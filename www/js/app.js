@@ -17,6 +17,9 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+     Parse.initialize("vvIFEVKHztE3l8CZrECjn09T3j8cjB3y0E3VxCN8",
+          "iNswO5XxUaNJtWUMUq1g9g14h600LOE0INwypTml");
   });
 })
 
@@ -65,8 +68,26 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           controller: 'PlaylistCtrl'
         }
       }
-    });
+    })
+     .state('app.children', {
+          url: "/children",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/children.html",
+                  controller: 'ChildrenCtrl'
+              }
+          }
+     })
+      .state('app.student', {
+          url: "/student/:studentId",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/student.html",
+                  controller: 'StudentCtrl'
+              }
+          }
+      });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/children');
 });
 

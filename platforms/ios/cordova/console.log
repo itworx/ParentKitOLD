@@ -6,3 +6,86 @@
 2014-05-18 16:08:51.524 HelloCordova[38760:70b] [CDVTimer][TotalPluginStartup] 1.821041ms
 2014-05-18 16:08:51.767 HelloCordova[38760:70b] Resetting plugins due to page load.
 2014-05-18 16:08:52.051 HelloCordova[38760:70b] Finished load of: file:///Users/amr/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/867DF0D8-2F29-4052-8D4C-144906B1F3C0/HelloCordova.app/www/index.html#/app/playlists
+2014-05-18 16:54:57.145 ParentKit[40306:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-18 16:54:57.154 ParentKit[40306:70b] Unlimited access to network resources
+2014-05-18 16:54:57.183 ParentKit[40306:70b] [CDVTimer][keyboard] 0.083983ms
+2014-05-18 16:54:57.184 ParentKit[40306:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-18 16:54:57.184 ParentKit[40306:70b] [CDVTimer][statusbar] 0.635028ms
+2014-05-18 16:54:57.185 ParentKit[40306:70b] [CDVTimer][TotalPluginStartup] 2.224982ms
+2014-05-18 16:54:57.257 ParentKit[40306:70b] Resetting plugins due to page load.
+2014-05-18 16:55:24.251 ParentKit[40306:4003] void SendDelegateMessage(NSInvocation *): delegate (webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:) failed to return after waiting 10 seconds. main run loop mode: kCFRunLoopDefaultMode
+2014-05-18 16:55:24.280 ParentKit[40306:70b] Finished load of: file:///Users/amr/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/B405ACE1-351B-48B5-8A05-E686E68D478A/ParentKit.app/www/index.html#/app/children
+2014-05-18 17:09:06.228 ParentKit[40874:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-18 17:09:06.236 ParentKit[40874:70b] Unlimited access to network resources
+2014-05-18 17:09:06.252 ParentKit[40874:70b] [CDVTimer][keyboard] 0.081003ms
+2014-05-18 17:09:06.253 ParentKit[40874:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-18 17:09:06.253 ParentKit[40874:70b] [CDVTimer][statusbar] 0.515044ms
+2014-05-18 17:09:06.253 ParentKit[40874:70b] [CDVTimer][TotalPluginStartup] 1.613021ms
+2014-05-18 17:09:06.296 ParentKit[40874:70b] Resetting plugins due to page load.
+2014-05-18 17:09:06.465 ParentKit[40874:70b] Finished load of: file:///Users/amr/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/B405ACE1-351B-48B5-8A05-E686E68D478A/ParentKit.app/www/index.html#/app/children
+2014-05-18 17:11:26.846 ParentKit[41238:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-18 17:11:26.853 ParentKit[41238:70b] Unlimited access to network resources
+2014-05-18 17:11:26.871 ParentKit[41238:70b] [CDVTimer][keyboard] 0.108004ms
+2014-05-18 17:11:26.872 ParentKit[41238:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-18 17:11:26.872 ParentKit[41238:70b] [CDVTimer][statusbar] 0.402987ms
+2014-05-18 17:11:26.873 ParentKit[41238:70b] [CDVTimer][TotalPluginStartup] 1.447022ms
+2014-05-18 17:11:26.986 ParentKit[41238:70b] Resetting plugins due to page load.
+2014-05-18 17:11:27.175 ParentKit[41238:70b] Finished load of: file:///Users/amr/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/96D3FFCE-BAD8-442A-82E0-86569151346E/ParentKit.app/www/index.html#/app/children
+2014-05-18 17:16:12.379 ParentKit[41238:4003] void SendDelegateMessage(NSInvocation *): delegate (webView:runJavaScriptAlertPanelWithMessage:initiatedByFrame:) failed to return after waiting 10 seconds. main run loop mode: kCFRunLoopDefaultMode
+2014-05-18 17:19:19.587 ParentKit[41587:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-18 17:19:19.596 ParentKit[41587:70b] Unlimited access to network resources
+2014-05-18 17:19:19.618 ParentKit[41587:70b] [CDVTimer][keyboard] 0.093997ms
+2014-05-18 17:19:19.619 ParentKit[41587:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-18 17:19:19.619 ParentKit[41587:70b] [CDVTimer][statusbar] 0.449002ms
+2014-05-18 17:19:19.620 ParentKit[41587:70b] [CDVTimer][TotalPluginStartup] 1.478016ms
+2014-05-18 17:19:19.664 ParentKit[41587:70b] Resetting plugins due to page load.
+2014-05-18 17:19:19.836 ParentKit[41587:70b] Finished load of: file:///Users/amr/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/96D3FFCE-BAD8-442A-82E0-86569151346E/ParentKit.app/www/index.html#/app/children
+2014-05-18 17:21:00.538 ParentKit[42042:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-18 17:21:00.547 ParentKit[42042:70b] Unlimited access to network resources
+2014-05-18 17:21:00.563 ParentKit[42042:70b] [CDVTimer][keyboard] 0.073969ms
+2014-05-18 17:21:00.563 ParentKit[42042:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-18 17:21:00.564 ParentKit[42042:70b] [CDVTimer][statusbar] 0.544012ms
+2014-05-18 17:21:00.564 ParentKit[42042:70b] [CDVTimer][TotalPluginStartup] 1.514018ms
+2014-05-18 17:21:00.620 ParentKit[42042:70b] Resetting plugins due to page load.
+2014-05-18 17:21:00.838 ParentKit[42042:70b] Finished load of: file:///Users/amr/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/96D3FFCE-BAD8-442A-82E0-86569151346E/ParentKit.app/www/index.html#/app/children
+2014-05-18 17:21:49.476 ParentKit[42228:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-18 17:21:49.489 ParentKit[42228:70b] Unlimited access to network resources
+2014-05-18 17:21:49.517 ParentKit[42228:70b] [CDVTimer][keyboard] 0.132978ms
+2014-05-18 17:21:49.518 ParentKit[42228:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-18 17:21:49.520 ParentKit[42228:70b] [CDVTimer][statusbar] 2.074003ms
+2014-05-18 17:21:49.520 ParentKit[42228:70b] [CDVTimer][TotalPluginStartup] 3.697038ms
+2014-05-18 17:21:49.584 ParentKit[42228:70b] Resetting plugins due to page load.
+2014-05-18 17:21:49.950 ParentKit[42228:70b] Finished load of: file:///Users/amr/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/96D3FFCE-BAD8-442A-82E0-86569151346E/ParentKit.app/www/index.html#/app/children
+2014-05-18 17:22:13.304 ParentKit[42228:70b] [{"firstName":"Tefa","isDeleted":false,"lastName":"Elsehemy","studentId":"ABC","tkID":"123","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"2J2AAIKrTq","createdAt":"2014-05-18T15:12:28.022Z","updatedAt":"2014-05-18T15:12:55.185Z"}]
+2014-05-18 17:22:52.503 ParentKit[42419:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-18 17:22:52.512 ParentKit[42419:70b] Unlimited access to network resources
+2014-05-18 17:22:52.528 ParentKit[42419:70b] [CDVTimer][keyboard] 0.069976ms
+2014-05-18 17:22:52.529 ParentKit[42419:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-18 17:22:52.529 ParentKit[42419:70b] [CDVTimer][statusbar] 0.528991ms
+2014-05-18 17:22:52.530 ParentKit[42419:70b] [CDVTimer][TotalPluginStartup] 1.513004ms
+2014-05-18 17:22:52.569 ParentKit[42419:70b] Resetting plugins due to page load.
+2014-05-18 17:22:52.754 ParentKit[42419:70b] Finished load of: file:///Users/amr/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/96D3FFCE-BAD8-442A-82E0-86569151346E/ParentKit.app/www/index.html#/app/children
+2014-05-18 17:23:57.178 ParentKit[42419:70b] [{"firstName":"Tefa","isDeleted":false,"lastName":"Elsehemy","studentId":"ABC","tkID":"123","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"2J2AAIKrTq","createdAt":"2014-05-18T15:12:28.022Z","updatedAt":"2014-05-18T15:12:55.185Z"}]
+2014-05-18 17:25:35.389 ParentKit[42419:70b] [{"firstName":"Tefa","isDeleted":false,"lastName":"Elsehemy","studentId":"ABC","tkID":"123","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"2J2AAIKrTq","createdAt":"2014-05-18T15:12:28.022Z","updatedAt":"2014-05-18T15:12:55.185Z"}]
+2014-05-18 17:26:12.043 ParentKit[42419:70b] [{"firstName":"Tefa","isDeleted":false,"lastName":"Elsehemy","studentId":"ABC","tkID":"123","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"2J2AAIKrTq","createdAt":"2014-05-18T15:12:28.022Z","updatedAt":"2014-05-18T15:12:55.185Z"}]
+2014-05-18 17:30:20.298 ParentKit[42887:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-18 17:30:20.307 ParentKit[42887:70b] Unlimited access to network resources
+2014-05-18 17:30:20.325 ParentKit[42887:70b] [CDVTimer][keyboard] 0.068009ms
+2014-05-18 17:30:20.325 ParentKit[42887:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-18 17:30:20.326 ParentKit[42887:70b] [CDVTimer][statusbar] 0.404000ms
+2014-05-18 17:30:20.326 ParentKit[42887:70b] [CDVTimer][TotalPluginStartup] 1.338959ms
+2014-05-18 17:30:20.362 ParentKit[42887:70b] Resetting plugins due to page load.
+2014-05-18 17:30:20.516 ParentKit[42887:70b] Finished load of: file:///Users/amr/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/96D3FFCE-BAD8-442A-82E0-86569151346E/ParentKit.app/www/index.html#/app/children
+2014-05-18 17:31:49.560 ParentKit[42887:70b] [{"firstName":"Tefa","isDeleted":false,"lastName":"Elsehemy","studentId":"ABC","tkID":"123","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"2J2AAIKrTq","createdAt":"2014-05-18T15:12:28.022Z","updatedAt":"2014-05-18T15:12:55.185Z"}]
+2014-05-18 17:32:10.043 ParentKit[42887:70b] [{"firstName":"Tefa","isDeleted":false,"lastName":"Elsehemy","studentId":"ABC","tkID":"123","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"2J2AAIKrTq","createdAt":"2014-05-18T15:12:28.022Z","updatedAt":"2014-05-18T15:12:55.185Z"}]
+2014-05-18 17:34:04.313 ParentKit[43363:70b] Multi-tasking -> Device: YES, App: YES
+2014-05-18 17:34:04.319 ParentKit[43363:70b] Unlimited access to network resources
+2014-05-18 17:34:04.339 ParentKit[43363:70b] [CDVTimer][keyboard] 0.104964ms
+2014-05-18 17:34:04.340 ParentKit[43363:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-18 17:34:04.340 ParentKit[43363:70b] [CDVTimer][statusbar] 0.454962ms
+2014-05-18 17:34:04.341 ParentKit[43363:70b] [CDVTimer][TotalPluginStartup] 1.569986ms
+2014-05-18 17:34:04.377 ParentKit[43363:70b] Resetting plugins due to page load.
+2014-05-18 17:34:04.530 ParentKit[43363:70b] Finished load of: file:///Users/amr/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/96D3FFCE-BAD8-442A-82E0-86569151346E/ParentKit.app/www/index.html#/app/children
+2014-05-18 17:34:23.210 ParentKit[43363:70b] [{"firstName":"Tefa","isDeleted":false,"lastName":"Elsehemy","studentId":"ABC","tkID":"123","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"2J2AAIKrTq","createdAt":"2014-05-18T15:12:28.022Z","updatedAt":"2014-05-18T15:12:55.185Z"}]
+2014-05-18 17:35:33.496 ParentKit[43363:70b] [{"firstName":"Tefa","isDeleted":false,"lastName":"Elsehemy","studentId":"ABC","tkID":"123","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"2J2AAIKrTq","createdAt":"2014-05-18T15:12:28.022Z","updatedAt":"2014-05-18T15:12:55.185Z"},{"firstName":"A","lastName":"B","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"VNq7qtN1U2","createdAt":"2014-05-18T15:35:19.810Z","updatedAt":"2014-05-18T15:35:22.697Z"}]
+2014-05-18 17:35:39.201 ParentKit[43363:70b] [{"firstName":"Tefa","isDeleted":false,"lastName":"Elsehemy","studentId":"ABC","tkID":"123","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"2J2AAIKrTq","createdAt":"2014-05-18T15:12:28.022Z","updatedAt":"2014-05-18T15:12:55.185Z"},{"firstName":"A","lastName":"B","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"VNq7qtN1U2","createdAt":"2014-05-18T15:35:19.810Z","updatedAt":"2014-05-18T15:35:22.697Z"}]

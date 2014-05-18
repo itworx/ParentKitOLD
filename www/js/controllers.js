@@ -16,3 +16,22 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
+.controller('ChildrenCtrl', function ($scope){
+
+        var Student = Parse.Object.extend("Student");
+        var query = new Parse.Query(Student);
+        query.find({
+            success: function(results) {
+                alert("Successfully retrieved " + results.length + " students.");
+                // Do something with the returned Parse.Object values
+                console.log(results);
+                $scope.children = results;
+            },
+            error: function(error) {
+                alert("Error: " + error.code + " " + error.message);
+            }
+        });
+})
+.controller('StudentCtrl', function ($scope){
+
+});
