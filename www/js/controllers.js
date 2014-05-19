@@ -13,13 +13,26 @@ angular.module('starter.controllers', [])
     { title: 'Cowbell', id: 6 }
   ];
 })
-
+.controller('AttendanceCtrl', function ($scope){
+alert("Att!");
+})
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
-.controller('ChildrenCtrl', function ($scope){
+.controller('ChildrenCtrl', function ($scope, $ionicLoading){
+        $scope.show = function() {
+            $ionicLoading.show({
+                template: 'Loading...'
+            });
+        };
+        $scope.hide = function(){
+            $ionicLoading.hide();
+        };
 
         var Student = Parse.Object.extend("Student");
         var query = new Parse.Query(Student);
+
+        $scope.show();
+
         query.find({
             success: function(results) {
 
@@ -32,9 +45,11 @@ angular.module('starter.controllers', [])
 
                 // Do something with the returned Parse.Object values
                 console.log(results);
+                $scope.hide();
 
             },
             error: function(error) {
+                $scope.hide();
                 alert("Error: " + error.code + " " + error.message);
             }
         });
@@ -47,7 +62,7 @@ angular.module('starter.controllers', [])
         $scope.logIn = function(user) {
             console.log('Trying to Log-In with ', user.username, user.password);
 
-            Parse.User.logIn(user.name, user.password, {
+            Parse.User.logIn(user.username, user.password, {
                 success: function(theUser) {
                     $state.go('app.children');
                     // Do stuff after successful login.
