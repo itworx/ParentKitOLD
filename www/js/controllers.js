@@ -22,10 +22,17 @@ angular.module('starter.controllers', [])
         var query = new Parse.Query(Student);
         query.find({
             success: function(results) {
-                alert("Successfully retrieved " + results.length + " students.");
+
+                $scope.children=[];
+
+                for (var i = 0; i < results.length; i++) {
+                    var object = results[i];
+                    $scope.children.push(object.toJSON());
+                }
+
                 // Do something with the returned Parse.Object values
                 console.log(results);
-                $scope.children = results;
+
             },
             error: function(error) {
                 alert("Error: " + error.code + " " + error.message);
@@ -34,4 +41,23 @@ angular.module('starter.controllers', [])
 })
 .controller('StudentCtrl', function ($scope){
 
-});
+})
+.controller('LogInCtrl', function($scope, $state) {
+
+        $scope.logIn = function(user) {
+            console.log('Trying to Log-In with ', user.username, user.password);
+
+            Parse.User.logIn(user.name, user.password, {
+                success: function(theUser) {
+                    $state.go('app.children');
+                    // Do stuff after successful login.
+                },
+                error: function(user, error) {
+                    console.log(user, error);
+//                    $state.go('app.children');
+                    // The login failed. Check error to see why.
+                }
+            });
+
+        };
+    });
