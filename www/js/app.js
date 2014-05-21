@@ -38,7 +38,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           templateUrl: "templates/student.html"
     })
     .state('tabs.attendance', {
-          url: "/attendance",
+          url: "/attendance/:studentId",
           views: {
               'attendance-tab': {
                   templateUrl: "templates/attendance.html",
@@ -108,8 +108,25 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                   controller: 'LogInCtrl'
               }
           }
+      })
+      .state('app.SignUp', {
+          url: "/SignUp",
+            views: {
+                'menuContent' :{
+                    templateUrl: "templates/SignUp.html",
+                    controller: 'SignUpCtrl'
+                }
+            }
+        })
+      .state('app.Students', {
+          url: "/Students",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/children.html",
+                  controller: 'Students'
+              }
+          }
       });
-
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/children');
+  $urlRouterProvider.otherwise('/app/login');
 });

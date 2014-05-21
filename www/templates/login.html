@@ -1,4 +1,4 @@
-<ion-view title="Log In">
+<ion-view hide-back-button="true" title="Log In">
     <ion-content>
         <div class="list">
             <label class="item item-input">
@@ -9,10 +9,15 @@
                 <span class="input-label">Password</span>
                 <input type="password" ng-model="user.password">
             </label>
+
         </div>
         <div class="padding">
             <button class="button button-block button-positive" ng-click="logIn(user)">
                 Sign-In
+            </button>
+
+            <button class="button button-block button-positive" ng-click="signup()">
+                Sign-Up
             </button>
             <p class="text-center">
                 <a href="#/forgot-password">Forgot password</a>
