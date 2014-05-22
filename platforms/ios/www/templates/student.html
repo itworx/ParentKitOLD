@@ -1,5 +1,18 @@
 <ion-view title="Student">
-    <ion-content class="has-header">
-        <h1>Student</h1>
-    </ion-content>
+    <ion-tabs class="tabs-icon-top tabs-positive">
+
+        <ion-tab title="Summary" icon="ion-home" href="#/app/student/attendance/{{studentId}}">
+            <ion-nav-view name="home-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Attendance" icon="ion-ios7-information" href="#/student/attendance/{{studentId}}">
+            <ion-nav-view name="attendance-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Behavior" icon="ion-log-out" href="#/sign-in">
+        </ion-tab>
+
+        <ion-tab title="Grades" icon="ion-log-out" href="#/sign-in">
+        </ion-tab>
+    </ion-tabs>
 </ion-view>

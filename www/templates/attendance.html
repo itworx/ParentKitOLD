@@ -1,10 +1,15 @@
-<ion-view title="Attendance">
-    <ion-content padding="true">
-        <p>Example of Ionic tabs. Navigate to each tab, and
-            navigate to child views of each tab and notice how
-            each tab has its own navigation history.</p>
-        <p>
-            <a class="button icon icon-right ion-chevron-right" href="#/tab/facts">Scientific Facts</a>
-        </p>
+<ion-view hide-back-button="true" title="Attendance">
+    <ion-content class="has-header">
+       <div class="list">
+
+            <a ng-repeat="record in records "
+               class="item item-thumbnail-left">
+
+                <img ng-src={{record.type.color}}>
+                <h2>{{ record.type.title}}</h2>
+                <h4>{{ record.lesson.lessonStartDate.toDateString()}}</h4>
+            </a>
+
+        </div>
     </ion-content>
 </ion-view>

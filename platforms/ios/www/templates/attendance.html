@@ -1,0 +1,9 @@
+<ion-view hide-back-button="true" title="Students">
+    <ion-content class="has-header">
+        <ion-list>
+            <ion-item ng-repeat = "record in records track by $index" href="#/app/student/{{attendace.objectId}}">
+                <h1>{{record.type.title}}  {{record.type.color}}  </h1>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -46,6 +46,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
               }
           }
      })
+      .state('tabs.behavior', {
+          url: "/behavior/:studentId",
+          views: {
+              'attendance-tab': {
+                  templateUrl: "templates/Behavior.html",
+                  controller: 'BehaviorCtrl'
+              }
+          }
+      })
     .state('app.search', {
       url: "/search",
       views: {

@@ -1,22 +1,22 @@
 angular.module('starter.controllers', ['ionic'])
     .service('AtendanceTypes',function(){
         var types = [];
+        var attendanceType =  Parse.Object.extend("Attendancetype");
+        var attendanceTypeQuery = new Parse.Query(attendanceType);
+        attendanceTypeQuery .find({
+            success: function (attendanceTypesResults) {
+                for(i in attendanceTypesResults){
+                    types.push(attendanceTypesResults[i].toJSON());
+                    console.log(types[i].objectId +'         title:    ' +  types[i].title);
+                }
+            },
+            error:function(error){
+                alert("Error: " + error.code + " " + error.message);
+            }
+        });
+
         this.getAttendanceTypes = function () {
             return types;
-        }
-        this.addType = function (type) {
-            var found = false;
-            for(i in types){
-                if(types[i].objectId == type.id){
-                    found = true;
-                }
-            }
-            if(!found){
-               types.push(type);
-            }
-        }
-        this.setTypes = function(attendanceTypes){
-            types = attendanceTypes;
         }
         this.getType = function (typeId) {
             for(i in types){
@@ -26,7 +26,49 @@ angular.module('starter.controllers', ['ionic'])
             }
         }
     })
+    .service('BehaviorTypesService',function(){
 
+        console.log('this is behavior types service');
+        var behaviortypes = [];
+        var behaviorType =  Parse.Object.extend("Behaviortype");
+        var behaviorTypesQuery = new Parse.Query(behaviorType );
+        behaviorTypesQuery.find({
+            success: function (behaviorTypesResults) {
+                for(i in behaviorTypesResults){
+                    behaviortypes.push(behaviorTypesResults[i].toJSON());
+                    console.log('types length ' + behaviortypes.length);
+                }
+            },
+            error:function(error){
+                alert("Error: " + error.code + " " + error.message);
+            }
+        });
+
+        this.getBehaviorTypes = function () {
+            return behaviortypes;
+        }
+        this.getBehaviorType = function (typeId) {
+            for(i in behaviortypes){
+                if(behaviortypes[i].objectId == typeId){
+                    return behaviortypes[i];
+                }
+            }
+        }
+    })
+    .service('LessonService',function(){
+        this.getLesson = function(lessonId){
+            //alert('during call');
+            console.log('LessonService : ' + lessonId);
+
+            var lessonObject =  Parse.Object.extend("Lesson");
+            var lessonQuery = new Parse.Query(lessonObject);
+            lessonQuery.equalTo('objectId',lessonId);
+            return lessonQuery.find();
+        }
+    })
+    .service('studentsService',function(){
+
+    })
 
 .controller('AppCtrl', function($scope) {
 })
@@ -42,59 +84,65 @@ angular.module('starter.controllers', ['ionic'])
   ];
 })
 
-.controller('AttendanceCtrl', function ($scope,$stateParams,AtendanceTypes){
+.controller('AttendanceCtrl', function ($scope,$stateParams,AtendanceTypes,LessonService){
 
-        //Get Attendance Types
-
-        var attendanceType =  Parse.Object.extend("Attendancetype");
-        var attendanceTypeQuery = new Parse.Query(attendanceType);
-        console.log('type Id     + ' + object.type.objectId);
-        attendanceTypeQuery.equalTo("objectId",object.type.objectId);
-        attendanceTypeQuery .find({
-            success: function (attendanceTypesResults) {
-                alert(attendanceTypesResults.length);
-                alert(attendanceTypesResults);
-                console.log('types   ' + attendanceTypesResults);
-            },
-            error:function(error){
-                alert("Error: " + error.code + " " + error.message);
-            }
-        });
-
-        //Get Attendance For Student
-
+       alert('this is attendance controller   '  + $stateParams.studentId);
+        $scope.records = [];
         var attendance = Parse.Object.extend("Attendance");
         var attendanceQuery = new Parse.Query(attendance);
 
         var student = Parse.Object.extend("Student");
         var studentQuery = new Parse.Query(student);
-
         studentQuery.equalTo("objectId",$stateParams.studentId);
 
         attendanceQuery.matchesQuery("student", studentQuery);
         attendanceQuery.find({
             success: function(attendancesResults) {
-                console.log(attendancesResults);
-                $scope.attendances = [];
                 for (var i = 0; i < attendancesResults.length; i++) {
-                    var object = attendancesResults[i];
-                    $scope.attendances.push(object.toJSON());
-                    object = $scope.attendances[i];
+                    var attendanceObject = attendancesResults[i].toJSON();
+                    console.log('This is my log');
+                    console.log(attendanceObject);
+                    console.log(attendanceObject.lesson);
+                    console.log(attendanceObject.lesson.objectId);
+                    var promise = LessonService.getLesson(attendanceObject.lesson.objectId);
+                    promise.done(function (lessons) {
+                        var lessonObject = lessons[0].toJSON();
+                        console.log('returning : ' +JSON.stringify(lessonObject) + " "  + lessonObject.lessonTitle );
+                        console.log('date:  '  + lessonObject.lessonStartDate);
+                        console.log('string:  '  +  JSON.stringify(lessonObject) + '      '+lessonObject.lessonStartDate.iso);
+                        lessonObject.lessonStartDate = new Date (lessonObject.lessonStartDate.iso);
+                        console.log('date after formatting   :' + lessonObject.lessonStartDate.toDateString());
+
+                         var record = {
+                                attendance :'',
+                                type :'',
+                                lesson:''
+                           };
+                            record.attendance = attendanceObject;
+                            record.lesson = lessonObject;
+                            record.type = AtendanceTypes.getType(attendanceObject.type.objectId);
+                            $scope.records.push(record);
+                            $scope.$apply();
+                        })
+                        .fail(function(error) {
+                            alert("Error: " + error.code + " " + error.message);
+                        });
                 }
             },
             error: function(error) {
                 alert("Error: " + error.code + " " + error.message);
             }
         });
-
-
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 
 })
 
-.controller('ChildrenCtrl', function ($scope, $ionicLoading){
+.controller('ChildrenCtrl', function ($scope, $ionicLoading,$state){
+        $scope.PressHandler = function(studentId){
+            $state.go();
+        };
         $scope.show = function() {
             $ionicLoading.show({
                 template: 'Loading...'
@@ -108,7 +156,6 @@ angular.module('starter.controllers', ['ionic'])
         var query = new Parse.Query(Student);
         query.equalTo()
         $scope.show();
-
         query.find({
             success: function(results) {
 
@@ -134,7 +181,6 @@ angular.module('starter.controllers', ['ionic'])
 
 .controller('StudentCtrl', function ($scope,$stateParams){
         $scope.studentId =  $stateParams.studentId;
-        alert('this is student id :' + $scope.studentId);
 })
 
 .controller('LogInCtrl', function($scope, $state,$ionicLoading) {
@@ -238,8 +284,6 @@ angular.module('starter.controllers', ['ionic'])
     })
 
 .controller('Students', function($scope, $state,  $ionicLoading) {
-        alert('students');
-
         $scope.showHUD = function(text) {
             $ionicLoading.show({
                 template: text
@@ -251,7 +295,6 @@ angular.module('starter.controllers', ['ionic'])
 
         var Student = Parse.Object.extend("Student");
         var query = new Parse.Query(Student);
-//        query.equalTo(accessCode, "");
         $scope.showHUD('loading..');
         query.find({
             success: function(results) {
@@ -273,4 +316,39 @@ angular.module('starter.controllers', ['ionic'])
                 alert("Error: " + error.code + " " + error.message);
             }
         });
+    })
+
+.controller('BehaviorCtrl', function ($scope,$stateParams,BehaviorTypesService){
+alert('this is behavior controller');
+    $scope.behaviorRecords = [];
+    var behavior = Parse.Object.extend("Behavior");
+    var behaviorQuery = new Parse.Query(behavior);
+
+    var student = Parse.Object.extend("Student");
+    var studentQuery = new Parse.Query(student);
+    studentQuery.equalTo("objectId",$stateParams.studentId);
+
+    behaviorQuery .matchesQuery("student", studentQuery);
+    behaviorQuery .find({
+        success: function(behaviorResults) {
+            for (var i = 0; i < behaviorResults.length; i++) {
+                var behaviorObject = behaviorResults[i].toJSON();
+                behaviorObject.behaviorDate= new Date (behaviorObject.behaviorDate.iso);
+                var behaviorTypeObject = BehaviorTypesService.getBehaviorType(behaviorObject.behaviorType.objectId);
+                behaviorTypeObject.isPositive = (behaviorTypeObject.isPositive == 0) ? 'Positive' :'Negative';
+                var behaviorRecord = {
+                    behavior:'',
+                    behaviorType :''
+                };
+                behaviorRecord .behavior = behaviorObject;
+                behaviorRecord .behaviorType = behaviorTypeObject;
+                $scope.behaviorRecords.push(behaviorRecord);
+                $scope.$apply();
+                console.log('behavior date   ' + behaviorRecord.behavior.behaviorDate.toDateString());
+            }
+        },
+        error: function(error) {
+            alert("Error: " + error.code + " " + error.message);
+        }
     });
+});

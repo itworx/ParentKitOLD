@@ -1,0 +1,13 @@
+<ion-view hide-back-button="true" title="Attendance">
+    <ion-content class="has-header">
+        <div class="list">
+            <a ng-repeat="record in behaviorRecords "
+               class="item item-thumbnail-left">
+                <img ng-src={{}}>
+                <h2>{{ record.behaviorType.title}}</h2>
+                <h3>{{ record.behavior.behaviorDate.toDateString()}}</h3>
+                <h4>{{ record.behaviorType.isPositive}}</h4>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
