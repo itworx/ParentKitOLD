@@ -49,7 +49,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       .state('tabs.behavior', {
           url: "/behavior/:studentId",
           views: {
-              'attendance-tab': {
+              'behavior-tab': {
                   templateUrl: "templates/Behavior.html",
                   controller: 'BehaviorCtrl'
               }

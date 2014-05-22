@@ -67,8 +67,13 @@ angular.module('starter.controllers', ['ionic'])
         }
     })
     .service('studentsService',function(){
-
+        var students = [];
+        this.addStudent = function(student){
+            students.push(student);
+        };
     })
+
+
 
 .controller('AppCtrl', function($scope) {
 })
@@ -85,8 +90,7 @@ angular.module('starter.controllers', ['ionic'])
 })
 
 .controller('AttendanceCtrl', function ($scope,$stateParams,AtendanceTypes,LessonService){
-
-       alert('this is attendance controller   '  + $stateParams.studentId);
+        console.log($stateParams);
         $scope.records = [];
         var attendance = Parse.Object.extend("Attendance");
         var attendanceQuery = new Parse.Query(attendance);
@@ -177,7 +181,6 @@ angular.module('starter.controllers', ['ionic'])
             }
         });
 })
-
 
 .controller('StudentCtrl', function ($scope,$stateParams){
         $scope.studentId =  $stateParams.studentId;
@@ -319,7 +322,7 @@ angular.module('starter.controllers', ['ionic'])
     })
 
 .controller('BehaviorCtrl', function ($scope,$stateParams,BehaviorTypesService){
-alert('this is behavior controller');
+        console.log($stateParams);
     $scope.behaviorRecords = [];
     var behavior = Parse.Object.extend("Behavior");
     var behaviorQuery = new Parse.Query(behavior);
