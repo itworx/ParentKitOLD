@@ -1,6 +1,15 @@
 <body>
     <script>
-    var canvas = d3.select("body").append("svg").attr("width",500).attr("height,500");
+        var canvas = d3.select("body").append("svg").attr("width",500).attr("height,500");
         var group = canvas.append("g").attr("transform","translate(100,100)");
+        var r = 100;
+        var p = Math.PI * 2 ;
+        var arc = d3.svg.arc()
+                .innerRadius(r - 20)
+                .outerRadius(r)
+                .startAngel(0)
+                .endAngel(p);
+
+        group.append("path").attr("d",arc);
     </script>
 </body>
