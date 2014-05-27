@@ -1,15 +1,16 @@
 <ion-view title="Student">
     <ion-tabs class="tabs-icon-top tabs-positive">
 
-        <ion-tab title="Summary" icon="ion-home" href="#/app/student/attendance/{{studentId}}">
+        <ion-tab title="Summary" icon="ion-home" href="#/">
             <ion-nav-view name="home-tab"></ion-nav-view>
         </ion-tab>
 
-        <ion-tab title="Attendance" icon="ion-ios7-information" href="#/student/attendance/{{studentId}}">
+        <ion-tab title="Attendance" icon="ion-ios7-information" ng-click="goToAttendance()">
             <ion-nav-view name="attendance-tab"></ion-nav-view>
         </ion-tab>
 
-        <ion-tab title="Behavior" icon="ion-log-out" href="#/sign-in">
+        <ion-tab title="Behavior" icon="ion-log-out" ng-click="goToBehavior()">
+            <ion-nav-view name="behavior-tab"></ion-nav-view>
         </ion-tab>
 
         <ion-tab title="Grades" icon="ion-log-out" href="#/sign-in">

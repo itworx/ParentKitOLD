@@ -68,9 +68,28 @@ angular.module('starter.controllers', ['ionic'])
     })
     .service('studentsService',function(){
         var students = [];
+        var currentStudent;
         this.addStudent = function(student){
             students.push(student);
         };
+        this.getCurrentStudent = function(){
+          return currentStudent;
+        };
+        this.setCurrentStudent = function(student){
+            console.log('this is set current studnet fn');
+            console.log('this is studnet   ' +  student);
+            currentStudent = student;
+            console.log('this is current studnet   ' +  currentStudent);
+        };
+        this.setStudents = function (studentsArr) {
+            console.log('this is set students fn');
+            students = studentsArr;
+            console.log('this is student array Parameters in service   ' + studentsArr);
+            console.log('this is student array in service   ' + students);
+        }
+        this.getStudents = function () {
+            return students;
+        }
     })
 
 
@@ -89,8 +108,16 @@ angular.module('starter.controllers', ['ionic'])
   ];
 })
 
-.controller('AttendanceCtrl', function ($scope,$stateParams,AtendanceTypes,LessonService){
-        console.log($stateParams);
+.controller('AttendanceCtrl', function ($scope,$stateParams,AtendanceTypes,LessonService,$ionicNavBarDelegate,$state,$ionicLoading){
+
+        $scope.showHUD = function(text) {
+            $ionicLoading.show({
+                template: text
+            });
+        };
+        $scope.hideHUD = function(){
+            $ionicLoading.hide();
+        };
         $scope.records = [];
         var attendance = Parse.Object.extend("Attendance");
         var attendanceQuery = new Parse.Query(attendance);
@@ -98,7 +125,7 @@ angular.module('starter.controllers', ['ionic'])
         var student = Parse.Object.extend("Student");
         var studentQuery = new Parse.Query(student);
         studentQuery.equalTo("objectId",$stateParams.studentId);
-
+        $scope.showHUD('loading...');
         attendanceQuery.matchesQuery("student", studentQuery);
         attendanceQuery.find({
             success: function(attendancesResults) {
@@ -111,12 +138,7 @@ angular.module('starter.controllers', ['ionic'])
                     var promise = LessonService.getLesson(attendanceObject.lesson.objectId);
                     promise.done(function (lessons) {
                         var lessonObject = lessons[0].toJSON();
-                        console.log('returning : ' +JSON.stringify(lessonObject) + " "  + lessonObject.lessonTitle );
-                        console.log('date:  '  + lessonObject.lessonStartDate);
-                        console.log('string:  '  +  JSON.stringify(lessonObject) + '      '+lessonObject.lessonStartDate.iso);
                         lessonObject.lessonStartDate = new Date (lessonObject.lessonStartDate.iso);
-                        console.log('date after formatting   :' + lessonObject.lessonStartDate.toDateString());
-
                          var record = {
                                 attendance :'',
                                 type :'',
@@ -132,18 +154,27 @@ angular.module('starter.controllers', ['ionic'])
                             alert("Error: " + error.code + " " + error.message);
                         });
                 }
+                $scope.hideHUD();
             },
             error: function(error) {
                 alert("Error: " + error.code + " " + error.message);
             }
         });
+
+        $scope.getPreviousTitle = function() {
+            console.log('previous title    :'  + $ionicNavBarDelegate.getPreviousTitle());
+            return $ionicNavBarDelegate.getPreviousTitle();
+        };
+        $scope.goBack =function(){
+            $state.go('app.Students');
+        }
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 
 })
 
-.controller('ChildrenCtrl', function ($scope, $ionicLoading,$state){
+.controller('ChildrenCtrl', function ($scope, $ionicLoading,$state,studentsService){
         $scope.PressHandler = function(studentId){
             $state.go();
         };
@@ -182,8 +213,19 @@ angular.module('starter.controllers', ['ionic'])
         });
 })
 
-.controller('StudentCtrl', function ($scope,$stateParams){
+.controller('StudentCtrl', function ($scope,$stateParams,$state,studentsService){
         $scope.studentId =  $stateParams.studentId;
+        $scope.goToAttendance = function(){
+            console.log('this is go to attendacne fn');
+            console.log('state parameters ' + $stateParams.studentId);
+            console.log('Scope Student Id' + $scope.studentId);
+            console.log('scope  ' + $scope);
+            $state.go('tabs.attendance',{"studentId":studentsService.getCurrentStudent().objectId});
+        };
+        $scope.goToBehavior= function(){
+            console.log('this is go to behavior fn');
+            $state.go('tabs.behavior',{"studentId":studentsService.getCurrentStudent().objectId});
+        };
 })
 
 .controller('LogInCtrl', function($scope, $state,$ionicLoading) {
@@ -260,7 +302,7 @@ angular.module('starter.controllers', ['ionic'])
                    success: function(parseUser) {
                        $scope.hide();
                        alert('sign up success');
-                       $state.go('app.login');
+                       $state.go('login');
                    },
                    error: function(user, error) {
                        // Show the error message somewhere and let the user try again.
@@ -286,7 +328,54 @@ angular.module('starter.controllers', ['ionic'])
         };
     })
 
-.controller('Students', function($scope, $state,  $ionicLoading) {
+.controller('Students', function($scope, $state,  $ionicLoading , studentsService) {
+
+        $scope.showHUD = function(text) {
+            $ionicLoading.show({
+                template: text
+            });
+        };
+        $scope.hideHUD = function(){
+            $ionicLoading.hide();
+        };
+        if(studentsService.getStudents().length == 0){
+            var Student = Parse.Object.extend("Student");
+            var query = new Parse.Query(Student);
+            $scope.showHUD('loading..');
+            query.find({
+                success: function(results) {
+
+                    $scope.children=[];
+
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+                        $scope.children.push(object.toJSON());
+                    }
+
+                    // Do something with the returned Parse.Object values
+                    console.log(results);
+                    studentsService.setStudents($scope.children);
+                    $scope.hideHUD();
+
+                },
+                error: function(error) {
+                    $scope.hideHUD();
+                    alert("Error: " + error.code + " " + error.message);
+                }
+            });
+        }
+        else{
+            $scope.children = studentsService.getStudents();
+        }
+        $scope.goToChildren = function(index){
+            studentsService.setCurrentStudent($scope.children[index]);
+            $state.go('tabs.attendance',{"studentId":studentsService.getCurrentStudent().objectId})
+        };
+
+    })
+
+.controller('BehaviorCtrl', function ($scope,$stateParams,BehaviorTypesService,$state,$ionicLoading){
+
         $scope.showHUD = function(text) {
             $ionicLoading.show({
                 template: text
@@ -296,34 +385,8 @@ angular.module('starter.controllers', ['ionic'])
             $ionicLoading.hide();
         };
 
-        var Student = Parse.Object.extend("Student");
-        var query = new Parse.Query(Student);
-        $scope.showHUD('loading..');
-        query.find({
-            success: function(results) {
-
-                $scope.children=[];
-
-                for (var i = 0; i < results.length; i++) {
-                    var object = results[i];
-                    $scope.children.push(object.toJSON());
-                }
-
-                // Do something with the returned Parse.Object values
-                console.log(results);
-                $scope.hideHUD();
-
-            },
-            error: function(error) {
-                $scope.hideHUD();
-                alert("Error: " + error.code + " " + error.message);
-            }
-        });
-    })
-
-.controller('BehaviorCtrl', function ($scope,$stateParams,BehaviorTypesService){
-        console.log($stateParams);
     $scope.behaviorRecords = [];
+     $scope.showHUD('loading..');
     var behavior = Parse.Object.extend("Behavior");
     var behaviorQuery = new Parse.Query(behavior);
 
@@ -347,6 +410,7 @@ angular.module('starter.controllers', ['ionic'])
                 behaviorRecord .behaviorType = behaviorTypeObject;
                 $scope.behaviorRecords.push(behaviorRecord);
                 $scope.$apply();
+                $scope.hideHUD();
                 console.log('behavior date   ' + behaviorRecord.behavior.behaviorDate.toDateString());
             }
         },
@@ -354,4 +418,64 @@ angular.module('starter.controllers', ['ionic'])
             alert("Error: " + error.code + " " + error.message);
         }
     });
-});
+        $scope.goBack =function(){
+            $state.go('app.Students');
+        }
+})
+.controller('BrowseCtrl', function ($scope,$stateParams,BehaviorTypesService,$state,$ionicLoading){
+        var ctx = document.getElementById("myChart").getContext("2d");
+
+        var data = [
+            {
+                value: 30,
+                color:"#F7464A",
+            },
+            {
+                value : 80,
+                color : "#E2EAE9",
+            }
+        ];
+
+        var options= {
+            //Boolean - Whether we should show a stroke on each segment
+            segmentShowStroke : true,
+
+            //String - The colour of each segment stroke
+            segmentStrokeColor : "#fff",
+
+            //Number - The width of each segment stroke
+            segmentStrokeWidth : 2,
+
+            //The percentage of the chart that we cut out of the middle.
+            percentageInnerCutout : 50,
+
+            //Boolean - Whether we should animate the chart
+            animation : true,
+
+            //Number - Amount of animation steps
+            animationSteps : 100,
+
+            scaleShowLabels : false,
+
+            //String - Animation easing effect
+            animationEasing : "easeOutBounce",
+
+            //Boolean - Whether we animate the rotation of the Doughnut
+            animateRotate : true,
+
+            //Boolean - Whether we animate scaling the Doughnut from the centre
+            animateScale : true,
+
+            //Function - Will fire on animation completion.
+            onAnimationComplete : null,
+
+            scaleLabelPaddingX: 35,
+            scaleFontFamily : "'Arial'",
+            scaleFontSize : 12,
+            scaleFontStyle : "normal",
+            scaleFontColor : "#666",
+            scaleLabel : "<%=value%>"
+        };
+        new Chart(ctx).Pie(data,options);
+    });
+

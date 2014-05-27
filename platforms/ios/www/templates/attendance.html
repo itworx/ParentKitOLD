@@ -1,9 +1,24 @@
-<ion-view hide-back-button="true" title="Students">
+<ion-nav-bar class="bar-stable nav-title-slide-ios7">
+
+</ion-nav-bar>
+
+<ion-view title="Attendance">
+    <ion-nav-buttons side="left">
+
+        <button class="button button-icon button-clear ion-ios7-arrow-back" ng-click="goBack()">
+            students
+        </button>
+    </ion-nav-buttons>
     <ion-content class="has-header">
-        <ion-list>
-            <ion-item ng-repeat = "record in records track by $index" href="#/app/student/{{attendace.objectId}}">
-                <h1>{{record.type.title}}  {{record.type.color}}  </h1>
-            </ion-item>
-        </ion-list>
+       <div class="list">
+
+            <a ng-repeat="record in records "
+               class="item item-thumbnail-left">
+
+                <img ng-src={{record.type.color}}>
+                <h2>{{record.type.title}}</h2>
+                <h4>{{record.lesson.lessonStartDate.toDateString()}}</h4>
+            </a>
+        </div>
     </ion-content>
 </ion-view>

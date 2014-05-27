@@ -1,11 +1,11 @@
-<ion-view hide-back-button="true" title="Students">
-    <ion-nav-buttons side="left">
-        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-    </ion-nav-buttons>
+<ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+</ion-nav-buttons>
+<ion-view  hide-back-button="true" title="Students">
     <ion-content class="has-header">
         <ion-list>
-            <ion-item ng-repeat="child in children" href="#/app/student/{{child.objectId}}">
-                <h1>{{child.firstName}}  {{child.objectId}}</h1>
+            <ion-item ng-repeat="child in children" ng-click="goToChildren($index)" >
+                <h3>{{child.firstName}}  {{child.lastName}}</h3>
             </ion-item>
         </ion-list>
     </ion-content>

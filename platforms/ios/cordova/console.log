@@ -103,3 +103,182 @@
 2014-05-21 14:42:33.864 ParentKit[9007:80b] hvuemU12P9         title:    Present_o
 2014-05-21 14:42:33.913 ParentKit[9007:80b] THREAD WARNING: ['Console'] took '48.379883' ms. Plugin should use a background thread.
 2014-05-21 14:42:33.914 ParentKit[9007:80b] [{"attendance":{"student":{"__type":"Pointer","className":"Student","objectId":"ELr6dWxFjO"},"type":{"__type":"Pointer","className":"Attendancetype","objectId":"hvuemU12P9"},"attendanceId":"","objectId":"4K9sqggnc3","createdAt":"2014-05-21T05:50:13.394Z","updatedAt":"2014-05-21T06:37:22.647Z"},"type":{"color":"00FF00","title":"Present_o","attendances":{"__type":"Relation","className":"Attendance"},"objectId":"hvuemU12P9","createdAt":"2014-05-21T06:36:43.578Z","updatedAt":"2014-05-21T06:36:53.027Z"}}]
+2014-05-26 13:16:40.500 ParentKit[879:80b] Multi-tasking -> Device: YES, App: YES
+2014-05-26 13:16:40.647 ParentKit[879:80b] Unlimited access to network resources
+2014-05-26 13:16:43.173 ParentKit[879:80b] [CDVTimer][keyboard] 0.104964ms
+2014-05-26 13:16:43.174 ParentKit[879:80b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-26 13:16:43.174 ParentKit[879:80b] [CDVTimer][statusbar] 0.386953ms
+2014-05-26 13:16:43.175 ParentKit[879:80b] [CDVTimer][TotalPluginStartup] 1.474977ms
+2014-05-26 13:16:43.505 ParentKit[879:80b] Resetting plugins due to page load.
+2014-05-26 13:16:44.221 ParentKit[879:80b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.0/Applications/182B37F4-800B-41ED-AB71-B0DF077323FC/ParentKit.app/www/index.html#/login
+2014-05-26 13:17:02.091 ParentKit[879:80b] Trying to Log-In with  mm mm
+2014-05-26 13:17:06.482 ParentKit[879:80b] [{"firstName":"Tefa","lastName":"1","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"rjdGW6XRO3","createdAt":"2014-05-25T11:02:09.593Z","updatedAt":"2014-05-25T11:03:44.124Z"},{"firstName":"Eslam","lastName":"youssef","parentName":"youssef","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"dcDMgM8dxi","createdAt":"2014-05-26T08:53:03.549Z","updatedAt":"2014-05-26T08:53:03.549Z"}]
+2014-05-26 13:17:06.483 ParentKit[879:80b] this is set students fn
+2014-05-26 13:17:06.483 ParentKit[879:80b] this is student array Parameters in service   [object Object],[object Object]
+2014-05-26 13:17:06.484 ParentKit[879:80b] this is student array in service   [object Object],[object Object]
+2014-05-26 13:17:08.364 ParentKit[879:80b] this is set current studnet fn
+2014-05-26 13:17:08.364 ParentKit[879:80b] this is studnet   [object Object]
+2014-05-26 13:17:08.364 ParentKit[879:80b] this is current studnet   [object Object]
+2014-05-26 13:27:29.088 ParentKit[1226:80b] Multi-tasking -> Device: YES, App: YES
+2014-05-26 13:27:29.108 ParentKit[1226:80b] Unlimited access to network resources
+2014-05-26 13:27:29.358 ParentKit[1226:80b] [CDVTimer][keyboard] 0.101984ms
+2014-05-26 13:27:29.359 ParentKit[1226:80b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-26 13:27:29.359 ParentKit[1226:80b] [CDVTimer][statusbar] 0.410974ms
+2014-05-26 13:27:29.359 ParentKit[1226:80b] [CDVTimer][TotalPluginStartup] 1.461983ms
+2014-05-26 13:27:59.940 ParentKit[1226:80b] Resetting plugins due to page load.
+2014-05-26 13:28:00.351 ParentKit[1226:80b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.0/Applications/182B37F4-800B-41ED-AB71-B0DF077323FC/ParentKit.app/www/index.html#/login
+2014-05-26 13:28:06.575 ParentKit[1226:80b] Trying to Log-In with  mm mm
+2014-05-26 13:28:08.792 ParentKit[1226:80b] [{"firstName":"Tefa","lastName":"1","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"rjdGW6XRO3","createdAt":"2014-05-25T11:02:09.593Z","updatedAt":"2014-05-25T11:03:44.124Z"},{"firstName":"Eslam","lastName":"youssef","parentName":"youssef","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"dcDMgM8dxi","createdAt":"2014-05-26T08:53:03.549Z","updatedAt":"2014-05-26T08:53:03.549Z"}]
+2014-05-26 13:28:08.793 ParentKit[1226:80b] this is set students fn
+2014-05-26 13:28:08.793 ParentKit[1226:80b] this is student array Parameters in service   [object Object],[object Object]
+2014-05-26 13:28:08.793 ParentKit[1226:80b] this is student array in service   [object Object],[object Object]
+2014-05-26 13:28:10.347 ParentKit[1226:80b] this is set current studnet fn
+2014-05-26 13:28:10.347 ParentKit[1226:80b] this is studnet   [object Object]
+2014-05-26 13:28:10.348 ParentKit[1226:80b] this is current studnet   [object Object]
+2014-05-26 13:28:10.419 ParentKit[1226:80b] this is attendance controller 
+2014-05-26 13:28:10.934 ParentKit[1226:80b] hvuemU12P9         title:    Present_o
+2014-05-26 13:28:11.306 ParentKit[1226:80b] This is my log
+2014-05-26 13:28:11.307 ParentKit[1226:80b] {"lesson":{"__type":"Pointer","className":"Lesson","objectId":"qKFwO32Kyv"},"student":{"__type":"Pointer","className":"Student","objectId":"rjdGW6XRO3"},"type":{"__type":"Pointer","className":"Attendancetype","objectId":"hvuemU12P9"},"attendanceId":"","objectId":"4K9sqggnc3","createdAt":"2014-05-21T05:50:13.394Z","updatedAt":"2014-05-25T11:03:08.006Z"}
+2014-05-26 13:28:11.307 ParentKit[1226:80b] {"__type":"Pointer","className":"Lesson","objectId":"qKFwO32Kyv"}
+2014-05-26 13:28:11.307 ParentKit[1226:80b] qKFwO32Kyv
+2014-05-26 13:28:11.307 ParentKit[1226:80b] LessonService : qKFwO32Kyv
+2014-05-26 13:28:11.822 ParentKit[1226:80b] returning : {"lessonDescription":"Description","lessonStartDate":{"__type":"Date","iso":"2014-05-21T15:18:00.000Z"},"lessonTitle":"testLesson","attachments":{"__type":"Relation","className":"Attachment"},"attendances":{"__type":"Relation","className":"Attendance"},"objectId":"qKFwO32Kyv","createdAt":"2014-05-21T12:56:04.129Z","updatedAt":"2014-05-21T15:18:46.546Z"} testLesson
+2014-05-26 13:28:11.823 ParentKit[1226:80b] date:  [object Object]
+2014-05-26 13:28:11.823 ParentKit[1226:80b] string:  {"lessonDescription":"Description","lessonStartDate":{"__type":"Date","iso":"2014-05-21T15:18:00.000Z"},"lessonTitle":"testLesson","attachments":{"__type":"Relation","className":"Attachment"},"attendances":{"__type":"Relation","className":"Attendance"},"objectId":"qKFwO32Kyv","createdAt":"2014-05-21T12:56:04.129Z","updatedAt":"2014-05-21T15:18:46.546Z"}      2014-05-21T15:18:00.000Z
+2014-05-26 13:28:11.824 ParentKit[1226:80b] date after formatting   :Wed May 21 2014
+2014-05-26 13:28:11.824 ParentKit[1226:80b] recordss   [object Object]
+2014-05-26 13:28:13.934 ParentKit[1226:80b] this is go to behavior fn
+2014-05-26 13:28:13.976 ParentKit[1226:80b] this is behavior types service
+2014-05-26 13:28:13.976 ParentKit[1226:80b] {"studentId":"rjdGW6XRO3"}
+2014-05-26 13:28:14.458 ParentKit[1226:80b] types length 1
+2014-05-26 13:28:14.510 ParentKit[1226:80b] behavior date   Thu May 22 2014
+2014-05-26 13:28:16.282 ParentKit[1226:80b] this is go to attendacne fn
+2014-05-26 13:28:16.282 ParentKit[1226:80b] state parameters undefined
+2014-05-26 13:28:16.283 ParentKit[1226:80b] Scope Student Idundefined
+2014-05-26 13:28:16.283 ParentKit[1226:80b] scope  [object Object]
+2014-05-26 13:28:16.283 ParentKit[1226:80b] this is attendance controller 
+2014-05-26 13:28:16.715 ParentKit[1226:80b] This is my log
+2014-05-26 13:28:16.715 ParentKit[1226:80b] {"lesson":{"__type":"Pointer","className":"Lesson","objectId":"qKFwO32Kyv"},"student":{"__type":"Pointer","className":"Student","objectId":"rjdGW6XRO3"},"type":{"__type":"Pointer","className":"Attendancetype","objectId":"hvuemU12P9"},"attendanceId":"","objectId":"4K9sqggnc3","createdAt":"2014-05-21T05:50:13.394Z","updatedAt":"2014-05-25T11:03:08.006Z"}
+2014-05-26 13:28:16.715 ParentKit[1226:80b] {"__type":"Pointer","className":"Lesson","objectId":"qKFwO32Kyv"}
+2014-05-26 13:28:16.716 ParentKit[1226:80b] qKFwO32Kyv
+2014-05-26 13:28:16.716 ParentKit[1226:80b] LessonService : qKFwO32Kyv
+2014-05-26 13:28:17.160 ParentKit[1226:80b] returning : {"lessonDescription":"Description","lessonStartDate":{"__type":"Date","iso":"2014-05-21T15:18:00.000Z"},"lessonTitle":"testLesson","attachments":{"__type":"Relation","className":"Attachment"},"attendances":{"__type":"Relation","className":"Attendance"},"objectId":"qKFwO32Kyv","createdAt":"2014-05-21T12:56:04.129Z","updatedAt":"2014-05-21T15:18:46.546Z"} testLesson
+2014-05-26 13:28:17.160 ParentKit[1226:80b] date:  [object Object]
+2014-05-26 13:28:17.161 ParentKit[1226:80b] string:  {"lessonDescription":"Description","lessonStartDate":{"__type":"Date","iso":"2014-05-21T15:18:00.000Z"},"lessonTitle":"testLesson","attachments":{"__type":"Relation","className":"Attachment"},"attendances":{"__type":"Relation","className":"Attendance"},"objectId":"qKFwO32Kyv","createdAt":"2014-05-21T12:56:04.129Z","updatedAt":"2014-05-21T15:18:46.546Z"}      2014-05-21T15:18:00.000Z
+2014-05-26 13:28:17.161 ParentKit[1226:80b] date after formatting   :Wed May 21 2014
+2014-05-26 13:28:17.161 ParentKit[1226:80b] recordss   [object Object]
+2014-05-26 13:28:17.948 ParentKit[1226:80b] this is go to behavior fn
+2014-05-26 13:28:17.948 ParentKit[1226:80b] {"studentId":"rjdGW6XRO3"}
+2014-05-26 13:28:18.579 ParentKit[1226:80b] behavior date   Thu May 22 2014
+2014-05-26 13:28:19.558 ParentKit[1226:80b] this is go to attendacne fn
+2014-05-26 13:28:19.559 ParentKit[1226:80b] state parameters undefined
+2014-05-26 13:28:19.559 ParentKit[1226:80b] Scope Student Idundefined
+2014-05-26 13:28:19.559 ParentKit[1226:80b] scope  [object Object]
+2014-05-26 13:28:19.560 ParentKit[1226:80b] this is attendance controller 
+2014-05-26 13:28:20.115 ParentKit[1226:80b] This is my log
+2014-05-26 13:28:20.115 ParentKit[1226:80b] {"lesson":{"__type":"Pointer","className":"Lesson","objectId":"qKFwO32Kyv"},"student":{"__type":"Pointer","className":"Student","objectId":"rjdGW6XRO3"},"type":{"__type":"Pointer","className":"Attendancetype","objectId":"hvuemU12P9"},"attendanceId":"","objectId":"4K9sqggnc3","createdAt":"2014-05-21T05:50:13.394Z","updatedAt":"2014-05-25T11:03:08.006Z"}
+2014-05-26 13:28:20.115 ParentKit[1226:80b] {"__type":"Pointer","className":"Lesson","objectId":"qKFwO32Kyv"}
+2014-05-26 13:28:20.116 ParentKit[1226:80b] qKFwO32Kyv
+2014-05-26 13:28:20.116 ParentKit[1226:80b] LessonService : qKFwO32Kyv
+2014-05-26 13:28:20.547 ParentKit[1226:80b] returning : {"lessonDescription":"Description","lessonStartDate":{"__type":"Date","iso":"2014-05-21T15:18:00.000Z"},"lessonTitle":"testLesson","attachments":{"__type":"Relation","className":"Attachment"},"attendances":{"__type":"Relation","className":"Attendance"},"objectId":"qKFwO32Kyv","createdAt":"2014-05-21T12:56:04.129Z","updatedAt":"2014-05-21T15:18:46.546Z"} testLesson
+2014-05-26 13:28:20.547 ParentKit[1226:80b] date:  [object Object]
+2014-05-26 13:28:20.547 ParentKit[1226:80b] string:  {"lessonDescription":"Description","lessonStartDate":{"__type":"Date","iso":"2014-05-21T15:18:00.000Z"},"lessonTitle":"testLesson","attachments":{"__type":"Relation","className":"Attachment"},"attendances":{"__type":"Relation","className":"Attendance"},"objectId":"qKFwO32Kyv","createdAt":"2014-05-21T12:56:04.129Z","updatedAt":"2014-05-21T15:18:46.546Z"}      2014-05-21T15:18:00.000Z
+2014-05-26 13:28:20.548 ParentKit[1226:80b] date after formatting   :Wed May 21 2014
+2014-05-26 13:28:20.548 ParentKit[1226:80b] recordss   [object Object]
+2014-05-26 13:28:22.497 ParentKit[1226:80b] this is go to behavior fn
+2014-05-26 13:28:22.498 ParentKit[1226:80b] {"studentId":"rjdGW6XRO3"}
+2014-05-26 13:28:23.080 ParentKit[1226:80b] behavior date   Thu May 22 2014
+2014-05-26 13:28:24.072 ParentKit[1226:80b] this is go to attendacne fn
+2014-05-26 13:28:24.072 ParentKit[1226:80b] state parameters undefined
+2014-05-26 13:28:24.072 ParentKit[1226:80b] Scope Student Idundefined
+2014-05-26 13:28:24.073 ParentKit[1226:80b] scope  [object Object]
+2014-05-26 13:28:24.073 ParentKit[1226:80b] this is attendance controller 
+2014-05-26 13:28:24.617 ParentKit[1226:80b] This is my log
+2014-05-26 13:28:24.617 ParentKit[1226:80b] {"lesson":{"__type":"Pointer","className":"Lesson","objectId":"qKFwO32Kyv"},"student":{"__type":"Pointer","className":"Student","objectId":"rjdGW6XRO3"},"type":{"__type":"Pointer","className":"Attendancetype","objectId":"hvuemU12P9"},"attendanceId":"","objectId":"4K9sqggnc3","createdAt":"2014-05-21T05:50:13.394Z","updatedAt":"2014-05-25T11:03:08.006Z"}
+2014-05-26 13:28:24.617 ParentKit[1226:80b] {"__type":"Pointer","className":"Lesson","objectId":"qKFwO32Kyv"}
+2014-05-26 13:28:24.618 ParentKit[1226:80b] qKFwO32Kyv
+2014-05-26 13:28:24.618 ParentKit[1226:80b] LessonService : qKFwO32Kyv
+2014-05-26 13:28:25.233 ParentKit[1226:80b] returning : {"lessonDescription":"Description","lessonStartDate":{"__type":"Date","iso":"2014-05-21T15:18:00.000Z"},"lessonTitle":"testLesson","attachments":{"__type":"Relation","className":"Attachment"},"attendances":{"__type":"Relation","className":"Attendance"},"objectId":"qKFwO32Kyv","createdAt":"2014-05-21T12:56:04.129Z","updatedAt":"2014-05-21T15:18:46.546Z"} testLesson
+2014-05-26 13:28:25.233 ParentKit[1226:80b] date:  [object Object]
+2014-05-26 13:28:25.233 ParentKit[1226:80b] string:  {"lessonDescription":"Description","lessonStartDate":{"__type":"Date","iso":"2014-05-21T15:18:00.000Z"},"lessonTitle":"testLesson","attachments":{"__type":"Relation","className":"Attachment"},"attendances":{"__type":"Relation","className":"Attendance"},"objectId":"qKFwO32Kyv","createdAt":"2014-05-21T12:56:04.129Z","updatedAt":"2014-05-21T15:18:46.546Z"}      2014-05-21T15:18:00.000Z
+2014-05-26 13:28:25.234 ParentKit[1226:80b] date after formatting   :Wed May 21 2014
+2014-05-26 13:28:25.234 ParentKit[1226:80b] recordss   [object Object]
+2014-05-26 13:30:04.441 ParentKit[1416:80b] Multi-tasking -> Device: YES, App: YES
+2014-05-26 13:30:04.490 ParentKit[1416:80b] Unlimited access to network resources
+2014-05-26 13:30:04.529 ParentKit[1416:80b] [CDVTimer][keyboard] 0.102997ms
+2014-05-26 13:30:04.533 ParentKit[1416:80b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-26 13:30:04.533 ParentKit[1416:80b] [CDVTimer][statusbar] 0.478029ms
+2014-05-26 13:30:04.534 ParentKit[1416:80b] [CDVTimer][TotalPluginStartup] 4.833996ms
+2014-05-26 13:30:05.210 ParentKit[1416:80b] Resetting plugins due to page load.
+2014-05-26 13:30:05.604 ParentKit[1416:80b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.0/Applications/182B37F4-800B-41ED-AB71-B0DF077323FC/ParentKit.app/www/index.html#/login
+2014-05-26 13:30:12.502 ParentKit[1416:80b] Trying to Log-In with  mm mm
+2014-05-26 13:30:14.821 ParentKit[1416:80b] [{"firstName":"Tefa","lastName":"1","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"rjdGW6XRO3","createdAt":"2014-05-25T11:02:09.593Z","updatedAt":"2014-05-25T11:03:44.124Z"},{"firstName":"Eslam","lastName":"youssef","parentName":"youssef","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"dcDMgM8dxi","createdAt":"2014-05-26T08:53:03.549Z","updatedAt":"2014-05-26T08:53:03.549Z"}]
+2014-05-26 13:30:14.823 ParentKit[1416:80b] this is set students fn
+2014-05-26 13:30:14.823 ParentKit[1416:80b] this is student array Parameters in service   [object Object],[object Object]
+2014-05-26 13:30:14.823 ParentKit[1416:80b] this is student array in service   [object Object],[object Object]
+2014-05-26 13:30:16.030 ParentKit[1416:80b] this is set current studnet fn
+2014-05-26 13:30:16.030 ParentKit[1416:80b] this is studnet   [object Object]
+2014-05-26 13:30:16.031 ParentKit[1416:80b] this is current studnet   [object Object]
+2014-05-26 13:30:16.077 ParentKit[1416:80b] this is attendance controller 
+2014-05-26 13:30:16.879 ParentKit[1416:80b] hvuemU12P9         title:    Present_o
+2014-05-26 13:30:17.254 ParentKit[1416:80b] This is my log
+2014-05-26 13:30:17.254 ParentKit[1416:80b] {"lesson":{"__type":"Pointer","className":"Lesson","objectId":"qKFwO32Kyv"},"student":{"__type":"Pointer","className":"Student","objectId":"rjdGW6XRO3"},"type":{"__type":"Pointer","className":"Attendancetype","objectId":"hvuemU12P9"},"attendanceId":"","objectId":"4K9sqggnc3","createdAt":"2014-05-21T05:50:13.394Z","updatedAt":"2014-05-25T11:03:08.006Z"}
+2014-05-26 13:30:17.254 ParentKit[1416:80b] {"__type":"Pointer","className":"Lesson","objectId":"qKFwO32Kyv"}
+2014-05-26 13:30:17.255 ParentKit[1416:80b] qKFwO32Kyv
+2014-05-26 13:30:17.255 ParentKit[1416:80b] LessonService : qKFwO32Kyv
+2014-05-26 13:30:17.727 ParentKit[1416:80b] returning : {"lessonDescription":"Description","lessonStartDate":{"__type":"Date","iso":"2014-05-21T15:18:00.000Z"},"lessonTitle":"testLesson","attachments":{"__type":"Relation","className":"Attachment"},"attendances":{"__type":"Relation","className":"Attendance"},"objectId":"qKFwO32Kyv","createdAt":"2014-05-21T12:56:04.129Z","updatedAt":"2014-05-21T15:18:46.546Z"} testLesson
+2014-05-26 13:30:17.728 ParentKit[1416:80b] date:  [object Object]
+2014-05-26 13:30:17.728 ParentKit[1416:80b] string:  {"lessonDescription":"Description","lessonStartDate":{"__type":"Date","iso":"2014-05-21T15:18:00.000Z"},"lessonTitle":"testLesson","attachments":{"__type":"Relation","className":"Attachment"},"attendances":{"__type":"Relation","className":"Attendance"},"objectId":"qKFwO32Kyv","createdAt":"2014-05-21T12:56:04.129Z","updatedAt":"2014-05-21T15:18:46.546Z"}      2014-05-21T15:18:00.000Z
+2014-05-26 13:30:17.728 ParentKit[1416:80b] date after formatting   :Wed May 21 2014
+2014-05-26 13:30:17.728 ParentKit[1416:80b] recordss   [object Object]
+2014-05-26 13:30:17.959 ParentKit[1416:80b] this is go to behavior fn
+2014-05-26 13:30:17.992 ParentKit[1416:80b] this is behavior types service
+2014-05-26 13:30:17.992 ParentKit[1416:80b] {"studentId":"rjdGW6XRO3"}
+2014-05-26 13:30:18.472 ParentKit[1416:80b] types length 1
+2014-05-26 13:30:27.001 ParentKit[1416:80b] this is go to attendacne fn
+2014-05-26 13:30:27.001 ParentKit[1416:80b] state parameters undefined
+2014-05-26 13:30:27.001 ParentKit[1416:80b] Scope Student Idundefined
+2014-05-26 13:30:27.002 ParentKit[1416:80b] scope  [object Object]
+2014-05-26 13:30:27.002 ParentKit[1416:80b] this is attendance controller 
+2014-05-26 13:30:27.487 ParentKit[1416:80b] This is my log
+2014-05-26 13:30:27.487 ParentKit[1416:80b] {"lesson":{"__type":"Pointer","className":"Lesson","objectId":"qKFwO32Kyv"},"student":{"__type":"Pointer","className":"Student","objectId":"rjdGW6XRO3"},"type":{"__type":"Pointer","className":"Attendancetype","objectId":"hvuemU12P9"},"attendanceId":"","objectId":"4K9sqggnc3","createdAt":"2014-05-21T05:50:13.394Z","updatedAt":"2014-05-25T11:03:08.006Z"}
+2014-05-26 13:30:27.487 ParentKit[1416:80b] {"__type":"Pointer","className":"Lesson","objectId":"qKFwO32Kyv"}
+2014-05-26 13:30:27.488 ParentKit[1416:80b] qKFwO32Kyv
+2014-05-26 13:30:27.488 ParentKit[1416:80b] LessonService : qKFwO32Kyv
+2014-05-26 13:30:28.000 ParentKit[1416:80b] returning : {"lessonDescription":"Description","lessonStartDate":{"__type":"Date","iso":"2014-05-21T15:18:00.000Z"},"lessonTitle":"testLesson","attachments":{"__type":"Relation","className":"Attachment"},"attendances":{"__type":"Relation","className":"Attendance"},"objectId":"qKFwO32Kyv","createdAt":"2014-05-21T12:56:04.129Z","updatedAt":"2014-05-21T15:18:46.546Z"} testLesson
+2014-05-26 13:30:28.000 ParentKit[1416:80b] date:  [object Object]
+2014-05-26 13:30:28.001 ParentKit[1416:80b] string:  {"lessonDescription":"Description","lessonStartDate":{"__type":"Date","iso":"2014-05-21T15:18:00.000Z"},"lessonTitle":"testLesson","attachments":{"__type":"Relation","className":"Attachment"},"attendances":{"__type":"Relation","className":"Attendance"},"objectId":"qKFwO32Kyv","createdAt":"2014-05-21T12:56:04.129Z","updatedAt":"2014-05-21T15:18:46.546Z"}      2014-05-21T15:18:00.000Z
+2014-05-26 13:30:28.001 ParentKit[1416:80b] date after formatting   :Wed May 21 2014
+2014-05-26 13:30:28.001 ParentKit[1416:80b] recordss   [object Object]
+2014-05-26 13:30:28.421 ParentKit[1416:80b] this is go to behavior fn
+2014-05-26 13:30:28.421 ParentKit[1416:80b] {"studentId":"rjdGW6XRO3"}
+2014-05-26 13:35:50.868 ParentKit[1616:80b] Multi-tasking -> Device: YES, App: YES
+2014-05-26 13:35:50.937 ParentKit[1616:80b] Unlimited access to network resources
+2014-05-26 13:35:50.980 ParentKit[1616:80b] [CDVTimer][keyboard] 0.105977ms
+2014-05-26 13:35:50.981 ParentKit[1616:80b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-26 13:35:50.981 ParentKit[1616:80b] [CDVTimer][statusbar] 0.481963ms
+2014-05-26 13:35:50.981 ParentKit[1616:80b] [CDVTimer][TotalPluginStartup] 2.016008ms
+2014-05-26 13:35:51.531 ParentKit[1616:80b] Resetting plugins due to page load.
+2014-05-26 13:35:52.068 ParentKit[1616:80b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.0/Applications/182B37F4-800B-41ED-AB71-B0DF077323FC/ParentKit.app/www/index.html#/login
+2014-05-26 13:36:18.198 ParentKit[1616:80b] Trying to Log-In with  mm mm
+2014-05-26 13:36:20.327 ParentKit[1616:80b] [{"firstName":"Tefa","lastName":"1","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"rjdGW6XRO3","createdAt":"2014-05-25T11:02:09.593Z","updatedAt":"2014-05-25T11:03:44.124Z"},{"firstName":"Eslam","lastName":"youssef","parentName":"youssef","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"dcDMgM8dxi","createdAt":"2014-05-26T08:53:03.549Z","updatedAt":"2014-05-26T08:53:03.549Z"}]
+2014-05-26 13:36:20.327 ParentKit[1616:80b] this is set students fn
+2014-05-26 13:36:20.327 ParentKit[1616:80b] this is student array Parameters in service   [object Object],[object Object]
+2014-05-26 13:36:20.328 ParentKit[1616:80b] this is student array in service   [object Object],[object Object]
+2014-05-26 13:36:21.032 ParentKit[1616:80b] this is set current studnet fn
+2014-05-26 13:36:21.033 ParentKit[1616:80b] this is studnet   [object Object]
+2014-05-26 13:36:21.033 ParentKit[1616:80b] this is current studnet   [object Object]
+2014-05-26 13:36:21.488 ParentKit[1616:80b] hvuemU12P9         title:    Present_o
+2014-05-26 13:36:21.963 ParentKit[1616:80b] This is my log
+2014-05-26 13:36:21.964 ParentKit[1616:80b] {"lesson":{"__type":"Pointer","className":"Lesson","objectId":"qKFwO32Kyv"},"student":{"__type":"Pointer","className":"Student","objectId":"rjdGW6XRO3"},"type":{"__type":"Pointer","className":"Attendancetype","objectId":"hvuemU12P9"},"attendanceId":"","objectId":"4K9sqggnc3","createdAt":"2014-05-21T05:50:13.394Z","updatedAt":"2014-05-25T11:03:08.006Z"}
+2014-05-26 13:36:21.964 ParentKit[1616:80b] {"__type":"Pointer","className":"Lesson","objectId":"qKFwO32Kyv"}
+2014-05-26 13:36:21.964 ParentKit[1616:80b] qKFwO32Kyv
+2014-05-26 13:36:21.965 ParentKit[1616:80b] LessonService : qKFwO32Kyv
+2014-05-26 13:36:22.481 ParentKit[1616:80b] returning : {"lessonDescription":"Description","lessonStartDate":{"__type":"Date","iso":"2014-05-21T15:18:00.000Z"},"lessonTitle":"testLesson","attachments":{"__type":"Relation","className":"Attachment"},"attendances":{"__type":"Relation","className":"Attendance"},"objectId":"qKFwO32Kyv","createdAt":"2014-05-21T12:56:04.129Z","updatedAt":"2014-05-21T15:18:46.546Z"} testLesson
+2014-05-26 13:36:22.481 ParentKit[1616:80b] date:  [object Object]
+2014-05-26 13:36:22.482 ParentKit[1616:80b] string:  {"lessonDescription":"Description","lessonStartDate":{"__type":"Date","iso":"2014-05-21T15:18:00.000Z"},"lessonTitle":"testLesson","attachments":{"__type":"Relation","className":"Attachment"},"attendances":{"__type":"Relation","className":"Attendance"},"objectId":"qKFwO32Kyv","createdAt":"2014-05-21T12:56:04.129Z","updatedAt":"2014-05-21T15:18:46.546Z"}      2014-05-21T15:18:00.000Z
+2014-05-26 13:36:22.482 ParentKit[1616:80b] date after formatting   :Wed May 21 2014
+2014-05-26 13:36:22.482 ParentKit[1616:80b] recordss   [object Object]
+2014-05-26 13:36:23.914 ParentKit[1616:80b] this is go to behavior fn
+2014-05-26 13:36:23.944 ParentKit[1616:80b] this is behavior types service
+2014-05-26 13:36:24.422 ParentKit[1616:80b] types length 1

@@ -1,3 +1,7 @@
+<ion-nav-bar class="bar-stable nav-title-slide-ios7">
+    <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back</ion-nav-back-button>
+</ion-nav-bar>
+
 <ion-view hide-back-button="true" title="Log In">
     <ion-content>
         <div class="list">
@@ -9,7 +13,6 @@
                 <span class="input-label">Password</span>
                 <input type="password" ng-model="user.password">
             </label>
-
         </div>
         <div class="padding">
             <button class="button button-block button-positive" ng-click="logIn(user)">
