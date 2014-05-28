@@ -56,14 +56,31 @@ angular.module('starter.controllers', ['ionic'])
         }
     })
     .service('LessonService',function(){
+        console.log('this is lesson serive ');
+        var lessons = [];
+        var lesson =  Parse.Object.extend("Lesson");
+        var lessonsQuery = new Parse.Query(lesson);
+        lessonsQuery .find({
+            success: function (lessonsResults) {
+                console.log('lesson serivce success');
+                for(i in lessonsResults){
+                    var lessonObject = lessonsResults[i].toJSON();
+                    lessonObject.lessonStartDate = new Date (lessonObject.lessonStartDate.iso);
+                    lessonObject.lessonStartTime= new Date (lessonObject.lessonStartTime.iso);
+                    lessonObject.lessonEndTime= new Date (lessonObject.lessonEndTime.iso);
+                    lessons.push(lessonObject);
+                }
+            },
+            error:function(error){
+                alert("Error: " + error.code + " " + error.message);
+            }
+        });
         this.getLesson = function(lessonId){
-            //alert('during call');
-            console.log('LessonService : ' + lessonId);
-
-            var lessonObject =  Parse.Object.extend("Lesson");
-            var lessonQuery = new Parse.Query(lessonObject);
-            lessonQuery.equalTo('objectId',lessonId);
-            return lessonQuery.find();
+            for(i in lessons){
+                if(lessons[i].objectId == lessonId){
+                    return lessons[i];
+                }
+            }
         }
     })
     .service('studentsService',function(){
@@ -108,8 +125,92 @@ angular.module('starter.controllers', ['ionic'])
   ];
 })
 
-.controller('AttendanceCtrl', function ($scope,$stateParams,AtendanceTypes,LessonService,$ionicNavBarDelegate,$state,$ionicLoading){
+.controller('AttendanceCtrl', function ($scope,$stateParams,AtendanceTypes,LessonService,$ionicNavBarDelegate,$state,$ionicLoading,studentsService){
 
+        $scope.pageTitle = studentsService.getCurrentStudent().firstName +' ' + studentsService.getCurrentStudent().lastName;
+
+
+
+        //Attendance Chart
+        var chartItems= [];
+        var ctx = document.getElementById("myChart").getContext("2d");
+        $scope.AddItemInAttendanceChartsData = function(record){
+            var found = false;
+            for(var i = 0; i < chartItems.length; i++) {
+                var item = chartItems[i];
+                if(item.title == record.type.title){
+                    item.value +=1;
+                    found = true;
+                    break;
+                }
+            }
+            if(!found){
+                var addedItem = {
+                    value : 1,
+                    color: record.type.color,
+                    title : record.type.title
+                }
+                chartItems.push(addedItem);
+            }
+        };
+        var options = {
+            inGraphDataShow : true,
+            datasetFill : false,
+            scaleLabel: "",
+            scaleTickSizeRight : 0,
+            scaleTickSizeLeft : 0,
+            scaleTickSizeBottom :0,
+            scaleTickSizeTop : 0,
+            scaleFontSize : 20,
+            canvasBorders : false,
+            canvasBordersWidth :1,
+            canvasBordersColor : "black",
+            graphTitle : "Attendance",
+            graphTitleFontFamily : "'Arial'",
+            graphTitleFontSize : 24,
+            graphTitleFontStyle : "bold",
+            graphTitleFontColor : "#666",
+//            graphSubTitle : "Graph Sub Title",
+            graphSubTitleFontFamily : "'Arial'",
+            graphSubTitleFontSize : 18,
+            graphSubTitleFontStyle : "normal",
+            graphSubTitleFontColor : "#666",
+//            inGraphDataTmpl: "<%=(v1 == ''? '' : v1+':')+ roundToWithThousands(config,v2,2) + ' (' + roundToWithThousands(config,v6,1) + ' %)'%>",
+            inGraphDataTmpl: "<%=(v1 == ''? '' : v1+'= ')+ roundToWithThousands(config,v2,2)%>",
+//            footNote : "Footnote for the graph",
+//            footNoteFontFamily : "'Arial'",
+//            footNoteFontSize : 8,
+//            footNoteFontStyle : "bold",
+//            footNoteFontColor : "#666",
+            legend : true,
+            legendFontFamily : "'Arial'",
+            legendFontSize : 12,
+            legendFontStyle : "normal",
+            legendFontColor : "#666",
+            legendBlockSize : 20,
+            legendBorders : false,
+            legendBordersWidth : 1,
+            legendBordersColors : "#666",
+            annotateDisplay : false,
+            spaceTop : 0,
+            spaceBottom : 0,
+            spaceLeft : 0,
+            spaceRight : 0,
+            logarithmic: false,
+//            rotateLabels : "smart",
+            xAxisSpaceOver : 0,
+            xAxisSpaceUnder : 0,
+            xAxisLabelSpaceAfter : 0,
+            xAxisLabelSpaceBefore : 0,
+            legendBordersSpaceBefore : 0,
+            legendBordersSpaceAfter : 0,
+            footNoteSpaceBefore : 0,
+            footNoteSpaceAfter : 0,
+            startAngle : 0,
+            dynamicDisplay : false
+        }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////// Hud
         $scope.showHUD = function(text) {
             $ionicLoading.show({
                 template: text
@@ -118,6 +219,7 @@ angular.module('starter.controllers', ['ionic'])
         $scope.hideHUD = function(){
             $ionicLoading.hide();
         };
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         $scope.records = [];
         var attendance = Parse.Object.extend("Attendance");
         var attendanceQuery = new Parse.Query(attendance);
@@ -131,50 +233,50 @@ angular.module('starter.controllers', ['ionic'])
             success: function(attendancesResults) {
                 for (var i = 0; i < attendancesResults.length; i++) {
                     var attendanceObject = attendancesResults[i].toJSON();
-                    console.log('This is my log');
-                    console.log(attendanceObject);
-                    console.log(attendanceObject.lesson);
-                    console.log(attendanceObject.lesson.objectId);
-                    var promise = LessonService.getLesson(attendanceObject.lesson.objectId);
-                    promise.done(function (lessons) {
-                        var lessonObject = lessons[0].toJSON();
-                        console.log('returning : ' +JSON.stringify(lessonObject) + " "  + lessonObject.lessonTitle );
-                        console.log('date:  '  + lessonObject.lessonStartDate);
-                        console.log('string:  '  +  JSON.stringify(lessonObject) + '      '+lessonObject.lessonStartDate.iso);
-                        lessonObject.lessonStartDate = new Date (lessonObject.lessonStartDate.iso);
-                        console.log('date after formatting   :' + lessonObject.lessonStartDate.toDateString());
-
-                         var record = {
-                                attendance :'',
-                                type :'',
-                                lesson:''
-                           };
-                            record.attendance = attendanceObject;
-                            record.lesson = lessonObject;
-                            record.type = AtendanceTypes.getType(attendanceObject.type.objectId);
-                            $scope.records.push(record);
-                        console.log('recordss   ' + $scope.records);
-                            $scope.$apply();
-                        $scope.hideHUD();
-                        })
-                        .fail(function(error) {
-                            alert("Error: " + error.code + " " + error.message);
-                        });
+                    var record = {
+                        attendance :'',
+                        type :'',
+                        lesson:''
+                    };
+                    record.attendance = attendanceObject;
+                    record.type = AtendanceTypes.getType(attendanceObject.type.objectId);
+                    var lessonObject= LessonService.getLesson(attendanceObject.lesson.objectId);
+                    record.lesson = lessonObject;
+                    $scope.records.push(record);
+                    $scope.$apply();
+                    $scope.AddItemInAttendanceChartsData(record);
                 }
+                for(var j = 0; j < $scope.records.length; j++){
+                    var object =  $scope.records[j];
+                    var element = document.getElementById(j);
+                    var objectColor = '#' + object.type.color;
+                       element.style.backgroundColor=objectColor;
+                   }
+                var data = [
+                    {
+                        value: 30,
+                        color:"#F38630"
+                    },
+                    {
+                        value : 50,
+                        color : "#E0E4CC"
+                    },
+                    {
+                        value : 100,
+                        color : "#69D2E7"
+                    }
+                ]
+                new Chart(ctx).Doughnut(data,options);
+                $scope.hideHUD();
             },
             error: function(error) {
                 alert("Error: " + error.code + " " + error.message);
             }
         });
-
-        $scope.getPreviousTitle = function() {
-            console.log('previous title    :'  + $ionicNavBarDelegate.getPreviousTitle());
-            return $ionicNavBarDelegate.getPreviousTitle();
-        };
         $scope.goBack =function(){
             $state.go('app.Students');
         }
-})
+    })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 
@@ -224,7 +326,7 @@ angular.module('starter.controllers', ['ionic'])
         $scope.goToAttendance = function(){
             console.log('this is go to attendacne fn');
             console.log('state parameters ' + $stateParams.studentId);
-            console.log('Scope Student Id' + $scope.studentId);
+            console.log('Scope Student Id' + studentsService.getCurrentStudent().objectId);
             console.log('scope  ' + $scope);
             $state.go('tabs.attendance',{"studentId":studentsService.getCurrentStudent().objectId});
         };
@@ -308,7 +410,7 @@ angular.module('starter.controllers', ['ionic'])
                    success: function(parseUser) {
                        $scope.hide();
                        alert('sign up success');
-                       $state.go('app.login');
+                       $state.go('login');
                    },
                    error: function(user, error) {
                        // Show the error message somewhere and let the user try again.
@@ -380,8 +482,92 @@ angular.module('starter.controllers', ['ionic'])
 
     })
 
-.controller('BehaviorCtrl', function ($scope,$stateParams,BehaviorTypesService,$state,$ionicLoading){
+.controller('BehaviorCtrl', function ($scope,$stateParams,BehaviorTypesService,$state,$ionicLoading,studentsService){
 
+ $scope.pageTitle = studentsService.getCurrentStudent().firstName +' ' + studentsService.getCurrentStudent().lastName;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //Behavior Chart
+        var chartItems= [];
+        var ctx = document.getElementById("myChart").getContext("2d");
+        $scope.AddItemInBehaviorChartsData = function(record){
+            var found = false;
+            var title = record.behaviorType.isPositive ? 'Positive':'Negative';
+            var color= record.behaviorType.isPositive ? '#00FF00':'#FF0000';
+            for(var i = 0; i < chartItems.length; i++) {
+                var item = chartItems[i];
+                if(item.title == title){
+                    item.value +=1;
+                    found = true;
+                    break;
+                }
+            }
+            if(!found){
+                var addedItem = {
+                    value : 1,
+                    color: color,
+                    title : title
+                }
+                chartItems.push(addedItem);
+            }
+        };
+        var options = {
+            inGraphDataShow : true,
+            datasetFill : false,
+            scaleLabel: "",
+            scaleTickSizeRight : 0,
+            scaleTickSizeLeft : 0,
+            scaleTickSizeBottom :0,
+            scaleTickSizeTop : 0,
+            scaleFontSize : 20,
+            canvasBorders : false,
+            canvasBordersWidth :1,
+            canvasBordersColor : "black",
+            graphTitle : "Behavior",
+            graphTitleFontFamily : "'Arial'",
+            graphTitleFontSize : 24,
+            graphTitleFontStyle : "bold",
+            graphTitleFontColor : "#666",
+//            graphSubTitle : "Graph Sub Title",
+            graphSubTitleFontFamily : "'Arial'",
+            graphSubTitleFontSize : 18,
+            graphSubTitleFontStyle : "normal",
+            graphSubTitleFontColor : "#666",
+//            inGraphDataTmpl: "<%=(v1 == ''? '' : v1+':')+ roundToWithThousands(config,v2,2) + ' (' + roundToWithThousands(config,v6,1) + ' %)'%>",
+            inGraphDataTmpl: "<%=(v1 == ''? '' : v1+'= ')+ roundToWithThousands(config,v2,2)%>",
+//            footNote : "Footnote for the graph",
+//            footNoteFontFamily : "'Arial'",
+//            footNoteFontSize : 8,
+//            footNoteFontStyle : "bold",
+//            footNoteFontColor : "#666",
+            legend : true,
+            legendFontFamily : "'Arial'",
+            legendFontSize : 12,
+            legendFontStyle : "normal",
+            legendFontColor : "#666",
+            legendBlockSize : 20,
+            legendBorders : false,
+            legendBordersWidth : 1,
+            legendBordersColors : "#666",
+            annotateDisplay : false,
+            spaceTop : 0,
+            spaceBottom : 0,
+            spaceLeft : 0,
+            spaceRight : 0,
+            logarithmic: false,
+//            rotateLabels : "smart",
+            xAxisSpaceOver : 0,
+            xAxisSpaceUnder : 0,
+            xAxisLabelSpaceAfter : 0,
+            xAxisLabelSpaceBefore : 0,
+            legendBordersSpaceBefore : 0,
+            legendBordersSpaceAfter : 0,
+            footNoteSpaceBefore : 0,
+            footNoteSpaceAfter : 0,
+            startAngle : 0,
+            dynamicDisplay : false
+        }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //Loading
         $scope.showHUD = function(text) {
             $ionicLoading.show({
                 template: text
@@ -390,7 +576,7 @@ angular.module('starter.controllers', ['ionic'])
         $scope.hideHUD = function(){
             $ionicLoading.hide();
         };
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     $scope.behaviorRecords = [];
      $scope.showHUD('loading..');
     var behavior = Parse.Object.extend("Behavior");
@@ -416,9 +602,11 @@ angular.module('starter.controllers', ['ionic'])
                 behaviorRecord .behaviorType = behaviorTypeObject;
                 $scope.behaviorRecords.push(behaviorRecord);
                 $scope.$apply();
-                $scope.hideHUD();
                 console.log('behavior date   ' + behaviorRecord.behavior.behaviorDate.toDateString());
+                $scope.AddItemInBehaviorChartsData(behaviorRecord);
             }
+         var x =  new Chart(ctx).Doughnut(chartItems,options);
+            $scope.hideHUD();
         },
         error: function(error) {
             alert("Error: " + error.code + " " + error.message);
@@ -427,4 +615,8 @@ angular.module('starter.controllers', ['ionic'])
         $scope.goBack =function(){
             $state.go('app.Students');
         }
+})
+.controller('BrowseCtrl', function ($scope,$stateParams,BehaviorTypesService,$state,$ionicLoading){
+
 });
+

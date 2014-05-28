@@ -3,13 +3,15 @@
         <i class="icon ion-arrow-left-c"></i>{{getPreviousTitle() || 'Back'}}
     </ion-nav-back-button>
 </ion-nav-bar>
-<ion-view title="Behavior">
+<ion-view title={{pageTitle}}>
     <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-ios7-arrow-back" ng-click="goBack()">
             students
         </button>
     </ion-nav-buttons>
     <ion-content>
+        <canvas id="myChart" width="310" height="310">
+        </canvas>
         <div class="list">
             <a ng-repeat="record in behaviorRecords "
                class="item item-thumbnail-left">

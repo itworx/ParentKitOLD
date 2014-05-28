@@ -282,3 +282,94 @@
 2014-05-26 13:36:23.914 ParentKit[1616:80b] this is go to behavior fn
 2014-05-26 13:36:23.944 ParentKit[1616:80b] this is behavior types service
 2014-05-26 13:36:24.422 ParentKit[1616:80b] types length 1
+2014-05-28 15:15:19.184 ParentKit[1630:80b] Multi-tasking -> Device: YES, App: YES
+2014-05-28 15:15:19.439 ParentKit[1630:80b] Unlimited access to network resources
+2014-05-28 15:15:20.643 ParentKit[1630:80b] [CDVTimer][keyboard] 0.131011ms
+2014-05-28 15:15:20.644 ParentKit[1630:80b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-28 15:15:20.644 ParentKit[1630:80b] [CDVTimer][statusbar] 0.554025ms
+2014-05-28 15:15:20.645 ParentKit[1630:80b] [CDVTimer][TotalPluginStartup] 2.129018ms
+2014-05-28 15:15:20.969 ParentKit[1630:80b] Resetting plugins due to page load.
+2014-05-28 15:15:21.670 ParentKit[1630:80b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.0/Applications/182B37F4-800B-41ED-AB71-B0DF077323FC/ParentKit.app/www/index.html#/login
+2014-05-28 15:15:35.850 ParentKit[1630:80b] Trying to Log-In with  mm mm
+2014-05-28 15:15:38.293 ParentKit[1630:80b] [{"firstName":"first","lastName":"lastname","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"0znvghz0Z6","createdAt":"2014-05-27T11:27:50.515Z","updatedAt":"2014-05-27T11:34:24.259Z"}]
+2014-05-28 15:15:38.293 ParentKit[1630:80b] this is set students fn
+2014-05-28 15:15:38.294 ParentKit[1630:80b] this is student array Parameters in service   [object Object]
+2014-05-28 15:15:38.294 ParentKit[1630:80b] this is student array in service   [object Object]
+2014-05-28 15:15:39.239 ParentKit[1630:80b] this is set current studnet fn
+2014-05-28 15:15:39.239 ParentKit[1630:80b] this is studnet   [object Object]
+2014-05-28 15:15:39.240 ParentKit[1630:80b] this is current studnet   [object Object]
+2014-05-28 15:15:39.305 ParentKit[1630:80b] this is lesson serive 
+2014-05-28 15:15:39.749 ParentKit[1630:80b] hvuemU12P9         title:    Present_o
+2014-05-28 15:15:39.750 ParentKit[1630:80b] S8TCUZGcci         title:    Absent_parent
+2014-05-28 15:15:40.244 ParentKit[1630:80b] lesson serivce success
+2014-05-28 15:15:49.234 ParentKit[1630:80b] this is go to behavior fn
+2014-05-28 15:15:49.293 ParentKit[1630:80b] this is behavior types service
+2014-05-28 15:15:49.774 ParentKit[1630:80b] types length 1
+2014-05-28 15:15:50.469 ParentKit[1630:80b] this is go to attendacne fn
+2014-05-28 15:15:50.470 ParentKit[1630:80b] state parameters undefined
+2014-05-28 15:15:50.470 ParentKit[1630:80b] Scope Student Id0znvghz0Z6
+2014-05-28 15:15:50.470 ParentKit[1630:80b] scope  [object Object]
+2014-05-28 15:16:02.054 ParentKit[1630:80b] Trying to Log-In with  mm mm
+2014-05-28 15:16:05.428 ParentKit[1630:80b] this is set current studnet fn
+2014-05-28 15:16:05.429 ParentKit[1630:80b] this is studnet   [object Object]
+2014-05-28 15:16:05.429 ParentKit[1630:80b] this is current studnet   [object Object]
+2014-05-28 15:16:11.086 ParentKit[1630:80b] this is set current studnet fn
+2014-05-28 15:16:11.087 ParentKit[1630:80b] this is studnet   [object Object]
+2014-05-28 15:16:11.087 ParentKit[1630:80b] this is current studnet   [object Object]
+2014-05-28 15:16:14.379 ParentKit[1630:80b] this is set current studnet fn
+2014-05-28 15:16:14.380 ParentKit[1630:80b] this is studnet   [object Object]
+2014-05-28 15:16:14.380 ParentKit[1630:80b] this is current studnet   [object Object]
+2014-05-28 15:16:16.504 ParentKit[1630:80b] this is go to behavior fn
+2014-05-28 15:16:18.751 ParentKit[1630:80b] this is go to attendacne fn
+2014-05-28 15:16:18.751 ParentKit[1630:80b] state parameters undefined
+2014-05-28 15:16:18.752 ParentKit[1630:80b] Scope Student Id0znvghz0Z6
+2014-05-28 15:16:18.752 ParentKit[1630:80b] scope  [object Object]
+2014-05-28 15:16:32.378 ParentKit[1630:80b] this is set current studnet fn
+2014-05-28 15:16:32.378 ParentKit[1630:80b] this is studnet   [object Object]
+2014-05-28 15:16:32.379 ParentKit[1630:80b] this is current studnet   [object Object]
+2014-05-28 15:16:35.770 ParentKit[1630:80b] this is go to behavior fn
+2014-05-28 15:16:37.868 ParentKit[1630:80b] this is go to attendacne fn
+2014-05-28 15:16:37.869 ParentKit[1630:80b] state parameters undefined
+2014-05-28 15:16:37.869 ParentKit[1630:80b] Scope Student Id0znvghz0Z6
+2014-05-28 15:16:37.869 ParentKit[1630:80b] scope  [object Object]
+2014-05-28 15:17:15.540 ParentKit[1630:80b] this is go to behavior fn
+2014-05-28 15:17:17.738 ParentKit[1630:80b] this is go to attendacne fn
+2014-05-28 15:17:17.738 ParentKit[1630:80b] state parameters undefined
+2014-05-28 15:17:17.739 ParentKit[1630:80b] Scope Student Id0znvghz0Z6
+2014-05-28 15:17:17.739 ParentKit[1630:80b] scope  [object Object]
+2014-05-28 15:17:22.210 ParentKit[1630:80b] this is set current studnet fn
+2014-05-28 15:17:22.211 ParentKit[1630:80b] this is studnet   [object Object]
+2014-05-28 15:17:22.211 ParentKit[1630:80b] this is current studnet   [object Object]
+2014-05-28 15:17:39.292 ParentKit[1630:80b] this is set current studnet fn
+2014-05-28 15:17:39.292 ParentKit[1630:80b] this is studnet   [object Object]
+2014-05-28 15:17:39.293 ParentKit[1630:80b] this is current studnet   [object Object]
+2014-05-28 15:18:50.773 ParentKit[1630:80b] this is set current studnet fn
+2014-05-28 15:18:50.773 ParentKit[1630:80b] this is studnet   [object Object]
+2014-05-28 15:18:50.774 ParentKit[1630:80b] this is current studnet   [object Object]
+2014-05-28 15:22:10.706 ParentKit[1630:80b] this is go to behavior fn
+2014-05-28 15:22:14.476 ParentKit[1630:80b] this is go to attendacne fn
+2014-05-28 15:22:14.476 ParentKit[1630:80b] state parameters undefined
+2014-05-28 15:22:14.476 ParentKit[1630:80b] Scope Student Id0znvghz0Z6
+2014-05-28 15:22:14.477 ParentKit[1630:80b] scope  [object Object]
+2014-05-28 15:22:17.489 ParentKit[1630:80b] this is set current studnet fn
+2014-05-28 15:22:17.490 ParentKit[1630:80b] this is studnet   [object Object]
+2014-05-28 15:22:17.490 ParentKit[1630:80b] this is current studnet   [object Object]
+2014-05-28 15:23:45.294 ParentKit[1630:80b] this is set current studnet fn
+2014-05-28 15:23:45.295 ParentKit[1630:80b] this is studnet   [object Object]
+2014-05-28 15:23:45.295 ParentKit[1630:80b] this is current studnet   [object Object]
+2014-05-28 15:23:51.028 ParentKit[1630:80b] this is set current studnet fn
+2014-05-28 15:23:51.029 ParentKit[1630:80b] this is studnet   [object Object]
+2014-05-28 15:23:51.029 ParentKit[1630:80b] this is current studnet   [object Object]
+2014-05-28 15:23:57.094 ParentKit[1630:80b] this is go to behavior fn
+2014-05-28 15:23:58.276 ParentKit[1630:80b] this is go to attendacne fn
+2014-05-28 15:23:58.277 ParentKit[1630:80b] state parameters undefined
+2014-05-28 15:23:58.277 ParentKit[1630:80b] Scope Student Id0znvghz0Z6
+2014-05-28 15:23:58.277 ParentKit[1630:80b] scope  [object Object]
+2014-05-28 15:24:04.662 ParentKit[1630:80b] this is set current studnet fn
+2014-05-28 15:24:04.663 ParentKit[1630:80b] this is studnet   [object Object]
+2014-05-28 15:24:04.663 ParentKit[1630:80b] this is current studnet   [object Object]
+2014-05-28 15:24:09.596 ParentKit[1630:80b] this is go to behavior fn
+2014-05-28 15:24:10.786 ParentKit[1630:80b] this is go to attendacne fn
+2014-05-28 15:24:10.786 ParentKit[1630:80b] state parameters undefined
+2014-05-28 15:24:10.786 ParentKit[1630:80b] Scope Student Id0znvghz0Z6
+2014-05-28 15:24:10.787 ParentKit[1630:80b] scope  [object Object]

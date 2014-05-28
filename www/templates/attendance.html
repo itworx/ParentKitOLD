@@ -2,7 +2,7 @@
 
 </ion-nav-bar>
 
-<ion-view title="Attendance">
+<ion-view title={{pageTitle}}>
     <ion-nav-buttons side="left">
 
         <button class="button button-icon button-clear ion-ios7-arrow-back" ng-click="goBack()">
@@ -10,15 +10,27 @@
         </button>
     </ion-nav-buttons>
     <ion-content class="has-header">
+        <canvas id="myChart" width="310" height="310">
+        </canvas>
        <div class="list">
-
             <a ng-repeat="record in records "
-               class="item item-thumbnail-left">
-
-                <img ng-src={{record.type.color}}>
+               class="item item-avatar">
+                <img id={{$index}} src="templates/transparent.png" style="background-color:yellow;" />
                 <h2>{{record.type.title}}</h2>
                 <h4>{{record.lesson.lessonStartDate.toDateString()}}</h4>
+                <p>{{record.lesson.lessonStartTime.getHours()}}:{{record.lesson.lessonStartTime.getMinutes()}} ➜ {{record.lesson.lessonEndTime.getHours()}}:{{record.lesson.lessonEndTime.getMinutes()}}</p>
             </a>
         </div>
     </ion-content>
+
 </ion-view>
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<style>
+    canvas {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        display: block
+    }
+</style>
