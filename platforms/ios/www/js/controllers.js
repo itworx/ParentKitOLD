@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ionic'])
+angular.module('starter.controllers', ['angles'])
     .service('AtendanceTypes',function(){
         var types = [];
         var attendanceType =  Parse.Object.extend("Attendancetype");
@@ -109,8 +109,6 @@ angular.module('starter.controllers', ['ionic'])
         }
     })
 
-
-
 .controller('AppCtrl', function($scope) {
 })
 
@@ -127,17 +125,15 @@ angular.module('starter.controllers', ['ionic'])
 
 .controller('AttendanceCtrl', function ($scope,$stateParams,AtendanceTypes,LessonService,$ionicNavBarDelegate,$state,$ionicLoading,studentsService){
 
-        $scope.pageTitle = studentsService.getCurrentStudent().firstName +' ' + studentsService.getCurrentStudent().lastName;
-
-
+        $scope.pageTitle = studentsService.getCurrentStudent().firstName;
 
         //Attendance Chart
-        var chartItems= [];
-        var ctx = document.getElementById("myChart").getContext("2d");
+        $scope.myChartData = [];
+//        var ctx = document.getElementById("myChart").getContext("2d");
         $scope.AddItemInAttendanceChartsData = function(record){
             var found = false;
-            for(var i = 0; i < chartItems.length; i++) {
-                var item = chartItems[i];
+            for(var i = 0; i < $scope.myChartData .length; i++) {
+                var item = $scope.myChartData [i];
                 if(item.title == record.type.title){
                     item.value +=1;
                     found = true;
@@ -150,13 +146,12 @@ angular.module('starter.controllers', ['ionic'])
                     color: record.type.color,
                     title : record.type.title
                 }
-                chartItems.push(addedItem);
+                $scope.myChartData .push(addedItem);
             }
         };
-        var options = {
+        $scope.myChartOptions =  {
             inGraphDataShow : true,
-            datasetFill : false,
-            scaleLabel: "",
+            datasetFill : true,
             scaleTickSizeRight : 0,
             scaleTickSizeLeft : 0,
             scaleTickSizeBottom :0,
@@ -170,25 +165,21 @@ angular.module('starter.controllers', ['ionic'])
             graphTitleFontSize : 24,
             graphTitleFontStyle : "bold",
             graphTitleFontColor : "#666",
-//            graphSubTitle : "Graph Sub Title",
-            graphSubTitleFontFamily : "'Arial'",
-            graphSubTitleFontSize : 18,
-            graphSubTitleFontStyle : "normal",
-            graphSubTitleFontColor : "#666",
+//            graphSubTitle : '',
+//            graphSubTitleFontFamily : "'Arial'",
+//            graphSubTitleFontSize : 18,
+//            graphSubTitleFontStyle : "normal",
+//            graphSubTitleFontColor : "#666",
 //            inGraphDataTmpl: "<%=(v1 == ''? '' : v1+':')+ roundToWithThousands(config,v2,2) + ' (' + roundToWithThousands(config,v6,1) + ' %)'%>",
-            inGraphDataTmpl: "<%=(v1 == ''? '' : v1+'= ')+ roundToWithThousands(config,v2,2)%>",
-//            footNote : "Footnote for the graph",
-//            footNoteFontFamily : "'Arial'",
-//            footNoteFontSize : 8,
-//            footNoteFontStyle : "bold",
-//            footNoteFontColor : "#666",
-            legend : true,
+            inGraphDataTmpl: "<%=(v1 == ''? '' : v1+' = ')+ roundToWithThousands(config,v2,2)%>",
+            inGraphDataFontColor: "#666",
+            legend : false,
             legendFontFamily : "'Arial'",
-            legendFontSize : 12,
+            legendFontSize : 9,
             legendFontStyle : "normal",
             legendFontColor : "#666",
-            legendBlockSize : 20,
-            legendBorders : false,
+            legendBlockSize : 50,
+            legendBorders : true,
             legendBordersWidth : 1,
             legendBordersColors : "#666",
             annotateDisplay : false,
@@ -196,8 +187,9 @@ angular.module('starter.controllers', ['ionic'])
             spaceBottom : 0,
             spaceLeft : 0,
             spaceRight : 0,
-            logarithmic: false,
-//            rotateLabels : "smart",
+            logarithmic: true,
+            animationSteps : 50,
+            rotateLabels : "smart",
             xAxisSpaceOver : 0,
             xAxisSpaceUnder : 0,
             xAxisLabelSpaceAfter : 0,
@@ -250,23 +242,9 @@ angular.module('starter.controllers', ['ionic'])
                     var object =  $scope.records[j];
                     var element = document.getElementById(j);
                     var objectColor = '#' + object.type.color;
-                       element.style.backgroundColor=objectColor;
+                    element.style.backgroundColor = objectColor;
                    }
-                var data = [
-                    {
-                        value: 30,
-                        color:"#F38630"
-                    },
-                    {
-                        value : 50,
-                        color : "#E0E4CC"
-                    },
-                    {
-                        value : 100,
-                        color : "#69D2E7"
-                    }
-                ]
-                new Chart(ctx).Doughnut(data,options);
+//                new Chart(ctx).Doughnut(chartItems,options);
                 $scope.hideHUD();
             },
             error: function(error) {
@@ -322,7 +300,7 @@ angular.module('starter.controllers', ['ionic'])
 })
 
 .controller('StudentCtrl', function ($scope,$stateParams,$state,studentsService){
-        $scope.studentId =  $stateParams.studentId;
+        $scope.studentId =  studentsService.getCurrentStudent().objectId;
         $scope.goToAttendance = function(){
             console.log('this is go to attendacne fn');
             console.log('state parameters ' + $stateParams.studentId);
@@ -477,24 +455,23 @@ angular.module('starter.controllers', ['ionic'])
         }
         $scope.goToChildren = function(index){
             studentsService.setCurrentStudent($scope.children[index]);
-            $state.go('tabs.attendance',{"studentId":studentsService.getCurrentStudent().objectId})
+            $state.go('tabs.behavior',{"studentId":studentsService.getCurrentStudent().objectId})
         };
-
     })
 
 .controller('BehaviorCtrl', function ($scope,$stateParams,BehaviorTypesService,$state,$ionicLoading,studentsService){
 
- $scope.pageTitle = studentsService.getCurrentStudent().firstName +' ' + studentsService.getCurrentStudent().lastName;
+        $scope.pageTitle = studentsService.getCurrentStudent().firstName;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //Behavior Chart
-        var chartItems= [];
-        var ctx = document.getElementById("myChart").getContext("2d");
+        $scope.myChartData = [];
+//        var ctx = document.getElementById("myChart").getContext("2d");
         $scope.AddItemInBehaviorChartsData = function(record){
             var found = false;
-            var title = record.behaviorType.isPositive ? 'Positive':'Negative';
-            var color= record.behaviorType.isPositive ? '#00FF00':'#FF0000';
-            for(var i = 0; i < chartItems.length; i++) {
-                var item = chartItems[i];
+            var title = record.behaviorType.isPositive;
+            var color= record.behaviorType.isPositive  == 'Positive' ? '#00FF00':'#FF0000';
+            for(var i = 0; i < $scope.myChartData .length; i++) {
+                var item = $scope.myChartData [i];
                 if(item.title == title){
                     item.value +=1;
                     found = true;
@@ -507,13 +484,14 @@ angular.module('starter.controllers', ['ionic'])
                     color: color,
                     title : title
                 }
-                chartItems.push(addedItem);
+                $scope.myChartData.push(addedItem);
+                console.log('this is length of chart data :   ' + $scope.myChartData.length);
             }
         };
-        var options = {
+
+        $scope.myChartOptions =  {
             inGraphDataShow : true,
-            datasetFill : false,
-            scaleLabel: "",
+            datasetFill : true,
             scaleTickSizeRight : 0,
             scaleTickSizeLeft : 0,
             scaleTickSizeBottom :0,
@@ -522,30 +500,26 @@ angular.module('starter.controllers', ['ionic'])
             canvasBorders : false,
             canvasBordersWidth :1,
             canvasBordersColor : "black",
-            graphTitle : "Behavior",
+            graphTitle : "Attendance",
             graphTitleFontFamily : "'Arial'",
             graphTitleFontSize : 24,
             graphTitleFontStyle : "bold",
             graphTitleFontColor : "#666",
-//            graphSubTitle : "Graph Sub Title",
-            graphSubTitleFontFamily : "'Arial'",
-            graphSubTitleFontSize : 18,
-            graphSubTitleFontStyle : "normal",
-            graphSubTitleFontColor : "#666",
+//            graphSubTitle : '',
+//            graphSubTitleFontFamily : "'Arial'",
+//            graphSubTitleFontSize : 18,
+//            graphSubTitleFontStyle : "normal",
+//            graphSubTitleFontColor : "#666",
 //            inGraphDataTmpl: "<%=(v1 == ''? '' : v1+':')+ roundToWithThousands(config,v2,2) + ' (' + roundToWithThousands(config,v6,1) + ' %)'%>",
-            inGraphDataTmpl: "<%=(v1 == ''? '' : v1+'= ')+ roundToWithThousands(config,v2,2)%>",
-//            footNote : "Footnote for the graph",
-//            footNoteFontFamily : "'Arial'",
-//            footNoteFontSize : 8,
-//            footNoteFontStyle : "bold",
-//            footNoteFontColor : "#666",
-            legend : true,
+            inGraphDataTmpl: "<%=(v1 == ''? '' : v1+' = ')+ roundToWithThousands(config,v2,2)%>",
+            inGraphDataFontColor: "#666",
+            legend : false,
             legendFontFamily : "'Arial'",
-            legendFontSize : 12,
+            legendFontSize : 9,
             legendFontStyle : "normal",
             legendFontColor : "#666",
-            legendBlockSize : 20,
-            legendBorders : false,
+            legendBlockSize : 50,
+            legendBorders : true,
             legendBordersWidth : 1,
             legendBordersColors : "#666",
             annotateDisplay : false,
@@ -553,8 +527,9 @@ angular.module('starter.controllers', ['ionic'])
             spaceBottom : 0,
             spaceLeft : 0,
             spaceRight : 0,
-            logarithmic: false,
-//            rotateLabels : "smart",
+            logarithmic: true,
+            animationSteps : 50,
+            rotateLabels : "smart",
             xAxisSpaceOver : 0,
             xAxisSpaceUnder : 0,
             xAxisLabelSpaceAfter : 0,
@@ -605,7 +580,7 @@ angular.module('starter.controllers', ['ionic'])
                 console.log('behavior date   ' + behaviorRecord.behavior.behaviorDate.toDateString());
                 $scope.AddItemInBehaviorChartsData(behaviorRecord);
             }
-         var x =  new Chart(ctx).Doughnut(chartItems,options);
+//         var x =  new Chart(ctx).Doughnut(chartItems,options);
             $scope.hideHUD();
         },
         error: function(error) {
@@ -618,5 +593,90 @@ angular.module('starter.controllers', ['ionic'])
 })
 .controller('BrowseCtrl', function ($scope,$stateParams,BehaviorTypesService,$state,$ionicLoading){
 
+        $scope.myChartData = [
+            {
+                value: 30,
+                color:"#F7464A",
+                title : 'class a'
+            },
+            {
+                value : 50,
+                color : "#E2EAE9",
+                title : 'class a'
+            },
+            {
+                value : 100,
+                color : "#D4CCC5",
+                title : 'class a'
+            },
+            {
+                value : 40,
+                color : "#949FB1",
+                title : 'class a'
+
+            },
+            {
+                value : 120,
+                color : "#4D5360",
+                title : 'class a'
+
+            }
+        ];
+
+        $scope.myChartOptions =  {
+                inGraphDataShow : true,
+                datasetFill : false,
+                scaleTickSizeRight : 0,
+                scaleTickSizeLeft : 0,
+                scaleTickSizeBottom :0,
+                scaleTickSizeTop : 0,
+                scaleFontSize : 20,
+                canvasBorders : false,
+                canvasBordersWidth :1,
+                canvasBordersColor : "black",
+                graphTitle : "Attendance",
+                graphTitleFontFamily : "'Arial'",
+                graphTitleFontSize : 24,
+                graphTitleFontStyle : "bold",
+                graphTitleFontColor : "#666",
+//            graphSubTitle : "Graph Sub Title",
+                graphSubTitleFontFamily : "'Arial'",
+                graphSubTitleFontSize : 18,
+                graphSubTitleFontStyle : "normal",
+                graphSubTitleFontColor : "#666",
+//            inGraphDataTmpl: "<%=(v1 == ''? '' : v1+':')+ roundToWithThousands(config,v2,2) + ' (' + roundToWithThousands(config,v6,1) + ' %)'%>",
+                inGraphDataTmpl: "<%=(v1 == ''? '' : v1+'= ')+ roundToWithThousands(config,v2,2)%>",
+//            footNote : "Footnote for the graph",
+//            footNoteFontFamily : "'Arial'",
+//            footNoteFontSize : 8,
+//            footNoteFontStyle : "bold",
+//            footNoteFontColor : "#666",
+                legend : true,
+                legendFontFamily : "'Arial'",
+                legendFontSize : 12,
+                legendFontStyle : "normal",
+                legendFontColor : "#666",
+                legendBlockSize : 20,
+                legendBorders : false,
+                legendBordersWidth : 1,
+                legendBordersColors : "#666",
+                annotateDisplay : false,
+                spaceTop : 0,
+                spaceBottom : 0,
+                spaceLeft : 0,
+                spaceRight : 0,
+                logarithmic: false,
+//            rotateLabels : "smart",
+                xAxisSpaceOver : 0,
+                xAxisSpaceUnder : 0,
+                xAxisLabelSpaceAfter : 0,
+                xAxisLabelSpaceBefore : 0,
+                legendBordersSpaceBefore : 0,
+                legendBordersSpaceAfter : 0,
+                footNoteSpaceBefore : 0,
+                footNoteSpaceAfter : 0,
+                startAngle : 0,
+                dynamicDisplay : false
+            }
 });
 

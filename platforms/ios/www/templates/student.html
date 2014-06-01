@@ -5,11 +5,11 @@
             <ion-nav-view name="home-tab"></ion-nav-view>
         </ion-tab>
 
-        <ion-tab title="Attendance" icon="ion-ios7-information" ng-click="goToAttendance()">
+        <ion-tab title="Attendance" icon="ion-ios7-information" href="#/student/attendance/{{studentId}}">
             <ion-nav-view name="attendance-tab"></ion-nav-view>
         </ion-tab>
 
-        <ion-tab title="Behavior" icon="ion-log-out" ng-click="goToBehavior()">
+        <ion-tab title="Behavior" icon="ion-log-out" href="student/attendance/{{studentId}}">
             <ion-nav-view name="behavior-tab"></ion-nav-view>
         </ion-tab>
 

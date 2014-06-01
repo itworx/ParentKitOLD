@@ -373,3 +373,183 @@
 2014-05-28 15:24:10.786 ParentKit[1630:80b] state parameters undefined
 2014-05-28 15:24:10.786 ParentKit[1630:80b] Scope Student Id0znvghz0Z6
 2014-05-28 15:24:10.787 ParentKit[1630:80b] scope  [object Object]
+2014-05-29 13:50:25.189 ParentKit[3807:80b] Multi-tasking -> Device: YES, App: YES
+2014-05-29 13:50:25.328 ParentKit[3807:80b] Unlimited access to network resources
+2014-05-29 13:50:26.788 ParentKit[3807:80b] [CDVTimer][keyboard] 0.132978ms
+2014-05-29 13:50:26.788 ParentKit[3807:80b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-29 13:50:26.789 ParentKit[3807:80b] [CDVTimer][statusbar] 0.506043ms
+2014-05-29 13:50:26.789 ParentKit[3807:80b] [CDVTimer][TotalPluginStartup] 1.878977ms
+2014-05-29 13:50:27.035 ParentKit[3807:80b] Resetting plugins due to page load.
+2014-05-29 13:50:27.648 ParentKit[3807:80b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.0/Applications/182B37F4-800B-41ED-AB71-B0DF077323FC/ParentKit.app/www/index.html#/login
+2014-05-29 14:05:30.956 ParentKit[3807:80b] Trying to Log-In with  mm mm
+2014-05-29 14:05:30.988 ParentKit[3807:80b] THREAD WARNING: ['Console'] took '31.561279' ms. Plugin should use a background thread.
+2014-05-29 14:05:33.980 ParentKit[3807:80b] [{"firstName":"first","lastName":"lastname","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"0znvghz0Z6","createdAt":"2014-05-27T11:27:50.515Z","updatedAt":"2014-05-27T11:34:24.259Z"}]
+2014-05-29 14:05:33.981 ParentKit[3807:80b] this is set students fn
+2014-05-29 14:05:33.981 ParentKit[3807:80b] this is student array Parameters in service   [object Object]
+2014-05-29 14:05:33.981 ParentKit[3807:80b] this is student array in service   [object Object]
+2014-05-29 14:05:34.798 ParentKit[3807:80b] this is set current studnet fn
+2014-05-29 14:05:34.799 ParentKit[3807:80b] this is studnet   [object Object]
+2014-05-29 14:05:34.799 ParentKit[3807:80b] this is current studnet   [object Object]
+2014-05-29 14:05:34.950 ParentKit[3807:80b] this is behavior types service
+2014-05-29 14:05:35.353 ParentKit[3807:80b] types length 1
+2014-05-29 14:05:37.381 ParentKit[3807:80b] this is lesson serive 
+2014-05-29 14:05:37.706 ParentKit[3807:80b] hvuemU12P9         title:    Present_o
+2014-05-29 14:05:37.706 ParentKit[3807:80b] S8TCUZGcci         title:    Absent_parent
+2014-05-29 14:05:38.085 ParentKit[3807:80b] lesson serivce success
+2014-05-29 14:05:57.560 ParentKit[3807:80b] this is set current studnet fn
+2014-05-29 14:05:57.560 ParentKit[3807:80b] this is studnet   [object Object]
+2014-05-29 14:05:57.561 ParentKit[3807:80b] this is current studnet   [object Object]
+2014-05-29 14:08:52.872 ParentKit[3807:80b] Trying to Log-In with  mm mm
+2014-05-29 14:08:53.290 ParentKit[3807:80b] THREAD WARNING: ['Console'] took '417.910889' ms. Plugin should use a background thread.
+2014-05-29 14:08:55.704 ParentKit[3807:80b] this is set current studnet fn
+2014-05-29 14:08:55.705 ParentKit[3807:80b] this is studnet   [object Object]
+2014-05-29 14:08:55.705 ParentKit[3807:80b] this is current studnet   [object Object]
+2014-05-29 14:09:14.678 ParentKit[4026:80b] Multi-tasking -> Device: YES, App: YES
+2014-05-29 14:09:14.710 ParentKit[4026:80b] Unlimited access to network resources
+2014-05-29 14:09:14.752 ParentKit[4026:80b] [CDVTimer][keyboard] 0.108004ms
+2014-05-29 14:09:14.752 ParentKit[4026:80b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-29 14:09:14.753 ParentKit[4026:80b] [CDVTimer][statusbar] 0.378966ms
+2014-05-29 14:09:14.753 ParentKit[4026:80b] [CDVTimer][TotalPluginStartup] 1.437008ms
+2014-05-29 14:09:15.370 ParentKit[4026:80b] Resetting plugins due to page load.
+2014-05-29 14:09:15.755 ParentKit[4026:80b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.0/Applications/182B37F4-800B-41ED-AB71-B0DF077323FC/ParentKit.app/www/index.html#/login
+2014-05-29 14:10:57.167 ParentKit[4026:80b] Trying to Log-In with  mm mm
+2014-05-29 14:11:06.404 ParentKit[4026:80b] [{"firstName":"first","lastName":"lastname","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"0znvghz0Z6","createdAt":"2014-05-27T11:27:50.515Z","updatedAt":"2014-05-27T11:34:24.259Z"}]
+2014-05-29 14:11:06.404 ParentKit[4026:80b] this is set students fn
+2014-05-29 14:11:06.405 ParentKit[4026:80b] this is student array Parameters in service   [object Object]
+2014-05-29 14:11:06.405 ParentKit[4026:80b] this is student array in service   [object Object]
+2014-05-29 14:11:07.241 ParentKit[4026:80b] this is set current studnet fn
+2014-05-29 14:11:07.241 ParentKit[4026:80b] this is studnet   [object Object]
+2014-05-29 14:11:07.241 ParentKit[4026:80b] this is current studnet   [object Object]
+2014-05-29 14:11:07.289 ParentKit[4026:80b] this is behavior types service
+2014-05-29 14:11:09.682 ParentKit[4026:80b] types length 1
+2014-05-29 14:11:12.551 ParentKit[4026:80b] this is lesson serive 
+2014-05-29 14:11:14.900 ParentKit[4026:80b] hvuemU12P9         title:    Present_o
+2014-05-29 14:11:14.900 ParentKit[4026:80b] S8TCUZGcci         title:    Absent_parent
+2014-05-29 14:11:14.917 ParentKit[4026:80b] lesson serivce success
+2014-05-29 14:12:39.459 ParentKit[4026:80b] Trying to Log-In with  mm mm
+2014-05-29 14:16:32.529 ParentKit[4261:80b] Multi-tasking -> Device: YES, App: YES
+2014-05-29 14:16:32.558 ParentKit[4261:80b] Unlimited access to network resources
+2014-05-29 14:16:32.594 ParentKit[4261:80b] [CDVTimer][keyboard] 0.110984ms
+2014-05-29 14:16:32.594 ParentKit[4261:80b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-29 14:16:32.595 ParentKit[4261:80b] [CDVTimer][statusbar] 0.401974ms
+2014-05-29 14:16:32.595 ParentKit[4261:80b] [CDVTimer][TotalPluginStartup] 1.470029ms
+2014-05-29 14:16:33.738 ParentKit[4261:80b] Resetting plugins due to page load.
+2014-05-29 14:16:34.074 ParentKit[4261:80b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.0/Applications/182B37F4-800B-41ED-AB71-B0DF077323FC/ParentKit.app/www/index.html#/login
+2014-05-29 14:16:47.660 ParentKit[4261:80b] Trying to Log-In with  mm mm
+2014-05-29 14:16:49.627 ParentKit[4261:80b] [{"firstName":"first","lastName":"lastname","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"0znvghz0Z6","createdAt":"2014-05-27T11:27:50.515Z","updatedAt":"2014-05-27T11:34:24.259Z"}]
+2014-05-29 14:16:49.628 ParentKit[4261:80b] this is set students fn
+2014-05-29 14:16:49.628 ParentKit[4261:80b] this is student array Parameters in service   [object Object]
+2014-05-29 14:16:49.628 ParentKit[4261:80b] this is student array in service   [object Object]
+2014-05-29 14:16:50.692 ParentKit[4261:80b] this is set current studnet fn
+2014-05-29 14:16:50.692 ParentKit[4261:80b] this is studnet   [object Object]
+2014-05-29 14:16:50.692 ParentKit[4261:80b] this is current studnet   [object Object]
+2014-05-29 14:16:50.748 ParentKit[4261:80b] this is behavior types service
+2014-05-29 14:16:51.206 ParentKit[4261:80b] types length 1
+2014-05-29 14:16:52.666 ParentKit[4261:80b] this is lesson serive 
+2014-05-29 14:16:52.995 ParentKit[4261:80b] hvuemU12P9         title:    Present_o
+2014-05-29 14:16:52.995 ParentKit[4261:80b] S8TCUZGcci         title:    Absent_parent
+2014-05-29 14:16:53.013 ParentKit[4261:80b] lesson serivce success
+2014-05-29 14:21:50.776 ParentKit[4261:80b] this is set current studnet fn
+2014-05-29 14:21:50.776 ParentKit[4261:80b] this is studnet   [object Object]
+2014-05-29 14:21:50.776 ParentKit[4261:80b] this is current studnet   [object Object]
+2014-05-29 14:23:24.002 ParentKit[4484:80b] Multi-tasking -> Device: YES, App: YES
+2014-05-29 14:23:24.012 ParentKit[4484:80b] Unlimited access to network resources
+2014-05-29 14:23:24.047 ParentKit[4484:80b] [CDVTimer][keyboard] 0.106990ms
+2014-05-29 14:23:24.048 ParentKit[4484:80b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-29 14:23:24.048 ParentKit[4484:80b] [CDVTimer][statusbar] 0.422001ms
+2014-05-29 14:23:24.049 ParentKit[4484:80b] [CDVTimer][TotalPluginStartup] 1.498997ms
+2014-05-29 14:23:24.771 ParentKit[4484:80b] Resetting plugins due to page load.
+2014-05-29 14:23:25.085 ParentKit[4484:80b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.0/Applications/182B37F4-800B-41ED-AB71-B0DF077323FC/ParentKit.app/www/index.html#/login
+2014-05-29 14:23:29.443 ParentKit[4484:80b] Trying to Log-In with  mm mm
+2014-05-29 14:23:33.451 ParentKit[4484:80b] [{"firstName":"first","lastName":"lastname","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"0znvghz0Z6","createdAt":"2014-05-27T11:27:50.515Z","updatedAt":"2014-05-27T11:34:24.259Z"}]
+2014-05-29 14:23:33.452 ParentKit[4484:80b] this is set students fn
+2014-05-29 14:23:33.452 ParentKit[4484:80b] this is student array Parameters in service   [object Object]
+2014-05-29 14:23:33.453 ParentKit[4484:80b] this is student array in service   [object Object]
+2014-05-29 14:23:33.967 ParentKit[4484:80b] this is set current studnet fn
+2014-05-29 14:23:33.967 ParentKit[4484:80b] this is studnet   [object Object]
+2014-05-29 14:23:33.968 ParentKit[4484:80b] this is current studnet   [object Object]
+2014-05-29 14:23:34.015 ParentKit[4484:80b] this is behavior types service
+2014-05-29 14:23:34.873 ParentKit[4484:80b] types length 1
+2014-05-29 14:23:38.752 ParentKit[4484:80b] this is lesson serive 
+2014-05-29 14:23:39.509 ParentKit[4484:80b] hvuemU12P9         title:    Present_o
+2014-05-29 14:23:39.510 ParentKit[4484:80b] S8TCUZGcci         title:    Absent_parent
+2014-05-29 14:23:39.597 ParentKit[4484:80b] lesson serivce success
+2014-05-29 14:24:07.170 ParentKit[4484:80b] this is set current studnet fn
+2014-05-29 14:24:07.170 ParentKit[4484:80b] this is studnet   [object Object]
+2014-05-29 14:24:07.170 ParentKit[4484:80b] this is current studnet   [object Object]
+2014-05-29 14:25:32.644 ParentKit[4662:80b] Multi-tasking -> Device: YES, App: YES
+2014-05-29 14:25:32.658 ParentKit[4662:80b] Unlimited access to network resources
+2014-05-29 14:25:32.695 ParentKit[4662:80b] [CDVTimer][keyboard] 0.109017ms
+2014-05-29 14:25:32.696 ParentKit[4662:80b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-29 14:25:32.696 ParentKit[4662:80b] [CDVTimer][statusbar] 0.492990ms
+2014-05-29 14:25:32.696 ParentKit[4662:80b] [CDVTimer][TotalPluginStartup] 1.608014ms
+2014-05-29 14:25:32.760 ParentKit[4662:80b] Resetting plugins due to page load.
+2014-05-29 14:25:33.169 ParentKit[4662:80b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.0/Applications/182B37F4-800B-41ED-AB71-B0DF077323FC/ParentKit.app/www/index.html#/login
+2014-05-29 14:25:57.146 ParentKit[4662:80b] Trying to Log-In with  mm mm
+2014-05-29 14:26:04.087 ParentKit[4662:80b] [{"firstName":"first","lastName":"lastname","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"0znvghz0Z6","createdAt":"2014-05-27T11:27:50.515Z","updatedAt":"2014-05-27T11:34:24.259Z"}]
+2014-05-29 14:26:04.088 ParentKit[4662:80b] this is set students fn
+2014-05-29 14:26:04.088 ParentKit[4662:80b] this is student array Parameters in service   [object Object]
+2014-05-29 14:26:04.088 ParentKit[4662:80b] this is student array in service   [object Object]
+2014-05-29 14:26:04.871 ParentKit[4662:80b] this is set current studnet fn
+2014-05-29 14:26:04.872 ParentKit[4662:80b] this is studnet   [object Object]
+2014-05-29 14:26:04.872 ParentKit[4662:80b] this is current studnet   [object Object]
+2014-05-29 14:26:04.923 ParentKit[4662:80b] this is behavior types service
+2014-05-29 14:26:06.527 ParentKit[4662:80b] types length 1
+2014-05-29 14:26:09.212 ParentKit[4662:80b] this is lesson serive 
+2014-05-29 14:26:10.285 ParentKit[4662:80b] lesson serivce success
+2014-05-29 14:26:12.154 ParentKit[4662:80b] hvuemU12P9         title:    Present_o
+2014-05-29 14:26:12.155 ParentKit[4662:80b] S8TCUZGcci         title:    Absent_parent
+2014-05-29 14:32:59.099 ParentKit[4662:80b] Trying to Log-In with  mm mm
+2014-05-29 14:33:01.429 ParentKit[4662:80b] this is set current studnet fn
+2014-05-29 14:33:01.429 ParentKit[4662:80b] this is studnet   [object Object]
+2014-05-29 14:33:01.429 ParentKit[4662:80b] this is current studnet   [object Object]
+2014-05-29 17:41:08.859 ParentKit[5012:80b] Multi-tasking -> Device: YES, App: YES
+2014-05-29 17:41:08.870 ParentKit[5012:80b] Unlimited access to network resources
+2014-05-29 17:41:08.927 ParentKit[5012:80b] [CDVTimer][keyboard] 0.102997ms
+2014-05-29 17:41:08.927 ParentKit[5012:80b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-05-29 17:41:08.928 ParentKit[5012:80b] [CDVTimer][statusbar] 0.411987ms
+2014-05-29 17:41:08.928 ParentKit[5012:80b] [CDVTimer][TotalPluginStartup] 1.473963ms
+2014-05-29 17:41:11.636 ParentKit[5012:80b] Resetting plugins due to page load.
+2014-05-29 17:41:12.327 ParentKit[5012:80b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.0/Applications/182B37F4-800B-41ED-AB71-B0DF077323FC/ParentKit.app/www/index.html#/login
+2014-05-29 17:41:24.686 ParentKit[5012:80b] Trying to Log-In with  mm mm
+2014-05-29 17:41:27.157 ParentKit[5012:80b] [{"firstName":"first","lastName":"lastname","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"0znvghz0Z6","createdAt":"2014-05-27T11:27:50.515Z","updatedAt":"2014-05-29T12:48:09.387Z"}]
+2014-05-29 17:41:27.158 ParentKit[5012:80b] this is set students fn
+2014-05-29 17:41:27.158 ParentKit[5012:80b] this is student array Parameters in service   [object Object]
+2014-05-29 17:41:27.158 ParentKit[5012:80b] this is student array in service   [object Object]
+2014-05-29 17:41:27.833 ParentKit[5012:80b] this is set current studnet fn
+2014-05-29 17:41:27.834 ParentKit[5012:80b] this is studnet   [object Object]
+2014-05-29 17:41:27.834 ParentKit[5012:80b] this is current studnet   [object Object]
+2014-05-29 17:41:28.086 ParentKit[5012:80b] this is behavior types service
+2014-05-29 17:41:28.384 ParentKit[5012:80b] types length 1
+2014-05-29 17:41:28.384 ParentKit[5012:80b] types length 2
+2014-05-29 17:41:29.114 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:29.114 ParentKit[5012:80b] this is length of chart data :   1
+2014-05-29 17:41:29.115 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:29.115 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:29.115 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:29.115 ParentKit[5012:80b] this is length of chart data :   2
+2014-05-29 17:41:29.116 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:29.116 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:29.116 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:29.117 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:29.117 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:29.117 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:46.282 ParentKit[5012:80b] this is set current studnet fn
+2014-05-29 17:41:46.329 ParentKit[5012:80b] THREAD WARNING: ['Console'] took '46.433838' ms. Plugin should use a background thread.
+2014-05-29 17:41:46.329 ParentKit[5012:80b] this is studnet   [object Object]
+2014-05-29 17:41:46.330 ParentKit[5012:80b] this is current studnet   [object Object]
+2014-05-29 17:41:46.808 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:46.810 ParentKit[5012:80b] this is length of chart data :   1
+2014-05-29 17:41:46.811 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:46.811 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:46.811 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:46.811 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:46.812 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:46.812 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:46.812 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:46.812 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:46.813 ParentKit[5012:80b] behavior date   Thu May 29 2014
+2014-05-29 17:41:50.429 ParentKit[5012:80b] this is lesson serive 
+2014-05-29 17:41:50.931 ParentKit[5012:80b] hvuemU12P9         title:    Present_o
+2014-05-29 17:41:50.932 ParentKit[5012:80b] S8TCUZGcci         title:    Absent_parent
+2014-05-29 17:41:50.997 ParentKit[5012:80b] lesson serivce success
