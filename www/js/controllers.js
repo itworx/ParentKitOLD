@@ -477,5 +477,23 @@ angular.module('starter.controllers', ['ionic'])
             scaleLabel : "<%=value%>"
         };
         new Chart(ctx).Pie(data,options);
-    });
+    })
 
+.controller('AccessCodeCtrl', function($scope) {
+
+        $scope.addAccessCode = function (code){
+
+            Parse.Cloud.run('useAccessCode', { accessCode: code }, {
+                success: function(result) {
+                    // ratings should be 4.5
+                    console.log(result);
+                    console.log(JSON.stringify(result));
+                    console.log("successful results");
+                },
+                error: function(error) {
+
+                    console.error("Not successful" + error);
+                }
+            });
+        };
+});
