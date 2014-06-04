@@ -623,7 +623,6 @@ angular.module('starter.controllers', ['angles'])
 
             }
         ];
-
         $scope.myChartOptions =  {
                 inGraphDataShow : true,
                 datasetFill : false,
@@ -677,7 +676,31 @@ angular.module('starter.controllers', ['angles'])
                 footNoteSpaceBefore : 0,
                 footNoteSpaceAfter : 0,
                 startAngle : 0,
-                dynamicDisplay : false
-            }
-});
+                dynamicDisplay : false,
+                scaleLabelPaddingX: 35,
+                scaleFontFamily : "'Arial'",
+                scaleFontSize : 12,
+                scaleFontStyle : "normal",
+                scaleFontColor : "#666",
+                scaleLabel : "<%=value%>"
+        };
+        new Chart(ctx).Pie(data,options);
+    })
 
+.controller('AccessCodeCtrl', function($scope) {
+
+        $scope.addAccessCode = function (code){
+
+            Parse.Cloud.run('useAccessCode', { accessCode: code }, {
+                success: function(result) {
+                    // ratings should be 4.5
+                    console.log(result);
+                    console.log(JSON.stringify(result));
+                    console.log("successful results");
+                },
+                error: function(error) {
+                    console.error("Not successful" + error);
+                }
+            });
+        };
+});
