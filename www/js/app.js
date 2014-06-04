@@ -147,6 +147,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
               }
           }
       })
+      .state('welcome', {
+          url: "/welcome",
+          templateUrl: "templates/welcome.html",
+          controller: 'AccessCodeCtrl'
+      })
   ;
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');

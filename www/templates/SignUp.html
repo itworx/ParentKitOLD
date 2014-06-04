@@ -3,31 +3,24 @@
         <div class="list">
             <!--username-->
             <label class="item item-input">
-                <span class="input-label">Username</span>
-                <input type="text" ng-model="user.username">
+                <i class="icon ion-person placeholder-icon"></i>
+                <input type="text" placeholder="username" ng-model="user.username">
             </label>
             <!--password-->
             <label class="item item-input">
-                <span class="input-label">Password</span>
-                <input type="password" ng-model="user.password">
+                <i class="icon ion-key placeholder-icon"></i>
+                <input type="text" placeholder="password" ng-model="user.password">
             </label>
             <!--confirm password-->
             <label class="item item-input">
-                <span class="input-label">confirm your Password</span>
-                <input type="password" ng-model="user.confirmPassword">
+                <i class="icon ion-key placeholder-icon"></i>
+                <input type="text" placeholder="Confirm your password" ng-model="user.confirmPassword">
             </label>
             <!--mail-->
             <label class="item item-input">
-                <span class="input-label">mail</span>
-                <input type="text" ng-model="user.mail">
+                <i class="icon ion-email placeholder-icon"></i>
+                <input type="text" placeholder="mail" ng-model="user.mail">
             </label>
-            <!--access code-->
-            <label class="item item-input">
-                <span class="input-label">access code</span>
-                <input type="text" ng-model="user.accessCode">
-            </label>
-
-
         </div>
         <div class="padding">
            <button class="button button-block button-positive" ng-click="signup()">

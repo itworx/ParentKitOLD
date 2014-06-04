@@ -390,7 +390,7 @@ angular.module('starter.controllers', ['angles'])
                    success: function(parseUser) {
                        $scope.hide();
                        alert('sign up success');
-                       $state.go('login');
+                       $state.go('welcome');
                    },
                    error: function(user, error) {
                        // Show the error message somewhere and let the user try again.
@@ -426,7 +426,6 @@ angular.module('starter.controllers', ['angles'])
         $scope.hideHUD = function(){
             $ionicLoading.hide();
         };
-        if(studentsService.getStudents().length == 0){
             var Student = Parse.Object.extend("Student");
             var query = new Parse.Query(Student);
             $scope.showHUD('loading..');
@@ -451,10 +450,6 @@ angular.module('starter.controllers', ['angles'])
                     alert("Error: " + error.code + " " + error.message);
                 }
             });
-        }
-        else{
-            $scope.children = studentsService.getStudents();
-        }
         $scope.goToChildren = function(index){
             studentsService.setCurrentStudent($scope.children[index]);
             $state.go('tabs.behavior',{"studentId":studentsService.getCurrentStudent().objectId})
@@ -687,7 +682,7 @@ angular.module('starter.controllers', ['angles'])
         new Chart(ctx).Pie(data,options);
     })
 
-.controller('AccessCodeCtrl', function($scope) {
+.controller('AccessCodeCtrl', function($scope,$state) {
 
         $scope.addAccessCode = function (code){
 
@@ -697,6 +692,7 @@ angular.module('starter.controllers', ['angles'])
                     console.log(result);
                     console.log(JSON.stringify(result));
                     console.log("successful results");
+                    $state.go('app.Students');
                 },
                 error: function(error) {
                     console.error("Not successful" + error);
