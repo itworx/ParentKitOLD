@@ -137,7 +137,22 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                   controller: 'Students'
               }
           }
-      });
+      })
+      .state('app.accessCode', {
+          url: "/accessCode",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/accessCode.html",
+                  controller: 'AccessCodeCtrl'
+              }
+          }
+      })
+      .state('welcome', {
+          url: "/welcome",
+          templateUrl: "templates/welcome.html",
+          controller: 'AccessCodeCtrl'
+      })
+  ;
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 });

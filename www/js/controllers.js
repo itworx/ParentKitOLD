@@ -390,7 +390,7 @@ angular.module('starter.controllers', ['angles'])
                    success: function(parseUser) {
                        $scope.hide();
                        alert('sign up success');
-                       $state.go('login');
+                       $state.go('welcome');
                    },
                    error: function(user, error) {
                        // Show the error message somewhere and let the user try again.
@@ -426,7 +426,6 @@ angular.module('starter.controllers', ['angles'])
         $scope.hideHUD = function(){
             $ionicLoading.hide();
         };
-        if(studentsService.getStudents().length == 0){
             var Student = Parse.Object.extend("Student");
             var query = new Parse.Query(Student);
             $scope.showHUD('loading..');
@@ -451,10 +450,6 @@ angular.module('starter.controllers', ['angles'])
                     alert("Error: " + error.code + " " + error.message);
                 }
             });
-        }
-        else{
-            $scope.children = studentsService.getStudents();
-        }
         $scope.goToChildren = function(index){
             studentsService.setCurrentStudent($scope.children[index]);
             $state.go('tabs.behavior',{"studentId":studentsService.getCurrentStudent().objectId})
@@ -623,7 +618,6 @@ angular.module('starter.controllers', ['angles'])
 
             }
         ];
-
         $scope.myChartOptions =  {
                 inGraphDataShow : true,
                 datasetFill : false,
@@ -677,7 +671,32 @@ angular.module('starter.controllers', ['angles'])
                 footNoteSpaceBefore : 0,
                 footNoteSpaceAfter : 0,
                 startAngle : 0,
-                dynamicDisplay : false
-            }
-});
+                dynamicDisplay : false,
+                scaleLabelPaddingX: 35,
+                scaleFontFamily : "'Arial'",
+                scaleFontSize : 12,
+                scaleFontStyle : "normal",
+                scaleFontColor : "#666",
+                scaleLabel : "<%=value%>"
+        };
+        new Chart(ctx).Pie(data,options);
+    })
 
+.controller('AccessCodeCtrl', function($scope,$state) {
+
+        $scope.addAccessCode = function (code){
+
+            Parse.Cloud.run('useAccessCode', { accessCode: code }, {
+                success: function(result) {
+                    // ratings should be 4.5
+                    console.log(result);
+                    console.log(JSON.stringify(result));
+                    console.log("successful results");
+                    $state.go('app.Students');
+                },
+                error: function(error) {
+                    console.error("Not successful" + error);
+                }
+            });
+        };
+});
