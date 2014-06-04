@@ -334,8 +334,8 @@ angular.module('starter.controllers', ['angles'])
             });
         };
 
-        $scope.signup = function(){
-            $state.go('app.SignUp');
+        $scope.signupUser = function(){
+            $state.go('SignUp');
         };
 
         $scope.show = function(text) {
@@ -699,4 +699,28 @@ angular.module('starter.controllers', ['angles'])
                 }
             });
         };
-});
+})
+    .controller('forgotPasswordCtrl', function ($scope,$state) {
+
+        $scope.send = function (mail) {
+            if(!validateEmail(mail)){
+                alert('please enter correct mail.');
+            }
+            else{
+                Parse.User.requestPasswordReset(mail, {
+                    success: function() {
+                        alert('mail was sent to you.');
+                        $state.go('login');
+                    },
+                    error: function(error) {
+                        alert("Error: " + error.code + " " + error.message);
+                    }
+                });
+            }
+        };
+        function validateEmail(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+    })
+;
