@@ -1,4 +1,10 @@
-<ion-view title="Sign up">
+<ion-nav-bar class="bar-positive nav-title-slide-ios7">
+
+    <ion-nav-back-button class="button-icon ion-chevron-left">
+    </ion-nav-back-button>
+
+</ion-nav-bar>
+<ion-view title="Sign up" has-header="true">
     <ion-content>
         <div class="list">
             <!--username-->
@@ -9,12 +15,12 @@
             <!--password-->
             <label class="item item-input">
                 <i class="icon ion-key placeholder-icon"></i>
-                <input type="text" placeholder="password" ng-model="user.password">
+                <input type="password" placeholder="password" ng-model="user.password">
             </label>
             <!--confirm password-->
             <label class="item item-input">
                 <i class="icon ion-key placeholder-icon"></i>
-                <input type="text" placeholder="Confirm your password" ng-model="user.confirmPassword">
+                <input type="password" placeholder="Confirm your password" ng-model="user.confirmPassword">
             </label>
             <!--mail-->
             <label class="item item-input">

@@ -111,6 +111,9 @@ angular.module('starter.controllers', ['angles'])
         }
     })
 
+
+
+
 .controller('AppCtrl', function($scope) {
 })
 
@@ -316,7 +319,7 @@ angular.module('starter.controllers', ['angles'])
         };
 })
 
-.controller('LogInCtrl', function($scope, $state,$ionicLoading) {
+.controller('LogInCtrl', function($scope, $state,$ionicLoading,$ionicPopup) {
 
         $scope.logIn = function(user) {
             console.log('Trying to Log-In with ', user.username, user.password);
@@ -328,7 +331,7 @@ angular.module('starter.controllers', ['angles'])
                 },
                 error: function(user, error) {
                     $scope.hide();
-                    alert("Invaild username or password.");
+                    $scope.showAlert('Error','Invalid username or password.');
                     console.log(user, error);
                 }
             });
@@ -347,9 +350,22 @@ angular.module('starter.controllers', ['angles'])
         $scope.hide = function(){
             $ionicLoading.hide();
         };
+        $scope.showAlert = function(title,content) {
+            $ionicPopup.alert({
+                title: title,
+                content: content
+            });
+        }
     })
 
-.controller('SignUpCtrl', function($scope, $state,  $ionicLoading) {
+.controller('SignUpCtrl', function($scope, $state,  $ionicLoading,$ionicPopup) {
+
+        $scope.showAlert = function(title,content) {
+            $ionicPopup.alert({
+                title: title,
+                content: content
+            });
+        }
 
             $scope.user = {
                 username : '',
@@ -361,22 +377,23 @@ angular.module('starter.controllers', ['angles'])
         $scope.signup = function() {
             //Validate inputs
            if($scope.user.username.length == 0){
-               alert('please enter username.');
+               $scope.showAlert('Error','please enter username');
            }
            else if($scope.user.password.length == 0){
-               alert('please enter password.');
+               $scope.showAlert('Error','please enter password');
            }
            else if($scope.user.confirmPassword.length == 0){
-               alert('please confirm password.');
+               $scope.showAlert('Error','please confirm password.');
            }
            else if ($scope.user.confirmPassword != $scope.user.password){
-               alert("These passwords don't match. Try again?");
+               $scope.showAlert('Error',"These passwords don't match. Try again?");
+
            }
            else if ($scope.user.mail.length == 0){
-               alert("please enter your mail.");
+               $scope.showAlert('Error',"please enter your mail.");
            }
            else if (!validateEmail($scope.user.mail)){
-               alert("email formatting not valid.");
+               $scope.showAlert('Error',"email formatting not valid.");
            }
            else{
                //sign up
@@ -395,7 +412,7 @@ angular.module('starter.controllers', ['angles'])
                    error: function(user, error) {
                        // Show the error message somewhere and let the user try again.
                        $scope.hide();
-                       alert('sign up failed')
+                       $scope.showAlert('Error','Sign-up Failed');
                    }
                });
            }
@@ -587,6 +604,7 @@ angular.module('starter.controllers', ['angles'])
             $state.go('app.Students');
         }
 })
+
 .controller('BrowseCtrl', function ($scope,$stateParams,BehaviorTypesService,$state,$ionicLoading){
 
         $scope.myChartData = [
@@ -700,7 +718,8 @@ angular.module('starter.controllers', ['angles'])
             });
         };
 })
-    .controller('forgotPasswordCtrl', function ($scope,$state) {
+
+ .controller('forgotPasswordCtrl', function ($scope,$state) {
 
         $scope.send = function (mail) {
             if(!validateEmail(mail)){

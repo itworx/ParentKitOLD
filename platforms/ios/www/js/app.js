@@ -120,14 +120,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 
       })
-      .state('app.SignUp', {
+      .state('SignUp', {
           url: "/SignUp",
-            views: {
-                'menuContent' :{
-                    templateUrl: "templates/SignUp.html",
-                    controller: 'SignUpCtrl'
-                }
-            }
+          templateUrl: "templates/SignUp.html",
+           controller: 'SignUpCtrl'
         })
       .state('app.Students', {
           url: "/Students",
@@ -137,7 +133,27 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                   controller: 'Students'
               }
           }
-      });
+      })
+      .state('app.accessCode', {
+          url: "/accessCode",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/accessCode.html",
+                  controller: 'AccessCodeCtrl'
+              }
+          }
+      })
+      .state('welcome', {
+          url: "/welcome",
+          templateUrl: "templates/welcome.html",
+          controller: 'AccessCodeCtrl'
+      })
+      .state('forgotPassword',{
+          url: "/forgotPassword",
+          templateUrl: "templates/forgotPassword.html",
+          controller: 'forgotPasswordCtrl'
+        })
+  ;
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 });

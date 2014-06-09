@@ -35,7 +35,9 @@ angular.module('starter.controllers', ['angles'])
         behaviorTypesQuery.find({
             success: function (behaviorTypesResults) {
                 for(i in behaviorTypesResults){
-                    behaviortypes.push(behaviorTypesResults[i].toJSON());
+                    var behaviorTypeObject = behaviorTypesResults[i].toJSON();
+                    behaviorTypeObject.isPositive = (behaviorTypeObject.isPositive == 0) ? 'Positive' :'Negative';
+                    behaviortypes.push(behaviorTypeObject);
                     console.log('types length ' + behaviortypes.length);
                 }
             },
@@ -314,7 +316,7 @@ angular.module('starter.controllers', ['angles'])
         };
 })
 
-.controller('LogInCtrl', function($scope, $state,$ionicLoading) {
+.controller('LogInCtrl', function($scope, $state,$ionicLoading,$ionicPopup) {
 
         $scope.logIn = function(user) {
             console.log('Trying to Log-In with ', user.username, user.password);
@@ -326,14 +328,14 @@ angular.module('starter.controllers', ['angles'])
                 },
                 error: function(user, error) {
                     $scope.hide();
-                    alert("Invaild username or password.");
+                    $scope.showAlert('Error','Invalid username or password.');
                     console.log(user, error);
                 }
             });
         };
 
-        $scope.signup = function(){
-            $state.go('app.SignUp');
+        $scope.signupUser = function(){
+            $state.go('SignUp');
         };
 
         $scope.show = function(text) {
@@ -345,9 +347,22 @@ angular.module('starter.controllers', ['angles'])
         $scope.hide = function(){
             $ionicLoading.hide();
         };
+        $scope.showAlert = function(title,content) {
+            $ionicPopup.alert({
+                title: title,
+                content: content
+            });
+        }
     })
 
-.controller('SignUpCtrl', function($scope, $state,  $ionicLoading) {
+.controller('SignUpCtrl', function($scope, $state,  $ionicLoading,$ionicPopup) {
+
+        $scope.showAlert = function(title,content) {
+            $ionicPopup.alert({
+                title: title,
+                content: content
+            });
+        }
 
             $scope.user = {
                 username : '',
@@ -359,22 +374,23 @@ angular.module('starter.controllers', ['angles'])
         $scope.signup = function() {
             //Validate inputs
            if($scope.user.username.length == 0){
-               alert('please enter username.');
+               $scope.showAlert('Error','please enter username');
            }
            else if($scope.user.password.length == 0){
-               alert('please enter password.');
+               $scope.showAlert('Error','please enter password');
            }
            else if($scope.user.confirmPassword.length == 0){
-               alert('please confirm password.');
+               $scope.showAlert('Error','please confirm password.');
            }
            else if ($scope.user.confirmPassword != $scope.user.password){
-               alert("These passwords don't match. Try again?");
+               $scope.showAlert('Error',"These passwords don't match. Try again?");
+
            }
            else if ($scope.user.mail.length == 0){
-               alert("please enter your mail.");
+               $scope.showAlert('Error',"please enter your mail.");
            }
            else if (!validateEmail($scope.user.mail)){
-               alert("email formatting not valid.");
+               $scope.showAlert('Error',"email formatting not valid.");
            }
            else{
                //sign up
@@ -388,12 +404,12 @@ angular.module('starter.controllers', ['angles'])
                    success: function(parseUser) {
                        $scope.hide();
                        alert('sign up success');
-                       $state.go('login');
+                       $state.go('welcome');
                    },
                    error: function(user, error) {
                        // Show the error message somewhere and let the user try again.
                        $scope.hide();
-                       alert('sign up failed')
+                       $scope.showAlert('Error','Sign-up Failed');
                    }
                });
            }
@@ -424,7 +440,6 @@ angular.module('starter.controllers', ['angles'])
         $scope.hideHUD = function(){
             $ionicLoading.hide();
         };
-        if(studentsService.getStudents().length == 0){
             var Student = Parse.Object.extend("Student");
             var query = new Parse.Query(Student);
             $scope.showHUD('loading..');
@@ -449,10 +464,6 @@ angular.module('starter.controllers', ['angles'])
                     alert("Error: " + error.code + " " + error.message);
                 }
             });
-        }
-        else{
-            $scope.children = studentsService.getStudents();
-        }
         $scope.goToChildren = function(index){
             studentsService.setCurrentStudent($scope.children[index]);
             $state.go('tabs.behavior',{"studentId":studentsService.getCurrentStudent().objectId})
@@ -500,7 +511,7 @@ angular.module('starter.controllers', ['angles'])
             canvasBorders : false,
             canvasBordersWidth :1,
             canvasBordersColor : "black",
-            graphTitle : "Attendance",
+            graphTitle : "Behavior",
             graphTitleFontFamily : "'Arial'",
             graphTitleFontSize : 24,
             graphTitleFontStyle : "bold",
@@ -568,7 +579,6 @@ angular.module('starter.controllers', ['angles'])
                 var behaviorObject = behaviorResults[i].toJSON();
                 behaviorObject.behaviorDate= new Date (behaviorObject.behaviorDate.iso);
                 var behaviorTypeObject = BehaviorTypesService.getBehaviorType(behaviorObject.behaviorType.objectId);
-                behaviorTypeObject.isPositive = (behaviorTypeObject.isPositive == 0) ? 'Positive' :'Negative';
                 var behaviorRecord = {
                     behavior:'',
                     behaviorType :''
@@ -622,7 +632,6 @@ angular.module('starter.controllers', ['angles'])
 
             }
         ];
-
         $scope.myChartOptions =  {
                 inGraphDataShow : true,
                 datasetFill : false,
@@ -676,7 +685,56 @@ angular.module('starter.controllers', ['angles'])
                 footNoteSpaceBefore : 0,
                 footNoteSpaceAfter : 0,
                 startAngle : 0,
-                dynamicDisplay : false
-            }
-});
+                dynamicDisplay : false,
+                scaleLabelPaddingX: 35,
+                scaleFontFamily : "'Arial'",
+                scaleFontSize : 12,
+                scaleFontStyle : "normal",
+                scaleFontColor : "#666",
+                scaleLabel : "<%=value%>"
+        };
+        new Chart(ctx).Pie(data,options);
+    })
 
+.controller('AccessCodeCtrl', function($scope,$state) {
+
+        $scope.addAccessCode = function (code){
+
+            Parse.Cloud.run('useAccessCode', { accessCode: code }, {
+                success: function(result) {
+                    // ratings should be 4.5
+                    console.log(result);
+                    console.log(JSON.stringify(result));
+                    console.log("successful results");
+                    $state.go('app.Students');
+                },
+                error: function(error) {
+                    console.error("Not successful" + error);
+                }
+            });
+        };
+})
+    .controller('forgotPasswordCtrl', function ($scope,$state) {
+
+        $scope.send = function (mail) {
+            if(!validateEmail(mail)){
+                alert('please enter correct mail.');
+            }
+            else{
+                Parse.User.requestPasswordReset(mail, {
+                    success: function() {
+                        alert('mail was sent to you.');
+                        $state.go('login');
+                    },
+                    error: function(error) {
+                        alert("Error: " + error.code + " " + error.message);
+                    }
+                });
+            }
+        };
+        function validateEmail(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+    })
+;

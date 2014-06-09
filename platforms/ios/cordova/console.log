@@ -553,3 +553,12 @@
 2014-05-29 17:41:50.931 ParentKit[5012:80b] hvuemU12P9         title:    Present_o
 2014-05-29 17:41:50.932 ParentKit[5012:80b] S8TCUZGcci         title:    Absent_parent
 2014-05-29 17:41:50.997 ParentKit[5012:80b] lesson serivce success
+2014-06-05 12:36:20.751 ParentKit[25309:80b] Multi-tasking -> Device: YES, App: YES
+2014-06-05 12:36:21.781 ParentKit[25309:80b] Unlimited access to network resources
+2014-06-05 12:36:36.850 ParentKit[25309:80b] [CDVTimer][keyboard] 18.011987ms
+2014-06-05 12:36:36.851 ParentKit[25309:80b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-05 12:36:36.851 ParentKit[25309:80b] [CDVTimer][statusbar] 0.374019ms
+2014-06-05 12:36:36.852 ParentKit[25309:80b] [CDVTimer][TotalPluginStartup] 19.333959ms
+2014-06-05 12:36:41.064 ParentKit[25309:80b] Resetting plugins due to page load.
+2014-06-05 12:36:51.226 ParentKit[25309:80b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.0/Applications/182B37F4-800B-41ED-AB71-B0DF077323FC/ParentKit.app/www/index.html#/login
+2014-06-05 12:36:51.967 ParentKit[25309:80b] deviceready has not fired after 5 seconds.

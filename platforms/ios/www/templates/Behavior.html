@@ -1,9 +1,8 @@
-<ion-nav-bar class="bar-stable nav-title-slide-ios7">
     <ion-nav-back-button class="button-clear">
         <i class="icon ion-arrow-left-c"></i>{{getPreviousTitle() || 'Back'}}
     </ion-nav-back-button>
-</ion-nav-bar>
-<ion-view hide-back-button="true" title={{pageTitle}}>
+
+<ion-view title={{pageTitle}}>
     <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-ios7-arrow-back" ng-click="goBack()">
             students
