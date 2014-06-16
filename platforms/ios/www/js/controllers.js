@@ -1,5 +1,5 @@
 angular.module('starter.controllers', ['angles'])
-    .service('AtendanceTypes',function(){
+    .service('AttendanceTypesService',function(){
         var types = [];
         var attendanceType =  Parse.Object.extend("Attendancetype");
         var attendanceTypeQuery = new Parse.Query(attendanceType);
@@ -36,8 +36,10 @@ angular.module('starter.controllers', ['angles'])
             success: function (behaviorTypesResults) {
                 for(i in behaviorTypesResults){
                     var behaviorTypeObject = behaviorTypesResults[i].toJSON();
-                    behaviorTypeObject.isPositive = (behaviorTypeObject.isPositive == 0) ? 'Positive' :'Negative';
-                    behaviortypes.push(behaviorTypeObject);
+                    behaviorTypeObject.isPositive = (behaviorTypeObject.isPositive == 1) ? 'Positive' :'Negative';
+                    if(behaviorTypeObject.isDeleted == false){
+                        behaviortypes.push(behaviorTypeObject);
+                    }
                     console.log('types length ' + behaviortypes.length);
                 }
             },
@@ -70,7 +72,9 @@ angular.module('starter.controllers', ['angles'])
                     lessonObject.lessonStartDate = new Date (lessonObject.lessonStartDate.iso);
                     lessonObject.lessonStartTime= new Date (lessonObject.lessonStartTime.iso);
                     lessonObject.lessonEndTime= new Date (lessonObject.lessonEndTime.iso);
-                    lessons.push(lessonObject);
+                    if(lessonObject.isDeleted == false){
+                        lessons.push(lessonObject);
+                    }
                 }
             },
             error:function(error){
@@ -95,7 +99,7 @@ angular.module('starter.controllers', ['angles'])
           return currentStudent;
         };
         this.setCurrentStudent = function(student){
-            console.log('this is set current studnet fn');
+            console.log('this is set current student fn');
             console.log('this is studnet   ' +  student);
             currentStudent = student;
             console.log('this is current studnet   ' +  currentStudent);
@@ -111,7 +115,28 @@ angular.module('starter.controllers', ['angles'])
         }
     })
 
-.controller('AppCtrl', function($scope) {
+    .service('storage',function($window) {
+        return {
+            set: function(key, value) {
+                $window.localStorage[key] = value;
+            },
+            get: function(key, defaultValue) {
+                return $window.localStorage[key] || defaultValue;
+            },
+            setObject: function(key, value) {
+                $window.localStorage[key] = JSON.stringify(value);
+            },
+            getObject: function(key) {
+                return JSON.parse($window.localStorage[key] || '{}');
+            },
+            removeObject : function(key) {
+                return $window.localStorage.removeItem(key);
+            }
+        }
+    })
+
+.controller('AppCtrl', function($scope,storage) {
+
 })
 
 .controller('PlaylistsCtrl', function($scope) {
@@ -125,7 +150,7 @@ angular.module('starter.controllers', ['angles'])
   ];
 })
 
-.controller('AttendanceCtrl', function ($scope,$stateParams,AtendanceTypes,LessonService,$ionicNavBarDelegate,$state,$ionicLoading,studentsService){
+.controller('AttendanceCtrl', function ($scope,LessonService,$stateParams,AttendanceTypesService,$ionicNavBarDelegate,$state,$ionicLoading,studentsService){
 
         $scope.pageTitle = studentsService.getCurrentStudent().firstName;
 
@@ -200,7 +225,7 @@ angular.module('starter.controllers', ['angles'])
             legendBordersSpaceAfter : 0,
             footNoteSpaceBefore : 0,
             footNoteSpaceAfter : 0,
-            startAngle : 0,
+            startAngle : 180,
             dynamicDisplay : false
         }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -227,19 +252,27 @@ angular.module('starter.controllers', ['angles'])
             success: function(attendancesResults) {
                 for (var i = 0; i < attendancesResults.length; i++) {
                     var attendanceObject = attendancesResults[i].toJSON();
-                    var record = {
-                        attendance :'',
-                        type :'',
-                        lesson:''
-                    };
-                    record.attendance = attendanceObject;
-                    record.type = AtendanceTypes.getType(attendanceObject.type.objectId);
-                    var lessonObject= LessonService.getLesson(attendanceObject.lesson.objectId);
-                    record.lesson = lessonObject;
-                    $scope.records.push(record);
-                    $scope.$apply();
-                    $scope.AddItemInAttendanceChartsData(record);
+                    if(attendanceObject.isDeleted == false){
+                        var record = {
+                            attendance :'',
+                            type :'',
+                            lesson:''
+                        };
+                        record.attendance = attendanceObject;
+                        record.type = AttendanceTypesService.getType(attendanceObject.type.objectId);
+                        var lessonObject= LessonService.getLesson(attendanceObject.lesson.objectId);
+                        record.lesson = lessonObject;
+                        $scope.records.push(record);
+                        $scope.$apply();
+                        $scope.AddItemInAttendanceChartsData(record);
+                    }
                 }
+                $scope.records.sort(function(a,b){
+                    if((b.lesson.lessonStartDate - a.lesson.lessonStartDate) == 0){
+                        return b.lesson.lessonStartTime - a.lesson.lessonStartTime;
+                    }
+                    return new Date(b.lesson.lessonStartDate) - new Date(a.lesson.lessonStartDate);
+                });
                 for(var j = 0; j < $scope.records.length; j++){
                     var object =  $scope.records[j];
                     var element = document.getElementById(j);
@@ -262,48 +295,47 @@ angular.module('starter.controllers', ['angles'])
 
 })
 
-.controller('ChildrenCtrl', function ($scope, $ionicLoading,$state,studentsService){
-        $scope.PressHandler = function(studentId){
-            $state.go();
-        };
-        $scope.show = function() {
-            $ionicLoading.show({
-                template: 'Loading...'
-            });
-        };
-        $scope.hide = function(){
-            $ionicLoading.hide();
-        };
-
-        var Student = Parse.Object.extend("Student");
-        var query = new Parse.Query(Student);
-        query.equalTo()
-        $scope.show();
-        query.find({
-            success: function(results) {
-
-                $scope.children=[];
-
-                for (var i = 0; i < results.length; i++) {
-                    var object = results[i];
-                    $scope.children.push(object.toJSON());
-                }
-
-                // Do something with the returned Parse.Object values
-                console.log(results);
-                $scope.hide();
-
-            },
-            error: function(error) {
-                $scope.hide();
-                alert("Error: " + error.code + " " + error.message);
-            }
-        });
-})
+//.controller('ChildrenCtrl', function ($scope, $ionicLoading,$state,studentsService){
+//        $scope.PressHandler = function(studentId){
+//            $state.go();
+//        };
+//        $scope.show = function() {
+//            $ionicLoading.show({
+//                template: 'Loading...'
+//            });
+//        };
+//        $scope.hide = function(){
+//            $ionicLoading.hide();
+//        };
+//
+//        var Student = Parse.Object.extend("Student");
+//        var query = new Parse.Query(Student);
+//        query.equalTo()
+//        $scope.show();
+//        query.find({
+//            success: function(results) {
+//
+//                $scope.children=[];
+//
+//                for (var i = 0; i < results.length; i++) {
+//                    var object = results[i];
+//                    $scope.children.push(object.toJSON());
+//                }
+//               // Do something with the returned Parse.Object values
+//                console.log(results);
+//                $scope.hide();
+//
+//            },
+//            error: function(error) {
+//                $scope.hide();
+//                alert("Error: " + error.code + " " + error.message);
+//            }
+//        });
+//})
 
 .controller('StudentCtrl', function ($scope,$stateParams,$state,studentsService){
         $scope.studentId =  studentsService.getCurrentStudent().objectId;
-        $scope.goToAttendance = function(){
+       $scope.goToAttendance = function(){
             console.log('this is go to attendacne fn');
             console.log('state parameters ' + $stateParams.studentId);
             console.log('Scope Student Id' + studentsService.getCurrentStudent().objectId);
@@ -316,19 +348,25 @@ angular.module('starter.controllers', ['angles'])
         };
 })
 
-.controller('LogInCtrl', function($scope, $state,$ionicLoading,$ionicPopup) {
-
+.controller('LogInCtrl', function($scope, $state,$ionicLoading,$ionicPopup,storage) {
+console.log('this is login ctrl');
+        storage.removeObject('User');
+    $scope.user = {
+        username : '',
+        password : ''
+    };
         $scope.logIn = function(user) {
-            console.log('Trying to Log-In with ', user.username, user.password);
         $scope.show('signing in..');
             Parse.User.logIn(user.username, user.password, {
                 success: function(theUser) {
                     $scope.hide();
+                    storage.setObject('User',theUser);
+                    var x = storage.getObject('User');
                     $state.go('app.Students');
                 },
                 error: function(user, error) {
                     $scope.hide();
-                    $scope.showAlert('Error','Invalid username or password.');
+                    $scope.showAlert('Error',error.message);
                     console.log(user, error);
                 }
             });
@@ -343,7 +381,6 @@ angular.module('starter.controllers', ['angles'])
                 template: text
             });
         };
-
         $scope.hide = function(){
             $ionicLoading.hide();
         };
@@ -392,6 +429,9 @@ angular.module('starter.controllers', ['angles'])
            else if (!validateEmail($scope.user.mail)){
                $scope.showAlert('Error',"email formatting not valid.");
            }
+           else if($scope.user.password.length < 4){
+               $scope.showAlert('',"Password should be more than 4 characters.");
+           }
            else{
                //sign up
                var parseUser = new Parse.User();
@@ -403,13 +443,17 @@ angular.module('starter.controllers', ['angles'])
                parseUser.signUp(null, {
                    success: function(parseUser) {
                        $scope.hide();
-                       alert('sign up success');
-                       $state.go('welcome');
+                       var welcomeMessage = 'Welcome ' + $scope.user.username;
+                       $scope.show(welcomeMessage);
+                       setTimeout(function (){
+                           $state.go('welcome');
+                           $scope.hide();
+                       }, 2000);
                    },
                    error: function(user, error) {
                        // Show the error message somewhere and let the user try again.
                        $scope.hide();
-                       $scope.showAlert('Error','Sign-up Failed');
+                       $scope.showAlert('Error',error.message);
                    }
                });
            }
@@ -430,7 +474,7 @@ angular.module('starter.controllers', ['angles'])
         };
     })
 
-.controller('Students', function($scope, $state,  $ionicLoading , studentsService) {
+.controller('Students', function($scope, $state,  $ionicLoading , studentsService,BehaviorTypesService,LessonService,AttendanceTypesService) {
 
         $scope.showHUD = function(text) {
             $ionicLoading.show({
@@ -455,6 +499,7 @@ angular.module('starter.controllers', ['angles'])
 
                     // Do something with the returned Parse.Object values
                     console.log(results);
+                    $scope.children.sort(compareChildren)
                     studentsService.setStudents($scope.children);
                     $scope.hideHUD();
 
@@ -466,8 +511,37 @@ angular.module('starter.controllers', ['angles'])
             });
         $scope.goToChildren = function(index){
             studentsService.setCurrentStudent($scope.children[index]);
-            $state.go('tabs.behavior',{"studentId":studentsService.getCurrentStudent().objectId})
+            $state.go('tabs.summary',{"studentId":studentsService.getCurrentStudent().objectId})
         };
+
+        function compareChildren(a,b) {
+
+                var first1lower = a.firstName.toLowerCase();
+                var first2lower = b.firstName.toLowerCase();
+
+                var last1lower = a.lastName.toLowerCase();
+                var last2lower = b.lastName.toLowerCase();
+
+            if(first1lower > first2lower)
+                return 1;
+            if(first2lower > first1lower)
+                return -1
+            if(last1lower > last2lower)
+                return 1;
+            if(last2lower > last1lower)
+                return -1
+
+            var aFirst = a.firstName.charAt(0);
+            if(a.firstName.charAt(0) > b.firstName.charAt(0))
+                return 1;
+            if(b.firstName.charAt(0) > a.firstName.charAt(0))
+                return -1;
+            if(a.lastName.charAt(0) > b.lastName.charAt(0))
+                return 1;
+            if(b.lastName.charAt(0) > a.lastName.charAt(0))
+                return -1;
+            return 0;
+        }
     })
 
 .controller('BehaviorCtrl', function ($scope,$stateParams,BehaviorTypesService,$state,$ionicLoading,studentsService){
@@ -499,23 +573,22 @@ angular.module('starter.controllers', ['angles'])
                 console.log('this is length of chart data :   ' + $scope.myChartData.length);
             }
         };
-
-        $scope.myChartOptions =  {
-            inGraphDataShow : true,
-            datasetFill : true,
-            scaleTickSizeRight : 0,
-            scaleTickSizeLeft : 0,
-            scaleTickSizeBottom :0,
-            scaleTickSizeTop : 0,
-            scaleFontSize : 20,
-            canvasBorders : false,
-            canvasBordersWidth :1,
-            canvasBordersColor : "black",
-            graphTitle : "Behavior",
-            graphTitleFontFamily : "'Arial'",
-            graphTitleFontSize : 24,
-            graphTitleFontStyle : "bold",
-            graphTitleFontColor : "#666",
+        $scope.myChartOptions = {
+            inGraphDataShow: true,
+            datasetFill: false,
+            scaleTickSizeRight: 0,
+            scaleTickSizeLeft: 0,
+            scaleTickSizeBottom: 0,
+            scaleTickSizeTop: 0,
+            scaleFontSize: 20,
+            canvasBorders: false,
+            canvasBordersWidth: 1,
+            canvasBordersColor: "black",
+            graphTitle: "Behavior",
+            graphTitleFontFamily: "'Arial'",
+            graphTitleFontSize: 24,
+            graphTitleFontStyle: "bold",
+            graphTitleFontColor: "#666",
 //            graphSubTitle : '',
 //            graphSubTitleFontFamily : "'Arial'",
 //            graphSubTitleFontSize : 18,
@@ -524,33 +597,33 @@ angular.module('starter.controllers', ['angles'])
 //            inGraphDataTmpl: "<%=(v1 == ''? '' : v1+':')+ roundToWithThousands(config,v2,2) + ' (' + roundToWithThousands(config,v6,1) + ' %)'%>",
             inGraphDataTmpl: "<%=(v1 == ''? '' : v1+' = ')+ roundToWithThousands(config,v2,2)%>",
             inGraphDataFontColor: "#666",
-            legend : false,
-            legendFontFamily : "'Arial'",
-            legendFontSize : 9,
-            legendFontStyle : "normal",
-            legendFontColor : "#666",
-            legendBlockSize : 50,
-            legendBorders : true,
-            legendBordersWidth : 1,
-            legendBordersColors : "#666",
-            annotateDisplay : false,
-            spaceTop : 0,
-            spaceBottom : 0,
-            spaceLeft : 0,
-            spaceRight : 0,
+            legend: false,
+            legendFontFamily: "'Arial'",
+            legendFontSize: 9,
+            legendFontStyle: "normal",
+            legendFontColor: "#666",
+            legendBlockSize: 50,
+            legendBorders: true,
+            legendBordersWidth: 1,
+            legendBordersColors: "#666",
+            annotateDisplay: false,
+            spaceTop: 0,
+            spaceBottom: 0,
+            spaceLeft: 0,
+            spaceRight: 0,
             logarithmic: true,
-            animationSteps : 50,
-            rotateLabels : "smart",
-            xAxisSpaceOver : 0,
-            xAxisSpaceUnder : 0,
-            xAxisLabelSpaceAfter : 0,
-            xAxisLabelSpaceBefore : 0,
-            legendBordersSpaceBefore : 0,
-            legendBordersSpaceAfter : 0,
-            footNoteSpaceBefore : 0,
-            footNoteSpaceAfter : 0,
-            startAngle : 0,
-            dynamicDisplay : false
+            animationSteps: 50,
+            rotateLabels: "bottom",
+            xAxisSpaceOver: 0,
+            xAxisSpaceUnder: 0,
+            xAxisLabelSpaceAfter: 0,
+            xAxisLabelSpaceBefore: 0,
+            legendBordersSpaceBefore: 0,
+            legendBordersSpaceAfter: 0,
+            footNoteSpaceBefore: 0,
+            footNoteSpaceAfter: 0,
+            startAngle: 180,
+            dynamicDisplay: false
         }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //Loading
@@ -577,19 +650,24 @@ angular.module('starter.controllers', ['angles'])
         success: function(behaviorResults) {
             for (var i = 0; i < behaviorResults.length; i++) {
                 var behaviorObject = behaviorResults[i].toJSON();
-                behaviorObject.behaviorDate= new Date (behaviorObject.behaviorDate.iso);
-                var behaviorTypeObject = BehaviorTypesService.getBehaviorType(behaviorObject.behaviorType.objectId);
-                var behaviorRecord = {
-                    behavior:'',
-                    behaviorType :''
-                };
-                behaviorRecord .behavior = behaviorObject;
-                behaviorRecord .behaviorType = behaviorTypeObject;
-                $scope.behaviorRecords.push(behaviorRecord);
-                $scope.$apply();
-                console.log('behavior date   ' + behaviorRecord.behavior.behaviorDate.toDateString());
-                $scope.AddItemInBehaviorChartsData(behaviorRecord);
+                if(behaviorObject.isDeleted == false){
+                    behaviorObject.behaviorDate= new Date (behaviorObject.behaviorDate.iso);
+                    var behaviorTypeObject = BehaviorTypesService.getBehaviorType(behaviorObject.behaviorType.objectId);
+                    var behaviorRecord = {
+                        behavior:'',
+                        behaviorType :''
+                    };
+                    behaviorRecord .behavior = behaviorObject;
+                    behaviorRecord .behaviorType = behaviorTypeObject;
+                    $scope.behaviorRecords.push(behaviorRecord);
+                    $scope.$apply();
+                    console.log('behavior date   ' + behaviorRecord.behavior.behaviorDate.toDateString());
+                    $scope.AddItemInBehaviorChartsData(behaviorRecord);
+                }
             }
+                $scope.behaviorRecords.sort(function(a,b){
+                    return b.behavior.behaviorDate - a.behavior.behaviorDate;
+                });
 //         var x =  new Chart(ctx).Doughnut(chartItems,options);
             $scope.hideHUD();
         },
@@ -601,6 +679,7 @@ angular.module('starter.controllers', ['angles'])
             $state.go('app.Students');
         }
 })
+
 .controller('BrowseCtrl', function ($scope,$stateParams,BehaviorTypesService,$state,$ionicLoading){
 
         $scope.myChartData = [
@@ -648,7 +727,7 @@ angular.module('starter.controllers', ['angles'])
                 graphTitleFontSize : 24,
                 graphTitleFontStyle : "bold",
                 graphTitleFontColor : "#666",
-//            graphSubTitle : "Graph Sub Title",
+                graphSubTitle : false,
                 graphSubTitleFontFamily : "'Arial'",
                 graphSubTitleFontSize : 18,
                 graphSubTitleFontStyle : "normal",
@@ -660,7 +739,7 @@ angular.module('starter.controllers', ['angles'])
 //            footNoteFontSize : 8,
 //            footNoteFontStyle : "bold",
 //            footNoteFontColor : "#666",
-                legend : true,
+                legend : false,
                 legendFontFamily : "'Arial'",
                 legendFontSize : 12,
                 legendFontStyle : "normal",
@@ -693,41 +772,62 @@ angular.module('starter.controllers', ['angles'])
                 scaleFontColor : "#666",
                 scaleLabel : "<%=value%>"
         };
-        new Chart(ctx).Pie(data,options);
     })
 
-.controller('AccessCodeCtrl', function($scope,$state) {
+.controller('AccessCodeCtrl', function($scope,$state,$ionicPopup,$ionicLoading) {
 
         $scope.addAccessCode = function (code){
-
+            $scope.show('Loading...');
             Parse.Cloud.run('useAccessCode', { accessCode: code }, {
                 success: function(result) {
                     // ratings should be 4.5
                     console.log(result);
                     console.log(JSON.stringify(result));
                     console.log("successful results");
+                    $scope.hide();
+                    $scope.show('Added successfully');
                     $state.go('app.Students');
                 },
                 error: function(error) {
-                    console.error("Not successful" + error);
+                    $scope.hide();
+                    $scope.showAlert('Error','Invalid access code');
                 }
             });
         };
+
+        $scope.showAlert = function(title,content) {
+            $ionicPopup.alert({
+                title: title,
+                content: content
+            });
+        }
+        $scope.show = function(text) {
+            $ionicLoading.show({
+                template: text
+            });
+        };
+
+        $scope.hide = function(){
+            $ionicLoading.hide();
+        };
 })
-    .controller('forgotPasswordCtrl', function ($scope,$state) {
+
+.controller('forgotPasswordCtrl', function ($scope,$state,$ionicPopup,$ionicLoading) {
 
         $scope.send = function (mail) {
             if(!validateEmail(mail)){
-                alert('please enter correct mail.');
+                $scope.showAlert('Error','please enter correct mail.');
             }
             else{
+                $scope.show('Loading...');
                 Parse.User.requestPasswordReset(mail, {
                     success: function() {
-                        alert('mail was sent to you.');
+                        $scope.hide();
                         $state.go('login');
                     },
                     error: function(error) {
-                        alert("Error: " + error.code + " " + error.message);
+                        $scope.hide();
+                        $scope.showAlert('Error',error.message);
                     }
                 });
             }
@@ -736,5 +836,60 @@ angular.module('starter.controllers', ['angles'])
             var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email);
         }
+
+        $scope.showAlert = function(title,content) {
+            $ionicPopup.alert({
+                title: title,
+                content: content
+            });
+        }
+        $scope.show = function(text) {
+            $ionicLoading.show({
+                template: text
+            });
+        };
+        $scope.hide = function(){
+            $ionicLoading.hide();
+        };
+    })
+
+.controller('SummaryCtrl',function($scope,studentsService,$state){
+        $scope.pageTitle = studentsService.getCurrentStudent().firstName;
+        $scope.goBack =function(){
+            $state.go('app.Students');
+        };
+
+        $scope.data = {
+            series: ['Sales', 'Income', 'Expense', 'Laptops', 'Keyboards'],
+            data : [{
+                x : "Sales",
+                y: [100,500, 0],
+                tooltip:"this is tooltip"
+            },
+                {
+                    x : "Not Sales",
+                    y: [300, 100, 100]
+                },
+                {
+                    x : "Tax",
+                    y: [351]
+                },
+                {
+                    x : "Not Tax",
+                    y: [54, 0, 879]
+                }]
+        };
+$scope.chartType = 'bar';
+
+$scope.config = {
+    labels: false,
+    title : "Not Products",
+    legend : {
+        display:true,
+        position:'left'
+    },
+    innerRadius: 0
+};
+
     })
 ;

@@ -562,3 +562,526 @@
 2014-06-05 12:36:41.064 ParentKit[25309:80b] Resetting plugins due to page load.
 2014-06-05 12:36:51.226 ParentKit[25309:80b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.0/Applications/182B37F4-800B-41ED-AB71-B0DF077323FC/ParentKit.app/www/index.html#/login
 2014-06-05 12:36:51.967 ParentKit[25309:80b] deviceready has not fired after 5 seconds.
+2014-06-10 13:25:13.584 ParentKit[3150:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-10 13:25:13.961 ParentKit[3150:70b] Unlimited access to network resources
+2014-06-10 13:25:15.551 ParentKit[3150:70b] [CDVTimer][keyboard] 46.669006ms
+2014-06-10 13:25:15.552 ParentKit[3150:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-10 13:25:15.552 ParentKit[3150:70b] [CDVTimer][statusbar] 0.672042ms
+2014-06-10 13:25:15.553 ParentKit[3150:70b] [CDVTimer][TotalPluginStartup] 48.713028ms
+2014-06-10 13:25:17.846 ParentKit[3150:70b] Resetting plugins due to page load.
+2014-06-10 13:25:19.343 ParentKit[3150:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-10 13:25:34.451 ParentKit[3150:70b] this is behavior types service
+2014-06-10 13:25:34.451 ParentKit[3150:70b] this is lesson serive 
+2014-06-10 13:25:34.805 ParentKit[3150:70b] types length 1
+2014-06-10 13:25:34.806 ParentKit[3150:70b] types length 2
+2014-06-10 13:25:34.806 ParentKit[3150:70b] types length 3
+2014-06-10 13:25:34.806 ParentKit[3150:70b] types length 4
+2014-06-10 13:25:34.806 ParentKit[3150:70b] types length 5
+2014-06-10 13:25:35.301 ParentKit[3150:70b] FwLsTlOjp1         title:    Present
+2014-06-10 13:25:35.301 ParentKit[3150:70b] tx0HiY1vAJ         title:    Absent
+2014-06-10 13:25:35.301 ParentKit[3150:70b] j66KQZoF4e         title:    Present
+2014-06-10 13:25:35.302 ParentKit[3150:70b] CN9hOLwh0x         title:    Present
+2014-06-10 13:25:35.302 ParentKit[3150:70b] soWOfd2LPJ         title:    Absent
+2014-06-10 13:25:35.302 ParentKit[3150:70b] Eb69plJuQ5         title:    Test
+2014-06-10 13:25:35.303 ParentKit[3150:70b] [{"firstName":"abc","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"XMZIcs4EUT","createdAt":"2014-06-10T05:05:09.697Z","updatedAt":"2014-06-10T05:05:14.232Z"},{"firstName":"be","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"YuEWB9OJfa","createdAt":"2014-06-10T05:05:48.388Z","updatedAt":"2014-06-10T05:05:50.725Z"},{"firstName":"abc","lastName":"d","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lRxbP7kJA7","createdAt":"2014-06-10T05:06:06.975Z","updatedAt":"2014-06-10T05:06:16.754Z"},{"firstName":"abc","lastName":"da","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lIG4eCtnTC","createdAt":"2014-06-10T05:16:00.064Z","updatedAt":"2014-06-10T05:16:02.924Z"},{"accessCode":{"__type":"Pointer","className":"AccessCode","objectId":"LPTGaNXo6T"},"firstName":"Tefa","iconPath":"","isDeleted":false,"lastName":"F","studentId":"6ACC5500-7144-4A01-8B5F-713EDDE0A30A","tkID":"E6E33C21-5001-4497-954E-BC3B202F546A","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"ACL":{"2kglmvFrzn":{"write":true,"read":true},"role:parent-E720A182-26E2-48F7-9E20-24F9FDADCDB2":{"read":true},"role:student-65F986F6-EC4B-4E7E-A62B-856C88B586FA":{"read":true}},"objectId":"3K0xzS2FVL","createdAt":"2014-06-09T15:17:32.409Z","updatedAt":"2014-06-10T11:03:30.926Z"},{"firstName":"Abc","lastName":"De","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"EvyD7QwQ3K","createdAt":"2014-06-10T05:15:39.419Z","updatedAt":"2014-06-10T05:47:17.349Z"}]
+2014-06-10 13:25:35.304 ParentKit[3150:70b] this is set students fn
+2014-06-10 13:25:35.305 ParentKit[3150:70b] this is student array Parameters in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 13:25:35.305 ParentKit[3150:70b] this is student array in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 13:25:35.305 ParentKit[3150:70b] lesson serivce success
+2014-06-10 13:25:55.395 ParentKit[3150:70b] this is set current student fn
+2014-06-10 13:25:55.446 ParentKit[3150:70b] THREAD WARNING: ['Console'] took '50.976074' ms. Plugin should use a background thread.
+2014-06-10 13:25:55.447 ParentKit[3150:70b] this is studnet   [object Object]
+2014-06-10 13:25:55.447 ParentKit[3150:70b] this is current studnet   [object Object]
+2014-06-10 13:25:57.172 ParentKit[3150:70b] behavior date   Wed Jun 11 2014
+2014-06-10 13:25:57.173 ParentKit[3150:70b] this is length of chart data :   1
+2014-06-10 13:25:57.173 ParentKit[3150:70b] behavior date   Mon Jun 09 2014
+2014-06-10 13:25:57.173 ParentKit[3150:70b] behavior date   Tue Jun 10 2014
+2014-06-10 13:28:59.938 ParentKit[3359:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-10 13:28:59.987 ParentKit[3359:70b] Unlimited access to network resources
+2014-06-10 13:29:00.130 ParentKit[3359:70b] [CDVTimer][keyboard] 0.132978ms
+2014-06-10 13:29:00.131 ParentKit[3359:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-10 13:29:00.169 ParentKit[3359:70b] [CDVTimer][statusbar] 38.134992ms
+2014-06-10 13:29:00.170 ParentKit[3359:70b] [CDVTimer][TotalPluginStartup] 39.977014ms
+2014-06-10 13:29:03.239 ParentKit[3359:70b] Resetting plugins due to page load.
+2014-06-10 13:29:03.722 ParentKit[3359:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-10 13:29:49.124 ParentKit[3359:70b] this is behavior types service
+2014-06-10 13:29:49.137 ParentKit[3359:70b] THREAD WARNING: ['Console'] took '13.296875' ms. Plugin should use a background thread.
+2014-06-10 13:29:49.138 ParentKit[3359:70b] this is lesson serive 
+2014-06-10 13:29:50.358 ParentKit[3359:70b] [{"firstName":"abc","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"XMZIcs4EUT","createdAt":"2014-06-10T05:05:09.697Z","updatedAt":"2014-06-10T05:05:14.232Z"},{"firstName":"be","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"YuEWB9OJfa","createdAt":"2014-06-10T05:05:48.388Z","updatedAt":"2014-06-10T05:05:50.725Z"},{"firstName":"abc","lastName":"d","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lRxbP7kJA7","createdAt":"2014-06-10T05:06:06.975Z","updatedAt":"2014-06-10T05:06:16.754Z"},{"firstName":"abc","lastName":"da","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lIG4eCtnTC","createdAt":"2014-06-10T05:16:00.064Z","updatedAt":"2014-06-10T05:16:02.924Z"},{"accessCode":{"__type":"Pointer","className":"AccessCode","objectId":"LPTGaNXo6T"},"firstName":"Tefa","iconPath":"","isDeleted":false,"lastName":"F","studentId":"6ACC5500-7144-4A01-8B5F-713EDDE0A30A","tkID":"E6E33C21-5001-4497-954E-BC3B202F546A","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"ACL":{"2kglmvFrzn":{"write":true,"read":true},"role:parent-E720A182-26E2-48F7-9E20-24F9FDADCDB2":{"read":true},"role:student-65F986F6-EC4B-4E7E-A62B-856C88B586FA":{"read":true}},"objectId":"3K0xzS2FVL","createdAt":"2014-06-09T15:17:32.409Z","updatedAt":"2014-06-10T11:03:30.926Z"},{"firstName":"Abc","lastName":"De","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"EvyD7QwQ3K","createdAt":"2014-06-10T05:15:39.419Z","updatedAt":"2014-06-10T05:47:17.349Z"}]
+2014-06-10 13:29:50.359 ParentKit[3359:70b] this is set students fn
+2014-06-10 13:29:50.360 ParentKit[3359:70b] this is student array Parameters in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 13:29:50.360 ParentKit[3359:70b] this is student array in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 13:29:51.876 ParentKit[3359:70b] this is set current student fn
+2014-06-10 13:29:51.877 ParentKit[3359:70b] this is studnet   [object Object]
+2014-06-10 13:29:51.877 ParentKit[3359:70b] this is current studnet   [object Object]
+2014-06-10 13:29:52.159 ParentKit[3359:70b] types length 1
+2014-06-10 13:29:52.160 ParentKit[3359:70b] types length 2
+2014-06-10 13:29:52.160 ParentKit[3359:70b] types length 3
+2014-06-10 13:29:52.160 ParentKit[3359:70b] types length 4
+2014-06-10 13:29:52.160 ParentKit[3359:70b] types length 5
+2014-06-10 13:29:52.161 ParentKit[3359:70b] lesson serivce success
+2014-06-10 13:29:52.435 ParentKit[3359:70b] FwLsTlOjp1         title:    Present
+2014-06-10 13:29:52.436 ParentKit[3359:70b] tx0HiY1vAJ         title:    Absent
+2014-06-10 13:29:52.436 ParentKit[3359:70b] j66KQZoF4e         title:    Present
+2014-06-10 13:29:52.436 ParentKit[3359:70b] CN9hOLwh0x         title:    Present
+2014-06-10 13:29:52.437 ParentKit[3359:70b] soWOfd2LPJ         title:    Absent
+2014-06-10 13:29:52.437 ParentKit[3359:70b] Eb69plJuQ5         title:    Test
+2014-06-10 13:29:53.815 ParentKit[3359:70b] behavior date   Wed Jun 11 2014
+2014-06-10 13:29:53.815 ParentKit[3359:70b] this is length of chart data :   1
+2014-06-10 13:29:53.815 ParentKit[3359:70b] behavior date   Mon Jun 09 2014
+2014-06-10 13:29:53.815 ParentKit[3359:70b] behavior date   Tue Jun 10 2014
+2014-06-10 13:32:19.329 ParentKit[3359:70b] behavior date   Wed Jun 11 2014
+2014-06-10 13:32:19.330 ParentKit[3359:70b] this is length of chart data :   1
+2014-06-10 13:32:19.330 ParentKit[3359:70b] behavior date   Mon Jun 09 2014
+2014-06-10 13:32:19.330 ParentKit[3359:70b] behavior date   Tue Jun 10 2014
+2014-06-10 13:32:57.969 ParentKit[3567:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-10 13:32:57.980 ParentKit[3567:70b] Unlimited access to network resources
+2014-06-10 13:32:58.028 ParentKit[3567:70b] [CDVTimer][keyboard] 0.097036ms
+2014-06-10 13:32:58.029 ParentKit[3567:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-10 13:32:58.029 ParentKit[3567:70b] [CDVTimer][statusbar] 0.456035ms
+2014-06-10 13:32:58.030 ParentKit[3567:70b] [CDVTimer][TotalPluginStartup] 1.537979ms
+2014-06-10 13:32:59.326 ParentKit[3567:70b] Resetting plugins due to page load.
+2014-06-10 13:32:59.743 ParentKit[3567:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-10 13:34:18.430 ParentKit[3567:70b] this is behavior types service
+2014-06-10 13:34:18.431 ParentKit[3567:70b] this is lesson serive 
+2014-06-10 13:34:19.786 ParentKit[3567:70b] types length 1
+2014-06-10 13:34:19.786 ParentKit[3567:70b] types length 2
+2014-06-10 13:34:19.787 ParentKit[3567:70b] types length 3
+2014-06-10 13:34:19.787 ParentKit[3567:70b] types length 4
+2014-06-10 13:34:19.787 ParentKit[3567:70b] types length 5
+2014-06-10 13:34:20.664 ParentKit[3567:70b] [{"firstName":"abc","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"XMZIcs4EUT","createdAt":"2014-06-10T05:05:09.697Z","updatedAt":"2014-06-10T05:05:14.232Z"},{"firstName":"be","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"YuEWB9OJfa","createdAt":"2014-06-10T05:05:48.388Z","updatedAt":"2014-06-10T05:05:50.725Z"},{"firstName":"abc","lastName":"d","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lRxbP7kJA7","createdAt":"2014-06-10T05:06:06.975Z","updatedAt":"2014-06-10T05:06:16.754Z"},{"firstName":"abc","lastName":"da","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lIG4eCtnTC","createdAt":"2014-06-10T05:16:00.064Z","updatedAt":"2014-06-10T05:16:02.924Z"},{"accessCode":{"__type":"Pointer","className":"AccessCode","objectId":"LPTGaNXo6T"},"firstName":"Tefa","iconPath":"","isDeleted":false,"lastName":"F","studentId":"6ACC5500-7144-4A01-8B5F-713EDDE0A30A","tkID":"E6E33C21-5001-4497-954E-BC3B202F546A","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"ACL":{"2kglmvFrzn":{"write":true,"read":true},"role:parent-E720A182-26E2-48F7-9E20-24F9FDADCDB2":{"read":true},"role:student-65F986F6-EC4B-4E7E-A62B-856C88B586FA":{"read":true}},"objectId":"3K0xzS2FVL","createdAt":"2014-06-09T15:17:32.409Z","updatedAt":"2014-06-10T11:03:30.926Z"},{"firstName":"Abc","lastName":"De","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"EvyD7QwQ3K","createdAt":"2014-06-10T05:15:39.419Z","updatedAt":"2014-06-10T05:47:17.349Z"}]
+2014-06-10 13:34:20.666 ParentKit[3567:70b] this is set students fn
+2014-06-10 13:34:20.666 ParentKit[3567:70b] this is student array Parameters in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 13:34:20.666 ParentKit[3567:70b] this is student array in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 13:34:20.667 ParentKit[3567:70b] lesson serivce success
+2014-06-10 13:34:20.721 ParentKit[3567:70b] FwLsTlOjp1         title:    Present
+2014-06-10 13:34:20.721 ParentKit[3567:70b] tx0HiY1vAJ         title:    Absent
+2014-06-10 13:34:20.721 ParentKit[3567:70b] j66KQZoF4e         title:    Present
+2014-06-10 13:34:20.722 ParentKit[3567:70b] CN9hOLwh0x         title:    Present
+2014-06-10 13:34:20.722 ParentKit[3567:70b] soWOfd2LPJ         title:    Absent
+2014-06-10 13:34:20.722 ParentKit[3567:70b] Eb69plJuQ5         title:    Test
+2014-06-10 13:34:22.593 ParentKit[3567:70b] this is set current student fn
+2014-06-10 13:34:22.593 ParentKit[3567:70b] this is studnet   [object Object]
+2014-06-10 13:34:22.593 ParentKit[3567:70b] this is current studnet   [object Object]
+2014-06-10 13:34:23.456 ParentKit[3567:70b] behavior date   Wed Jun 11 2014
+2014-06-10 13:34:23.456 ParentKit[3567:70b] this is length of chart data :   1
+2014-06-10 13:34:23.456 ParentKit[3567:70b] behavior date   Mon Jun 09 2014
+2014-06-10 13:34:23.457 ParentKit[3567:70b] behavior date   Tue Jun 10 2014
+2014-06-10 13:35:39.378 ParentKit[3567:70b] [{"firstName":"abc","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"XMZIcs4EUT","createdAt":"2014-06-10T05:05:09.697Z","updatedAt":"2014-06-10T05:05:14.232Z"},{"firstName":"be","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"YuEWB9OJfa","createdAt":"2014-06-10T05:05:48.388Z","updatedAt":"2014-06-10T05:05:50.725Z"},{"firstName":"abc","lastName":"d","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lRxbP7kJA7","createdAt":"2014-06-10T05:06:06.975Z","updatedAt":"2014-06-10T05:06:16.754Z"},{"firstName":"abc","lastName":"da","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lIG4eCtnTC","createdAt":"2014-06-10T05:16:00.064Z","updatedAt":"2014-06-10T05:16:02.924Z"},{"accessCode":{"__type":"Pointer","className":"AccessCode","objectId":"LPTGaNXo6T"},"firstName":"Tefa","iconPath":"","isDeleted":false,"lastName":"F","studentId":"6ACC5500-7144-4A01-8B5F-713EDDE0A30A","tkID":"E6E33C21-5001-4497-954E-BC3B202F546A","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"ACL":{"2kglmvFrzn":{"write":true,"read":true},"role:parent-E720A182-26E2-48F7-9E20-24F9FDADCDB2":{"read":true},"role:student-65F986F6-EC4B-4E7E-A62B-856C88B586FA":{"read":true}},"objectId":"3K0xzS2FVL","createdAt":"2014-06-09T15:17:32.409Z","updatedAt":"2014-06-10T11:03:30.926Z"},{"firstName":"Abc","lastName":"De","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"EvyD7QwQ3K","createdAt":"2014-06-10T05:15:39.419Z","updatedAt":"2014-06-10T05:47:17.349Z"}]
+2014-06-10 13:35:39.421 ParentKit[3567:70b] THREAD WARNING: ['Console'] took '43.056885' ms. Plugin should use a background thread.
+2014-06-10 13:35:39.422 ParentKit[3567:70b] this is set students fn
+2014-06-10 13:35:39.422 ParentKit[3567:70b] this is student array Parameters in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 13:35:39.422 ParentKit[3567:70b] this is student array in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 13:36:21.456 ParentKit[3760:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-10 13:36:21.480 ParentKit[3760:70b] Unlimited access to network resources
+2014-06-10 13:36:21.527 ParentKit[3760:70b] [CDVTimer][keyboard] 0.095010ms
+2014-06-10 13:36:21.528 ParentKit[3760:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-10 13:36:21.528 ParentKit[3760:70b] [CDVTimer][statusbar] 0.425994ms
+2014-06-10 13:36:21.528 ParentKit[3760:70b] [CDVTimer][TotalPluginStartup] 1.468003ms
+2014-06-10 13:36:22.533 ParentKit[3760:70b] Resetting plugins due to page load.
+2014-06-10 13:36:23.274 ParentKit[3760:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-10 13:36:36.453 ParentKit[3760:70b] this is behavior types service
+2014-06-10 13:36:36.454 ParentKit[3760:70b] this is lesson serive 
+2014-06-10 13:36:37.129 ParentKit[3760:70b] types length 1
+2014-06-10 13:36:37.129 ParentKit[3760:70b] types length 2
+2014-06-10 13:36:37.129 ParentKit[3760:70b] types length 3
+2014-06-10 13:36:37.130 ParentKit[3760:70b] types length 4
+2014-06-10 13:36:37.130 ParentKit[3760:70b] types length 5
+2014-06-10 13:36:37.314 ParentKit[3760:70b] [{"firstName":"abc","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"XMZIcs4EUT","createdAt":"2014-06-10T05:05:09.697Z","updatedAt":"2014-06-10T05:05:14.232Z"},{"firstName":"be","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"YuEWB9OJfa","createdAt":"2014-06-10T05:05:48.388Z","updatedAt":"2014-06-10T05:05:50.725Z"},{"firstName":"abc","lastName":"d","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lRxbP7kJA7","createdAt":"2014-06-10T05:06:06.975Z","updatedAt":"2014-06-10T05:06:16.754Z"},{"firstName":"abc","lastName":"da","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lIG4eCtnTC","createdAt":"2014-06-10T05:16:00.064Z","updatedAt":"2014-06-10T05:16:02.924Z"},{"accessCode":{"__type":"Pointer","className":"AccessCode","objectId":"LPTGaNXo6T"},"firstName":"Tefa","iconPath":"","isDeleted":false,"lastName":"F","studentId":"6ACC5500-7144-4A01-8B5F-713EDDE0A30A","tkID":"E6E33C21-5001-4497-954E-BC3B202F546A","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"ACL":{"2kglmvFrzn":{"write":true,"read":true},"role:parent-E720A182-26E2-48F7-9E20-24F9FDADCDB2":{"read":true},"role:student-65F986F6-EC4B-4E7E-A62B-856C88B586FA":{"read":true}},"objectId":"3K0xzS2FVL","createdAt":"2014-06-09T15:17:32.409Z","updatedAt":"2014-06-10T11:03:30.926Z"},{"firstName":"Abc","lastName":"De","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"EvyD7QwQ3K","createdAt":"2014-06-10T05:15:39.419Z","updatedAt":"2014-06-10T05:47:17.349Z"}]
+2014-06-10 13:36:37.315 ParentKit[3760:70b] this is set students fn
+2014-06-10 13:36:37.315 ParentKit[3760:70b] this is student array Parameters in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 13:36:37.315 ParentKit[3760:70b] this is student array in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 13:36:37.365 ParentKit[3760:70b] FwLsTlOjp1         title:    Present
+2014-06-10 13:36:37.365 ParentKit[3760:70b] tx0HiY1vAJ         title:    Absent
+2014-06-10 13:36:37.365 ParentKit[3760:70b] j66KQZoF4e         title:    Present
+2014-06-10 13:36:37.366 ParentKit[3760:70b] CN9hOLwh0x         title:    Present
+2014-06-10 13:36:37.366 ParentKit[3760:70b] soWOfd2LPJ         title:    Absent
+2014-06-10 13:36:37.366 ParentKit[3760:70b] Eb69plJuQ5         title:    Test
+2014-06-10 13:36:37.391 ParentKit[3760:70b] lesson serivce success
+2014-06-10 13:36:38.715 ParentKit[3760:70b] this is set current student fn
+2014-06-10 13:36:38.715 ParentKit[3760:70b] this is studnet   [object Object]
+2014-06-10 13:36:38.715 ParentKit[3760:70b] this is current studnet   [object Object]
+2014-06-10 13:36:38.744 ParentKit[3760:70b] THREAD WARNING: ['Console'] took '28.395996' ms. Plugin should use a background thread.
+2014-06-10 13:36:39.400 ParentKit[3760:70b] behavior date   Wed Jun 11 2014
+2014-06-10 13:36:39.400 ParentKit[3760:70b] this is length of chart data :   1
+2014-06-10 13:36:39.400 ParentKit[3760:70b] behavior date   Mon Jun 09 2014
+2014-06-10 13:36:39.401 ParentKit[3760:70b] behavior date   Tue Jun 10 2014
+2014-06-10 13:38:52.605 ParentKit[3962:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-10 13:38:52.655 ParentKit[3962:70b] Unlimited access to network resources
+2014-06-10 13:38:52.688 ParentKit[3962:70b] [CDVTimer][keyboard] 0.095010ms
+2014-06-10 13:38:52.688 ParentKit[3962:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-10 13:38:52.689 ParentKit[3962:70b] [CDVTimer][statusbar] 0.459015ms
+2014-06-10 13:38:52.689 ParentKit[3962:70b] [CDVTimer][TotalPluginStartup] 1.518965ms
+2014-06-10 13:38:53.558 ParentKit[3962:70b] Resetting plugins due to page load.
+2014-06-10 13:38:54.068 ParentKit[3962:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-10 13:39:06.678 ParentKit[3962:70b] this is behavior types service
+2014-06-10 13:39:06.679 ParentKit[3962:70b] this is lesson serive 
+2014-06-10 13:39:07.131 ParentKit[3962:70b] types length 1
+2014-06-10 13:39:07.132 ParentKit[3962:70b] types length 2
+2014-06-10 13:39:07.132 ParentKit[3962:70b] types length 3
+2014-06-10 13:39:07.132 ParentKit[3962:70b] types length 4
+2014-06-10 13:39:07.132 ParentKit[3962:70b] types length 5
+2014-06-10 13:39:07.543 ParentKit[3962:70b] [{"firstName":"abc","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"XMZIcs4EUT","createdAt":"2014-06-10T05:05:09.697Z","updatedAt":"2014-06-10T05:05:14.232Z"},{"firstName":"be","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"YuEWB9OJfa","createdAt":"2014-06-10T05:05:48.388Z","updatedAt":"2014-06-10T05:05:50.725Z"},{"firstName":"abc","lastName":"d","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lRxbP7kJA7","createdAt":"2014-06-10T05:06:06.975Z","updatedAt":"2014-06-10T05:06:16.754Z"},{"firstName":"abc","lastName":"da","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lIG4eCtnTC","createdAt":"2014-06-10T05:16:00.064Z","updatedAt":"2014-06-10T05:16:02.924Z"},{"accessCode":{"__type":"Pointer","className":"AccessCode","objectId":"LPTGaNXo6T"},"firstName":"Tefa","iconPath":"","isDeleted":false,"lastName":"F","studentId":"6ACC5500-7144-4A01-8B5F-713EDDE0A30A","tkID":"E6E33C21-5001-4497-954E-BC3B202F546A","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"ACL":{"2kglmvFrzn":{"write":true,"read":true},"role:parent-E720A182-26E2-48F7-9E20-24F9FDADCDB2":{"read":true},"role:student-65F986F6-EC4B-4E7E-A62B-856C88B586FA":{"read":true}},"objectId":"3K0xzS2FVL","createdAt":"2014-06-09T15:17:32.409Z","updatedAt":"2014-06-10T11:03:30.926Z"},{"firstName":"Abc","lastName":"De","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"EvyD7QwQ3K","createdAt":"2014-06-10T05:15:39.419Z","updatedAt":"2014-06-10T05:47:17.349Z"}]
+2014-06-10 13:39:07.579 ParentKit[3962:70b] THREAD WARNING: ['Console'] took '36.197021' ms. Plugin should use a background thread.
+2014-06-10 13:39:07.580 ParentKit[3962:70b] this is set students fn
+2014-06-10 13:39:07.580 ParentKit[3962:70b] this is student array Parameters in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 13:39:07.580 ParentKit[3962:70b] this is student array in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 13:39:07.581 ParentKit[3962:70b] FwLsTlOjp1         title:    Present
+2014-06-10 13:39:07.581 ParentKit[3962:70b] tx0HiY1vAJ         title:    Absent
+2014-06-10 13:39:07.581 ParentKit[3962:70b] j66KQZoF4e         title:    Present
+2014-06-10 13:39:07.581 ParentKit[3962:70b] CN9hOLwh0x         title:    Present
+2014-06-10 13:39:07.583 ParentKit[3962:70b] soWOfd2LPJ         title:    Absent
+2014-06-10 13:39:07.583 ParentKit[3962:70b] Eb69plJuQ5         title:    Test
+2014-06-10 13:39:07.688 ParentKit[3962:70b] lesson serivce success
+2014-06-10 13:39:08.197 ParentKit[3962:70b] this is set current student fn
+2014-06-10 13:39:08.198 ParentKit[3962:70b] this is studnet   [object Object]
+2014-06-10 13:39:08.198 ParentKit[3962:70b] this is current studnet   [object Object]
+2014-06-10 13:39:08.841 ParentKit[3962:70b] behavior date   Wed Jun 11 2014
+2014-06-10 13:39:08.842 ParentKit[3962:70b] this is length of chart data :   1
+2014-06-10 13:39:08.842 ParentKit[3962:70b] behavior date   Mon Jun 09 2014
+2014-06-10 13:39:08.842 ParentKit[3962:70b] behavior date   Tue Jun 10 2014
+2014-06-10 13:56:13.561 ParentKit[4187:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-10 13:56:14.144 ParentKit[4187:70b] Unlimited access to network resources
+2014-06-10 13:56:15.279 ParentKit[4187:70b] [CDVTimer][keyboard] 1.029968ms
+2014-06-10 13:56:15.280 ParentKit[4187:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-10 13:56:15.281 ParentKit[4187:70b] [CDVTimer][statusbar] 0.725985ms
+2014-06-10 13:56:15.281 ParentKit[4187:70b] [CDVTimer][TotalPluginStartup] 3.196001ms
+2014-06-10 13:56:17.080 ParentKit[4187:70b] Resetting plugins due to page load.
+2014-06-10 13:56:18.243 ParentKit[4187:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-10 13:58:10.017 ParentKit[4187:70b] this is behavior types service
+2014-06-10 13:58:10.032 ParentKit[4187:70b] THREAD WARNING: ['Console'] took '14.229004' ms. Plugin should use a background thread.
+2014-06-10 13:58:10.032 ParentKit[4187:70b] this is lesson serive 
+2014-06-10 13:58:10.376 ParentKit[4187:70b] types length 1
+2014-06-10 13:58:10.376 ParentKit[4187:70b] types length 2
+2014-06-10 13:58:10.376 ParentKit[4187:70b] types length 3
+2014-06-10 13:58:10.377 ParentKit[4187:70b] types length 4
+2014-06-10 13:58:10.377 ParentKit[4187:70b] types length 5
+2014-06-10 13:58:10.834 ParentKit[4187:70b] FwLsTlOjp1         title:    Present
+2014-06-10 13:58:10.835 ParentKit[4187:70b] tx0HiY1vAJ         title:    Absent
+2014-06-10 13:58:10.835 ParentKit[4187:70b] j66KQZoF4e         title:    Present
+2014-06-10 13:58:10.835 ParentKit[4187:70b] CN9hOLwh0x         title:    Present
+2014-06-10 13:58:10.836 ParentKit[4187:70b] soWOfd2LPJ         title:    Absent
+2014-06-10 13:58:10.836 ParentKit[4187:70b] Eb69plJuQ5         title:    Test
+2014-06-10 13:58:10.917 ParentKit[4187:70b] [{"firstName":"abc","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"XMZIcs4EUT","createdAt":"2014-06-10T05:05:09.697Z","updatedAt":"2014-06-10T05:05:14.232Z"},{"firstName":"be","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"YuEWB9OJfa","createdAt":"2014-06-10T05:05:48.388Z","updatedAt":"2014-06-10T05:05:50.725Z"},{"firstName":"abc","lastName":"d","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lRxbP7kJA7","createdAt":"2014-06-10T05:06:06.975Z","updatedAt":"2014-06-10T05:06:16.754Z"},{"firstName":"abc","lastName":"da","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lIG4eCtnTC","createdAt":"2014-06-10T05:16:00.064Z","updatedAt":"2014-06-10T05:16:02.924Z"},{"accessCode":{"__type":"Pointer","className":"AccessCode","objectId":"LPTGaNXo6T"},"firstName":"Tefa","iconPath":"","isDeleted":false,"lastName":"F","studentId":"6ACC5500-7144-4A01-8B5F-713EDDE0A30A","tkID":"E6E33C21-5001-4497-954E-BC3B202F546A","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"ACL":{"2kglmvFrzn":{"write":true,"read":true},"role:parent-E720A182-26E2-48F7-9E20-24F9FDADCDB2":{"read":true},"role:student-65F986F6-EC4B-4E7E-A62B-856C88B586FA":{"read":true}},"objectId":"3K0xzS2FVL","createdAt":"2014-06-09T15:17:32.409Z","updatedAt":"2014-06-10T11:03:30.926Z"},{"firstName":"Abc","lastName":"De","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"EvyD7QwQ3K","createdAt":"2014-06-10T05:15:39.419Z","updatedAt":"2014-06-10T05:47:17.349Z"}]
+2014-06-10 13:58:10.937 ParentKit[4187:70b] THREAD WARNING: ['Console'] took '20.250977' ms. Plugin should use a background thread.
+2014-06-10 13:58:10.938 ParentKit[4187:70b] this is set students fn
+2014-06-10 13:58:10.938 ParentKit[4187:70b] this is student array Parameters in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 13:58:10.939 ParentKit[4187:70b] this is student array in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 13:58:10.939 ParentKit[4187:70b] lesson serivce success
+2014-06-10 13:58:11.782 ParentKit[4187:70b] this is set current student fn
+2014-06-10 13:58:11.782 ParentKit[4187:70b] this is studnet   [object Object]
+2014-06-10 13:58:11.782 ParentKit[4187:70b] this is current studnet   [object Object]
+2014-06-10 13:58:12.614 ParentKit[4187:70b] behavior date   Wed Jun 11 2014
+2014-06-10 13:58:12.614 ParentKit[4187:70b] this is length of chart data :   1
+2014-06-10 13:58:12.614 ParentKit[4187:70b] behavior date   Mon Jun 09 2014
+2014-06-10 13:58:12.614 ParentKit[4187:70b] behavior date   Tue Jun 10 2014
+2014-06-10 14:40:27.969 ParentKit[4547:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-10 14:40:28.465 ParentKit[4547:70b] Unlimited access to network resources
+2014-06-10 14:40:29.542 ParentKit[4547:70b] [CDVTimer][keyboard] 0.151992ms
+2014-06-10 14:40:29.543 ParentKit[4547:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-10 14:40:29.543 ParentKit[4547:70b] [CDVTimer][statusbar] 0.705004ms
+2014-06-10 14:40:29.544 ParentKit[4547:70b] [CDVTimer][TotalPluginStartup] 2.166033ms
+2014-06-10 14:40:31.351 ParentKit[4547:70b] Resetting plugins due to page load.
+2014-06-10 14:40:32.475 ParentKit[4547:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-10 15:03:47.096 ParentKit[4798:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-10 15:03:47.284 ParentKit[4798:70b] Unlimited access to network resources
+2014-06-10 15:03:50.293 ParentKit[4798:70b] [CDVTimer][keyboard] 92.619002ms
+2014-06-10 15:03:50.294 ParentKit[4798:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-10 15:03:50.294 ParentKit[4798:70b] [CDVTimer][statusbar] 0.721991ms
+2014-06-10 15:03:50.295 ParentKit[4798:70b] [CDVTimer][TotalPluginStartup] 94.789982ms
+2014-06-10 15:03:56.253 ParentKit[4798:70b] Resetting plugins due to page load.
+2014-06-10 15:03:59.670 ParentKit[4798:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-10 15:05:56.868 ParentKit[4798:70b] this is behavior types service
+2014-06-10 15:05:56.882 ParentKit[4798:70b] THREAD WARNING: ['Console'] took '14.400879' ms. Plugin should use a background thread.
+2014-06-10 15:05:56.883 ParentKit[4798:70b] this is lesson serive 
+2014-06-10 15:05:57.380 ParentKit[4798:70b] types length 1
+2014-06-10 15:05:57.380 ParentKit[4798:70b] types length 2
+2014-06-10 15:05:57.380 ParentKit[4798:70b] types length 3
+2014-06-10 15:05:57.380 ParentKit[4798:70b] types length 4
+2014-06-10 15:05:57.381 ParentKit[4798:70b] types length 5
+2014-06-10 15:05:57.587 ParentKit[4798:70b] FwLsTlOjp1         title:    Present
+2014-06-10 15:05:57.588 ParentKit[4798:70b] tx0HiY1vAJ         title:    Absent
+2014-06-10 15:05:57.588 ParentKit[4798:70b] j66KQZoF4e         title:    Present
+2014-06-10 15:05:57.588 ParentKit[4798:70b] CN9hOLwh0x         title:    Present
+2014-06-10 15:05:57.589 ParentKit[4798:70b] soWOfd2LPJ         title:    Absent
+2014-06-10 15:05:57.589 ParentKit[4798:70b] Eb69plJuQ5         title:    Test
+2014-06-10 15:05:57.682 ParentKit[4798:70b] [{"firstName":"abc","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"XMZIcs4EUT","createdAt":"2014-06-10T05:05:09.697Z","updatedAt":"2014-06-10T05:05:14.232Z"},{"firstName":"be","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"YuEWB9OJfa","createdAt":"2014-06-10T05:05:48.388Z","updatedAt":"2014-06-10T05:05:50.725Z"},{"firstName":"abc","lastName":"d","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lRxbP7kJA7","createdAt":"2014-06-10T05:06:06.975Z","updatedAt":"2014-06-10T05:06:16.754Z"},{"firstName":"abc","lastName":"da","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lIG4eCtnTC","createdAt":"2014-06-10T05:16:00.064Z","updatedAt":"2014-06-10T05:16:02.924Z"},{"accessCode":{"__type":"Pointer","className":"AccessCode","objectId":"LPTGaNXo6T"},"firstName":"Tefa","iconPath":"","isDeleted":false,"lastName":"F","studentId":"6ACC5500-7144-4A01-8B5F-713EDDE0A30A","tkID":"E6E33C21-5001-4497-954E-BC3B202F546A","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"ACL":{"2kglmvFrzn":{"write":true,"read":true},"role:parent-E720A182-26E2-48F7-9E20-24F9FDADCDB2":{"read":true},"role:student-65F986F6-EC4B-4E7E-A62B-856C88B586FA":{"read":true}},"objectId":"3K0xzS2FVL","createdAt":"2014-06-09T15:17:32.409Z","updatedAt":"2014-06-10T11:03:30.926Z"},{"firstName":"Abc","lastName":"De","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"EvyD7QwQ3K","createdAt":"2014-06-10T05:15:39.419Z","updatedAt":"2014-06-10T05:47:17.349Z"}]
+2014-06-10 15:05:57.683 ParentKit[4798:70b] this is set students fn
+2014-06-10 15:05:57.683 ParentKit[4798:70b] this is student array Parameters in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 15:05:57.684 ParentKit[4798:70b] this is student array in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 15:05:58.234 ParentKit[4798:70b] lesson serivce success
+2014-06-10 15:05:58.687 ParentKit[4798:70b] this is set current student fn
+2014-06-10 15:05:58.687 ParentKit[4798:70b] this is studnet   [object Object]
+2014-06-10 15:05:58.688 ParentKit[4798:70b] this is current studnet   [object Object]
+2014-06-10 15:05:59.732 ParentKit[4798:70b] behavior date   Wed Jun 11 2014
+2014-06-10 15:05:59.733 ParentKit[4798:70b] this is length of chart data :   1
+2014-06-10 15:05:59.733 ParentKit[4798:70b] behavior date   Mon Jun 09 2014
+2014-06-10 15:05:59.733 ParentKit[4798:70b] behavior date   Tue Jun 10 2014
+2014-06-10 15:06:20.378 ParentKit[4798:70b] behavior date   Wed Jun 11 2014
+2014-06-10 15:06:20.378 ParentKit[4798:70b] this is length of chart data :   1
+2014-06-10 15:06:20.379 ParentKit[4798:70b] behavior date   Mon Jun 09 2014
+2014-06-10 15:06:20.379 ParentKit[4798:70b] behavior date   Tue Jun 10 2014
+2014-06-10 15:15:15.132 ParentKit[5116:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-10 15:15:15.609 ParentKit[5116:70b] Unlimited access to network resources
+2014-06-10 15:15:15.679 ParentKit[5116:70b] [CDVTimer][keyboard] 0.099957ms
+2014-06-10 15:15:15.680 ParentKit[5116:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-10 15:15:15.680 ParentKit[5116:70b] [CDVTimer][statusbar] 0.447989ms
+2014-06-10 15:15:15.681 ParentKit[5116:70b] [CDVTimer][TotalPluginStartup] 1.522005ms
+2014-06-10 15:15:18.019 ParentKit[5116:70b] Resetting plugins due to page load.
+2014-06-10 15:15:18.585 ParentKit[5116:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-10 15:18:34.074 ParentKit[5116:70b] this is behavior types service
+2014-06-10 15:18:34.075 ParentKit[5116:70b] this is lesson serive 
+2014-06-10 15:18:34.448 ParentKit[5116:70b] [{"firstName":"abc","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"XMZIcs4EUT","createdAt":"2014-06-10T05:05:09.697Z","updatedAt":"2014-06-10T05:05:14.232Z"},{"firstName":"be","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"YuEWB9OJfa","createdAt":"2014-06-10T05:05:48.388Z","updatedAt":"2014-06-10T05:05:50.725Z"},{"firstName":"abc","lastName":"d","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lRxbP7kJA7","createdAt":"2014-06-10T05:06:06.975Z","updatedAt":"2014-06-10T05:06:16.754Z"},{"firstName":"abc","lastName":"da","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lIG4eCtnTC","createdAt":"2014-06-10T05:16:00.064Z","updatedAt":"2014-06-10T05:16:02.924Z"},{"accessCode":{"__type":"Pointer","className":"AccessCode","objectId":"LPTGaNXo6T"},"firstName":"Tefa","iconPath":"","isDeleted":false,"lastName":"F","studentId":"6ACC5500-7144-4A01-8B5F-713EDDE0A30A","tkID":"E6E33C21-5001-4497-954E-BC3B202F546A","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"ACL":{"2kglmvFrzn":{"write":true,"read":true},"role:parent-E720A182-26E2-48F7-9E20-24F9FDADCDB2":{"read":true},"role:student-65F986F6-EC4B-4E7E-A62B-856C88B586FA":{"read":true}},"objectId":"3K0xzS2FVL","createdAt":"2014-06-09T15:17:32.409Z","updatedAt":"2014-06-10T11:03:30.926Z"},{"firstName":"Abc","lastName":"De","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"EvyD7QwQ3K","createdAt":"2014-06-10T05:15:39.419Z","updatedAt":"2014-06-10T05:47:17.349Z"}]
+2014-06-10 15:18:34.470 ParentKit[5116:70b] THREAD WARNING: ['Console'] took '21.779785' ms. Plugin should use a background thread.
+2014-06-10 15:18:34.471 ParentKit[5116:70b] this is set students fn
+2014-06-10 15:18:34.471 ParentKit[5116:70b] this is student array Parameters in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 15:18:34.471 ParentKit[5116:70b] this is student array in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 15:18:34.826 ParentKit[5116:70b] types length 1
+2014-06-10 15:18:34.826 ParentKit[5116:70b] types length 2
+2014-06-10 15:18:34.827 ParentKit[5116:70b] types length 3
+2014-06-10 15:18:34.827 ParentKit[5116:70b] types length 4
+2014-06-10 15:18:34.827 ParentKit[5116:70b] types length 5
+2014-06-10 15:18:34.862 ParentKit[5116:70b] lesson serivce success
+2014-06-10 15:18:34.867 ParentKit[5116:70b] FwLsTlOjp1         title:    Present
+2014-06-10 15:18:34.867 ParentKit[5116:70b] tx0HiY1vAJ         title:    Absent
+2014-06-10 15:18:34.867 ParentKit[5116:70b] j66KQZoF4e         title:    Present
+2014-06-10 15:18:34.867 ParentKit[5116:70b] CN9hOLwh0x         title:    Present
+2014-06-10 15:18:34.868 ParentKit[5116:70b] soWOfd2LPJ         title:    Absent
+2014-06-10 15:18:34.868 ParentKit[5116:70b] Eb69plJuQ5         title:    Test
+2014-06-10 15:18:35.615 ParentKit[5116:70b] this is set current student fn
+2014-06-10 15:18:35.615 ParentKit[5116:70b] this is studnet   [object Object]
+2014-06-10 15:18:35.650 ParentKit[5116:70b] THREAD WARNING: ['Console'] took '34.373047' ms. Plugin should use a background thread.
+2014-06-10 15:18:35.650 ParentKit[5116:70b] this is current studnet   [object Object]
+2014-06-10 15:18:36.809 ParentKit[5116:70b] behavior date   Wed Jun 11 2014
+2014-06-10 15:18:36.809 ParentKit[5116:70b] this is length of chart data :   1
+2014-06-10 15:18:36.809 ParentKit[5116:70b] behavior date   Mon Jun 09 2014
+2014-06-10 15:18:36.810 ParentKit[5116:70b] behavior date   Tue Jun 10 2014
+2014-06-10 15:18:48.558 ParentKit[5116:70b] behavior date   Wed Jun 11 2014
+2014-06-10 15:18:48.558 ParentKit[5116:70b] this is length of chart data :   1
+2014-06-10 15:18:48.559 ParentKit[5116:70b] behavior date   Mon Jun 09 2014
+2014-06-10 15:18:48.559 ParentKit[5116:70b] behavior date   Tue Jun 10 2014
+2014-06-10 15:18:50.573 ParentKit[5116:70b] [{"firstName":"abc","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"XMZIcs4EUT","createdAt":"2014-06-10T05:05:09.697Z","updatedAt":"2014-06-10T05:05:14.232Z"},{"firstName":"be","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"YuEWB9OJfa","createdAt":"2014-06-10T05:05:48.388Z","updatedAt":"2014-06-10T05:05:50.725Z"},{"firstName":"abc","lastName":"d","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lRxbP7kJA7","createdAt":"2014-06-10T05:06:06.975Z","updatedAt":"2014-06-10T05:06:16.754Z"},{"firstName":"abc","lastName":"da","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lIG4eCtnTC","createdAt":"2014-06-10T05:16:00.064Z","updatedAt":"2014-06-10T05:16:02.924Z"},{"accessCode":{"__type":"Pointer","className":"AccessCode","objectId":"LPTGaNXo6T"},"firstName":"Tefa","iconPath":"","isDeleted":false,"lastName":"F","studentId":"6ACC5500-7144-4A01-8B5F-713EDDE0A30A","tkID":"E6E33C21-5001-4497-954E-BC3B202F546A","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"ACL":{"2kglmvFrzn":{"write":true,"read":true},"role:parent-E720A182-26E2-48F7-9E20-24F9FDADCDB2":{"read":true},"role:student-65F986F6-EC4B-4E7E-A62B-856C88B586FA":{"read":true}},"objectId":"3K0xzS2FVL","createdAt":"2014-06-09T15:17:32.409Z","updatedAt":"2014-06-10T11:03:30.926Z"},{"firstName":"Abc","lastName":"De","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"EvyD7QwQ3K","createdAt":"2014-06-10T05:15:39.419Z","updatedAt":"2014-06-10T05:47:17.349Z"}]
+2014-06-10 15:18:50.575 ParentKit[5116:70b] this is set students fn
+2014-06-10 15:18:50.575 ParentKit[5116:70b] this is student array Parameters in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 15:18:50.575 ParentKit[5116:70b] this is student array in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 15:35:57.676 ParentKit[5116:70b] this is set current student fn
+2014-06-10 15:35:57.860 ParentKit[5116:70b] THREAD WARNING: ['Console'] took '184.729004' ms. Plugin should use a background thread.
+2014-06-10 15:35:57.915 ParentKit[5116:70b] this is studnet   [object Object]
+2014-06-10 15:35:57.916 ParentKit[5116:70b] this is current studnet   [object Object]
+2014-06-10 15:45:33.378 ParentKit[5428:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-10 15:45:33.621 ParentKit[5428:70b] Unlimited access to network resources
+2014-06-10 15:45:34.921 ParentKit[5428:70b] [CDVTimer][keyboard] 0.101030ms
+2014-06-10 15:45:34.922 ParentKit[5428:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-10 15:45:34.922 ParentKit[5428:70b] [CDVTimer][statusbar] 0.461996ms
+2014-06-10 15:45:34.933 ParentKit[5428:70b] [CDVTimer][TotalPluginStartup] 12.320995ms
+2014-06-10 15:45:39.335 ParentKit[5428:70b] Resetting plugins due to page load.
+2014-06-10 15:45:41.128 ParentKit[5428:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-10 15:48:05.185 ParentKit[5428:70b] this is behavior types service
+2014-06-10 15:48:05.193 ParentKit[5428:70b] this is lesson serive 
+2014-06-10 15:48:05.563 ParentKit[5428:70b] types length 1
+2014-06-10 15:48:05.564 ParentKit[5428:70b] types length 2
+2014-06-10 15:48:05.564 ParentKit[5428:70b] types length 3
+2014-06-10 15:48:05.564 ParentKit[5428:70b] types length 4
+2014-06-10 15:48:05.564 ParentKit[5428:70b] types length 5
+2014-06-10 15:48:06.043 ParentKit[5428:70b] [{"firstName":"abc","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"XMZIcs4EUT","createdAt":"2014-06-10T05:05:09.697Z","updatedAt":"2014-06-10T05:05:14.232Z"},{"firstName":"be","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"YuEWB9OJfa","createdAt":"2014-06-10T05:05:48.388Z","updatedAt":"2014-06-10T05:05:50.725Z"},{"firstName":"abc","lastName":"d","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lRxbP7kJA7","createdAt":"2014-06-10T05:06:06.975Z","updatedAt":"2014-06-10T05:06:16.754Z"},{"firstName":"abc","lastName":"da","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lIG4eCtnTC","createdAt":"2014-06-10T05:16:00.064Z","updatedAt":"2014-06-10T05:16:02.924Z"},{"accessCode":{"__type":"Pointer","className":"AccessCode","objectId":"LPTGaNXo6T"},"firstName":"Tefa","iconPath":"","isDeleted":false,"lastName":"F","studentId":"6ACC5500-7144-4A01-8B5F-713EDDE0A30A","tkID":"E6E33C21-5001-4497-954E-BC3B202F546A","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"ACL":{"2kglmvFrzn":{"write":true,"read":true},"role:parent-E720A182-26E2-48F7-9E20-24F9FDADCDB2":{"read":true},"role:student-65F986F6-EC4B-4E7E-A62B-856C88B586FA":{"read":true}},"objectId":"3K0xzS2FVL","createdAt":"2014-06-09T15:17:32.409Z","updatedAt":"2014-06-10T11:03:30.926Z"},{"firstName":"Abc","lastName":"De","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"EvyD7QwQ3K","createdAt":"2014-06-10T05:15:39.419Z","updatedAt":"2014-06-10T13:41:12.854Z"}]
+2014-06-10 15:48:06.044 ParentKit[5428:70b] this is set students fn
+2014-06-10 15:48:06.044 ParentKit[5428:70b] this is student array Parameters in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 15:48:06.045 ParentKit[5428:70b] this is student array in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 15:48:06.045 ParentKit[5428:70b] lesson serivce success
+2014-06-10 15:48:06.105 ParentKit[5428:70b] FwLsTlOjp1         title:    Present
+2014-06-10 15:48:06.106 ParentKit[5428:70b] tx0HiY1vAJ         title:    Absent
+2014-06-10 15:48:06.106 ParentKit[5428:70b] j66KQZoF4e         title:    Present
+2014-06-10 15:48:06.106 ParentKit[5428:70b] CN9hOLwh0x         title:    Present
+2014-06-10 15:48:06.106 ParentKit[5428:70b] soWOfd2LPJ         title:    Absent
+2014-06-10 15:48:06.107 ParentKit[5428:70b] Eb69plJuQ5         title:    Test
+2014-06-10 15:48:07.728 ParentKit[5428:70b] this is set current student fn
+2014-06-10 15:48:07.728 ParentKit[5428:70b] this is studnet   [object Object]
+2014-06-10 15:48:07.728 ParentKit[5428:70b] this is current studnet   [object Object]
+2014-06-10 15:50:31.982 ParentKit[5630:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-10 15:50:32.032 ParentKit[5630:70b] Unlimited access to network resources
+2014-06-10 15:50:32.065 ParentKit[5630:70b] [CDVTimer][keyboard] 0.100970ms
+2014-06-10 15:50:32.066 ParentKit[5630:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-10 15:50:32.066 ParentKit[5630:70b] [CDVTimer][statusbar] 0.458002ms
+2014-06-10 15:50:32.066 ParentKit[5630:70b] [CDVTimer][TotalPluginStartup] 1.556993ms
+2014-06-10 15:50:32.938 ParentKit[5630:70b] Resetting plugins due to page load.
+2014-06-10 15:50:33.492 ParentKit[5630:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-10 15:50:52.051 ParentKit[5630:70b] this is behavior types service
+2014-06-10 15:50:52.051 ParentKit[5630:70b] this is lesson serive 
+2014-06-10 15:50:52.880 ParentKit[5630:70b] types length 1
+2014-06-10 15:50:52.880 ParentKit[5630:70b] types length 2
+2014-06-10 15:50:52.880 ParentKit[5630:70b] types length 3
+2014-06-10 15:50:52.881 ParentKit[5630:70b] types length 4
+2014-06-10 15:50:52.881 ParentKit[5630:70b] types length 5
+2014-06-10 15:50:52.881 ParentKit[5630:70b] [{"firstName":"abc","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"XMZIcs4EUT","createdAt":"2014-06-10T05:05:09.697Z","updatedAt":"2014-06-10T05:05:14.232Z"},{"firstName":"be","lastName":"de","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"YuEWB9OJfa","createdAt":"2014-06-10T05:05:48.388Z","updatedAt":"2014-06-10T05:05:50.725Z"},{"firstName":"abc","lastName":"d","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lRxbP7kJA7","createdAt":"2014-06-10T05:06:06.975Z","updatedAt":"2014-06-10T05:06:16.754Z"},{"firstName":"abc","lastName":"da","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"lIG4eCtnTC","createdAt":"2014-06-10T05:16:00.064Z","updatedAt":"2014-06-10T05:16:02.924Z"},{"accessCode":{"__type":"Pointer","className":"AccessCode","objectId":"LPTGaNXo6T"},"firstName":"Tefa","iconPath":"","isDeleted":false,"lastName":"F","studentId":"6ACC5500-7144-4A01-8B5F-713EDDE0A30A","tkID":"E6E33C21-5001-4497-954E-BC3B202F546A","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"ACL":{"2kglmvFrzn":{"write":true,"read":true},"role:parent-E720A182-26E2-48F7-9E20-24F9FDADCDB2":{"read":true},"role:student-65F986F6-EC4B-4E7E-A62B-856C88B586FA":{"read":true}},"objectId":"3K0xzS2FVL","createdAt":"2014-06-09T15:17:32.409Z","updatedAt":"2014-06-10T11:03:30.926Z"},{"firstName":"Abc","lastName":"De","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"objectId":"EvyD7QwQ3K","createdAt":"2014-06-10T05:15:39.419Z","updatedAt":"2014-06-10T13:41:12.854Z"}]
+2014-06-10 15:50:52.882 ParentKit[5630:70b] this is set students fn
+2014-06-10 15:50:52.883 ParentKit[5630:70b] this is student array Parameters in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 15:50:52.883 ParentKit[5630:70b] this is student array in service   [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+2014-06-10 15:50:53.085 ParentKit[5630:70b] FwLsTlOjp1         title:    Present
+2014-06-10 15:50:53.085 ParentKit[5630:70b] tx0HiY1vAJ         title:    Absent
+2014-06-10 15:50:53.086 ParentKit[5630:70b] j66KQZoF4e         title:    Present
+2014-06-10 15:50:53.086 ParentKit[5630:70b] CN9hOLwh0x         title:    Present
+2014-06-10 15:50:53.086 ParentKit[5630:70b] soWOfd2LPJ         title:    Absent
+2014-06-10 15:50:53.086 ParentKit[5630:70b] Eb69plJuQ5         title:    Test
+2014-06-10 15:50:53.709 ParentKit[5630:70b] lesson serivce success
+2014-06-10 15:50:54.101 ParentKit[5630:70b] this is set current student fn
+2014-06-10 15:50:54.102 ParentKit[5630:70b] this is studnet   [object Object]
+2014-06-10 15:50:54.102 ParentKit[5630:70b] this is current studnet   [object Object]
+2014-06-10 16:24:11.648 ParentKit[5883:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-10 16:24:11.863 ParentKit[5883:70b] Unlimited access to network resources
+2014-06-10 16:24:13.054 ParentKit[5883:70b] [CDVTimer][keyboard] 3.491998ms
+2014-06-10 16:24:13.055 ParentKit[5883:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-10 16:24:13.055 ParentKit[5883:70b] [CDVTimer][statusbar] 0.477970ms
+2014-06-10 16:24:13.056 ParentKit[5883:70b] [CDVTimer][TotalPluginStartup] 5.014956ms
+2014-06-10 16:24:15.294 ParentKit[5883:70b] Resetting plugins due to page load.
+2014-06-10 16:24:17.485 ParentKit[5883:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-11 12:02:09.463 ParentKit[1198:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-11 12:02:09.564 ParentKit[1198:70b] Unlimited access to network resources
+2014-06-11 12:02:09.970 ParentKit[1198:70b] [CDVTimer][keyboard] 0.149965ms
+2014-06-11 12:02:09.971 ParentKit[1198:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-11 12:02:09.972 ParentKit[1198:70b] [CDVTimer][statusbar] 0.723004ms
+2014-06-11 12:02:09.972 ParentKit[1198:70b] [CDVTimer][TotalPluginStartup] 2.245963ms
+2014-06-11 12:02:10.257 ParentKit[1198:70b] Resetting plugins due to page load.
+2014-06-11 12:02:11.442 ParentKit[1198:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-11 12:17:21.780 ParentKit[1840:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-11 12:17:21.985 ParentKit[1840:70b] Unlimited access to network resources
+2014-06-11 12:17:23.980 ParentKit[1840:70b] [CDVTimer][keyboard] 0.110984ms
+2014-06-11 12:17:23.981 ParentKit[1840:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-11 12:17:23.982 ParentKit[1840:70b] [CDVTimer][statusbar] 0.468016ms
+2014-06-11 12:17:23.982 ParentKit[1840:70b] [CDVTimer][TotalPluginStartup] 2.001047ms
+2014-06-11 12:17:25.566 ParentKit[1840:70b] Resetting plugins due to page load.
+2014-06-11 12:17:26.537 ParentKit[1840:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-15 09:37:19.137 ParentKit[2256:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-15 09:37:19.403 ParentKit[2256:70b] Unlimited access to network resources
+2014-06-15 09:37:19.489 ParentKit[2256:70b] [CDVTimer][keyboard] 0.093997ms
+2014-06-15 09:37:19.489 ParentKit[2256:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-15 09:37:19.490 ParentKit[2256:70b] [CDVTimer][statusbar] 0.474989ms
+2014-06-15 09:37:19.490 ParentKit[2256:70b] [CDVTimer][TotalPluginStartup] 1.531959ms
+2014-06-15 09:37:21.121 ParentKit[2256:70b] Resetting plugins due to page load.
+2014-06-15 09:37:25.831 ParentKit[2256:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-15 09:39:21.004 ParentKit[2447:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-15 09:39:21.030 ParentKit[2447:70b] Unlimited access to network resources
+2014-06-15 09:39:21.064 ParentKit[2447:70b] [CDVTimer][keyboard] 0.093997ms
+2014-06-15 09:39:21.064 ParentKit[2447:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-15 09:39:21.065 ParentKit[2447:70b] [CDVTimer][statusbar] 0.465989ms
+2014-06-15 09:39:21.065 ParentKit[2447:70b] [CDVTimer][TotalPluginStartup] 1.528025ms
+2014-06-15 09:39:22.155 ParentKit[2447:70b] Resetting plugins due to page load.
+2014-06-15 09:39:22.551 ParentKit[2447:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-15 15:14:52.035 ParentKit[1564:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-15 15:14:52.834 ParentKit[1564:70b] Unlimited access to network resources
+2014-06-15 15:15:13.938 ParentKit[1564:70b] [CDVTimer][keyboard] 122.875035ms
+2014-06-15 15:15:14.011 ParentKit[1564:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-15 15:15:14.011 ParentKit[1564:70b] [CDVTimer][statusbar] 0.604033ms
+2014-06-15 15:15:14.012 ParentKit[1564:70b] [CDVTimer][TotalPluginStartup] 196.592987ms
+2014-06-15 15:15:26.805 ParentKit[1564:70b] Resetting plugins due to page load.
+2014-06-15 15:15:43.247 ParentKit[1564:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-15 15:38:20.991 ParentKit[1564:70b] this is login ctrl
+2014-06-15 15:38:21.013 ParentKit[1564:70b] THREAD WARNING: ['Console'] took '22.298096' ms. Plugin should use a background thread.
+2014-06-15 15:38:43.176 ParentKit[1564:70b] this is behavior types service
+2014-06-15 15:38:43.176 ParentKit[1564:70b] this is lesson serive 
+2014-06-15 15:38:43.578 ParentKit[1564:70b] [{"accessCode":{"__type":"Pointer","className":"AccessCode","objectId":"LPTGaNXo6T"},"firstName":"Tefa","iconPath":"","isDeleted":false,"lastName":"F","studentId":"6ACC5500-7144-4A01-8B5F-713EDDE0A30A","tkID":"E6E33C21-5001-4497-954E-BC3B202F546A","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"ACL":{"2kglmvFrzn":{"write":true,"read":true},"role:parent-E720A182-26E2-48F7-9E20-24F9FDADCDB2":{"read":true},"role:student-65F986F6-EC4B-4E7E-A62B-856C88B586FA":{"read":true}},"objectId":"3K0xzS2FVL","createdAt":"2014-06-09T15:17:32.409Z","updatedAt":"2014-06-10T11:03:30.926Z"}]
+2014-06-15 15:38:43.579 ParentKit[1564:70b] this is set students fn
+2014-06-15 15:38:43.579 ParentKit[1564:70b] this is student array Parameters in service   [object Object]
+2014-06-15 15:38:43.580 ParentKit[1564:70b] this is student array in service   [object Object]
+2014-06-15 15:38:43.936 ParentKit[1564:70b] types length 1
+2014-06-15 15:38:43.937 ParentKit[1564:70b] types length 2
+2014-06-15 15:38:43.937 ParentKit[1564:70b] types length 3
+2014-06-15 15:38:43.937 ParentKit[1564:70b] types length 4
+2014-06-15 15:38:43.937 ParentKit[1564:70b] types length 5
+2014-06-15 15:38:43.938 ParentKit[1564:70b] FwLsTlOjp1         title:    Present
+2014-06-15 15:38:43.938 ParentKit[1564:70b] tx0HiY1vAJ         title:    Absent
+2014-06-15 15:38:43.938 ParentKit[1564:70b] j66KQZoF4e         title:    Present
+2014-06-15 15:38:43.938 ParentKit[1564:70b] CN9hOLwh0x         title:    Present
+2014-06-15 15:38:43.939 ParentKit[1564:70b] soWOfd2LPJ         title:    Absent
+2014-06-15 15:38:43.939 ParentKit[1564:70b] Eb69plJuQ5         title:    Test
+2014-06-15 15:38:45.045 ParentKit[1564:70b] lesson serivce success
+2014-06-15 16:17:45.853 ParentKit[2150:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-15 16:17:45.917 ParentKit[2150:70b] Unlimited access to network resources
+2014-06-15 16:17:46.035 ParentKit[2150:70b] [CDVTimer][keyboard] 0.095010ms
+2014-06-15 16:17:46.036 ParentKit[2150:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-15 16:17:46.036 ParentKit[2150:70b] [CDVTimer][statusbar] 0.437975ms
+2014-06-15 16:17:46.037 ParentKit[2150:70b] [CDVTimer][TotalPluginStartup] 1.468003ms
+2014-06-15 16:17:47.172 ParentKit[2150:70b] Resetting plugins due to page load.
+2014-06-15 16:17:47.997 ParentKit[2150:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-15 16:32:18.872 ParentKit[2150:70b] this is behavior types service
+2014-06-15 16:32:18.872 ParentKit[2150:70b] this is lesson serive 
+2014-06-15 16:32:19.350 ParentKit[2150:70b] types length 1
+2014-06-15 16:32:19.350 ParentKit[2150:70b] types length 2
+2014-06-15 16:32:19.351 ParentKit[2150:70b] types length 3
+2014-06-15 16:32:19.351 ParentKit[2150:70b] types length 4
+2014-06-15 16:32:19.351 ParentKit[2150:70b] types length 5
+2014-06-15 16:32:19.772 ParentKit[2150:70b] [{"accessCode":{"__type":"Pointer","className":"AccessCode","objectId":"LPTGaNXo6T"},"firstName":"Tefa","iconPath":"","isDeleted":false,"lastName":"F","studentId":"6ACC5500-7144-4A01-8B5F-713EDDE0A30A","tkID":"E6E33C21-5001-4497-954E-BC3B202F546A","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"ACL":{"2kglmvFrzn":{"write":true,"read":true},"role:parent-E720A182-26E2-48F7-9E20-24F9FDADCDB2":{"read":true},"role:student-65F986F6-EC4B-4E7E-A62B-856C88B586FA":{"read":true}},"objectId":"3K0xzS2FVL","createdAt":"2014-06-09T15:17:32.409Z","updatedAt":"2014-06-10T11:03:30.926Z"}]
+2014-06-15 16:32:19.773 ParentKit[2150:70b] this is set students fn
+2014-06-15 16:32:19.773 ParentKit[2150:70b] this is student array Parameters in service   [object Object]
+2014-06-15 16:32:19.773 ParentKit[2150:70b] this is student array in service   [object Object]
+2014-06-15 16:32:19.773 ParentKit[2150:70b] FwLsTlOjp1         title:    Present
+2014-06-15 16:32:19.774 ParentKit[2150:70b] tx0HiY1vAJ         title:    Absent
+2014-06-15 16:32:19.774 ParentKit[2150:70b] j66KQZoF4e         title:    Present
+2014-06-15 16:32:19.774 ParentKit[2150:70b] CN9hOLwh0x         title:    Present
+2014-06-15 16:32:19.774 ParentKit[2150:70b] soWOfd2LPJ         title:    Absent
+2014-06-15 16:32:19.775 ParentKit[2150:70b] Eb69plJuQ5         title:    Test
+2014-06-15 16:32:19.775 ParentKit[2150:70b] lesson serivce success
+2014-06-15 16:32:38.182 ParentKit[2150:70b] this is set current student fn
+2014-06-15 16:32:38.183 ParentKit[2150:70b] this is studnet   [object Object]
+2014-06-15 16:32:38.183 ParentKit[2150:70b] this is current studnet   [object Object]
+2014-06-15 16:38:46.413 ParentKit[2441:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-15 16:38:46.423 ParentKit[2441:70b] Unlimited access to network resources
+2014-06-15 16:38:46.451 ParentKit[2441:70b] [CDVTimer][keyboard] 0.283003ms
+2014-06-15 16:38:46.451 ParentKit[2441:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-15 16:38:46.452 ParentKit[2441:70b] [CDVTimer][statusbar] 0.468016ms
+2014-06-15 16:38:46.452 ParentKit[2441:70b] [CDVTimer][TotalPluginStartup] 1.749039ms
+2014-06-15 16:38:46.656 ParentKit[2441:70b] Resetting plugins due to page load.
+2014-06-15 16:38:47.319 ParentKit[2441:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-15 16:39:38.231 ParentKit[2441:70b] this is behavior types service
+2014-06-15 16:39:38.231 ParentKit[2441:70b] this is lesson serive 
+2014-06-15 16:39:38.638 ParentKit[2441:70b] types length 1
+2014-06-15 16:39:38.638 ParentKit[2441:70b] types length 2
+2014-06-15 16:39:38.639 ParentKit[2441:70b] types length 3
+2014-06-15 16:39:38.639 ParentKit[2441:70b] types length 4
+2014-06-15 16:39:38.639 ParentKit[2441:70b] types length 5
+2014-06-15 16:39:39.131 ParentKit[2441:70b] FwLsTlOjp1         title:    Present
+2014-06-15 16:39:39.132 ParentKit[2441:70b] tx0HiY1vAJ         title:    Absent
+2014-06-15 16:39:39.132 ParentKit[2441:70b] j66KQZoF4e         title:    Present
+2014-06-15 16:39:39.132 ParentKit[2441:70b] CN9hOLwh0x         title:    Present
+2014-06-15 16:39:39.132 ParentKit[2441:70b] soWOfd2LPJ         title:    Absent
+2014-06-15 16:39:39.133 ParentKit[2441:70b] Eb69plJuQ5         title:    Test
+2014-06-15 16:39:39.133 ParentKit[2441:70b] [{"accessCode":{"__type":"Pointer","className":"AccessCode","objectId":"LPTGaNXo6T"},"firstName":"Tefa","iconPath":"","isDeleted":false,"lastName":"F","studentId":"6ACC5500-7144-4A01-8B5F-713EDDE0A30A","tkID":"E6E33C21-5001-4497-954E-BC3B202F546A","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"ACL":{"2kglmvFrzn":{"write":true,"read":true},"role:parent-E720A182-26E2-48F7-9E20-24F9FDADCDB2":{"read":true},"role:student-65F986F6-EC4B-4E7E-A62B-856C88B586FA":{"read":true}},"objectId":"3K0xzS2FVL","createdAt":"2014-06-09T15:17:32.409Z","updatedAt":"2014-06-10T11:03:30.926Z"}]
+2014-06-15 16:39:39.133 ParentKit[2441:70b] this is set students fn
+2014-06-15 16:39:39.134 ParentKit[2441:70b] this is student array Parameters in service   [object Object]
+2014-06-15 16:39:39.134 ParentKit[2441:70b] this is student array in service   [object Object]
+2014-06-15 16:39:39.134 ParentKit[2441:70b] lesson serivce success
+2014-06-15 18:06:31.214 ParentKit[3525:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-15 18:10:03.363 ParentKit[3919:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-15 18:10:03.432 ParentKit[3919:70b] Unlimited access to network resources
+2014-06-15 18:10:03.468 ParentKit[3919:70b] [CDVTimer][keyboard] 0.106990ms
+2014-06-15 18:10:03.469 ParentKit[3919:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-15 18:10:03.469 ParentKit[3919:70b] [CDVTimer][statusbar] 0.472009ms
+2014-06-15 18:10:03.469 ParentKit[3919:70b] [CDVTimer][TotalPluginStartup] 1.775980ms
+2014-06-15 18:10:04.522 ParentKit[3919:70b] Resetting plugins due to page load.
+2014-06-15 18:10:05.043 ParentKit[3919:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-15 18:14:10.131 ParentKit[3919:70b] this is behavior types service
+2014-06-15 18:14:10.132 ParentKit[3919:70b] this is lesson serive 
+2014-06-15 18:14:10.543 ParentKit[3919:70b] types length 1
+2014-06-15 18:14:10.544 ParentKit[3919:70b] types length 2
+2014-06-15 18:14:10.544 ParentKit[3919:70b] types length 3
+2014-06-15 18:14:10.544 ParentKit[3919:70b] types length 4
+2014-06-15 18:14:10.545 ParentKit[3919:70b] types length 5
+2014-06-15 18:14:11.004 ParentKit[3919:70b] [{"accessCode":{"__type":"Pointer","className":"AccessCode","objectId":"LPTGaNXo6T"},"firstName":"Tefa","iconPath":"","isDeleted":false,"lastName":"F","studentId":"6ACC5500-7144-4A01-8B5F-713EDDE0A30A","tkID":"E6E33C21-5001-4497-954E-BC3B202F546A","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"ACL":{"2kglmvFrzn":{"write":true,"read":true},"role:parent-E720A182-26E2-48F7-9E20-24F9FDADCDB2":{"read":true},"role:student-65F986F6-EC4B-4E7E-A62B-856C88B586FA":{"read":true}},"objectId":"3K0xzS2FVL","createdAt":"2014-06-09T15:17:32.409Z","updatedAt":"2014-06-10T11:03:30.926Z"}]
+2014-06-15 18:14:11.004 ParentKit[3919:70b] this is set students fn
+2014-06-15 18:14:11.004 ParentKit[3919:70b] this is student array Parameters in service   [object Object]
+2014-06-15 18:14:11.005 ParentKit[3919:70b] this is student array in service   [object Object]
+2014-06-15 18:14:11.005 ParentKit[3919:70b] FwLsTlOjp1         title:    Present
+2014-06-15 18:14:11.005 ParentKit[3919:70b] tx0HiY1vAJ         title:    Absent
+2014-06-15 18:14:11.005 ParentKit[3919:70b] j66KQZoF4e         title:    Present
+2014-06-15 18:14:11.006 ParentKit[3919:70b] CN9hOLwh0x         title:    Present
+2014-06-15 18:14:11.006 ParentKit[3919:70b] soWOfd2LPJ         title:    Absent
+2014-06-15 18:14:11.006 ParentKit[3919:70b] Eb69plJuQ5         title:    Test
+2014-06-15 18:14:11.006 ParentKit[3919:70b] lesson serivce success
+2014-06-16 08:18:30.352 ParentKit[3919:70b] [{"accessCode":{"__type":"Pointer","className":"AccessCode","objectId":"LPTGaNXo6T"},"firstName":"Tefa","iconPath":"","isDeleted":false,"lastName":"F","studentId":"6ACC5500-7144-4A01-8B5F-713EDDE0A30A","tkID":"E6E33C21-5001-4497-954E-BC3B202F546A","attendances":{"__type":"Relation","className":"Attendance"},"behaviors":{"__type":"Relation","className":"Behavior"},"classrooms":{"__type":"Relation","className":"Classroom"},"seats":{"__type":"Relation","className":"Seat"},"grades":{"__type":"Relation","className":"Grade"},"ACL":{"2kglmvFrzn":{"write":true,"read":true},"role:parent-E720A182-26E2-48F7-9E20-24F9FDADCDB2":{"read":true},"role:student-65F986F6-EC4B-4E7E-A62B-856C88B586FA":{"read":true}},"objectId":"3K0xzS2FVL","createdAt":"2014-06-09T15:17:32.409Z","updatedAt":"2014-06-10T11:03:30.926Z"}]
+2014-06-16 08:18:30.368 ParentKit[3919:70b] THREAD WARNING: ['Console'] took '16.151855' ms. Plugin should use a background thread.
+2014-06-16 08:18:30.369 ParentKit[3919:70b] this is set students fn
+2014-06-16 08:18:30.369 ParentKit[3919:70b] this is student array Parameters in service   [object Object]
+2014-06-16 08:18:30.504 ParentKit[3919:70b] THREAD WARNING: ['Console'] took '134.908936' ms. Plugin should use a background thread.
+2014-06-16 08:18:30.505 ParentKit[3919:70b] this is student array in service   [object Object]
+2014-06-16 08:18:31.852 ParentKit[3919:70b] this is set current student fn
+2014-06-16 08:18:31.852 ParentKit[3919:70b] this is studnet   [object Object]
+2014-06-16 08:18:31.852 ParentKit[3919:70b] this is current studnet   [object Object]

@@ -1,17 +1,10 @@
-<ion-nav-bar class="bar-stable nav-title-slide-ios7">
-
-</ion-nav-bar>
-
 <ion-view title={{pageTitle}}>
     <ion-nav-buttons side="left">
-
         <button class="button button-icon button-clear ion-ios7-arrow-back" ng-click="goBack()">
-            students
         </button>
     </ion-nav-buttons>
     <ion-content class="has-header">
-        <canvas donutchart options="myChartOptions" data="myChartData" width="320" height="320"></canvas>
-
+        <canvas donutchart options="myChartOptions" data="myChartData" width="300" height="400"></canvas>
        <div class="list">
             <a ng-repeat="record in records "
                class="item item-avatar">

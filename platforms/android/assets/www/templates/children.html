@@ -1,0 +1,15 @@
+
+    <ion-nav-bar class="bar-positive nav-title-slide-ios7">
+        <ion-nav-buttons side="left">
+            <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+<ion-view  title="Students" hide-back-button="true" animation="slide-left-right">
+    <ion-content class="has-header">
+        <ion-list>
+            <ion-item ng-repeat="child in children" ng-click="goToChildren($index)" >
+                <h3>{{child.firstName}}  {{child.lastName}}</h3>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

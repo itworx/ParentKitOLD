@@ -6,12 +6,17 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,storage,$state) {
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+      var user = storage.getObject('User');
+        if(Object.getOwnPropertyNames(user).length != 0){
+          $state.transitionTo('app.Students');
+        }
     if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
     }
     if(window.StatusBar) {
       // org.apache.cordova.statusbar required
@@ -153,6 +158,24 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           templateUrl: "templates/forgotPassword.html",
           controller: 'forgotPasswordCtrl'
         })
+      .state('tabs.summary',{
+          url: "/summary/:studentId",
+          views: {
+              'summary-tab': {
+                  templateUrl: "templates/summary.html",
+                  controller: 'SummaryCtrl'
+              }
+          }
+      })
+      .state('tabs.grades',{
+          url: "/grades/:studentId",
+          views: {
+              'grades-tab': {
+                  templateUrl: "templates/grades.html",
+                  controller: 'GradesCtrl'
+              }
+          }
+      })
   ;
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');

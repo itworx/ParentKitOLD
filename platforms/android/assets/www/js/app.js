@@ -17,6 +17,9 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+     Parse.initialize("vvIFEVKHztE3l8CZrECjn09T3j8cjB3y0E3VxCN8",
+          "iNswO5XxUaNJtWUMUq1g9g14h600LOE0INwypTml");
   });
 })
 
@@ -29,7 +32,30 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       templateUrl: "templates/menu.html",
       controller: 'AppCtrl'
     })
-
+    .state('tabs', {
+          url: "/student",
+          abstract: true,
+          templateUrl: "templates/student.html",
+          controller: 'StudentCtrl'
+    })
+    .state('tabs.attendance', {
+          url: "/attendance/:studentId",
+          views: {
+              'attendance-tab': {
+                  templateUrl: "templates/attendance.html",
+                  controller: 'AttendanceCtrl'
+              }
+          }
+     })
+      .state('tabs.behavior', {
+          url: "/behavior/:studentId",
+          views: {
+              'behavior-tab': {
+                  templateUrl: "templates/Behavior.html",
+                  controller: 'BehaviorCtrl'
+              }
+          }
+      })
     .state('app.search', {
       url: "/search",
       views: {
@@ -43,7 +69,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/browse",
       views: {
         'menuContent' :{
-          templateUrl: "templates/browse.html"
+          templateUrl: "templates/browse.html",
+            controller: 'BrowseCtrl'
         }
       }
     })
@@ -65,8 +92,77 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           controller: 'PlaylistCtrl'
         }
       }
-    });
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
-});
+    })
+     .state('app.children', {
+          url: "/children",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/children.html",
+                  controller: 'ChildrenCtrl'
+              }
+          }
+     })
+      .state('app.student', {
+          url: "/student/:studentId",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/student.html",
+                  controller: 'StudentCtrl'
+              }
+          }
+      })
+      .state('login', {
+          url: "/login",
 
+
+                  templateUrl: "templates/login.html",
+                  controller: 'LogInCtrl'
+
+
+      })
+      .state('SignUp', {
+          url: "/SignUp",
+          templateUrl: "templates/SignUp.html",
+           controller: 'SignUpCtrl'
+        })
+      .state('app.Students', {
+          url: "/Students",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/children.html",
+                  controller: 'Students'
+              }
+          }
+      })
+      .state('app.accessCode', {
+          url: "/accessCode",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/accessCode.html",
+                  controller: 'AccessCodeCtrl'
+              }
+          }
+      })
+      .state('welcome', {
+          url: "/welcome",
+          templateUrl: "templates/welcome.html",
+          controller: 'AccessCodeCtrl'
+      })
+      .state('forgotPassword',{
+          url: "/forgotPassword",
+          templateUrl: "templates/forgotPassword.html",
+          controller: 'forgotPasswordCtrl'
+        })
+      .state('tabs.summary',{
+          url: "/summary/:studentId",
+          views: {
+              'summary-tab': {
+                  templateUrl: "templates/summary.html",
+                  controller: 'SummaryCtrl'
+              }
+          }
+      })
+  ;
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/login');
+});

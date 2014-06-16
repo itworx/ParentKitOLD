@@ -1,25 +1,22 @@
 <ion-nav-bar class="bar-positive nav-title-slide-ios7">
-
-    <ion-nav-back-button class="button-icon ion-chevron-left">
-    </ion-nav-back-button>
-
 </ion-nav-bar>
-<ion-view title="Forgot Password" has-header="true">
+
+<ion-view  hide-back-button="true" title="Welcome">
     <ion-content class="has-header">
         <div class="list">
             <div class="card">
                 <div class="item item-text-wrap" style="text-align: center">
-                    Please add your account mail
+                    You haven't any students please add access code.
                 </div>
             </div>
             <label class="item item-input">
-                <i class="icon ion-email placeholder-icon"></i>
-                <input type="email" placeholder="mail" ng-model="mail">
+                <i class="icon ion-person-add placeholder-icon"></i>
+                <input type="text" placeholder="Add access code" ng-model="accessCode">
             </label>
         </div>
         <div class="padding">
-            <button class="button button-block button-positive" ng-click="send(mail)">
-                send mail
+            <button class="button button-block button-positive" ng-click="addAccessCode(accessCode)">
+                Add Code
             </button>
         </div>
     </ion-content>

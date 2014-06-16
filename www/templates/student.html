@@ -4,19 +4,20 @@
 <ion-view title="Student">
     <ion-tabs class="tabs-icon-top tabs-positive">
 
-        <ion-tab title="Summary" icon="ion-home" href="#/">
-            <ion-nav-view name="home-tab"></ion-nav-view>
+        <ion-tab title="Summary" icon="ion-home" href="student/summary/{{studentId}}">
+            <ion-nav-view name="summary-tab"></ion-nav-view>
         </ion-tab>
 
-        <ion-tab title="Attendance" icon="ion-ios7-information" href="#/student/attendance/{{studentId}}">
+        <ion-tab title="Attendance" icon="ion-ios7-information" href="student/attendance/{{studentId}}">
             <ion-nav-view name="attendance-tab"></ion-nav-view>
         </ion-tab>
 
-        <ion-tab title="Behavior" icon="ion-log-out" href="student/attendance/{{studentId}}">
+        <ion-tab title="Behavior" icon="ion-log-out" href="student/behavior/{{studentId}}">
             <ion-nav-view name="behavior-tab"></ion-nav-view>
         </ion-tab>
 
-        <ion-tab title="Grades" icon="ion-log-out" href="#/sign-in">
+        <ion-tab title="Grades" icon="ion-home" href="student/grades/{{studentId}}">
+            <ion-nav-view name="grades-tab"></ion-nav-view>
         </ion-tab>
     </ion-tabs>
 </ion-view>
