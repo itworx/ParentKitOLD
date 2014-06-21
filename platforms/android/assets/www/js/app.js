@@ -6,20 +6,41 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,storage,$state) {
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+      var user = storage.getObject('User');
+        if(Object.getOwnPropertyNames(user).length != 0){
+          $state.transitionTo('app.Students');
+        }
     if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
     }
     if(window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
 
+      (function(d, s, id){
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
      Parse.initialize("vvIFEVKHztE3l8CZrECjn09T3j8cjB3y0E3VxCN8",
           "iNswO5XxUaNJtWUMUq1g9g14h600LOE0INwypTml");
+      window.fbAsyncInit = function() {
+          Parse.FacebookUtils.init({
+              appId: '246994372161242', // Facebook App ID
+              channelUrl: '',
+              cookie: true, // enable cookies to allow Parse to access the session
+              xfbml: true  // parse XFBML
+          });
+      }
   });
 })
 
@@ -159,6 +180,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
               'summary-tab': {
                   templateUrl: "templates/summary.html",
                   controller: 'SummaryCtrl'
+              }
+          }
+      })
+      .state('tabs.grades',{
+          url: "/grades/:studentId",
+          views: {
+              'grades-tab': {
+                  templateUrl: "templates/grades.html",
+                  controller: 'GradesCtrl'
               }
           }
       })

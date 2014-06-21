@@ -115,10 +115,28 @@ angular.module('starter.controllers', ['angles'])
         }
     })
 
+    .service('storage',function($window) {
+        return {
+            set: function(key, value) {
+                $window.localStorage[key] = value;
+            },
+            get: function(key, defaultValue) {
+                return $window.localStorage[key] || defaultValue;
+            },
+            setObject: function(key, value) {
+                $window.localStorage[key] = JSON.stringify(value);
+            },
+            getObject: function(key) {
+                return JSON.parse($window.localStorage[key] || '{}');
+            },
+            removeObject : function(key) {
+                return $window.localStorage.removeItem(key);
+            }
+        }
+    })
 
+.controller('AppCtrl', function($scope,storage) {
 
-
-.controller('AppCtrl', function($scope) {
 })
 
 .controller('PlaylistsCtrl', function($scope) {
@@ -317,7 +335,7 @@ angular.module('starter.controllers', ['angles'])
 
 .controller('StudentCtrl', function ($scope,$stateParams,$state,studentsService){
         $scope.studentId =  studentsService.getCurrentStudent().objectId;
-        $scope.goToAttendance = function(){
+       $scope.goToAttendance = function(){
             console.log('this is go to attendacne fn');
             console.log('state parameters ' + $stateParams.studentId);
             console.log('Scope Student Id' + studentsService.getCurrentStudent().objectId);
@@ -330,22 +348,38 @@ angular.module('starter.controllers', ['angles'])
         };
 })
 
-.controller('LogInCtrl', function($scope, $state,$ionicLoading,$ionicPopup) {
-$scope.user = {
-    username : '',
-    password : ''
-};
+.controller('LogInCtrl', function($scope, $state,$ionicLoading,$ionicPopup,storage) {
+console.log('this is login ctrl');
+        storage.removeObject('User');
+    $scope.user = {
+        username : '',
+        password : ''
+    };
         $scope.logIn = function(user) {
-        $scope.show('signing in..');
-            Parse.User.logIn(user.username, user.password, {
-                success: function(theUser) {
-                    $scope.hide();
-                    $state.go('app.Students');
+//        $scope.show('signing in..');
+//            Parse.User.logIn(user.username, user.password, {
+//                success: function(theUser) {
+//                    $scope.hide();
+//                    storage.setObject('User',theUser);
+//                    var x = storage.getObject('User');
+//                    $state.go('app.Students');
+//                },
+//                error: function(user, error) {
+//                    $scope.hide();
+//                    $scope.showAlert('Error',error.message);
+//                    console.log(user, error);
+//                }
+//            });
+            Parse.FacebookUtils.logIn(null, {
+                success: function(user) {
+                    if (!user.existed()) {
+                        alert("User signed up and logged in through Facebook!");
+                    } else {
+                        alert("User logged in through Facebook!");
+                    }
                 },
                 error: function(user, error) {
-                    $scope.hide();
-                    $scope.showAlert('Error',error.message);
-                    console.log(user, error);
+                    alert("User cancelled the Facebook login or did not fully authorize.");
                 }
             });
         };
@@ -359,7 +393,6 @@ $scope.user = {
                 template: text
             });
         };
-
         $scope.hide = function(){
             $ionicLoading.hide();
         };
@@ -472,8 +505,10 @@ $scope.user = {
                     $scope.children=[];
 
                     for (var i = 0; i < results.length; i++) {
-                        var object = results[i];
-                        $scope.children.push(object.toJSON());
+                        var object = results[i].toJSON();
+                        if(object.isDeleted == false){
+                            $scope.children.push(object);
+                        }
                     }
 
                     // Do something with the returned Parse.Object values
@@ -791,20 +826,26 @@ $scope.user = {
         };
 })
 
- .controller('forgotPasswordCtrl', function ($scope,$state) {
+.controller('forgotPasswordCtrl', function ($scope,$state,$ionicPopup,$ionicLoading) {
 
         $scope.send = function (mail) {
             if(!validateEmail(mail)){
-                alert('please enter correct mail.');
+                $scope.showAlert('Error','please enter correct mail.');
             }
             else{
+                $scope.show('Loading...');
                 Parse.User.requestPasswordReset(mail, {
                     success: function() {
-                        alert('mail was sent to you.');
-                        $state.go('login');
+                        $scope.hide();
+                        $scope.show('mail was sent to you.');
+                        setTimeout(function (){
+                            $scope.hide();
+                            $state.go('login');
+                        }, 2000);
                     },
                     error: function(error) {
-                        alert("Error: " + error.code + " " + error.message);
+                        $scope.hide();
+                        $scope.showAlert('Error',error.message);
                     }
                 });
             }
@@ -813,8 +854,24 @@ $scope.user = {
             var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email);
         }
+
+        $scope.showAlert = function(title,content) {
+            $ionicPopup.alert({
+                title: title,
+                content: content
+            });
+        }
+        $scope.show = function(text) {
+            $ionicLoading.show({
+                template: text
+            });
+        };
+        $scope.hide = function(){
+            $ionicLoading.hide();
+        };
     })
-    .controller('SummaryCtrl',function($scope,studentsService,$state){
+
+.controller('SummaryCtrl',function($scope,studentsService,$state){
         $scope.pageTitle = studentsService.getCurrentStudent().firstName;
         $scope.goBack =function(){
             $state.go('app.Students');
@@ -853,4 +910,44 @@ $scope.config = {
 };
 
     })
+
+.controller('GradesCtrl',function($scope,studentsService,$state){
+    $scope.pageTitle = studentsService.getCurrentStudent().firstName;
+    $scope.goBack =function(){
+        $state.go('app.Students');
+    };
+
+    $scope.data = {
+        series: ['Sales', 'Income', 'Expense', 'Laptops', 'Keyboards'],
+        data : [{
+            x : "Sales",
+            y: [100,500, 0],
+            tooltip:"this is tooltip"
+        },
+            {
+                x : "Not Sales",
+                y: [300, 100, 100]
+            },
+            {
+                x : "Tax",
+                y: [351]
+            },
+            {
+                x : "Not Tax",
+                y: [54, 0, 879]
+            }]
+    };
+    $scope.chartType = 'bar';
+
+    $scope.config = {
+        labels: false,
+        title : "Not Products",
+        legend : {
+            display:true,
+            position:'left'
+        },
+        innerRadius: 0
+    };
+
+})
 ;

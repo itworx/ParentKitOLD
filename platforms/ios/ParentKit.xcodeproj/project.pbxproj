@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00DDD349073F49C7B727DC0B /* UIWebViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D487775DE7F40858B6A71FD /* UIWebViewExtension.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -43,6 +42,7 @@
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		E374D392193C487FBECEF0CB /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D29F30B0AF49FAA44DBA29 /* IonicKeyboard.m */; };
+		A34ED748C9A245F9A82C0495 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BE9659F68D498995A90C3C /* CDVInAppBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +115,8 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F0D29F30B0AF49FAA44DBA29 /* IonicKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IonicKeyboard.m; path = com.ionic.keyboard/IonicKeyboard.m; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ParentKit/config.xml; sourceTree = "<group>"; };
+		95BE9659F68D498995A90C3C /* CDVInAppBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVInAppBrowser.m"; path = "org.apache.cordova.inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		B1CB6F1799914EE38CB16C9B /* CDVInAppBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVInAppBrowser.h"; path = "org.apache.cordova.inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,8 @@
 				67D8AE41C968418EB22C0DE3 /* CDVLogger.h */,
 				A2928003CB284E1E8CB6F450 /* CDVDevice.m */,
 				BAC253093DE54543B5AB4E19 /* CDVDevice.h */,
+				95BE9659F68D498995A90C3C /* CDVInAppBrowser.m */,
+				B1CB6F1799914EE38CB16C9B /* CDVInAppBrowser.h */,
 			);
 			name = Plugins;
 			path = ParentKit/Plugins;
@@ -441,6 +445,7 @@
 				00DDD349073F49C7B727DC0B /* UIWebViewExtension.m in Sources */,
 				33CBCC4D51EB4F859E3771FE /* CDVLogger.m in Sources */,
 				21D88D1C899E4DE8A505E31E /* CDVDevice.m in Sources */,
+				A34ED748C9A245F9A82C0495 /* CDVInAppBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

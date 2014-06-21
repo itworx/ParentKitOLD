@@ -72,6 +72,7 @@ angular.module('starter.controllers', ['angles'])
                     lessonObject.lessonStartDate = new Date (lessonObject.lessonStartDate.iso);
                     lessonObject.lessonStartTime= new Date (lessonObject.lessonStartTime.iso);
                     lessonObject.lessonEndTime= new Date (lessonObject.lessonEndTime.iso);
+                    console.log('lesson Object ID :' + lessonObject.objectId);
                     if(lessonObject.isDeleted == false){
                         lessons.push(lessonObject);
                     }
@@ -348,7 +349,7 @@ angular.module('starter.controllers', ['angles'])
         };
 })
 
-.controller('LogInCtrl', function($scope, $state,$ionicLoading,$ionicPopup,storage) {
+.controller('LogInCtrl', function($scope, $state,$ionicLoading,$ionicPopup,storage,OpenFB) {
 console.log('this is login ctrl');
         storage.removeObject('User');
     $scope.user = {
@@ -356,20 +357,41 @@ console.log('this is login ctrl');
         password : ''
     };
         $scope.logIn = function(user) {
-        $scope.show('signing in..');
-            Parse.User.logIn(user.username, user.password, {
-                success: function(theUser) {
-                    $scope.hide();
-                    storage.setObject('User',theUser);
-                    var x = storage.getObject('User');
-                    $state.go('app.Students');
-                },
-                error: function(user, error) {
-                    $scope.hide();
-                    $scope.showAlert('Error',error.message);
-                    console.log(user, error);
-                }
-            });
+//        $scope.show('signing in..');
+//            Parse.User.logIn(user.username, user.password, {
+//                success: function(theUser) {
+//                    $scope.hide();
+//                    storage.setObject('User',theUser);
+//                    var x = storage.getObject('User');
+//                    $state.go('app.Students');
+//                },
+//                error: function(user, error) {
+//                    $scope.hide();
+//                    $scope.showAlert('Error',error.message);
+//                    console.log(user, error);
+//                }
+//            });
+            OpenFB.login('email,read_stream,publish_stream')
+                .finally(
+                console.log('finished'),
+                alert('login finished'),
+                OpenFB.get('/me').success(function (user) {
+                    alert('this is profile');
+                    alert(JSON.stringify(user));
+                })
+            );
+//            Parse.FacebookUtils.logIn(null, {
+//                success: function(user) {
+//                    if (!user.existed()) {
+//                        alert("User signed up and logged in through Facebook!");
+//                    } else {
+//                        alert("User logged in through Facebook!");
+//                    }
+//                },
+//                error: function(user, error) {
+//                    alert("User cancelled the Facebook login or did not fully authorize.");
+//                }
+//            });
         };
 
         $scope.signupUser = function(){
@@ -493,8 +515,10 @@ console.log('this is login ctrl');
                     $scope.children=[];
 
                     for (var i = 0; i < results.length; i++) {
-                        var object = results[i];
-                        $scope.children.push(object.toJSON());
+                        var object = results[i].toJSON();
+                        if(object.isDeleted == false){
+                            $scope.children.push(object);
+                        }
                     }
 
                     // Do something with the returned Parse.Object values
@@ -823,7 +847,11 @@ console.log('this is login ctrl');
                 Parse.User.requestPasswordReset(mail, {
                     success: function() {
                         $scope.hide();
-                        $state.go('login');
+                        $scope.show('mail was sent to you.');
+                        setTimeout(function (){
+                            $scope.hide();
+                            $state.go('login');
+                        }, 2000);
                     },
                     error: function(error) {
                         $scope.hide();
@@ -892,4 +920,44 @@ $scope.config = {
 };
 
     })
+
+.controller('GradesCtrl',function($scope,studentsService,$state){
+    $scope.pageTitle = studentsService.getCurrentStudent().firstName;
+    $scope.goBack =function(){
+        $state.go('app.Students');
+    };
+
+    $scope.data = {
+        series: ['Sales', 'Income', 'Expense', 'Laptops', 'Keyboards'],
+        data : [{
+            x : "Sales",
+            y: [100,500, 0],
+            tooltip:"this is tooltip"
+        },
+            {
+                x : "Not Sales",
+                y: [300, 100, 100]
+            },
+            {
+                x : "Tax",
+                y: [351]
+            },
+            {
+                x : "Not Tax",
+                y: [54, 0, 879]
+            }]
+    };
+    $scope.chartType = 'bar';
+
+    $scope.config = {
+        labels: false,
+        title : "Not Products",
+        legend : {
+            display:true,
+            position:'left'
+        },
+        innerRadius: 0
+    };
+
+})
 ;

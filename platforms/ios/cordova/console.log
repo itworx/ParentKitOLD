@@ -1085,3 +1085,131 @@
 2014-06-16 08:18:31.852 ParentKit[3919:70b] this is set current student fn
 2014-06-16 08:18:31.852 ParentKit[3919:70b] this is studnet   [object Object]
 2014-06-16 08:18:31.852 ParentKit[3919:70b] this is current studnet   [object Object]
+2014-06-16 17:25:12.534 ParentKit[7392:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-16 17:25:14.095 ParentKit[7392:70b] Unlimited access to network resources
+2014-06-16 17:25:34.242 ParentKit[7392:70b] [CDVTimer][keyboard] 100.874007ms
+2014-06-16 17:25:34.279 ParentKit[7392:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-16 17:25:34.281 ParentKit[7392:70b] [CDVTimer][statusbar] 1.227975ms
+2014-06-16 17:25:34.281 ParentKit[7392:70b] [CDVTimer][TotalPluginStartup] 140.285015ms
+2014-06-16 17:25:41.229 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:25:46.279 ParentKit[7392:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-16 17:25:55.265 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:25:55.866 ParentKit[7392:70b] Failed to load webpage with error: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-16 17:25:55.867 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:25:58.671 ParentKit[7392:70b] Failed to load webpage with error: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-16 17:25:58.671 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:25:59.243 ParentKit[7392:70b] Failed to load webpage with error: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-16 17:25:59.243 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:25:59.419 ParentKit[7392:70b] Failed to load webpage with error: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-16 17:25:59.419 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:25:59.572 ParentKit[7392:70b] Failed to load webpage with error: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-16 17:25:59.594 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:25:59.739 ParentKit[7392:70b] Failed to load webpage with error: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-16 17:25:59.739 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:25:59.932 ParentKit[7392:70b] Failed to load webpage with error: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-16 17:25:59.933 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:26:00.161 ParentKit[7392:70b] Failed to load webpage with error: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-16 17:26:00.162 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:26:00.369 ParentKit[7392:70b] Failed to load webpage with error: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-16 17:26:00.369 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:26:00.857 ParentKit[7392:70b] Failed to load webpage with error: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-16 17:26:00.858 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:26:01.408 ParentKit[7392:70b] Failed to load webpage with error: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-16 17:26:01.409 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:31:30.195 ParentKit[7392:70b] Failed to load webpage with error: The request timed out.
+2014-06-16 17:42:09.819 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:42:09.925 ParentKit[7392:70b] Failed to load webpage with error: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-16 17:42:09.925 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:42:09.930 ParentKit[7392:70b] Failed to load webpage with error: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-16 17:42:09.931 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:42:09.937 ParentKit[7392:70b] Failed to load webpage with error: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-16 17:42:09.937 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:42:10.014 ParentKit[7392:70b] Failed to load webpage with error: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-16 17:42:10.015 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:42:10.140 ParentKit[7392:70b] Failed to load webpage with error: The Internet connection appears to be offline.
+2014-06-16 17:42:10.206 ParentKit[7392:70b] Resetting plugins due to page load.
+2014-06-16 17:42:10.210 ParentKit[7392:70b] Failed to load webpage with error: The Internet connection appears to be offline.
+2014-06-16 17:47:44.976 ParentKit[7701:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-16 17:47:45.208 ParentKit[7701:70b] Unlimited access to network resources
+2014-06-16 17:47:45.380 ParentKit[7701:70b] [CDVTimer][keyboard] 0.097990ms
+2014-06-16 17:47:45.381 ParentKit[7701:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-16 17:47:45.381 ParentKit[7701:70b] [CDVTimer][statusbar] 0.411987ms
+2014-06-16 17:47:45.382 ParentKit[7701:70b] [CDVTimer][TotalPluginStartup] 1.577973ms
+2014-06-16 17:47:45.801 ParentKit[7701:70b] Resetting plugins due to page load.
+2014-06-16 17:47:46.721 ParentKit[7701:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-16 17:47:47.155 ParentKit[7701:70b] THREAD WARNING: ['Device'] took '124.199951' ms. Plugin should use a background thread.
+2014-06-16 17:48:03.408 ParentKit[7701:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-06-16 17:48:03.621 ParentKit[7701:70b] THREAD WARNING: ['InAppBrowser'] took '678.729980' ms. Plugin should use a background thread.
+2014-06-16 17:49:05.278 ParentKit[7701:70b] webView:didFailLoadWithError - -1001: The request timed out.
+2014-06-16 17:50:00.506 ParentKit[7701:70b] facebook login Noooooo
+2014-06-16 17:50:00.563 ParentKit[7701:70b] THREAD WARNING: ['Console'] took '56.860107' ms. Plugin should use a background thread.
+2014-06-16 17:50:47.302 ParentKit[7701:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-06-16 17:50:47.357 ParentKit[7701:70b] THREAD WARNING: ['InAppBrowser'] took '5787.008057' ms. Plugin should use a background thread.
+2014-06-16 17:50:48.100 ParentKit[7701:70b] Tried to show IAB while already shown
+2014-06-16 17:50:48.101 ParentKit[7701:70b] THREAD WARNING: ['InAppBrowser'] took '408.655029' ms. Plugin should use a background thread.
+2014-06-16 17:50:49.864 ParentKit[7701:70b] webView:didFailLoadWithError - -999: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-16 17:51:50.405 ParentKit[7701:70b] webView:didFailLoadWithError - -1001: The request timed out.
+2014-06-16 17:52:39.827 ParentKit[7918:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-16 17:52:40.145 ParentKit[7918:70b] Unlimited access to network resources
+2014-06-16 17:52:40.646 ParentKit[7918:70b] [CDVTimer][keyboard] 0.100970ms
+2014-06-16 17:52:40.647 ParentKit[7918:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-16 17:52:40.647 ParentKit[7918:70b] [CDVTimer][statusbar] 0.389993ms
+2014-06-16 17:52:40.648 ParentKit[7918:70b] [CDVTimer][TotalPluginStartup] 1.614034ms
+2014-06-16 17:52:42.293 ParentKit[7918:70b] Resetting plugins due to page load.
+2014-06-16 17:52:46.990 ParentKit[7918:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-16 17:52:50.928 ParentKit[7918:70b] THREAD WARNING: ['Device'] took '25.010986' ms. Plugin should use a background thread.
+2014-06-16 17:52:51.409 ParentKit[7918:70b] deviceready has not fired after 5 seconds.
+2014-06-16 17:52:51.494 ParentKit[7918:70b] Channel not fired: onCordovaInfoReady
+2014-06-16 17:52:51.530 ParentKit[7918:70b] THREAD WARNING: ['Console'] took '36.362793' ms. Plugin should use a background thread.
+2014-06-16 17:56:22.816 ParentKit[8136:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-16 17:56:23.097 ParentKit[8136:70b] Unlimited access to network resources
+2014-06-16 17:56:23.202 ParentKit[8136:70b] [CDVTimer][keyboard] 0.091970ms
+2014-06-16 17:56:23.203 ParentKit[8136:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-16 17:56:23.204 ParentKit[8136:70b] [CDVTimer][statusbar] 0.503957ms
+2014-06-16 17:56:23.204 ParentKit[8136:70b] [CDVTimer][TotalPluginStartup] 1.830041ms
+2014-06-16 17:56:24.673 ParentKit[8136:70b] Resetting plugins due to page load.
+2014-06-16 17:56:25.616 ParentKit[8136:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-16 17:56:27.402 ParentKit[8136:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-06-16 17:56:27.408 ParentKit[8136:70b] THREAD WARNING: ['InAppBrowser'] took '583.116943' ms. Plugin should use a background thread.
+2014-06-16 17:56:29.027 ParentKit[8136:70b] facebook login Noooooo
+2014-06-16 18:02:15.694 ParentKit[8136:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-06-16 18:02:15.790 ParentKit[8136:70b] THREAD WARNING: ['InAppBrowser'] took '396.020996' ms. Plugin should use a background thread.
+2014-06-16 18:02:15.991 ParentKit[8136:70b] Tried to show IAB while already shown
+2014-06-16 18:02:16.091 ParentKit[8136:70b] webView:didFailLoadWithError - -999: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-16 18:02:18.977 ParentKit[8136:70b] facebook login Noooooo
+2014-06-16 18:17:11.775 ParentKit[8136:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-06-16 18:17:11.797 ParentKit[8136:70b] THREAD WARNING: ['InAppBrowser'] took '27.251221' ms. Plugin should use a background thread.
+2014-06-16 18:17:13.360 ParentKit[8136:70b] facebook login Noooooo
+2014-06-16 18:25:17.331 ParentKit[8607:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-16 18:25:17.766 ParentKit[8607:70b] Unlimited access to network resources
+2014-06-16 18:25:21.855 ParentKit[8607:70b] [CDVTimer][keyboard] 20.633996ms
+2014-06-16 18:25:21.856 ParentKit[8607:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-16 18:25:21.856 ParentKit[8607:70b] [CDVTimer][statusbar] 0.463009ms
+2014-06-16 18:25:21.857 ParentKit[8607:70b] [CDVTimer][TotalPluginStartup] 22.570014ms
+2014-06-16 18:25:26.650 ParentKit[8607:70b] Resetting plugins due to page load.
+2014-06-16 18:25:49.966 ParentKit[8607:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-16 18:25:50.062 ParentKit[8607:70b] THREAD WARNING: ['Device'] took '14.795898' ms. Plugin should use a background thread.
+2014-06-17 13:05:12.144 ParentKit[9755:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-17 13:05:12.543 ParentKit[9755:70b] Unlimited access to network resources
+2014-06-17 13:05:14.434 ParentKit[9755:70b] [CDVTimer][keyboard] 0.128984ms
+2014-06-17 13:05:14.435 ParentKit[9755:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-17 13:05:14.435 ParentKit[9755:70b] [CDVTimer][statusbar] 0.517011ms
+2014-06-17 13:05:14.436 ParentKit[9755:70b] [CDVTimer][TotalPluginStartup] 1.906037ms
+2014-06-17 13:05:16.585 ParentKit[9755:70b] Resetting plugins due to page load.
+2014-06-17 13:05:18.623 ParentKit[9755:70b] THREAD WARNING: ['Device'] took '14.575928' ms. Plugin should use a background thread.
+2014-06-17 13:05:18.829 ParentKit[9755:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-17 13:08:05.145 ParentKit[9755:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-06-17 13:08:05.253 ParentKit[9755:70b] THREAD WARNING: ['InAppBrowser'] took '802.661865' ms. Plugin should use a background thread.
+2014-06-17 13:09:06.011 ParentKit[9755:70b] webView:didFailLoadWithError - -1001: The request timed out.
+2014-06-17 17:02:13.184 ParentKit[1889:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-17 17:02:13.229 ParentKit[1889:70b] Unlimited access to network resources
+2014-06-17 17:02:13.350 ParentKit[1889:70b] [CDVTimer][keyboard] 0.142992ms
+2014-06-17 17:02:13.351 ParentKit[1889:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-17 17:02:13.351 ParentKit[1889:70b] [CDVTimer][statusbar] 0.539958ms
+2014-06-17 17:02:13.352 ParentKit[1889:70b] [CDVTimer][TotalPluginStartup] 2.080977ms
+2014-06-17 17:02:14.359 ParentKit[1889:70b] Resetting plugins due to page load.
+2014-06-17 17:02:15.401 ParentKit[1889:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-17 17:02:15.885 ParentKit[1889:70b] THREAD WARNING: ['Device'] took '24.502930' ms. Plugin should use a background thread.
+2014-06-17 17:02:20.291 ParentKit[1889:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-06-17 17:02:20.317 ParentKit[1889:70b] THREAD WARNING: ['InAppBrowser'] took '386.489990' ms. Plugin should use a background thread.
+2014-06-17 17:03:20.428 ParentKit[1889:70b] webView:didFailLoadWithError - -1001: The request timed out.

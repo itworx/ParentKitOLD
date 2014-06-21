@@ -72,6 +72,7 @@ angular.module('starter.controllers', ['angles'])
                     lessonObject.lessonStartDate = new Date (lessonObject.lessonStartDate.iso);
                     lessonObject.lessonStartTime= new Date (lessonObject.lessonStartTime.iso);
                     lessonObject.lessonEndTime= new Date (lessonObject.lessonEndTime.iso);
+                    console.log('lesson Object ID :' + lessonObject.objectId);
                     if(lessonObject.isDeleted == false){
                         lessons.push(lessonObject);
                     }
@@ -348,7 +349,7 @@ angular.module('starter.controllers', ['angles'])
         };
 })
 
-.controller('LogInCtrl', function($scope, $state,$ionicLoading,$ionicPopup,storage) {
+.controller('LogInCtrl', function($scope, $state,$ionicLoading,$ionicPopup,storage,OpenFB) {
 console.log('this is login ctrl');
         storage.removeObject('User');
     $scope.user = {
@@ -370,6 +371,27 @@ console.log('this is login ctrl');
                     console.log(user, error);
                 }
             });
+//            OpenFB.login('email',read_stream,publish_stream')
+//                .then(
+//                function(){
+//                    console.log('yesss');
+//                },
+//                function(){
+//                    console.log('nooooo');
+//                }
+//            );
+//            Parse.FacebookUtils.logIn(null, {
+//                success: function(user) {
+//                    if (!user.existed()) {
+//                        alert("User signed up and logged in through Facebook!");
+//                    } else {
+//                        alert("User logged in through Facebook!");
+//                    }
+//                },
+//                error: function(user, error) {
+//                    alert("User cancelled the Facebook login or did not fully authorize.");
+//                }
+//            });
         };
 
         $scope.signupUser = function(){
