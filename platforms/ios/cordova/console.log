@@ -1213,3 +1213,74 @@
 2014-06-17 17:02:20.291 ParentKit[1889:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
 2014-06-17 17:02:20.317 ParentKit[1889:70b] THREAD WARNING: ['InAppBrowser'] took '386.489990' ms. Plugin should use a background thread.
 2014-06-17 17:03:20.428 ParentKit[1889:70b] webView:didFailLoadWithError - -1001: The request timed out.
+2014-06-22 11:59:04.213 ParentKit[8192:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-22 11:59:04.593 ParentKit[8192:70b] Unlimited access to network resources
+2014-06-22 11:59:07.763 ParentKit[8192:70b] [CDVTimer][keyboard] 0.101030ms
+2014-06-22 11:59:07.764 ParentKit[8192:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-22 11:59:07.764 ParentKit[8192:70b] [CDVTimer][statusbar] 0.362992ms
+2014-06-22 11:59:07.765 ParentKit[8192:70b] [CDVTimer][TotalPluginStartup] 1.420021ms
+2014-06-22 11:59:14.451 ParentKit[8192:70b] Resetting plugins due to page load.
+2014-06-22 11:59:19.678 ParentKit[8192:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-22 11:59:20.254 ParentKit[8192:70b] THREAD WARNING: ['Device'] took '27.428955' ms. Plugin should use a background thread.
+2014-06-22 12:04:44.734 ParentKit[8413:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-22 12:04:44.812 ParentKit[8413:70b] Unlimited access to network resources
+2014-06-22 12:04:44.873 ParentKit[8413:70b] [CDVTimer][keyboard] 0.100017ms
+2014-06-22 12:04:44.874 ParentKit[8413:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-22 12:04:44.874 ParentKit[8413:70b] [CDVTimer][statusbar] 0.433981ms
+2014-06-22 12:04:44.875 ParentKit[8413:70b] [CDVTimer][TotalPluginStartup] 1.576006ms
+2014-06-22 12:04:47.692 ParentKit[8413:70b] Resetting plugins due to page load.
+2014-06-22 12:04:48.277 ParentKit[8413:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-22 12:14:58.963 ParentKit[8800:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-22 12:14:59.104 ParentKit[8800:70b] Unlimited access to network resources
+2014-06-22 12:14:59.228 ParentKit[8800:70b] [CDVTimer][keyboard] 0.105977ms
+2014-06-22 12:14:59.229 ParentKit[8800:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-22 12:14:59.253 ParentKit[8800:70b] [CDVTimer][statusbar] 23.813009ms
+2014-06-22 12:14:59.254 ParentKit[8800:70b] [CDVTimer][TotalPluginStartup] 25.560021ms
+2014-06-22 12:15:04.377 ParentKit[8800:70b] Resetting plugins due to page load.
+2014-06-22 12:15:05.941 ParentKit[8800:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-22 12:20:21.284 ParentKit[8800:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-06-22 12:20:21.563 ParentKit[8800:70b] THREAD WARNING: ['InAppBrowser'] took '1025.318115' ms. Plugin should use a background thread.
+2014-06-22 12:24:04.343 ParentKit[9208:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-22 12:24:04.353 ParentKit[9208:70b] Unlimited access to network resources
+2014-06-22 12:24:04.385 ParentKit[9208:70b] [CDVTimer][keyboard] 0.097990ms
+2014-06-22 12:24:04.385 ParentKit[9208:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-22 12:24:04.386 ParentKit[9208:70b] [CDVTimer][statusbar] 0.481009ms
+2014-06-22 12:24:04.386 ParentKit[9208:70b] [CDVTimer][TotalPluginStartup] 1.632035ms
+2014-06-22 12:24:05.448 ParentKit[9208:70b] Resetting plugins due to page load.
+2014-06-22 12:24:05.919 ParentKit[9208:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-22 14:16:19.777 ParentKit[13144:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-22 14:16:21.976 ParentKit[13144:70b] Unlimited access to network resources
+2014-06-22 14:16:41.849 ParentKit[13144:70b] [CDVTimer][keyboard] 214.438975ms
+2014-06-22 14:16:41.926 ParentKit[13144:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-22 14:16:41.927 ParentKit[13144:70b] [CDVTimer][statusbar] 0.725031ms
+2014-06-22 14:16:41.928 ParentKit[13144:70b] [CDVTimer][TotalPluginStartup] 292.631984ms
+2014-06-22 14:16:54.373 ParentKit[13144:70b] Resetting plugins due to page load.
+2014-06-22 14:17:01.366 ParentKit[13144:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-22 14:17:04.974 ParentKit[13144:70b] THREAD WARNING: ['Device'] took '136.825195' ms. Plugin should use a background thread.
+2014-06-22 14:17:05.419 ParentKit[13144:70b] deviceready has not fired after 5 seconds.
+2014-06-22 14:17:05.419 ParentKit[13144:70b] Channel not fired: onCordovaInfoReady
+2014-06-22 14:27:45.085 ParentKit[13370:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-22 14:27:45.116 ParentKit[13370:70b] Unlimited access to network resources
+2014-06-22 14:27:45.161 ParentKit[13370:70b] [CDVTimer][keyboard] 0.096023ms
+2014-06-22 14:27:45.162 ParentKit[13370:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-22 14:27:45.162 ParentKit[13370:70b] [CDVTimer][statusbar] 0.437021ms
+2014-06-22 14:27:45.163 ParentKit[13370:70b] [CDVTimer][TotalPluginStartup] 1.582980ms
+2014-06-22 14:27:46.096 ParentKit[13370:70b] Resetting plugins due to page load.
+2014-06-22 14:27:46.530 ParentKit[13370:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-22 15:19:55.166 ParentKit[14639:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-22 15:19:55.420 ParentKit[14639:70b] Unlimited access to network resources
+2014-06-22 15:19:57.365 ParentKit[14639:70b] [CDVTimer][keyboard] 0.101984ms
+2014-06-22 15:19:57.365 ParentKit[14639:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-22 15:19:57.366 ParentKit[14639:70b] [CDVTimer][statusbar] 0.458002ms
+2014-06-22 15:19:57.366 ParentKit[14639:70b] [CDVTimer][TotalPluginStartup] 1.627028ms
+2014-06-22 15:19:59.341 ParentKit[14639:70b] Resetting plugins due to page load.
+2014-06-22 15:20:01.536 ParentKit[14639:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-22 15:27:37.604 ParentKit[14895:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-22 15:27:38.231 ParentKit[14895:70b] Unlimited access to network resources
+2014-06-22 15:27:38.711 ParentKit[14895:70b] [CDVTimer][keyboard] 0.095010ms
+2014-06-22 15:27:38.712 ParentKit[14895:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-06-22 15:27:38.712 ParentKit[14895:70b] [CDVTimer][statusbar] 0.518978ms
+2014-06-22 15:27:38.713 ParentKit[14895:70b] [CDVTimer][TotalPluginStartup] 1.960993ms
+2014-06-22 15:27:45.190 ParentKit[14895:70b] Resetting plugins due to page load.
+2014-06-22 15:27:48.892 ParentKit[14895:70b] Finished load of: file:///Users/Tefa/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/3F3CB877-44F9-42EF-BF99-74C817CC9F1F/ParentKit.app/www/index.html#/login
+2014-06-22 15:27:50.227 ParentKit[14895:70b] THREAD WARNING: ['Device'] took '69.627930' ms. Plugin should use a background thread.

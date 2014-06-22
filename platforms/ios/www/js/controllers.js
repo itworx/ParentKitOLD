@@ -357,29 +357,20 @@ console.log('this is login ctrl');
         password : ''
     };
         $scope.logIn = function(user) {
-//        $scope.show('signing in..');
-//            Parse.User.logIn(user.username, user.password, {
-//                success: function(theUser) {
-//                    $scope.hide();
-//                    storage.setObject('User',theUser);
-//                    var x = storage.getObject('User');
-//                    $state.go('app.Students');
-//                },
-//                error: function(user, error) {
-//                    $scope.hide();
-//                    $scope.showAlert('Error',error.message);
-//                    console.log(user, error);
-//                }
-//            });
-            OpenFB.login('email,read_stream,publish_stream')
-                .finally(
-                console.log('finished'),
-                alert('login finished'),
-                OpenFB.get('/me').success(function (user) {
-                    alert('this is profile');
-                    alert(JSON.stringify(user));
-                })
-            );
+        $scope.show('signing in..');
+            Parse.User.logIn(user.username, user.password, {
+                success: function(theUser) {
+                    $scope.hide();
+                    storage.setObject('User',theUser);
+                    var x = storage.getObject('User');
+                    $state.go('app.Students');
+                },
+                error: function(user, error) {
+                    $scope.hide();
+                    $scope.showAlert('Error',error.message);
+                    console.log(user, error);
+                }
+            });
 //            Parse.FacebookUtils.logIn(null, {
 //                success: function(user) {
 //                    if (!user.existed()) {
@@ -412,6 +403,52 @@ console.log('this is login ctrl');
                 content: content
             });
         }
+        $scope.facebookLogin = function () {
+            OpenFB.login('email','read_stream,publish_stream')
+                .then(
+                function() {
+                    //Success in login
+
+                    OpenFB.get('/me')
+                        .success(function (user) {
+                            alert('yessss');
+                            var accessToken = OpenFB.getAccessToken();
+                            var expires_in_seconds =  OpenFB.getExpires_in();
+                            alert("access " +  accessToken);
+                            var Expire_date = new Date(1970,0,1);
+                            Expire_date.setSeconds(expires_in_seconds);
+                            alert("Expires_In " +  Expire_date);
+                            var facebookAuthData = {
+                                "id": user.id + "",
+                                "access_token": accessToken,
+                                "expiration_date" :Expire_date.toISOString()
+                            }
+                            alert(facebookAuthData)
+                            Parse.FacebookUtils.logIn(facebookAuthData, {
+                                success: function(user) {
+                                    if (!user.existed()) {
+                                        alert("User signed up and logged in through Facebook!");
+                                    } else {
+                                        alert("User logged in through Facebook!");
+                                    }
+                                },
+                                error: function(user, error) {
+                                    alert("User cancelled the Facebook login or did not fully authorize.");
+                                    alert(error.message);
+                                }
+                            });
+                        })
+                        .error(function (data) {
+                            alert(data.error.message);
+                        })
+                },
+                function(){
+                    //failed in login
+                    $scope.showAlert("Error","Failed to login with facebook.");
+                }
+            );
+        }
+
     })
 
 .controller('SignUpCtrl', function($scope, $state,  $ionicLoading,$ionicPopup) {

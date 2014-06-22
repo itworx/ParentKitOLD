@@ -13,6 +13,8 @@ angular.module('openfb', [])
         // By default we store fbtoken in sessionStorage. This can be overriden in init()
             tokenStore = window.sessionStorage,
 
+            //"http://coenraets.org/apps/sociogram/oauthcallback.html?#access_token=CAAGnQVmIP3kBADTnBNDFP8XRJDPLAVmC5jkwYAtTCaT3JTY9SCjqClsBr8ImriwBQYB8PUn0MmZBU9Lgq6RXEeTRoydRYtITVayeWjs6ZAnOH4K1ZCE60s4PFvQVXI0b0ZBE3ZB9tcRJwdbVilXZCkt1g9JAI7k60frE03DVbJerXQ1rb1Xi6zMSG9sJ9S34ZCPMVJMfaZCFVQZDZD&expires_in=6176"
+
             fbAppId,
             oauthRedirectURL,
 
@@ -121,6 +123,7 @@ angular.module('openfb', [])
                 queryString = url.substr(url.indexOf('#') + 1);
                 obj = parseQueryString(queryString);
                 tokenStore['fbtoken'] = obj['access_token'];
+                tokenStore['expires_in'] = obj['expires_in'];
                 deferredLogin.resolve();
             } else if (url.indexOf("error=") > 0) {
                 queryString = url.substring(url.indexOf('?') + 1, url.indexOf('#'));
@@ -179,7 +182,7 @@ angular.module('openfb', [])
          * @param params
          * @returns {*}
          */
-        function post(path, params) {
+       function post(path, params) {
             return api({method: 'POST', path: path, params: params});
         }
 
@@ -191,6 +194,13 @@ angular.module('openfb', [])
          */
         function get(path, params) {
             return api({method: 'GET', path: path, params: params});
+        }
+
+        function getAccessToken() {
+            return tokenStore['fbtoken'];
+        }
+        function getExpires_in() {
+            return tokenStore['expires_in'];
         }
 
         function parseQueryString(queryString) {
@@ -212,7 +222,9 @@ angular.module('openfb', [])
             api: api,
             post: post,
             get: get,
-            oauthCallback: oauthCallback
+            oauthCallback: oauthCallback,
+            getAccessToken:getAccessToken,
+            getExpires_in:getExpires_in
         }
 
     });
