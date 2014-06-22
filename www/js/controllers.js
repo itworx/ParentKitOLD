@@ -371,18 +371,6 @@ console.log('this is login ctrl');
                     console.log(user, error);
                 }
             });
-//            Parse.FacebookUtils.logIn(null, {
-//                success: function(user) {
-//                    if (!user.existed()) {
-//                        alert("User signed up and logged in through Facebook!");
-//                    } else {
-//                        alert("User logged in through Facebook!");
-//                    }
-//                },
-//                error: function(user, error) {
-//                    alert("User cancelled the Facebook login or did not fully authorize.");
-//                }
-//            });
         };
 
         $scope.signupUser = function(){
@@ -411,7 +399,7 @@ console.log('this is login ctrl');
 
                     OpenFB.get('/me')
                         .success(function (user) {
-                            alert('yessss');
+                            $scope.show('Logging with facebook...');
                             var accessToken = OpenFB.getAccessToken();
                             var expires_in_seconds =  OpenFB.getExpires_in();
                             alert("access " +  accessToken);
@@ -426,15 +414,21 @@ console.log('this is login ctrl');
                             alert(facebookAuthData)
                             Parse.FacebookUtils.logIn(facebookAuthData, {
                                 success: function(user) {
+                                   $scope.hide();
                                     if (!user.existed()) {
-                                        alert("User signed up and logged in through Facebook!");
+                                        var welcomeMessage = 'Welcome ' + $scope.user.username;
+                                        $scope.show(welcomeMessage);
+                                        setTimeout(function (){
+                                            $state.go('welcome');
+                                            $scope.hide();
+                                        }, 2000);
                                     } else {
-                                        alert("User logged in through Facebook!");
+                                        $state.go('app.Students');
                                     }
                                 },
                                 error: function(user, error) {
-                                    alert("User cancelled the Facebook login or did not fully authorize.");
-                                    alert(error.message);
+                                    $scope.hide();
+                                    $scope.showAlert("Error","Failed to login with facebook.");
                                 }
                             });
                         })
