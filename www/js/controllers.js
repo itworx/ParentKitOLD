@@ -137,7 +137,9 @@ angular.module('starter.controllers', ['angles'])
     })
 
 .controller('AppCtrl', function($scope,storage) {
-
+    $scope.logOut = function(){
+       window.localStorage.clear();
+    }   
 })
 
 .controller('PlaylistsCtrl', function($scope) {
@@ -151,7 +153,7 @@ angular.module('starter.controllers', ['angles'])
   ];
 })
 
-.controller('AttendanceCtrl', function ($scope,LessonService,$stateParams,AttendanceTypesService,$ionicNavBarDelegate,$state,$ionicLoading,studentsService){
+.controller('AttendanceCtrl', function ($scope,LessonService,$stateParams,AttendanceTypesService,$ionicNavBarDelegate,$state,$ionicLoading,studentsService,$ionicPopup){
 
         $scope.pageTitle = studentsService.getCurrentStudent().firstName;
 
@@ -239,6 +241,13 @@ angular.module('starter.controllers', ['angles'])
         $scope.hideHUD = function(){
             $ionicLoading.hide();
         };
+
+        $scope.showAlert = function(title,content) {
+            $ionicPopup.alert({
+                title: title,
+                content: content
+            });
+        }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         $scope.records = [];
         var attendance = Parse.Object.extend("Attendance");
@@ -251,6 +260,7 @@ angular.module('starter.controllers', ['angles'])
         attendanceQuery.matchesQuery("student", studentQuery);
         attendanceQuery.find({
             success: function(attendancesResults) {
+                var error = false;
                 for (var i = 0; i < attendancesResults.length; i++) {
                     var attendanceObject = attendancesResults[i].toJSON();
                     if(attendanceObject.isDeleted == false){
@@ -262,24 +272,36 @@ angular.module('starter.controllers', ['angles'])
                         record.attendance = attendanceObject;
                         record.type = AttendanceTypesService.getType(attendanceObject.type.objectId);
                         var lessonObject= LessonService.getLesson(attendanceObject.lesson.objectId);
+                        if(!lessonObject){
+                            error = true;
+                            break;
+                        }
                         record.lesson = lessonObject;
                         $scope.records.push(record);
                         $scope.$apply();
                         $scope.AddItemInAttendanceChartsData(record);
                     }
                 }
-                $scope.records.sort(function(a,b){
-                    if((b.lesson.lessonStartDate - a.lesson.lessonStartDate) == 0){
-                        return b.lesson.lessonStartTime - a.lesson.lessonStartTime;
+                if(error){
+                    $scope.hideHUD();
+                    $scope.showAlert('Error','Error in retrieving data...');
+                    $scope.records = [];
+                    $scope.myChartData = [];
+                }
+                else{
+                    $scope.records.sort(function(a,b){
+                        if((b.lesson.lessonStartDate - a.lesson.lessonStartDate) == 0){
+                            return b.lesson.lessonStartTime - a.lesson.lessonStartTime;
+                        }
+                        return new Date(b.lesson.lessonStartDate) - new Date(a.lesson.lessonStartDate);
+                    });
+                    for(var j = 0; j < $scope.records.length; j++){
+                        var object =  $scope.records[j];
+                        var element = document.getElementById(j);
+                        var objectColor = '#' + object.type.color;
+                        element.style.backgroundColor = objectColor;
                     }
-                    return new Date(b.lesson.lessonStartDate) - new Date(a.lesson.lessonStartDate);
-                });
-                for(var j = 0; j < $scope.records.length; j++){
-                    var object =  $scope.records[j];
-                    var element = document.getElementById(j);
-                    var objectColor = '#' + object.type.color;
-                    element.style.backgroundColor = objectColor;
-                   }
+                }
 //                new Chart(ctx).Doughnut(chartItems,options);
                 $scope.hideHUD();
             },
@@ -350,9 +372,11 @@ angular.module('starter.controllers', ['angles'])
 })
 
 .controller('LogInCtrl', function($scope, $state,$ionicLoading,$ionicPopup,storage,OpenFB) {
-console.log('this is login ctrl');
-        storage.removeObject('User');
-    $scope.user = {
+//        window.localStorage.clear();
+//        alert('this is localstorage' + JSON.stringify(window.localStorage));
+//        console.log('this is login ctrl');
+//        storage.removeObject('User');
+        $scope.user = {
         username : '',
         password : ''
     };
@@ -360,9 +384,8 @@ console.log('this is login ctrl');
         $scope.show('signing in..');
             Parse.User.logIn(user.username, user.password, {
                 success: function(theUser) {
+//                    alert('this is localstorage' + JSON.stringify(window.localStorage));
                     $scope.hide();
-                    storage.setObject('User',theUser);
-                    var x = storage.getObject('User');
                     $state.go('app.Students');
                 },
                 error: function(user, error) {
@@ -402,32 +425,35 @@ console.log('this is login ctrl');
                             $scope.show('Logging with facebook...');
                             var accessToken = OpenFB.getAccessToken();
                             var expires_in_seconds =  OpenFB.getExpires_in();
-                            alert("access " +  accessToken);
+//                            alert("access " +  accessToken);
                             var Expire_date = new Date(1970,0,1);
                             Expire_date.setSeconds(expires_in_seconds);
-                            alert("Expires_In " +  Expire_date);
+//                            alert("Expires_In " +  Expire_date);
                             var facebookAuthData = {
                                 "id": user.id + "",
                                 "access_token": accessToken,
                                 "expiration_date" :Expire_date.toISOString()
                             }
-                            alert(facebookAuthData)
+//                            alert(facebookAuthData)
                             Parse.FacebookUtils.logIn(facebookAuthData, {
                                 success: function(user) {
-                                   $scope.hide();
+                                    $scope.hide();
+//                                   alert('yeees');
                                     if (!user.existed()) {
-                                        var welcomeMessage = 'Welcome ' + $scope.user.username;
-                                        $scope.show(welcomeMessage);
-                                        setTimeout(function (){
                                             $state.go('welcome');
-                                            $scope.hide();
-                                        }, 2000);
+//                                        var welcomeMessage = 'Welcome ' + $scope.user.username;
+//                                        $scope.show(welcomeMessage);
+//                                        setTimeout(function (){
+//
+//                                            $scope.hide();
+//                                        }, 2000);
                                     } else {
                                         $state.go('app.Students');
                                     }
                                 },
                                 error: function(user, error) {
-                                    $scope.hide();
+//                                    $scope.hide();
+                                    alert('no');
                                     $scope.showAlert("Error","Failed to login with facebook.");
                                 }
                             });

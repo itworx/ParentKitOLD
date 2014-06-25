@@ -48,4 +48,8 @@
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
+    <feature name="File">
+        <param name="onload" value="true" />
+        <param name="ios-package" value="CDVFile" />
+    </feature>
 </widget>

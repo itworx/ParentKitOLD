@@ -137,7 +137,9 @@ angular.module('starter.controllers', ['angles'])
     })
 
 .controller('AppCtrl', function($scope,storage) {
-
+    $scope.logOut = function(){
+       window.localStorage.clear();
+    }   
 })
 
 .controller('PlaylistsCtrl', function($scope) {
@@ -350,9 +352,11 @@ angular.module('starter.controllers', ['angles'])
 })
 
 .controller('LogInCtrl', function($scope, $state,$ionicLoading,$ionicPopup,storage,OpenFB) {
-console.log('this is login ctrl');
-        storage.removeObject('User');
-    $scope.user = {
+//        window.localStorage.clear();
+//        alert('this is localstorage' + JSON.stringify(window.localStorage));
+//        console.log('this is login ctrl');
+//        storage.removeObject('User');
+        $scope.user = {
         username : '',
         password : ''
     };
@@ -360,9 +364,8 @@ console.log('this is login ctrl');
         $scope.show('signing in..');
             Parse.User.logIn(user.username, user.password, {
                 success: function(theUser) {
+//                    alert('this is localstorage' + JSON.stringify(window.localStorage));
                     $scope.hide();
-                    storage.setObject('User',theUser);
-                    var x = storage.getObject('User');
                     $state.go('app.Students');
                 },
                 error: function(user, error) {
@@ -402,32 +405,35 @@ console.log('this is login ctrl');
                             $scope.show('Logging with facebook...');
                             var accessToken = OpenFB.getAccessToken();
                             var expires_in_seconds =  OpenFB.getExpires_in();
-                            alert("access " +  accessToken);
+//                            alert("access " +  accessToken);
                             var Expire_date = new Date(1970,0,1);
                             Expire_date.setSeconds(expires_in_seconds);
-                            alert("Expires_In " +  Expire_date);
+//                            alert("Expires_In " +  Expire_date);
                             var facebookAuthData = {
                                 "id": user.id + "",
                                 "access_token": accessToken,
                                 "expiration_date" :Expire_date.toISOString()
                             }
-                            alert(facebookAuthData)
+//                            alert(facebookAuthData)
                             Parse.FacebookUtils.logIn(facebookAuthData, {
                                 success: function(user) {
-                                   $scope.hide();
+                                    $scope.hide();
+//                                   alert('yeees');
                                     if (!user.existed()) {
-                                        var welcomeMessage = 'Welcome ' + $scope.user.username;
-                                        $scope.show(welcomeMessage);
-                                        setTimeout(function (){
                                             $state.go('welcome');
-                                            $scope.hide();
-                                        }, 2000);
+//                                        var welcomeMessage = 'Welcome ' + $scope.user.username;
+//                                        $scope.show(welcomeMessage);
+//                                        setTimeout(function (){
+//
+//                                            $scope.hide();
+//                                        }, 2000);
                                     } else {
                                         $state.go('app.Students');
                                     }
                                 },
                                 error: function(user, error) {
-                                    $scope.hide();
+//                                    $scope.hide();
+                                    alert('no');
                                     $scope.showAlert("Error","Failed to login with facebook.");
                                 }
                             });

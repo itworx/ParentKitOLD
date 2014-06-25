@@ -16,21 +16,15 @@
  specific language governing permissions and limitations
  under the License.
  */
-//
-//  main.m
-//  HelloCordova
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
-//
 
-#import <UIKit/UIKit.h>
+#import "CDVFile.h"
 
-int main(int argc, char* argv[])
-{
-    @autoreleasepool {
-        int retVal = UIApplicationMain(argc, argv, nil, @"AppDelegate");
-        return retVal;
-    }
+extern NSString* const kCDVAssetsLibraryPrefix;
+extern NSString* const kCDVAssetsLibraryScheme;
+
+@interface CDVAssetLibraryFilesystem : NSObject<CDVFileSystem> {
 }
 
+- (id) initWithName:(NSString *)name;
+
+@end

@@ -245,10 +245,40 @@ angular.module('starter', ['ionic', 'starter.controllers','openfb'])
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
       OpenFB.init('246994372161242','https://www.facebook.com/connect/login_success.html');
-      var user = storage.getObject('User');
-        if(Object.getOwnPropertyNames(user).length != 0){
-          $state.transitionTo('app.Students');
+//      var user = storage.getObject('User');
+//        if(Object.getOwnPropertyNames(user).length != 0){
+//          $state.transitionTo('app.Students');
+//        }
+//      else{
+//            alert('localStorage empty');
+//        }
+    var keyIndex = -1;
+    for(var i=0 ; i < window.localStorage.length;i++){
+        var currentUserKey = "currentUser";
+
+          if(window.localStorage.key(i).indexOf(currentUserKey) > -1){
+              keyIndex = i;
+            break;
+          }
+      }
+    if(keyIndex >= 0){
+        var user = window.localStorage.getItem(window.localStorage.key(keyIndex));
+
+//      alert('1 :' +user);
+//      alert('2 :' +user1);
+//      alert('3 :' +user2);
+
+        if(user) {
+            user = JSON.parse(user);
+            if (Object.getOwnPropertyNames(user).length != 0) {
+//              alert('localStorage 2 has vale');
+                $state.transitionTo('app.Students');
+            }
         }
+
+    }
+
+
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
     }
@@ -272,7 +302,7 @@ angular.module('starter', ['ionic', 'starter.controllers','openfb'])
               appId: '246994372161242', // Facebook App ID
               channelUrl: 'https://www.facebook.com/connect/success.html',
               cookie: true, // enable cookies to allow Parse to access the session
-              xfbml: true  // parse XFBML
+              xfbml: true
           });
       }
   });
