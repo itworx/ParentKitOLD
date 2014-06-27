@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['angles'])
+angular.module('starter.controllers', ['angles','angularCharts'])
     .service('AttendanceTypesService',function(){
         var types = [];
         var attendanceType =  Parse.Object.extend("Attendancetype");
@@ -158,12 +158,11 @@ angular.module('starter.controllers', ['angles'])
         $scope.pageTitle = studentsService.getCurrentStudent().firstName;
 
         //Attendance Chart
-        $scope.myChartData = [];
-//        var ctx = document.getElementById("myChart").getContext("2d");
+        $scope.tmpChartData = [];
         $scope.AddItemInAttendanceChartsData = function(record){
             var found = false;
-            for(var i = 0; i < $scope.myChartData .length; i++) {
-                var item = $scope.myChartData [i];
+            for(var i = 0; i < $scope.tmpChartData.length; i++) {
+                var item = $scope.tmpChartData [i];
                 if(item.title == record.type.title){
                     item.value +=1;
                     found = true;
@@ -176,12 +175,12 @@ angular.module('starter.controllers', ['angles'])
                     color: record.type.color,
                     title : record.type.title
                 }
-                $scope.myChartData .push(addedItem);
+                $scope.tmpChartData.push(addedItem);
             }
         };
-        $scope.myChartOptions =  {
+        var myChartOptions  =  {
             inGraphDataShow : true,
-            datasetFill : true,
+            datasetFill : false,
             scaleTickSizeRight : 0,
             scaleTickSizeLeft : 0,
             scaleTickSizeBottom :0,
@@ -195,15 +194,13 @@ angular.module('starter.controllers', ['angles'])
             graphTitleFontSize : 24,
             graphTitleFontStyle : "bold",
             graphTitleFontColor : "#666",
-//            graphSubTitle : '',
-//            graphSubTitleFontFamily : "'Arial'",
-//            graphSubTitleFontSize : 18,
-//            graphSubTitleFontStyle : "normal",
-//            graphSubTitleFontColor : "#666",
-//            inGraphDataTmpl: "<%=(v1 == ''? '' : v1+':')+ roundToWithThousands(config,v2,2) + ' (' + roundToWithThousands(config,v6,1) + ' %)'%>",
-            inGraphDataTmpl: "<%=(v1 == ''? '' : v1+' = ')+ roundToWithThousands(config,v2,2)%>",
+            graphSubTitleFontFamily : "'Arial'",
+            graphSubTitleFontSize : 18,
+            graphSubTitleFontStyle : "normal",
+            graphSubTitleFontColor : "#666",
+            inGraphDataTmpl: "<%=roundToWithThousands(config,v2,2)%>",
             inGraphDataFontColor: "#666",
-            legend : false,
+            legend : true,
             legendFontFamily : "'Arial'",
             legendFontSize : 9,
             legendFontStyle : "normal",
@@ -228,7 +225,7 @@ angular.module('starter.controllers', ['angles'])
             legendBordersSpaceAfter : 0,
             footNoteSpaceBefore : 0,
             footNoteSpaceAfter : 0,
-            startAngle : 180,
+            startAngle : 0,
             dynamicDisplay : false
         }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -278,7 +275,6 @@ angular.module('starter.controllers', ['angles'])
                         }
                         record.lesson = lessonObject;
                         $scope.records.push(record);
-                        $scope.$apply();
                         $scope.AddItemInAttendanceChartsData(record);
                     }
                 }
@@ -295,6 +291,8 @@ angular.module('starter.controllers', ['angles'])
                         }
                         return new Date(b.lesson.lessonStartDate) - new Date(a.lesson.lessonStartDate);
                     });
+                    var ChartData = $scope.tmpChartData;
+                    $scope.$apply();
                     for(var j = 0; j < $scope.records.length; j++){
                         var object =  $scope.records[j];
                         var element = document.getElementById(j);
@@ -302,7 +300,7 @@ angular.module('starter.controllers', ['angles'])
                         element.style.backgroundColor = objectColor;
                     }
                 }
-//                new Chart(ctx).Doughnut(chartItems,options);
+                new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(ChartData,myChartOptions);
                 $scope.hideHUD();
             },
             error: function(error) {
@@ -311,6 +309,50 @@ angular.module('starter.controllers', ['angles'])
         });
         $scope.goBack =function(){
             $state.go('app.Students');
+        }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        $scope.data = {
+            data : [{
+                x : "Jack",
+                y: [100,210, 384],
+                tooltip:"this is tooltip"
+            },
+                {
+                    x : "John",
+                    y: [300, 289, 456]
+                },
+                {
+                    x : "Stacy",
+                    y: [351, 170, 255]
+                },
+                {
+                    x : "Luke",
+                    y: [54, 341, 879]
+                }]
+        };
+
+        $scope.chartType = 'bar';
+
+
+        $scope.config = {
+            labels: false,
+            title : "Products",
+            legend : {
+                display: true,
+                position:'right'
+            },
+            click : function(d) {
+                console.log('clicked');
+            },
+            mouseover : function(d) {
+                console.log('mouseover');
+            },
+            mouseout : function(d) {
+                console.log('mouseout');
+            },
+            innerRadius: 0,
+            lineLegend: 'lineEnd'
         }
     })
 
