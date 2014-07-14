@@ -32,12 +32,14 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       templateUrl: "templates/menu.html",
       controller: 'AppCtrl'
     })
+
     .state('tabs', {
           url: "/student",
           abstract: true,
           templateUrl: "templates/student.html",
           controller: 'StudentCtrl'
     })
+
     .state('tabs.attendance', {
           url: "/attendance/:studentId",
           views: {
@@ -47,7 +49,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
               }
           }
      })
-      .state('tabs.behavior', {
+
+     .state('tabs.behavior', {
           url: "/behavior/:studentId",
           views: {
               'behavior-tab': {
@@ -56,6 +59,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
               }
           }
       })
+
     .state('app.search', {
       url: "/search",
       views: {
@@ -74,6 +78,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+
     .state('app.playlists', {
       url: "/playlists",
       views: {
@@ -93,6 +98,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+
      .state('app.children', {
           url: "/children",
           views: {
@@ -102,7 +108,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
               }
           }
      })
-      .state('app.student', {
+
+     .state('app.student', {
           url: "/student/:studentId",
           views: {
               'menuContent' :{
@@ -111,16 +118,14 @@ angular.module('starter', ['ionic', 'starter.controllers'])
               }
           }
       })
-      .state('login', {
+
+     .state('login', {
           url: "/login",
-
-
-                  templateUrl: "templates/login.html",
-                  controller: 'LogInCtrl'
-
-
+          templateUrl: "templates/login.html",
+          controller: 'LogInCtrl'
       })
-      .state('app.SignUp', {
+
+     .state('app.SignUp', {
           url: "/SignUp",
             views: {
                 'menuContent' :{
@@ -129,6 +134,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                 }
             }
         })
+
       .state('app.Students', {
           url: "/Students",
           views: {
@@ -138,6 +144,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
               }
           }
       });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 });

@@ -422,6 +422,7 @@ angular.module('starter.controllers', ['ionic'])
             $state.go('app.Students');
         }
 })
+
 .controller('BrowseCtrl', function ($scope,$stateParams,BehaviorTypesService,$state,$ionicLoading){
         var ctx = document.getElementById("myChart").getContext("2d");
 
