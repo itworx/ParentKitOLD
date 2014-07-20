@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['angles'])
+angular.module('starter.controllers', ['angles','angularCharts'])
     .service('AttendanceTypesService',function(){
         var types = [];
         var attendanceType =  Parse.Object.extend("Attendancetype");
@@ -115,7 +115,6 @@ angular.module('starter.controllers', ['angles'])
             return students;
         }
     })
-
     .service('storage',function($window) {
         return {
             set: function(key, value) {
@@ -153,17 +152,16 @@ angular.module('starter.controllers', ['angles'])
   ];
 })
 
-.controller('AttendanceCtrl', function ($scope,LessonService,$stateParams,AttendanceTypesService,$ionicNavBarDelegate,$state,$ionicLoading,studentsService){
+.controller('AttendanceCtrl', function ($scope,LessonService,$stateParams,AttendanceTypesService,$ionicNavBarDelegate,$state,$ionicLoading,studentsService,$ionicPopup){
 
         $scope.pageTitle = studentsService.getCurrentStudent().firstName;
 
         //Attendance Chart
-        $scope.myChartData = [];
-//        var ctx = document.getElementById("myChart").getContext("2d");
+        $scope.tmpChartData = [];
         $scope.AddItemInAttendanceChartsData = function(record){
             var found = false;
-            for(var i = 0; i < $scope.myChartData .length; i++) {
-                var item = $scope.myChartData [i];
+            for(var i = 0; i < $scope.tmpChartData.length; i++) {
+                var item = $scope.tmpChartData [i];
                 if(item.title == record.type.title){
                     item.value +=1;
                     found = true;
@@ -176,12 +174,12 @@ angular.module('starter.controllers', ['angles'])
                     color: record.type.color,
                     title : record.type.title
                 }
-                $scope.myChartData .push(addedItem);
+                $scope.tmpChartData.push(addedItem);
             }
         };
-        $scope.myChartOptions =  {
+        var myChartOptions  =  {
             inGraphDataShow : true,
-            datasetFill : true,
+            datasetFill : false,
             scaleTickSizeRight : 0,
             scaleTickSizeLeft : 0,
             scaleTickSizeBottom :0,
@@ -195,15 +193,13 @@ angular.module('starter.controllers', ['angles'])
             graphTitleFontSize : 24,
             graphTitleFontStyle : "bold",
             graphTitleFontColor : "#666",
-//            graphSubTitle : '',
-//            graphSubTitleFontFamily : "'Arial'",
-//            graphSubTitleFontSize : 18,
-//            graphSubTitleFontStyle : "normal",
-//            graphSubTitleFontColor : "#666",
-//            inGraphDataTmpl: "<%=(v1 == ''? '' : v1+':')+ roundToWithThousands(config,v2,2) + ' (' + roundToWithThousands(config,v6,1) + ' %)'%>",
-            inGraphDataTmpl: "<%=(v1 == ''? '' : v1+' = ')+ roundToWithThousands(config,v2,2)%>",
+            graphSubTitleFontFamily : "'Arial'",
+            graphSubTitleFontSize : 18,
+            graphSubTitleFontStyle : "normal",
+            graphSubTitleFontColor : "#666",
+            inGraphDataTmpl: "<%=roundToWithThousands(config,v2,2)%>",
             inGraphDataFontColor: "#666",
-            legend : false,
+            legend : true,
             legendFontFamily : "'Arial'",
             legendFontSize : 9,
             legendFontStyle : "normal",
@@ -228,7 +224,7 @@ angular.module('starter.controllers', ['angles'])
             legendBordersSpaceAfter : 0,
             footNoteSpaceBefore : 0,
             footNoteSpaceAfter : 0,
-            startAngle : 180,
+            startAngle : 0,
             dynamicDisplay : false
         }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -241,6 +237,13 @@ angular.module('starter.controllers', ['angles'])
         $scope.hideHUD = function(){
             $ionicLoading.hide();
         };
+
+        $scope.showAlert = function(title,content) {
+            $ionicPopup.alert({
+                title: title,
+                content: content
+            });
+        }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         $scope.records = [];
         var attendance = Parse.Object.extend("Attendance");
@@ -253,6 +256,7 @@ angular.module('starter.controllers', ['angles'])
         attendanceQuery.matchesQuery("student", studentQuery);
         attendanceQuery.find({
             success: function(attendancesResults) {
+                var error = false;
                 for (var i = 0; i < attendancesResults.length; i++) {
                     var attendanceObject = attendancesResults[i].toJSON();
                     if(attendanceObject.isDeleted == false){
@@ -264,25 +268,38 @@ angular.module('starter.controllers', ['angles'])
                         record.attendance = attendanceObject;
                         record.type = AttendanceTypesService.getType(attendanceObject.type.objectId);
                         var lessonObject= LessonService.getLesson(attendanceObject.lesson.objectId);
+                        if(!lessonObject){
+                            error = true;
+                            break;
+                        }
                         record.lesson = lessonObject;
                         $scope.records.push(record);
-                        $scope.$apply();
                         $scope.AddItemInAttendanceChartsData(record);
                     }
                 }
-                $scope.records.sort(function(a,b){
-                    if((b.lesson.lessonStartDate - a.lesson.lessonStartDate) == 0){
-                        return b.lesson.lessonStartTime - a.lesson.lessonStartTime;
+                if(error){
+                    $scope.hideHUD();
+                    $scope.showAlert('Error','Error in retrieving data...');
+                    $scope.records = [];
+                    $scope.myChartData = [];
+                }
+                else{
+                    $scope.records.sort(function(a,b){
+                        if((b.lesson.lessonStartDate - a.lesson.lessonStartDate) == 0){
+                            return b.lesson.lessonStartTime - a.lesson.lessonStartTime;
+                        }
+                        return new Date(b.lesson.lessonStartDate) - new Date(a.lesson.lessonStartDate);
+                    });
+                    var ChartData = $scope.tmpChartData;
+                    $scope.$apply();
+                    for(var j = 0; j < $scope.records.length; j++){
+                        var object =  $scope.records[j];
+                        var element = document.getElementById(j);
+                        var objectColor = '#' + object.type.color;
+                        element.style.backgroundColor = objectColor;
                     }
-                    return new Date(b.lesson.lessonStartDate) - new Date(a.lesson.lessonStartDate);
-                });
-                for(var j = 0; j < $scope.records.length; j++){
-                    var object =  $scope.records[j];
-                    var element = document.getElementById(j);
-                    var objectColor = '#' + object.type.color;
-                    element.style.backgroundColor = objectColor;
-                   }
-//                new Chart(ctx).Doughnut(chartItems,options);
+                }
+                new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(ChartData,myChartOptions);
                 $scope.hideHUD();
             },
             error: function(error) {
@@ -291,6 +308,50 @@ angular.module('starter.controllers', ['angles'])
         });
         $scope.goBack =function(){
             $state.go('app.Students');
+        }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        $scope.data = {
+            data : [{
+                x : "Jack",
+                y: [100,210, 384],
+                tooltip:"this is tooltip"
+            },
+                {
+                    x : "John",
+                    y: [300, 289, 456]
+                },
+                {
+                    x : "Stacy",
+                    y: [351, 170, 255]
+                },
+                {
+                    x : "Luke",
+                    y: [54, 341, 879]
+                }]
+        };
+
+        $scope.chartType = 'bar';
+
+
+        $scope.config = {
+            labels: false,
+            title : "Products",
+            legend : {
+                display: true,
+                position:'right'
+            },
+            click : function(d) {
+                console.log('clicked');
+            },
+            mouseover : function(d) {
+                console.log('mouseover');
+            },
+            mouseout : function(d) {
+                console.log('mouseout');
+            },
+            innerRadius: 0,
+            lineLegend: 'lineEnd'
         }
     })
 
@@ -552,6 +613,7 @@ angular.module('starter.controllers', ['angles'])
                     $scope.children=[];
 
                     for (var i = 0; i < results.length; i++) {
+
                         var object = results[i].toJSON();
                         if(object.isDeleted == false){
                             $scope.children.push(object);
@@ -570,11 +632,23 @@ angular.module('starter.controllers', ['angles'])
                     alert("Error: " + error.code + " " + error.message);
                 }
             });
+
+        $scope.toggleGroup = function(group) {
+            if ($scope.isGroupShown(group)) {
+                $scope.shownGroup = null;
+            } else {
+                $scope.shownGroup = group;
+            }
+        };
+
+        $scope.isGroupShown = function(group) {
+            return $scope.shownGroup === group;
+        };
+
         $scope.goToChildren = function(index){
             studentsService.setCurrentStudent($scope.children[index]);
             $state.go('tabs.summary',{"studentId":studentsService.getCurrentStudent().objectId})
         };
-
         function compareChildren(a,b) {
 
                 var first1lower = a.firstName.toLowerCase();

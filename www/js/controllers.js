@@ -115,7 +115,6 @@ angular.module('starter.controllers', ['angles','angularCharts'])
             return students;
         }
     })
-
     .service('storage',function($window) {
         return {
             set: function(key, value) {
@@ -605,23 +604,41 @@ angular.module('starter.controllers', ['angles','angularCharts'])
         $scope.hideHUD = function(){
             $ionicLoading.hide();
         };
-            var Student = Parse.Object.extend("Student");
-            var query = new Parse.Query(Student);
-            $scope.showHUD('loading..');
-            query.find({
+         var Student = Parse.Object.extend("Student");
+         var query = new Parse.Query(Student);
+         $scope.showHUD('loading..');
+
+         query.query({
                 success: function(results) {
-
                     $scope.children=[];
-
                     for (var i = 0; i < results.length; i++) {
                         var object = results[i].toJSON();
                         if(object.isDeleted == false){
+
+                            var classroomsRelation = results[i].relation("classrooms");
+                            var classQuery = classroomsRelation.query();
+                            classQuery.query({
+                                success: function(classes) {
+                                    if(classes.length >0) {
+                                        var studentClasses = [];
+                                        for (var j = 0; j < classes.length; j++) {
+                                            var classObject = classes[j].toJSON();
+                                            studentClasses.push(classObject);
+                                        }
+                                        object.classrooms = studentClasses;
+                                    }
+                                },
+                                error: function(error) {
+                                    $scope.hideHUD();
+                                    alert("Error: " + error.code + " " + error.message);
+                                }
+                            });
                             $scope.children.push(object);
                         }
                     }
-
                     // Do something with the returned Parse.Object values
                     console.log(results);
+
                     $scope.children.sort(compareChildren)
                     studentsService.setStudents($scope.children);
                     $scope.hideHUD();
@@ -632,11 +649,24 @@ angular.module('starter.controllers', ['angles','angularCharts'])
                     alert("Error: " + error.code + " " + error.message);
                 }
             });
+
+
+        $scope.toggleGroup = function(group) {
+            if ($scope.isGroupShown(group)) {
+                $scope.shownGroup = null;
+            } else {
+                $scope.shownGroup = group;
+            }
+        };
+
+        $scope.isGroupShown = function(group) {
+            return $scope.shownGroup === group;
+        };
+
         $scope.goToChildren = function(index){
             studentsService.setCurrentStudent($scope.children[index]);
             $state.go('tabs.summary',{"studentId":studentsService.getCurrentStudent().objectId})
         };
-
         function compareChildren(a,b) {
 
                 var first1lower = a.firstName.toLowerCase();
