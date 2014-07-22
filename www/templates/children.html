@@ -7,7 +7,7 @@
 <ion-view  title="Students" hide-back-button="true" animation="slide-left-right">
     <ion-content class="has-header">
         <ion-list>
-            <div ng-repeat="child in children">
+            <div ng-repeat="child in children" >
                 <ion-item class="item-stable"
                           ng-click="toggleGroup(child)"
                           ng-class="{active: isGroupShown(child)}">

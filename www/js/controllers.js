@@ -608,48 +608,51 @@ angular.module('starter.controllers', ['angles','angularCharts'])
          var query = new Parse.Query(Student);
          $scope.showHUD('loading..');
 
-         query.query({
+         query.find({
                 success: function(results) {
-                    $scope.children=[];
+                    $scope.children = [];
+                    var childrenObjects = [];
                     for (var i = 0; i < results.length; i++) {
                         var object = results[i].toJSON();
-                        if(object.isDeleted == false){
-
-                            var classroomsRelation = results[i].relation("classrooms");
-                            var classQuery = classroomsRelation.query();
-                            classQuery.query({
-                                success: function(classes) {
-                                    if(classes.length >0) {
-                                        var studentClasses = [];
-                                        for (var j = 0; j < classes.length; j++) {
-                                            var classObject = classes[j].toJSON();
-                                            studentClasses.push(classObject);
-                                        }
-                                        object.classrooms = studentClasses;
-                                    }
+                        if (object.isDeleted == false) {
+                            $scope.children.push(object);
+                            childrenObjects.push(results[i]);
+                        }
+                     }
+                    var count = 0;
+                    for (var i = 0; i < $scope.children.length; i++){
+                        var classroomsRelation = childrenObjects[i].relation("classrooms");
+                        var classQuery = classroomsRelation.query();
+                        classQuery.find({
+                            success: function(classes) {
+                                  var studentClasses = [];
+                                  for (var j = 0; j < classes.length; j++) {
+                                      var classObject = classes[j].toJSON();
+                                      studentClasses.push(classObject);
+                                  }
+//                                alert(count);
+//                                alert($scope.children[count]);
+                                $scope.children[count].classrooms = studentClasses;
+                                count++;
                                 },
                                 error: function(error) {
                                     $scope.hideHUD();
                                     alert("Error: " + error.code + " " + error.message);
                                 }
                             });
-                            $scope.children.push(object);
-                        }
+
                     }
-                    // Do something with the returned Parse.Object values
-                    console.log(results);
-
-                    $scope.children.sort(compareChildren)
-                    studentsService.setStudents($scope.children);
-                    $scope.hideHUD();
-
+                        console.log(results);
+                        $scope.children.sort(compareChildren)
+                        studentsService.setStudents($scope.children);
+                        $scope.$apply();
+                        $scope.hideHUD();
                 },
                 error: function(error) {
                     $scope.hideHUD();
                     alert("Error: " + error.code + " " + error.message);
                 }
             });
-
 
         $scope.toggleGroup = function(group) {
             if ($scope.isGroupShown(group)) {
@@ -667,6 +670,7 @@ angular.module('starter.controllers', ['angles','angularCharts'])
             studentsService.setCurrentStudent($scope.children[index]);
             $state.go('tabs.summary',{"studentId":studentsService.getCurrentStudent().objectId})
         };
+
         function compareChildren(a,b) {
 
                 var first1lower = a.firstName.toLowerCase();
