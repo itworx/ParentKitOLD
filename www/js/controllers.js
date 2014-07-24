@@ -604,6 +604,7 @@ angular.module('starter.controllers', ['angles','angularCharts'])
         $scope.hideHUD = function(){
             $ionicLoading.hide();
         };
+
          var Student = Parse.Object.extend("Student");
          var query = new Parse.Query(Student);
          $scope.showHUD('loading..');
@@ -611,42 +612,19 @@ angular.module('starter.controllers', ['angles','angularCharts'])
          query.find({
                 success: function(results) {
                     $scope.children = [];
-                    var childrenObjects = [];
+                    $scope.childrenObjects = [];
                     for (var i = 0; i < results.length; i++) {
                         var object = results[i].toJSON();
                         if (object.isDeleted == false) {
                             $scope.children.push(object);
-                            childrenObjects.push(results[i]);
+                            $scope.childrenObjects.push(results[i]);
                         }
                      }
-                    var count = 0;
-                    for (var i = 0; i < $scope.children.length; i++){
-                        var classroomsRelation = childrenObjects[i].relation("classrooms");
-                        var classQuery = classroomsRelation.query();
-                        classQuery.find({
-                            success: function(classes) {
-                                  var studentClasses = [];
-                                  for (var j = 0; j < classes.length; j++) {
-                                      var classObject = classes[j].toJSON();
-                                      studentClasses.push(classObject);
-                                  }
-//                                alert(count);
-//                                alert($scope.children[count]);
-                                $scope.children[count].classrooms = studentClasses;
-                                count++;
-                                },
-                                error: function(error) {
-                                    $scope.hideHUD();
-                                    alert("Error: " + error.code + " " + error.message);
-                                }
-                            });
-
-                    }
-                        console.log(results);
-                        $scope.children.sort(compareChildren)
-                        studentsService.setStudents($scope.children);
-                        $scope.$apply();
-                        $scope.hideHUD();
+                    console.log(results);
+                    $scope.children.sort(compareChildren)
+                    studentsService.setStudents($scope.children);
+                    $scope.$apply();
+                    $scope.hideHUD();
                 },
                 error: function(error) {
                     $scope.hideHUD();
@@ -654,7 +632,27 @@ angular.module('starter.controllers', ['angles','angularCharts'])
                 }
             });
 
-        $scope.toggleGroup = function(group) {
+        $scope.toggleGroup = function(group,index) {
+            $scope.showHUD('loading..');
+            var classroomsRelation = $scope.childrenObjects[index].relation("classrooms");
+            var classQuery = classroomsRelation.query();
+                classQuery.find({
+                            success: function(classes) {
+                                  var studentClasses = [];
+                                  for (var j = 0; j < classes.length; j++) {
+                                      var classObject = classes[j].toJSON();
+                                      studentClasses.push(classObject);
+                                  }
+                                $scope.children[index].classrooms = studentClasses;
+                                studentsService.setStudents($scope.children);
+                                $scope.$apply();
+                                $scope.hideHUD();
+                                },
+                                error: function(error) {
+                                    $scope.hideHUD();
+                                    alert("Error: " + error.code + " " + error.message);
+                                }
+                 });
             if ($scope.isGroupShown(group)) {
                 $scope.shownGroup = null;
             } else {

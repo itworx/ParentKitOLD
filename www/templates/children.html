@@ -9,7 +9,7 @@
         <ion-list>
             <div ng-repeat="child in children" >
                 <ion-item class="item-stable"
-                          ng-click="toggleGroup(child)"
+                          ng-click="toggleGroup(child,$index)"
                           ng-class="{active: isGroupShown(child)}">
                     <i class="icon" ng-class="isGroupShown(child) ? 'ion-minus' : 'ion-plus'"></i>
                     <b>{{child.firstName}}  {{child.lastName}}</b>
