@@ -419,6 +419,7 @@ angular.module('starter', ['ionic', 'starter.controllers','openfb'])
               }
           }
       })
+
       .state('app.accessCode', {
           url: "/accessCode",
           views: {

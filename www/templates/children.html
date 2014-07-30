@@ -16,7 +16,8 @@
                 </ion-item>
                 <ion-item class="item-accordion"
                           ng-repeat="item in child.classrooms"
-                          ng-show="isGroupShown(child)">
+                          ng-show="isGroupShown(child)"
+                          ng-click="goToChildren($index)">
                     {{item.title}}
                 </ion-item>
                 </div>
