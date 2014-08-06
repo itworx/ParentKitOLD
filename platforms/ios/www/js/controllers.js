@@ -96,10 +96,8 @@ angular.module('starter.controllers', ['angles','angularCharts'])
         this.addStudent = function(student){
             students.push(student);
         };
-        this.getCurrentStudent = function(){
-          return currentStudent;
-        };
-        this.setCurrentStudent = function(student){
+
+        this.setCurrentStudent = function(student,studentObject){
             console.log('this is set current student fn');
             console.log('this is studnet   ' +  student);
             currentStudent = student;
@@ -114,6 +112,10 @@ angular.module('starter.controllers', ['angles','angularCharts'])
         this.getStudents = function () {
             return students;
         }
+        this.getCurrentStudent = function(){
+            return currentStudent;
+        };
+
     })
     .service('storage',function($window) {
         return {
@@ -171,7 +173,7 @@ angular.module('starter.controllers', ['angles','angularCharts'])
             if(!found){
                 var addedItem = {
                     value : 1,
-                    color: record.type.color,
+                    color: "#"+record.type.color,
                     title : record.type.title
                 }
                 $scope.tmpChartData.push(addedItem);
@@ -596,86 +598,138 @@ angular.module('starter.controllers', ['angles','angularCharts'])
 
 .controller('Students', function($scope, $state,  $ionicLoading , studentsService,BehaviorTypesService,LessonService,AttendanceTypesService) {
 
-        $scope.showHUD = function(text) {
+        $scope.showHUD = function (text) {
             $ionicLoading.show({
                 template: text
             });
         };
-        $scope.hideHUD = function(){
+        $scope.hideHUD = function () {
             $ionicLoading.hide();
         };
-            var Student = Parse.Object.extend("Student");
-            var query = new Parse.Query(Student);
-            $scope.showHUD('loading..');
-            query.find({
-                success: function(results) {
 
-                    $scope.children=[];
+        var Student = Parse.Object.extend("Student");
+        var query = new Parse.Query(Student);
+        $scope.showHUD('loading..');
 
-                    for (var i = 0; i < results.length; i++) {
-
-                        var object = results[i].toJSON();
-                        if(object.isDeleted == false){
-                            $scope.children.push(object);
-                        }
+        query.find({
+            success: function (results) {
+                $scope.children = [];
+                $scope.childrenObjects = [];
+                for (var i = 0; i < results.length; i++) {
+                    var object = results[i].toJSON();
+                    var rawObject = results[i];
+                    if (object.isDeleted == false) {
+                        $scope.children.push(object);
+                        $scope.childrenObjects.push(rawObject);
                     }
-
-                    // Do something with the returned Parse.Object values
-                    console.log(results);
-                    $scope.children.sort(compareChildren)
-                    studentsService.setStudents($scope.children);
-                    $scope.hideHUD();
-
-                },
-                error: function(error) {
-                    $scope.hideHUD();
-                    alert("Error: " + error.code + " " + error.message);
                 }
-            });
+                console.log(results);
+                $scope.children.sort(compareChildren)
+                $scope.childrenObjects.sort(compareChildrenObjects);
+                studentsService.setStudents($scope.children);
+                $scope.$apply();
+                $scope.hideHUD();
+            },
+            error: function (error) {
+                $scope.hideHUD();
+                alert("Error: " + error.code + " " + error.message);
+            }
+        });
 
-        $scope.toggleGroup = function(group) {
+        $scope.toggleGroup = function (group, index) {
             if ($scope.isGroupShown(group)) {
                 $scope.shownGroup = null;
             } else {
+                $scope.showHUD('loading..');
+                var classroomsRelation = $scope.childrenObjects[index].relation("classrooms");
+                var classQuery = classroomsRelation.query();
+                classQuery.find({
+                    success: function (classes) {
+                        var studentClasses = [];
+                        for (var j = 0; j < classes.length; j++) {
+                            var classObject = classes[j].toJSON();
+                            studentClasses.push(classObject);
+                        }
+                        $scope.children[index].classrooms = studentClasses;
+                        studentsService.setStudents($scope.children);
+                        $scope.$apply();
+                        $scope.hideHUD();
+                    },
+                    error: function (error) {
+                        $scope.hideHUD();
+                        alert("Error: " + error.code + " " + error.message);
+                    }
+                });
                 $scope.shownGroup = group;
             }
         };
 
-        $scope.isGroupShown = function(group) {
+        $scope.isGroupShown = function (group) {
             return $scope.shownGroup === group;
         };
 
-        $scope.goToChildren = function(index){
+        $scope.goToChildren = function (index) {
             studentsService.setCurrentStudent($scope.children[index]);
             $state.go('tabs.summary',{"studentId":studentsService.getCurrentStudent().objectId})
         };
-        function compareChildren(a,b) {
 
-                var first1lower = a.firstName.toLowerCase();
-                var first2lower = b.firstName.toLowerCase();
+        function compareChildren(a, b) {
 
-                var last1lower = a.lastName.toLowerCase();
-                var last2lower = b.lastName.toLowerCase();
+            var first1lower = a.firstName.toLowerCase();
+            var first2lower = b.firstName.toLowerCase();
 
-            if(first1lower > first2lower)
+            var last1lower = a.lastName.toLowerCase();
+            var last2lower = b.lastName.toLowerCase();
+
+            if (first1lower > first2lower)
                 return 1;
-            if(first2lower > first1lower)
+            if (first2lower > first1lower)
                 return -1
-            if(last1lower > last2lower)
+            if (last1lower > last2lower)
                 return 1;
-            if(last2lower > last1lower)
+            if (last2lower > last1lower)
                 return -1
 
             var aFirst = a.firstName.charAt(0);
-            if(a.firstName.charAt(0) > b.firstName.charAt(0))
+            if (a.firstName.charAt(0) > b.firstName.charAt(0))
                 return 1;
-            if(b.firstName.charAt(0) > a.firstName.charAt(0))
+            if (b.firstName.charAt(0) > a.firstName.charAt(0))
                 return -1;
-            if(a.lastName.charAt(0) > b.lastName.charAt(0))
+            if (a.lastName.charAt(0) > b.lastName.charAt(0))
                 return 1;
-            if(b.lastName.charAt(0) > a.lastName.charAt(0))
+            if (b.lastName.charAt(0) > a.lastName.charAt(0))
                 return -1;
             return 0;
+        }
+
+        function compareChildrenObjects(a, b) {
+
+            var first1lower = a.attributes.firstName.toLowerCase();
+            var first2lower = b.attributes.firstName.toLowerCase();
+
+            var last1lower = a.attributes.lastName.toLowerCase();
+            var last2lower = b.attributes.lastName.toLowerCase();
+
+            if (first1lower > first2lower)
+                return 1;
+            if (first2lower > first1lower)
+                return -1
+            if (last1lower > last2lower)
+                return 1;
+            if (last2lower > last1lower)
+                return -1
+
+            var aFirst = a.attributes.firstName.charAt(0);
+            if (a.attributes.firstName.charAt(0) > b.attributes.firstName.charAt(0))
+                return 1;
+            if (b.attributes.firstName.charAt(0) > a.attributes.firstName.charAt(0))
+                return -1;
+            if (a.attributes.lastName.charAt(0) > b.attributes.lastName.charAt(0))
+                return 1;
+            if (b.attributes.lastName.charAt(0) > a.attributes.lastName.charAt(0))
+                return -1;
+            return 0;
+
         }
     })
 

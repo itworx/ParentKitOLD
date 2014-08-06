@@ -18,7 +18,7 @@
                           ng-repeat="item in child.classrooms"
                           ng-show="isGroupShown(child)"
                           ng-click="goToChildren($index)">
-                    {{item.title}}
+                    {{item.attributes.title}}
                 </ion-item>
                 </div>
             </ion-list>

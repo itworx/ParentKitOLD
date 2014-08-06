@@ -93,10 +93,17 @@ angular.module('starter.controllers', ['angles','angularCharts'])
     .service('studentsService',function(){
         var students = [];
         var currentStudent;
+        var selectedClassroomId;
         this.addStudent = function(student){
             students.push(student);
         };
+        this.setSelectedClassroomId = function(classroomId){
+            selectedClassroomId = classroomId;
+        };
 
+        this.getSelectedClassroomId = function () {
+            return selectedClassroomId;
+        }
         this.setCurrentStudent = function(student,studentObject){
             console.log('this is set current student fn');
             console.log('this is studnet   ' +  student);
@@ -157,6 +164,7 @@ angular.module('starter.controllers', ['angles','angularCharts'])
 .controller('AttendanceCtrl', function ($scope,LessonService,$stateParams,AttendanceTypesService,$ionicNavBarDelegate,$state,$ionicLoading,studentsService,$ionicPopup){
 
         $scope.pageTitle = studentsService.getCurrentStudent().firstName;
+        var selectedClassroomId = studentsService.getSelectedClassroomId();
 
         //Attendance Chart
         $scope.tmpChartData = [];
@@ -247,6 +255,33 @@ angular.module('starter.controllers', ['angles','angularCharts'])
             });
         }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        var lessons = [];
+        var lesson =  Parse.Object.extend("Lesson");
+        var lessonsQuery = new Parse.Query(lesson);
+
+        var classroom = Parse.Object.extend("Classroom");
+        var classroomQuery = new Parse.Query(classroom);
+        classroomQuery.equalTo("objectId",selectedClassroomId);
+        lessonsQuery.matchesQuery("Classroom", classroomQuery);
+        lessonsQuery .find({
+            success: function (lessonsResults) {
+                console.log('lesson serivce success');
+                for(i in lessonsResults){
+                    var lessonObject = lessonsResults[i].toJSON();
+                    lessonObject.lessonStartDate = new Date (lessonObject.lessonStartDate.iso);
+                    lessonObject.lessonStartTime= new Date (lessonObject.lessonStartTime.iso);
+                    lessonObject.lessonEndTime= new Date (lessonObject.lessonEndTime.iso);
+                    console.log('lesson Object ID :' + lessonObject.objectId);
+                    if(lessonObject.isDeleted == false){
+                        lessons.push(lessonObject);
+                    }
+                }
+            },
+            error:function(error){
+                alert("Error: " + error.code + " " + error.message);
+            }
+        });
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         $scope.records = [];
         var attendance = Parse.Object.extend("Attendance");
         var attendanceQuery = new Parse.Query(attendance);
@@ -254,6 +289,7 @@ angular.module('starter.controllers', ['angles','angularCharts'])
         var student = Parse.Object.extend("Student");
         var studentQuery = new Parse.Query(student);
         studentQuery.equalTo("objectId",$stateParams.studentId);
+
         $scope.showHUD('loading...');
         attendanceQuery.matchesQuery("student", studentQuery);
         attendanceQuery.find({
@@ -597,7 +633,7 @@ angular.module('starter.controllers', ['angles','angularCharts'])
     })
 
 .controller('Students', function($scope, $state,  $ionicLoading , studentsService,BehaviorTypesService,LessonService,AttendanceTypesService) {
-
+        $scope.studentIndex =-1;
         $scope.showHUD = function (text) {
             $ionicLoading.show({
                 template: text
@@ -640,14 +676,16 @@ angular.module('starter.controllers', ['angles','angularCharts'])
             if ($scope.isGroupShown(group)) {
                 $scope.shownGroup = null;
             } else {
+
                 $scope.showHUD('loading..');
+                $scope.studentIndex = index;
                 var classroomsRelation = $scope.childrenObjects[index].relation("classrooms");
                 var classQuery = classroomsRelation.query();
                 classQuery.find({
                     success: function (classes) {
                         var studentClasses = [];
                         for (var j = 0; j < classes.length; j++) {
-                            var classObject = classes[j].toJSON();
+                            var classObject = classes[j];
                             studentClasses.push(classObject);
                         }
                         $scope.children[index].classrooms = studentClasses;
@@ -669,7 +707,9 @@ angular.module('starter.controllers', ['angles','angularCharts'])
         };
 
         $scope.goToChildren = function (index) {
-            studentsService.setCurrentStudent($scope.children[index]);
+            studentsService.setCurrentStudent($scope.children[$scope.studentIndex]);
+            studentsService.setSelectedClassroomId($scope.children[$scope.studentIndex].classrooms[index].id);
+            console.log("classroom:",$scope.children[$scope.studentIndex].classrooms[index].id);
             $state.go('tabs.summary',{"studentId":studentsService.getCurrentStudent().objectId})
         };
 
@@ -983,6 +1023,8 @@ angular.module('starter.controllers', ['angles','angularCharts'])
                 }
             });
         };
+
+
 
         $scope.showAlert = function(title,content) {
             $ionicPopup.alert({
