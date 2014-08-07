@@ -255,32 +255,58 @@ angular.module('starter.controllers', ['angles','angularCharts'])
             });
         }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
         var lessons = [];
-        var lesson =  Parse.Object.extend("Lesson");
-        var lessonsQuery = new Parse.Query(lesson);
 
         var classroom = Parse.Object.extend("Classroom");
         var classroomQuery = new Parse.Query(classroom);
         classroomQuery.equalTo("objectId",selectedClassroomId);
-        lessonsQuery.matchesQuery("Classroom", classroomQuery);
-        lessonsQuery .find({
-            success: function (lessonsResults) {
-                console.log('lesson serivce success');
-                for(i in lessonsResults){
-                    var lessonObject = lessonsResults[i].toJSON();
-                    lessonObject.lessonStartDate = new Date (lessonObject.lessonStartDate.iso);
-                    lessonObject.lessonStartTime= new Date (lessonObject.lessonStartTime.iso);
-                    lessonObject.lessonEndTime= new Date (lessonObject.lessonEndTime.iso);
-                    console.log('lesson Object ID :' + lessonObject.objectId);
-                    if(lessonObject.isDeleted == false){
-                        lessons.push(lessonObject);
-                    }
+        classroomQuery .find({
+            success: function (classrooms) {
+                if(classrooms.length>0){
+                    var classroom = classrooms[0];
+                    var lessonsRelation = classroom.relation("lessons");
+                    lessonsRelation.query().find({
+                        success: function(lessonsObjects) {
+                            for (var i = 0; i < lessonsObjects.length; i++) {
+                                var lessonObject =  lessonsObjects[i].toJSON;
+                               }
+
+
+                        }
+                    });
                 }
             },
             error:function(error){
                 alert("Error: " + error.code + " " + error.message);
             }
         });
+
+
+
+//        var lesson =  Parse.Object.extend("Lesson");
+//        var lessonsQuery = new Parse.Query(lesson);
+//
+//        lessonsQuery.matchesQuery("Classroom", classroomQuery);
+//        lessonsQuery .find({
+//            success: function (lessonsResults) {
+//                console.log('lesson serivce success');
+//                for(i in lessonsResults){
+//                    var lessonObject = lessonsResults[i].toJSON();
+//                    lessonObject.lessonStartDate = new Date (lessonObject.lessonStartDate.iso);
+//                    lessonObject.lessonStartTime= new Date (lessonObject.lessonStartTime.iso);
+//                    lessonObject.lessonEndTime= new Date (lessonObject.lessonEndTime.iso);
+//                    console.log('lesson Object ID :' + lessonObject.objectId);
+//                    if(lessonObject.isDeleted == false){
+//                        lessons.push(lessonObject);
+//                    }
+//                }
+//            },
+//            error:function(error){
+//                alert("Error: " + error.code + " " + error.message);
+//            }
+//        });
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         $scope.records = [];
         var attendance = Parse.Object.extend("Attendance");
@@ -305,6 +331,10 @@ angular.module('starter.controllers', ['angles','angularCharts'])
                         };
                         record.attendance = attendanceObject;
                         record.type = AttendanceTypesService.getType(attendanceObject.type.objectId);
+                        //bool found   currentLesson ;
+                        //for lessons
+                        // if lesson.objectid == attendanceobject.lesson.objectid /found = true /currentlesson = lesson /break
+                        // if found record,lesson = currentlesson
                         var lessonObject= LessonService.getLesson(attendanceObject.lesson.objectId);
                         if(!lessonObject){
                             error = true;
