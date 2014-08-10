@@ -93,10 +93,17 @@ angular.module('starter.controllers', ['angles','angularCharts'])
     .service('studentsService',function(){
         var students = [];
         var currentStudent;
+        var selectedClassroomId;
         this.addStudent = function(student){
             students.push(student);
         };
+        this.setSelectedClassroomId = function(classroomId){
+            selectedClassroomId = classroomId;
+        };
 
+        this.getSelectedClassroomId = function () {
+            return selectedClassroomId;
+        }
         this.setCurrentStudent = function(student,studentObject){
             console.log('this is set current student fn');
             console.log('this is studnet   ' +  student);
@@ -157,6 +164,7 @@ angular.module('starter.controllers', ['angles','angularCharts'])
 .controller('AttendanceCtrl', function ($scope,LessonService,$stateParams,AttendanceTypesService,$ionicNavBarDelegate,$state,$ionicLoading,studentsService,$ionicPopup){
 
         $scope.pageTitle = studentsService.getCurrentStudent().firstName;
+        var selectedClassroomId = studentsService.getSelectedClassroomId();
 
         //Attendance Chart
         $scope.tmpChartData = [];
@@ -247,67 +255,198 @@ angular.module('starter.controllers', ['angles','angularCharts'])
             });
         }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        $scope.records = [];
-        var attendance = Parse.Object.extend("Attendance");
-        var attendanceQuery = new Parse.Query(attendance);
 
-        var student = Parse.Object.extend("Student");
-        var studentQuery = new Parse.Query(student);
-        studentQuery.equalTo("objectId",$stateParams.studentId);
-        $scope.showHUD('loading...');
-        attendanceQuery.matchesQuery("student", studentQuery);
-        attendanceQuery.find({
-            success: function(attendancesResults) {
-                var error = false;
-                for (var i = 0; i < attendancesResults.length; i++) {
-                    var attendanceObject = attendancesResults[i].toJSON();
-                    if(attendanceObject.isDeleted == false){
-                        var record = {
-                            attendance :'',
-                            type :'',
-                            lesson:''
-                        };
-                        record.attendance = attendanceObject;
-                        record.type = AttendanceTypesService.getType(attendanceObject.type.objectId);
-                        var lessonObject= LessonService.getLesson(attendanceObject.lesson.objectId);
-                        if(!lessonObject){
-                            error = true;
-                            break;
+
+        var lessons = [];
+
+        var classroom = Parse.Object.extend("Classroom");
+        var classroomQuery = new Parse.Query(classroom);
+        classroomQuery.equalTo("objectId",selectedClassroomId);
+        classroomQuery .find({
+            success: function (classrooms) {
+                if(classrooms.length>0){
+                    var classroom = classrooms[0];
+                    var lessonsRelation = classroom.relation("lessons");
+                    lessonsRelation.query().find({
+                        success: function(lessonsObjects) {
+                            for (var i = 0; i < lessonsObjects.length; i++) {
+                                var lesson =  lessonsObjects[i].toJSON();
+                                lesson.lessonStartDate = new Date (lesson.lessonStartDate.iso);
+                                lesson.lessonStartTime= new Date (lesson.lessonStartTime.iso);
+                                lesson.lessonEndTime= new Date (lesson.lessonEndTime.iso);
+                                lessons.push(lesson);
+                               }
+                            $scope.records = [];
+                            var attendance = Parse.Object.extend("Attendance");
+                            var attendanceQuery = new Parse.Query(attendance);
+
+                            var student = Parse.Object.extend("Student");
+                            var studentQuery = new Parse.Query(student);
+                            studentQuery.equalTo("objectId",$stateParams.studentId);
+
+                            $scope.showHUD('loading...');
+                            attendanceQuery.matchesQuery("student", studentQuery);
+                            attendanceQuery.find({
+                                success: function(attendancesResults) {
+                                    var error = false;
+                                    for (var i = 0; i < attendancesResults.length; i++) {
+                                        var attendanceObject = attendancesResults[i].toJSON();
+                                        if(attendanceObject.isDeleted == false){
+                                            var record = {
+                                                attendance :'',
+                                                type :'',
+                                                lesson:''
+                                            };
+                                            record.attendance = attendanceObject;
+                                            record.type = AttendanceTypesService.getType(attendanceObject.type.objectId);
+                                            var found;
+                                            var currentLesson ;
+                                            for (var k = 0; k < lessons.length; k++) {
+                                                var lesson = lessons[k];
+                                                if(lesson.objectId == attendanceObject.lesson.objectId){
+                                                     found = true;
+                                                     currentLesson = lesson;
+                                                     break;
+                                                }
+                                            }
+                                            if(found) {
+
+                                                record.lesson = currentLesson;
+                                                $scope.records.push(record);
+                                                $scope.AddItemInAttendanceChartsData(record);
+                                            }
+                                        }
+                                    }
+                                    if(error){
+                                        $scope.hideHUD();
+                                        $scope.showAlert('Error','Error in retrieving data...');
+                                        $scope.records = [];
+                                        $scope.myChartData = [];
+                                    }
+                                    else{
+                                        $scope.records.sort(function(a,b){
+                                            if((b.lesson.lessonStartDate - a.lesson.lessonStartDate) == 0){
+                                                return b.lesson.lessonStartTime - a.lesson.lessonStartTime;
+                                            }
+                                            return new Date(b.lesson.lessonStartDate) - new Date(a.lesson.lessonStartDate);
+                                        });
+                                        var ChartData = $scope.tmpChartData;
+                                        $scope.$apply();
+                                        for(var j = 0; j < $scope.records.length; j++){
+                                            var object =  $scope.records[j];
+                                            var element = document.getElementById(j);
+                                            var objectColor = '#' + object.type.color;
+                                            element.style.backgroundColor = objectColor;
+                                        }
+                                    }
+                                    new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(ChartData,myChartOptions);
+                                    $scope.hideHUD();
+                                },
+                                error: function(error) {
+                                    alert("Error: " + error.code + " " + error.message);
+                                }
+                            });
+
                         }
-                        record.lesson = lessonObject;
-                        $scope.records.push(record);
-                        $scope.AddItemInAttendanceChartsData(record);
-                    }
-                }
-                if(error){
-                    $scope.hideHUD();
-                    $scope.showAlert('Error','Error in retrieving data...');
-                    $scope.records = [];
-                    $scope.myChartData = [];
-                }
-                else{
-                    $scope.records.sort(function(a,b){
-                        if((b.lesson.lessonStartDate - a.lesson.lessonStartDate) == 0){
-                            return b.lesson.lessonStartTime - a.lesson.lessonStartTime;
-                        }
-                        return new Date(b.lesson.lessonStartDate) - new Date(a.lesson.lessonStartDate);
                     });
-                    var ChartData = $scope.tmpChartData;
-                    $scope.$apply();
-                    for(var j = 0; j < $scope.records.length; j++){
-                        var object =  $scope.records[j];
-                        var element = document.getElementById(j);
-                        var objectColor = '#' + object.type.color;
-                        element.style.backgroundColor = objectColor;
-                    }
                 }
-                new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(ChartData,myChartOptions);
-                $scope.hideHUD();
             },
-            error: function(error) {
+            error:function(error){
                 alert("Error: " + error.code + " " + error.message);
             }
         });
+
+
+
+//        var lesson =  Parse.Object.extend("Lesson");
+//        var lessonsQuery = new Parse.Query(lesson);
+//
+//        lessonsQuery.matchesQuery("Classroom", classroomQuery);
+//        lessonsQuery .find({
+//            success: function (lessonsResults) {
+//                console.log('lesson serivce success');
+//                for(i in lessonsResults){
+//                    var lessonObject = lessonsResults[i].toJSON();
+//                    lessonObject.lessonStartDate = new Date (lessonObject.lessonStartDate.iso);
+//                    lessonObject.lessonStartTime= new Date (lessonObject.lessonStartTime.iso);
+//                    lessonObject.lessonEndTime= new Date (lessonObject.lessonEndTime.iso);
+//                    console.log('lesson Object ID :' + lessonObject.objectId);
+//                    if(lessonObject.isDeleted == false){
+//                        lessons.push(lessonObject);
+//                    }
+//                }
+//            },
+//            error:function(error){
+//                alert("Error: " + error.code + " " + error.message);
+//            }
+//        });
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//        $scope.records = [];
+//        var attendance = Parse.Object.extend("Attendance");
+//        var attendanceQuery = new Parse.Query(attendance);
+//
+//        var student = Parse.Object.extend("Student");
+//        var studentQuery = new Parse.Query(student);
+//        studentQuery.equalTo("objectId",$stateParams.studentId);
+//
+//        $scope.showHUD('loading...');
+//        attendanceQuery.matchesQuery("student", studentQuery);
+//        attendanceQuery.find({
+//            success: function(attendancesResults) {
+//                var error = false;
+//                for (var i = 0; i < attendancesResults.length; i++) {
+//                    var attendanceObject = attendancesResults[i].toJSON();
+//                    if(attendanceObject.isDeleted == false){
+//                        var record = {
+//                            attendance :'',
+//                            type :'',
+//                            lesson:''
+//                        };
+//                        record.attendance = attendanceObject;
+//                        record.type = AttendanceTypesService.getType(attendanceObject.type.objectId);
+//                        //bool found   currentLesson ;
+//                        //for lessons
+//                        // if lesson.objectid == attendanceobject.lesson.objectid /found = true /currentlesson = lesson /break
+//                        // if found record,lesson = currentlesson
+//                        var lessonObject= LessonService.getLesson(attendanceObject.lesson.objectId);
+//                        if(!lessonObject){
+//                            error = true;
+//                            break;
+//                        }
+//                        record.lesson = lessonObject;
+//                        $scope.records.push(record);
+//                        $scope.AddItemInAttendanceChartsData(record);
+//                    }
+//                }
+//                if(error){
+//                    $scope.hideHUD();
+//                    $scope.showAlert('Error','Error in retrieving data...');
+//                    $scope.records = [];
+//                    $scope.myChartData = [];
+//                }
+//                else{
+//                    $scope.records.sort(function(a,b){
+//                        if((b.lesson.lessonStartDate - a.lesson.lessonStartDate) == 0){
+//                            return b.lesson.lessonStartTime - a.lesson.lessonStartTime;
+//                        }
+//                        return new Date(b.lesson.lessonStartDate) - new Date(a.lesson.lessonStartDate);
+//                    });
+//                    var ChartData = $scope.tmpChartData;
+//                    $scope.$apply();
+//                    for(var j = 0; j < $scope.records.length; j++){
+//                        var object =  $scope.records[j];
+//                        var element = document.getElementById(j);
+//                        var objectColor = '#' + object.type.color;
+//                        element.style.backgroundColor = objectColor;
+//                    }
+//                }
+//                new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(ChartData,myChartOptions);
+//                $scope.hideHUD();
+//            },
+//            error: function(error) {
+//                alert("Error: " + error.code + " " + error.message);
+//            }
+//        });
         $scope.goBack =function(){
             $state.go('app.Students');
         }
@@ -597,7 +736,7 @@ angular.module('starter.controllers', ['angles','angularCharts'])
     })
 
 .controller('Students', function($scope, $state,  $ionicLoading , studentsService,BehaviorTypesService,LessonService,AttendanceTypesService) {
-
+        $scope.studentIndex =-1;
         $scope.showHUD = function (text) {
             $ionicLoading.show({
                 template: text
@@ -640,14 +779,16 @@ angular.module('starter.controllers', ['angles','angularCharts'])
             if ($scope.isGroupShown(group)) {
                 $scope.shownGroup = null;
             } else {
+
                 $scope.showHUD('loading..');
+                $scope.studentIndex = index;
                 var classroomsRelation = $scope.childrenObjects[index].relation("classrooms");
                 var classQuery = classroomsRelation.query();
                 classQuery.find({
                     success: function (classes) {
                         var studentClasses = [];
                         for (var j = 0; j < classes.length; j++) {
-                            var classObject = classes[j].toJSON();
+                            var classObject = classes[j];
                             studentClasses.push(classObject);
                         }
                         $scope.children[index].classrooms = studentClasses;
@@ -669,7 +810,9 @@ angular.module('starter.controllers', ['angles','angularCharts'])
         };
 
         $scope.goToChildren = function (index) {
-            studentsService.setCurrentStudent($scope.children[index]);
+            studentsService.setCurrentStudent($scope.children[$scope.studentIndex]);
+            studentsService.setSelectedClassroomId($scope.children[$scope.studentIndex].classrooms[index].id);
+            console.log("classroom:",$scope.children[$scope.studentIndex].classrooms[index].id);
             $state.go('tabs.summary',{"studentId":studentsService.getCurrentStudent().objectId})
         };
 
@@ -736,6 +879,7 @@ angular.module('starter.controllers', ['angles','angularCharts'])
 .controller('BehaviorCtrl', function ($scope,$stateParams,BehaviorTypesService,$state,$ionicLoading,studentsService){
 
         $scope.pageTitle = studentsService.getCurrentStudent().firstName;
+        var selectedClassroomId = studentsService.getSelectedClassroomId();
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //Behavior Chart
         $scope.myChartData = [];
@@ -834,7 +978,13 @@ angular.module('starter.controllers', ['angles','angularCharts'])
     var studentQuery = new Parse.Query(student);
     studentQuery.equalTo("objectId",$stateParams.studentId);
 
+    var classroom = Parse.Object.extend("Classroom");
+    var classroomQuery = new Parse.Query(classroom);
+    classroomQuery.equalTo("objectId",selectedClassroomId);
+
     behaviorQuery .matchesQuery("student", studentQuery);
+    behaviorQuery .matchesQuery("classroom", classroomQuery);
+
     behaviorQuery .find({
         success: function(behaviorResults) {
             for (var i = 0; i < behaviorResults.length; i++) {
@@ -983,6 +1133,8 @@ angular.module('starter.controllers', ['angles','angularCharts'])
                 }
             });
         };
+
+
 
         $scope.showAlert = function(title,content) {
             $ionicPopup.alert({

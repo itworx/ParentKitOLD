@@ -295,8 +295,8 @@ angular.module('starter', ['ionic', 'starter.controllers','openfb'])
           fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
 
-     Parse.initialize("vvIFEVKHztE3l8CZrECjn09T3j8cjB3y0E3VxCN8",
-          "iNswO5XxUaNJtWUMUq1g9g14h600LOE0INwypTml");
+     Parse.initialize("2cjtLvANwrqhS94xOc9k4AKENGH8kjOpLNfov7cQ",
+          "dbRbXdWO8BjwzxjkJC2FFBAULyt2nGk5PNILlIJc");
       window.fbAsyncInit = function() {
           Parse.FacebookUtils.init({
               appId: '246994372161242', // Facebook App ID
