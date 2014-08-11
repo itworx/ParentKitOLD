@@ -1238,43 +1238,76 @@ $scope.config = {
 
     })
 
-.controller('GradesCtrl',function($scope,studentsService,$state){
-    $scope.pageTitle = studentsService.getCurrentStudent().firstName;
-    $scope.goBack =function(){
-        $state.go('app.Students');
-    };
+.controller('GradesCtrl',function($scope,studentsService,$state,$stateParams,$ionicLoading){
 
-    $scope.data = {
-        series: ['Sales', 'Income', 'Expense', 'Laptops', 'Keyboards'],
-        data : [{
-            x : "Sales",
-            y: [100,500, 0],
-            tooltip:"this is tooltip"
-        },
-            {
-                x : "Not Sales",
-                y: [300, 100, 100]
-            },
-            {
-                x : "Tax",
-                y: [351]
-            },
-            {
-                x : "Not Tax",
-                y: [54, 0, 879]
-            }]
-    };
-    $scope.chartType = 'bar';
 
-    $scope.config = {
-        labels: false,
-        title : "Not Products",
-        legend : {
-            display:true,
-            position:'left'
-        },
-        innerRadius: 0
-    };
+        $scope.showHUD = function (text) {
+            $ionicLoading.show({
+                template: text
+            });
+        };
+        $scope.hideHUD = function () {
+            $ionicLoading.hide();
+        };
+
+        $scope.showHUD('loading..');
+
+        $scope.pageTitle = studentsService.getCurrentStudent().firstName;
+        var selectedClassroomId = studentsService.getSelectedClassroomId();
+        $scope.goBack =function(){
+            $state.go('app.Students');
+        };
+
+        var gradeCategory = Parse.Object.extend("Gradecategory");
+        var gradeCategoryQuery = new Parse.Query(gradeCategory);
+
+        var classroom = Parse.Object.extend("Classroom");
+        var classroomQuery = new Parse.Query(classroom);
+        classroomQuery.equalTo("objectId",selectedClassroomId);
+
+        gradeCategoryQuery .matchesQuery("classroom", classroomQuery);
+
+        gradeCategoryQuery .find({
+            success: function(gradeCategoryResults) {
+
+                $scope.hideHUD();
+            },
+            error: function(error) {
+                $scope.hideHUD();
+                alert("Error: " + error.code + " " + error.message);
+            }
+        });
+//    $scope.data = {
+//        series: ['Sales', 'Income', 'Expense', 'Laptops', 'Keyboards'],
+//        data : [{
+//            x : "Sales",
+//            y: [100,500, 0],
+//            tooltip:"this is tooltip"
+//        },
+//            {
+//                x : "Not Sales",
+//                y: [300, 100, 100]
+//            },
+//            {
+//                x : "Tax",
+//                y: [351]
+//            },
+//            {
+//                x : "Not Tax",
+//                y: [54, 0, 879]
+//            }]
+//    };
+//    $scope.chartType = 'bar';
+//
+//    $scope.config = {
+//        labels: false,
+//        title : "Not Products",
+//        legend : {
+//            display:true,
+//            position:'left'
+//        },
+//        innerRadius: 0
+//    };
 
 })
 ;
