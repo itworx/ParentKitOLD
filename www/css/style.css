@@ -12,3 +12,45 @@
 .list .item.item-accordion.ng-hide-remove {
     display: block !important;
 }
+
+/* this is just an example - don't use !important */
+
+.item-header {
+    font-size: 12px !important;
+    font-weight: bold;
+}
+
+.item-footer {
+    font-size: 12px !important;
+    font-weight: bold;
+
+    /* the workaround below "fixes" the scrolling */
+    margin-bottom: 28px !important;
+}
+
+.col-right {
+    text-align: right;
+    padding: 3px 5px 3px 5px !important;
+}
+
+.col-sep {
+    border-left: 1px solid lightgray;
+}
+
+.col-left {
+    padding: 3px 5px 3px 5px !important;
+}
+.col-center{
+    text-align: center;
+    padding: 3px 5px 3px 5px !important;
+}
+.min-75 { min-width: 75px; }
+.min-50 { min-width: 50px; }
+.min-180 { min-width: 180px; }
+.min-705 { min-width: 705px; }
+
+.row-item {
+    padding: 0px !important;
+    margin-left: 0 !important;
+    font-size: 12px !important;
+}
