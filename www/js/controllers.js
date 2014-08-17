@@ -1150,6 +1150,14 @@ $scope.config = {
 
 .controller('GradesCtrl',function($scope,studentsService,$state,$stateParams,$ionicLoading,$ionicScrollDelegate){
 
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF'.split('');
+            var color = '#';
+            for (var i = 0; i < 6; i++ ) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
 
         $scope.showHUD = function (text) {
             $ionicLoading.show({
@@ -1167,57 +1175,6 @@ $scope.config = {
         $scope.goBack =function(){
             $state.go('app.Students');
         };
-
-        var gradeCategory = Parse.Object.extend("Grade");
-        var gradeCategoryQuery = new Parse.Query(gradeCategory);
-
-//        var classroom = Parse.Object.extend("Classroom");
-//        var classroomQuery = new Parse.Query(classroom);
-//        classroomQuery.equalTo("objectId",selectedClassroomId);
-
-        //gradeCategoryQuery .matchesQuery("classroom", classroomQuery);
-
-        gradeCategoryQuery .find({
-            success: function(gradeCategoryResults) {
-
-                $scope.hideHUD();
-            },
-            error: function(error) {
-                $scope.hideHUD();
-                alert("Error: " + error.code + " " + error.message);
-            }
-        });
-
-        $scope.children = ['Category A','Category B','Category C','Category D','Category E'];
-        var ChartData = [
-            {
-                value: 30,
-                color:"#F7464A",
-                title : 'Category A'
-            },
-            {
-                value : 50,
-                color : "#E2EAE9",
-                title : 'Category B'
-            },
-            {
-                value : 130,
-                color : "#D4CCC5",
-                title : 'Category C'
-            },
-            {
-                value : 40,
-                color : "#949FB1",
-                title : 'Category D'
-
-            },
-            {
-                value : 120,
-                color : "#4D5360",
-                title : 'Category E'
-
-            }
-        ];
 
         var myChartOptions  =  {
             inGraphDataShow : true,
@@ -1270,14 +1227,47 @@ $scope.config = {
             dynamicDisplay : false
         }
 
-        new Chart(document.getElementById("canvas").getContext("2d")).Pie(ChartData,myChartOptions);
+        var mainChartData = [];
+        var gradeCategory = Parse.Object.extend("Gradecategory");
+        var gradeCategoryQuery = new Parse.Query(gradeCategory);
+
+        var classroom = Parse.Object.extend("Classroom");
+        var classroomQuery = new Parse.Query(classroom);
+        classroomQuery.equalTo("objectId",selectedClassroomId);
+
+        gradeCategoryQuery .matchesQuery("classroom", classroomQuery);
+
+        gradeCategoryQuery .find({
+            success: function(gradeCategoryResults) {
+                for(var i=0;i<gradeCategoryResults.length;i++)
+                {
+                    var tempGradeCategory = gradeCategoryResults[i].toJSON();
+                    var chartItems ={
+                        value: tempGradeCategory.percent,
+                        color:getRandomColor(),
+                        title : tempGradeCategory.title
+                    };
+                    mainChartData.push(chartItems);
+                }
+                new Chart(document.getElementById("mainCanvas").getContext("2d")).Pie(mainChartData,myChartOptions);
+                $scope.hideHUD();
+            },
+            error: function(error) {
+                $scope.hideHUD();
+                alert("Error: " + error.code + " " + error.message);
+            }
+        });
+
+        $scope.children = ['Category A','Category B','Category C','Category D','Category E'];
+
+
 
         $scope.data = [
-            {"id":1,"category":"Category A","weight":'5%',"grade":'90%'},
-            {"id":1,"category":"Category B","weight":'30%',"grade":'80%'},
-            {"id":1,"category":"Category C","weight":'35%',"grade":'85%'},
-            {"id":1,"category":"Category D","weight":'20%',"grade":'60%'},
-            {"id":1,"category":"Category E","weight":'10%',"grade":'87%'}
+            {"id":1,"category":"Category A","weight":'58%',"grade":'90%'},
+            {"id":2,"category":"Category B","weight":'30%',"grade":'80%'},
+            {"id":3,"category":"Category C","weight":'35%',"grade":'85%'},
+            {"id":4,"category":"Category D","weight":'20%',"grade":'60%'},
+            {"id":5,"category":"Category E","weight":'10%',"grade":'87%'}
             ];
 
             // calculating the summary
@@ -1296,7 +1286,7 @@ $scope.config = {
             $scope.sum.precoMedio = $scope.sum.valorLiquido / $scope.sum.quantidade;
 
             // table sorting
-            $scope.predicate = 'descricao';
+            $scope.predicate = 'id';
             $scope.desc = false;
 
 
@@ -1337,7 +1327,135 @@ $scope.config = {
             if ($scope.isGroupShown(group)) {
                 $scope.shownGroup = null;
             } else {
+
+                var data = {
+                    labels: ["Assignments", "Exam 1", "Exam 2", "Exam 3", "Midterm", "Final"],
+                    datasets: [
+                        {
+                            label: "My First dataset",
+                            fillColor: "rgba(220,220,220,0.5)",
+                            strokeColor: "rgba(220,220,220,0.8)",
+                            highlightFill: "rgba(220,220,220,0.75)",
+                            highlightStroke: "rgba(220,220,220,1)",
+                            data: [65, 59, 80, 81, 56, 55]
+                        },
+                        {
+                            label: "My Second dataset",
+                            fillColor: "rgba(151,187,205,0.5)",
+                            strokeColor: "rgba(151,187,205,0.8)",
+                            highlightFill: "rgba(151,187,205,0.75)",
+                            highlightStroke: "rgba(151,187,205,1)",
+                            data: [28, 48, 40, 19, 86,90]
+                        }
+                    ]
+                };
+                var chartOptions = {
+                    //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+                    scaleBeginAtZero : true,
+                    //Boolean - Whether grid lines are shown across the chart
+                    scaleShowGridLines : true,
+                    graphTitle : "Grades",
+                    //String - Colour of the grid lines
+                    scaleGridLineColor : "rgba(0,0,0,.05)",
+                    //Number - Width of the grid lines
+                    scaleGridLineWidth : 1,
+                    //Boolean - If there is a stroke on each bar
+                    barShowStroke : true,
+                    //Number - Pixel width of the bar stroke
+                    barStrokeWidth : 2,
+                    //Number - Spacing between each of the X value sets
+                    barValueSpacing : 5,
+                    //Number - Spacing between data sets within X values
+                    barDatasetSpacing : 1,
+                    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+                }
+
+                new Chart(document.getElementById("itemBarCanvas").getContext("2d")).Bar(data,chartOptions);
+
+                var mainChartData = [
+                    {
+                        value: 10,
+                        color:"#F7464A",
+                        title : 'Exam 1'
+                    },
+                    {
+                        value : 20,
+                        color : "#E2EAE9",
+                        title : 'Exam 2'
+                    },
+                    {
+                        value : 30,
+                        color : "#D4CCC5",
+                        title : 'Exam 3'
+                    },
+                    {
+                        value : 20,
+                        color : "#949FB1",
+                        title : 'Midterm'
+
+                    },
+                    {
+                        value : 20,
+                        color : "#4D5360",
+                        title : 'Final'
+
+                    }
+                ];
+
+                var myChartOptions  =  {
+                    inGraphDataShow : true,
+                    datasetFill : false,
+                    scaleTickSizeRight : 0,
+                    scaleTickSizeLeft : 0,
+                    scaleTickSizeBottom :0,
+                    scaleTickSizeTop : 0,
+                    scaleFontSize : 20,
+                    canvasBorders : false,
+                    canvasBordersWidth :1,
+                    canvasBordersColor : "black",
+                    graphTitle : "Gradable item weights",
+                    graphTitleFontFamily : "'Arial'",
+                    graphTitleFontSize : 24,
+                    graphTitleFontStyle : "bold",
+                    graphTitleFontColor : "#666",
+                    graphSubTitleFontFamily : "'Arial'",
+                    graphSubTitleFontSize : 18,
+                    graphSubTitleFontStyle : "normal",
+                    graphSubTitleFontColor : "#666",
+                    inGraphDataTmpl: "<%=roundToWithThousands(config,v2,2)%>",
+                    inGraphDataFontColor: "#666",
+                    legend : true,
+                    legendFontFamily : "'Arial'",
+                    legendFontSize : 9,
+                    legendFontStyle : "normal",
+                    legendFontColor : "#666",
+                    legendBlockSize : 50,
+                    legendBorders : true,
+                    legendBordersWidth : 1,
+                    legendBordersColors : "#666",
+                    annotateDisplay : false,
+                    spaceTop : 0,
+                    spaceBottom : 0,
+                    spaceLeft : 0,
+                    spaceRight : 0,
+                    logarithmic: true,
+                    animationSteps : 50,
+                    rotateLabels : "smart",
+                    xAxisSpaceOver : 0,
+                    xAxisSpaceUnder : 0,
+                    xAxisLabelSpaceAfter : 0,
+                    xAxisLabelSpaceBefore : 0,
+                    legendBordersSpaceBefore : 0,
+                    legendBordersSpaceAfter : 0,
+                    footNoteSpaceBefore : 0,
+                    footNoteSpaceAfter : 0,
+                    startAngle : 0,
+                    dynamicDisplay : false
+                }
+
+                new Chart(document.getElementById("itemPieCanvas").getContext("2d")).Pie(mainChartData,myChartOptions);
                 $scope.shownGroup = group;
+                $scope.$apply();
             }
         };
 
