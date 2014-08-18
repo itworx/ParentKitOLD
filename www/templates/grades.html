@@ -9,8 +9,8 @@
 
             <div class="item item-header item-positive row row-item min-705">
                 <div class="col col-left col-20 min-180" ng-click="sort('Categories')">Categories</div>
-                <div class="col col-right min-75" ng-click="sort('Weight')">Weight</div>
-                <div class="col col-right min-75" ng-click="sort('Grades')">Grades</div>
+                <div class="col col-center col-sep min-75" ng-click="sort('Weight')">Weight</div>
+                <div class="col col-center col-sep min-75" ng-click="sort('Grades')">Grades</div>
             </div>
             <div class="item row row-item min-705" ng-repeat="row in data | orderBy:predicate:desc">
                 <div class="col col-left col-20 min-180">{{ row.category }}</div>
@@ -36,8 +36,8 @@
 
                         <div class="item item-header item-positive row row-item min-705">
                             <div class="col col-left col-20 min-180" ng-click="sort('Categories')">Categories</div>
-                            <div class="col col-right min-75" ng-click="sort('Weight')">Weight</div>
-                            <div class="col col-right min-75" ng-click="sort('Grades')">Grades</div>
+                            <div class="col col-center col-sep min-75" ng-click="sort('Weight')">Weight</div>
+                            <div class="col col-center col-sep min-75" ng-click="sort('Grades')">Grades</div>
                         </div>
 
                         <div class="item row row-item min-705" ng-repeat="row in data | orderBy:predicate:desc">
