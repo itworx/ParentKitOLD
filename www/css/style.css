@@ -44,13 +44,17 @@
     text-align: center;
     padding: 3px 5px 3px 5px !important;
 }
-.min-75 { min-width: 75px; }
-.min-50 { min-width: 50px; }
-.min-180 { min-width: 180px; }
-.min-705 { min-width: 705px; }
+
+.min-50 { min-width: 20px; }
+.min-75 { min-width: 30px; }
+.min-180 { min-width: 100px; }
+.min-320 { min-width: 320px; }
 
 .row-item {
     padding: 0px !important;
     margin-left: 0 !important;
     font-size: 16px !important;
+}
+.dataGrid {
+    widthL:auto;
 }

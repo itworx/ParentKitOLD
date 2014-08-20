@@ -1172,9 +1172,12 @@ $scope.config = {
 
         $scope.pageTitle = studentsService.getCurrentStudent().firstName;
         var selectedClassroomId = studentsService.getSelectedClassroomId();
+        var studentId =  studentsService.getCurrentStudent().objectId;
+
         $scope.goBack =function(){
             $state.go('app.Students');
         };
+        $scope.data = [];
 
         var myChartOptions  =  {
             inGraphDataShow : true,
@@ -1193,14 +1196,14 @@ $scope.config = {
             graphTitleFontStyle : "bold",
             graphTitleFontColor : "#666",
             graphSubTitleFontFamily : "'Arial'",
-            graphSubTitleFontSize : 18,
+            graphSubTitleFontSize : 24,
             graphSubTitleFontStyle : "normal",
             graphSubTitleFontColor : "#666",
             inGraphDataTmpl: "<%=roundToWithThousands(config,v2,2)%>",
             inGraphDataFontColor: "#666",
             legend : true,
             legendFontFamily : "'Arial'",
-            legendFontSize : 9,
+            legendFontSize : 14,
             legendFontStyle : "normal",
             legendFontColor : "#666",
             legendBlockSize : 50,
@@ -1226,49 +1229,109 @@ $scope.config = {
             startAngle : 0,
             dynamicDisplay : false
         }
-
+        $scope.children = [];
+        $scope.categories = [];
         var mainChartData = [];
+        var categories = [];
         var gradeCategory = Parse.Object.extend("Gradecategory");
         var gradeCategoryQuery = new Parse.Query(gradeCategory);
 
         var classroom = Parse.Object.extend("Classroom");
         var classroomQuery = new Parse.Query(classroom);
+        var count = 0;
+        var totalCategoriesCount = 0;
         classroomQuery.equalTo("objectId",selectedClassroomId);
 
         gradeCategoryQuery .matchesQuery("classroom", classroomQuery);
 
         gradeCategoryQuery .find({
             success: function(gradeCategoryResults) {
-                for(var i=0;i<gradeCategoryResults.length;i++)
-                {
-                    var tempGradeCategory = gradeCategoryResults[i].toJSON();
-                    var chartItems ={
-                        value: tempGradeCategory.percent,
-                        color:getRandomColor(),
-                        title : tempGradeCategory.title
-                    };
-                    mainChartData.push(chartItems);
+                totalItemsCount = gradeCategoryResults.length;
+                for (var i = 0; i < gradeCategoryResults.length; i++) {
+                    gradeCategoryResults[i].gradableItems = [];
+                    categories.push(gradeCategoryResults[i]);
+                    var gradableItemRelation = gradeCategoryResults[i].relation("gradableItems");
+                    gradableItemRelation.query().find({
+                        success: function (gradableItems) {
+                            var gradesCount = 0;
+                            if(gradableItems.length<=0)count++;
+                            for (var j = 0; j < gradableItems.length; j++) {
+                                var grade = Parse.Object.extend("Grade");
+                                var gradeQuery = new Parse.Query(grade);
+
+                                var gradableItemParse = Parse.Object.extend("Gradableitem");
+                                var gradableItemQuery = new Parse.Query(gradableItemParse);
+
+                                gradableItemQuery.equalTo("objectId", gradableItems[j].id);
+
+                                var student = Parse.Object.extend("Student");
+                                var studentQuery = new Parse.Query(student);
+                                var gradesCount = 0;
+                                studentQuery.equalTo("objectId", studentId);
+
+                                gradeQuery.matchesQuery("student", studentQuery);
+                                gradeQuery.matchesQuery("gradableItem", gradableItemQuery);
+                                gradeQuery.find({
+                                    success: function (grades) {
+                                        gradesCount++;
+                                        for (var z = 0; z < gradableItems.length; z++) {
+                                            for (var k = 0; k < grades.length; k++) {
+                                                var tempGradableItem = gradableItems[z].toJSON();
+                                                var tempgrade = grades[k].toJSON();
+                                                if (tempGradableItem.objectId == tempgrade.gradableItem.objectId) {
+                                                    gradableItems[z].grade = grades[k];
+                                                }
+                                            }
+                                        }
+                                        if(gradesCount >= gradableItems.length)
+                                        {
+                                            count++;
+                                            for (var g = 0; g < categories.length && gradableItems.length>0; g++) {
+                                                var tempGradableItem = gradableItems[0].toJSON();
+                                                var tempGradeCategory = categories[g].toJSON();
+                                                if (tempGradableItem.gradeCategory.objectId == tempGradeCategory.objectId) {
+                                                    categories[g].gradableItems = gradableItems;
+                                                    var chartItems = {
+                                                        value: tempGradeCategory.percent,
+                                                        color: getRandomColor(),
+                                                        title: tempGradeCategory.title
+                                                    };
+                                                    var dataGridItem = {
+                                                        id: tempGradeCategory.sortKey,
+                                                        category: tempGradeCategory.title,
+                                                        weight: tempGradeCategory.percent,
+                                                        grade: "*"
+                                                    };
+                                                    $scope.data.push(dataGridItem);
+                                                    mainChartData.push(chartItems);
+                                                    $scope.categories.push(categories[g]);
+                                                    $scope.children.push(tempGradeCategory.title);
+                                                    break
+                                                }
+                                            }
+                                            if(count >= gradeCategoryResults.length ) {
+                                                new Chart(document.getElementById("mainCanvas").getContext("2d")).Pie(mainChartData, myChartOptions);
+                                                $scope.hideHUD();
+                                            }
+                                        }
+                                    }
+                                });
+                            }
+                        },
+                        error: function(error) {
+                            count++;
+                            $scope.hideHUD();
+                            alert("Error: " + error.code + " " + error.message);
+                        }
+                    });
+
                 }
-                new Chart(document.getElementById("mainCanvas").getContext("2d")).Pie(mainChartData,myChartOptions);
-                $scope.hideHUD();
             },
             error: function(error) {
                 $scope.hideHUD();
                 alert("Error: " + error.code + " " + error.message);
             }
         });
-
-        $scope.children = ['Category A','Category B','Category C','Category D','Category E'];
-
-
-
-        $scope.data = [
-            {"id":1,"category":"Category A","weight":'58%',"grade":'90%'},
-            {"id":2,"category":"Category B","weight":'30%',"grade":'80%'},
-            {"id":3,"category":"Category C","weight":'35%',"grade":'85%'},
-            {"id":4,"category":"Category D","weight":'20%',"grade":'60%'},
-            {"id":5,"category":"Category E","weight":'10%',"grade":'87%'}
-            ];
 
             // calculating the summary
             $scope.sum = {
@@ -1288,6 +1351,7 @@ $scope.config = {
             // table sorting
             $scope.predicate = 'id';
             $scope.desc = false;
+
 
 
             $scope.toggleLeft = function() {
@@ -1327,7 +1391,18 @@ $scope.config = {
             if ($scope.isGroupShown(group)) {
                 $scope.shownGroup = null;
             } else {
-
+                $scope.currentCategory = $scope.categories[index];
+                $scope.gradableItemsData = [];
+                for(var i=0;i< $scope.currentCategory.gradableItems.length; i++) {
+                    var tempGradableItem = $scope.currentCategory.gradableItems[i];
+                    var dataGridItem = {
+                        id: i,
+                        title: tempGradableItem.attributes.title,
+                        grade: tempGradableItem.grade.attributes.gradeValue + " / " +tempGradableItem.attributes.maximumGrade,
+                        weight: tempGradableItem.attributes.weight
+                    };
+                    $scope.gradableItemsData.push(dataGridItem);
+                }
                 var data = {
                     labels: ["Assignments", "Exam 1", "Exam 2", "Exam 3", "Midterm", "Final"],
                     datasets: [
@@ -1370,7 +1445,7 @@ $scope.config = {
                     legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
                 }
 
-                new Chart(document.getElementById("itemBarCanvas").getContext("2d")).Bar(data,chartOptions);
+
 
                 var mainChartData = [
                     {
@@ -1452,10 +1527,9 @@ $scope.config = {
                     startAngle : 0,
                     dynamicDisplay : false
                 }
-
                 new Chart(document.getElementById("itemPieCanvas").getContext("2d")).Pie(mainChartData,myChartOptions);
+                new Chart(document.getElementById("itemBarCanvas").getContext("2d")).Bar(data,chartOptions);
                 $scope.shownGroup = group;
-                $scope.$apply();
             }
         };
 

@@ -64,10 +64,12 @@
     <string>0.0.1</string>
     <key>LSRequiresIPhoneOS</key>
     <true/>
-    <key>NSMainNibFile</key>
-    <string></string>
     <key>NSMainNibFile~ipad</key>
     <string></string>
+    <key>UIStatusBarHidden</key>
+    <false/>
+    <key>UIStatusBarStyle</key>
+    <string>UIStatusBarStyleBlackOpaque</string>
     <key>UISupportedInterfaceOrientations</key>
     <array>
       <string>UIInterfaceOrientationPortrait</string>
@@ -79,5 +81,7 @@
       <string>UIInterfaceOrientationPortraitUpsideDown</string>
       <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
+    <key>UIViewControllerBasedStatusBarAppearance</key>
+    <false/>
   </dict>
 </plist>
