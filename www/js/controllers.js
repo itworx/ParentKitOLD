@@ -1527,8 +1527,10 @@ $scope.config = {
                     startAngle : 0,
                     dynamicDisplay : false
                 }
-                new Chart(document.getElementById("itemPieCanvas").getContext("2d")).Pie(mainChartData,myChartOptions);
-                new Chart(document.getElementById("itemBarCanvas").getContext("2d")).Bar(data,chartOptions);
+//                new Chart(document.getElementById("itemPieCanvas").getContext("2d")).Pie(mainChartData,myChartOptions);
+//                new Chart(document.getElementById("itemBarCanvas").getContext("2d")).Bar(data,chartOptions);
+//                <canvas id="itemBarCanvas" height="350" width="300"></canvas>
+//                <canvas id="itemPieCanvas" height="350" width="300"></canvas>
                 $scope.shownGroup = group;
             }
         };
