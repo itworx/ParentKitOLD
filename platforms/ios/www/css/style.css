@@ -1,9 +1,16 @@
 /* Empty. Add your own CSS if you like */
 .list .item.item-accordion {
+    padding-top: 0;
+    padding-bottom: 0;
+    transform: none;
+}
+
+.list .item.item-accordion-general{
     line-height: 38px;
     padding-top: 0;
     padding-bottom: 0;
-    transition: 0.09s all linear;
+    height: inherit;
+    transform: none;
 }
 .list .item.item-accordion.ng-hide {
     line-height: 0px;

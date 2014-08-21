@@ -1367,32 +1367,31 @@ $scope.config = {
 
             var adjusting = false;
 
-            $scope.scrollMirror = function(from, to) {
-                if (adjusting) {
-                    adjusting = false;
-                } else {
-                    // Mirroring zoom level
-                    var zoomFrom = $ionicScrollDelegate.$getByHandle(from).getScrollView().getValues().zoom;
-                    var zoomTo = $ionicScrollDelegate.$getByHandle(to).getScrollView().getValues().zoom;
 
-                    if (zoomFrom != zoomTo) {
-                        $ionicScrollDelegate.$getByHandle(to).getScrollView().zoomTo(zoomFrom);
-                    }
-
-                    // Mirroring left position
-                    $ionicScrollDelegate.$getByHandle(to).scrollTo($ionicScrollDelegate.$getByHandle(from).getScrollPosition().left,
-                        $ionicScrollDelegate.$getByHandle(to).getScrollPosition().top);
-
-                    adjusting = true;
-                }
-            };
 
         $scope.toggleGroup = function (group, index) {
             if ($scope.isGroupShown(group)) {
                 $scope.shownGroup = null;
             } else {
+                $scope.shownGroup = group;
                 $scope.currentCategory = $scope.categories[index];
                 $scope.gradableItemsData = [];
+
+                var data = {
+                    labels: [],
+                    datasets: [
+                        {
+                            label: "",
+                            fillColor: "rgba(151,187,205,0.5)",
+                            strokeColor: "rgba(151,187,205,0.8)",
+                            highlightFill: "rgba(151,187,205,0.75)",
+                            highlightStroke: "rgba(151,187,205,1)",
+                            data: []
+                        }]
+                };
+
+                var mainChartData = [];
+
                 for(var i=0;i< $scope.currentCategory.gradableItems.length; i++) {
                     var tempGradableItem = $scope.currentCategory.gradableItems[i];
                     var dataGridItem = {
@@ -1401,29 +1400,17 @@ $scope.config = {
                         grade: tempGradableItem.grade.attributes.gradeValue + " / " +tempGradableItem.attributes.maximumGrade,
                         weight: tempGradableItem.attributes.weight
                     };
+                    var mainChartDataItem = {
+                        value: tempGradableItem.attributes.weight,
+                        color: getRandomColor(),
+                        title: tempGradableItem.attributes.title
+                    };
+                    data.labels.push(tempGradableItem.attributes.title);
+                    data.datasets[0].data.push(tempGradableItem.grade.attributes.gradeValue);
+                    mainChartData.push(mainChartDataItem);
                     $scope.gradableItemsData.push(dataGridItem);
                 }
-                var data = {
-                    labels: ["Assignments", "Exam 1", "Exam 2", "Exam 3", "Midterm", "Final"],
-                    datasets: [
-                        {
-                            label: "My First dataset",
-                            fillColor: "rgba(220,220,220,0.5)",
-                            strokeColor: "rgba(220,220,220,0.8)",
-                            highlightFill: "rgba(220,220,220,0.75)",
-                            highlightStroke: "rgba(220,220,220,1)",
-                            data: [65, 59, 80, 81, 56, 55]
-                        },
-                        {
-                            label: "My Second dataset",
-                            fillColor: "rgba(151,187,205,0.5)",
-                            strokeColor: "rgba(151,187,205,0.8)",
-                            highlightFill: "rgba(151,187,205,0.75)",
-                            highlightStroke: "rgba(151,187,205,1)",
-                            data: [28, 48, 40, 19, 86,90]
-                        }
-                    ]
-                };
+
                 var chartOptions = {
                     //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
                     scaleBeginAtZero : true,
@@ -1444,38 +1431,6 @@ $scope.config = {
                     barDatasetSpacing : 1,
                     legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
                 }
-
-
-
-                var mainChartData = [
-                    {
-                        value: 10,
-                        color:"#F7464A",
-                        title : 'Exam 1'
-                    },
-                    {
-                        value : 20,
-                        color : "#E2EAE9",
-                        title : 'Exam 2'
-                    },
-                    {
-                        value : 30,
-                        color : "#D4CCC5",
-                        title : 'Exam 3'
-                    },
-                    {
-                        value : 20,
-                        color : "#949FB1",
-                        title : 'Midterm'
-
-                    },
-                    {
-                        value : 20,
-                        color : "#4D5360",
-                        title : 'Final'
-
-                    }
-                ];
 
                 var myChartOptions  =  {
                     inGraphDataShow : true,
@@ -1527,16 +1482,21 @@ $scope.config = {
                     startAngle : 0,
                     dynamicDisplay : false
                 }
-//                new Chart(document.getElementById("itemPieCanvas").getContext("2d")).Pie(mainChartData,myChartOptions);
-//                new Chart(document.getElementById("itemBarCanvas").getContext("2d")).Bar(data,chartOptions);
-//                <canvas id="itemBarCanvas" height="350" width="300"></canvas>
-//                <canvas id="itemPieCanvas" height="350" width="300"></canvas>
-                $scope.shownGroup = group;
+                new Chart(document.getElementById("itemPieCanvas").getContext("2d")).Pie(mainChartData,myChartOptions);
+                new Chart(document.getElementById("itemBarCanvas").getContext("2d")).Bar(data,chartOptions);
+
+                sleepFor(500);
+                console.log("finished");
             }
         };
 
         $scope.isGroupShown = function (group) {
             return $scope.shownGroup === group;
         };
+
+        function sleepFor( sleepDuration ){
+            var now = new Date().getTime();
+            while(new Date().getTime() < now + sleepDuration){ /* do nothing */ }
+        }
 })
 ;
