@@ -297,11 +297,28 @@ angular.module('starter', ['ionic', 'starter.controllers','openfb'])
 
 .config(function($stateProvider, $urlRouterProvider) {
    $stateProvider
-       .state('app', {
-           url: "/app",
-           abstract: true,
-           templateUrl: "templates/menu.html",
-           controller: 'AppCtrl'
+       .state('login', {
+           url: "/login",
+           templateUrl: "templates/login.html",
+           controller: 'LogInCtrl'
        })
-   $urlRouterProvider.otherwise('/login');
+       .state('forgotPassword',{
+           url: "/forgotPassword",
+           templateUrl: "templates/forgotPassword.html",
+           controller: 'forgotPasswordCtrl'
+       })
+       .state('SignUp', {
+           url: "/SignUp",
+           templateUrl: "templates/SignUp.html",
+           controller: 'SignUpCtrl'
+       })
+       .state('welcome', {
+           url: "/welcome",
+           templateUrl: "templates/welcome.html",
+           controller: 'AccessCodeCtrl'
+       })
+
+
+   ;
+        $urlRouterProvider.otherwise('/login');
  });

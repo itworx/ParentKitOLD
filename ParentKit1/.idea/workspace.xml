@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1078" max-vertical-offset="3630">
-              <caret line="318" column="6" selection-start-line="318" selection-start-column="6" selection-end-line="318" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.6938776" vertical-offset="2739" max-vertical-offset="3630">
+              <caret line="429" column="11" selection-start-line="429" selection-start-column="11" selection-end-line="429" selection-end-column="11" />
               <folding>
                 <element signature="e#412#9355#0" expanded="false" />
                 <element signature="n#!!block;n#oauthCallback#0" expanded="false" />
@@ -39,17 +39,31 @@
       <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1845" max-vertical-offset="22605">
-              <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="144" selection-end-column="6" />
-              <folding />
+            <state vertical-scroll-proportion="-3.090909" vertical-offset="2474" max-vertical-offset="8025">
+              <caret line="1108" column="6" selection-start-line="1065" selection-start-column="0" selection-end-line="1108" selection-end-column="6" />
+              <folding>
+                <element signature="e#5780#5999#0" expanded="false" />
+                <element signature="e#6169#16739#0" expanded="false" />
+                <element signature="e#16801#16805#0" expanded="false" />
+                <element signature="e#16808#16894#0" expanded="false" />
+                <element signature="e#18097#18798#0" expanded="false" />
+                <element signature="e#18892#22949#0" expanded="false" />
+                <element signature="e#23031#26097#0" expanded="false" />
+                <element signature="e#26241#31576#0" expanded="false" />
+                <element signature="e#31695#37604#0" expanded="false" />
+                <element signature="e#37705#41008#0" expanded="false" />
+                <element signature="e#41091#42226#0" expanded="false" />
+                <element signature="e#42314#43805#0" expanded="false" />
+                <element signature="e#43873#44793#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35665914" vertical-offset="157" max-vertical-offset="675">
+            <state vertical-scroll-proportion="-6.5833335" vertical-offset="157" max-vertical-offset="675">
               <caret line="21" column="38" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="38" />
               <folding />
             </state>
@@ -72,6 +86,13 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="true" />
     </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/www/js/app.js" />
+      </list>
+    </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="4" />
@@ -314,30 +335,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5833335" vertical-offset="157" max-vertical-offset="675">
+          <caret line="21" column="38" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1845" max-vertical-offset="22605">
-          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="144" selection-end-column="6" />
-          <folding />
+        <state vertical-scroll-proportion="-3.090909" vertical-offset="2474" max-vertical-offset="8025">
+          <caret line="1108" column="6" selection-start-line="1065" selection-start-column="0" selection-end-line="1108" selection-end-column="6" />
+          <folding>
+            <element signature="e#5780#5999#0" expanded="false" />
+            <element signature="e#6169#16739#0" expanded="false" />
+            <element signature="e#16801#16805#0" expanded="false" />
+            <element signature="e#16808#16894#0" expanded="false" />
+            <element signature="e#18097#18798#0" expanded="false" />
+            <element signature="e#18892#22949#0" expanded="false" />
+            <element signature="e#23031#26097#0" expanded="false" />
+            <element signature="e#26241#31576#0" expanded="false" />
+            <element signature="e#31695#37604#0" expanded="false" />
+            <element signature="e#37705#41008#0" expanded="false" />
+            <element signature="e#41091#42226#0" expanded="false" />
+            <element signature="e#42314#43805#0" expanded="false" />
+            <element signature="e#43873#44793#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1078" max-vertical-offset="3630">
-          <caret line="318" column="6" selection-start-line="318" selection-start-column="6" selection-end-line="318" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.6938776" vertical-offset="2739" max-vertical-offset="3630">
+          <caret line="429" column="11" selection-start-line="429" selection-start-column="11" selection-end-line="429" selection-end-column="11" />
           <folding>
             <element signature="e#412#9355#0" expanded="false" />
             <element signature="n#!!block;n#oauthCallback#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35665914" vertical-offset="157" max-vertical-offset="675">
-          <caret line="21" column="38" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
