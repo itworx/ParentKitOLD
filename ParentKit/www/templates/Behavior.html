@@ -1,0 +1,28 @@
+<ion-view title={{pageTitle}}>
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-ios7-arrow-back" ng-click="goBack()">
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <canvas donutchart options="myChartOptions" data="myChartData" width="320" height="400"></canvas>
+        <div class="list">
+            <a ng-repeat="record in behaviorRecords "
+               class="item item-thumbnail-left">
+                <img ng-src={{}}>
+                <h2>{{ record.behaviorType.title}}</h2>
+                <h3>{{ record.behavior.behaviorDate.toDateString()}}</h3>
+                <h4>{{ record.behaviorType.isPositive}}</h4>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<style>
+    canvas {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        display: block
+    }
+</style>

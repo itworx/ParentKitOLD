@@ -1,0 +1,71 @@
+<ion-view title={{pageTitle}}>
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-ios7-arrow-back" ng-click="goBack()">
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <canvas id="mainCanvas" height="350" width="300"></canvas>
+        <br><br>
+        <div class="dataGrid">
+            <div class="item item-header item-positive row row-item min-320">
+                <div class="col col-left col-20 min-180" ng-click="sort('Categories')">Categories</div>
+                <div class="col col-center col-sep min-50" ng-click="sort('Weight')">Weight</div>
+                <div class="col col-center col-sep min-50" ng-click="sort('Grades')">Grades</div>
+            </div>
+            <div class="item row row-item min-320" ng-repeat="row in data | orderBy:predicate:desc">
+                <div class="col col-left col-20 min-180">{{ row.category }}</div>
+                <div class="col col-center col-sep min-50">{{ row.weight }}</div>
+                <div class="col col-center col-sep min-50">{{ row.grade }}</div>
+            </div>
+            <div class="item item-footer item-positive row row-item min-320">
+                <div class="col col-left col-20 min-180"></div>
+                <div class="col col-left min-75">TOTAL</div>
+                <div class="col col-center min-75"></div>
+                <div class="col col-center min-50">***</div>
+            </div>
+        </div>
+        <ion-list>
+            <div ng-repeat="child in children" >
+                <ion-item class="item-stable"
+                          ng-click="toggleGroup(child,$index)"
+                          ng-class="{active: isGroupShown(child)}">
+                    <i class="icon" ng-class="isGroupShown(child) ? 'ion-minus' : 'ion-plus'"></i>
+                    <b>{{child}}</b>
+                </ion-item>
+                <ion-item class="item-accordion"
+                          ng-show="isGroupShown(child)">
+                        <div class="item item-header item-positive row row-item min-320">
+                            <div class="col col-left col-20 min-180" ng-click="sort('Categories')">{{currentCategory.attributes.title }}</div>
+                            <div class="col col-center col-sep min-75" ng-click="sort('Grades')">Grade</div>
+                            <div class="col col-center col-sep min-75" ng-click="sort('Weight')">Weight</div>
+                        </div>
+
+                        <div class="item row row-item min-320" ng-repeat="row in gradableItemsData | orderBy:predicate:desc">
+                            <div class="col col-left col-20 min-180">{{ row.title }}</div>
+                            <div class="col col-center col-sep min-75">{{ row.grade }}</div>
+                            <div class="col col-center col-sep min-75">{{ row.weight }}</div>
+                        </div>
+                        <div class="item item-footer item-positive row row-item min-320">
+                            <div class="col col-left col-20 min-180"></div>
+                            <div class="col col-left min-75">TOTAL</div>
+                            <div class="col col-center min-75"></div>
+                            <div class="col col-center min-50">***</div>
+                        </div>
+                        <canvas id="itemBarCanvas" height="300" width="300"></canvas>
+                        <canvas id="itemPieCanvas" height="350" width="300"></canvas>
+                </ion-item>
+            </div>
+        </ion-list>
+
+    </ion-content>
+</ion-view>
+<style>
+    canvas {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        display: block
+    }
+
+</style>

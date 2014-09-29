@@ -1,0 +1,37 @@
+<ion-nav-bar class="bar-positive nav-title-slide-ios7">
+
+    <ion-nav-back-button class="button-icon ion-chevron-left">
+    </ion-nav-back-button>
+
+</ion-nav-bar>
+<ion-view title="Sign up" has-header="true">
+    <ion-content>
+        <div class="list">
+            <!--username-->
+            <label class="item item-input">
+                <i class="icon ion-person placeholder-icon"></i>
+                <input type="text" placeholder="username" ng-model="user.username">
+            </label>
+            <!--password-->
+            <label class="item item-input">
+                <i class="icon ion-key placeholder-icon"></i>
+                <input type="password" placeholder="password" ng-model="user.password">
+            </label>
+            <!--confirm password-->
+            <label class="item item-input">
+                <i class="icon ion-key placeholder-icon"></i>
+                <input type="password" placeholder="Confirm your password" ng-model="user.confirmPassword">
+            </label>
+            <!--mail-->
+            <label class="item item-input">
+                <i class="icon ion-email placeholder-icon"></i>
+                <input type="email" placeholder="mail" ng-model="user.mail">
+            </label>
+        </div>
+        <div class="padding">
+           <button class="button button-block button-positive" ng-click="signup()">
+                Sign-Up
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

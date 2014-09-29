@@ -1,0 +1,37 @@
+<ion-nav-bar class="bar-positive nav-title-slide-ios7">
+<ion-nav-back-button class="button-icon ion-chevron-left">
+</ion-nav-back-button>
+</ion-nav-bar>
+
+<ion-view hide-back-button="true" title="Log In">
+    <ion-content>
+        <div class="list">
+           <label class="item item-input">
+                <i class="icon ion-person placeholder-icon"></i>
+                <input type="text" autocorrect="off" autocapitalize="off" placeholder="username" ng-model="user.username">
+            </label>
+            <label class="item item-input">
+                <i class="icon ion-key placeholder-icon"></i>
+                <input type="password" autocorrect="off" autocapitalize="off" placeholder="password" ng-model="user.password">
+            </label>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-positive" ng-click="logIn(user)">
+                Sign-In
+            </button>
+
+            <button class="button button-block button-positive" ng-click="signupUser()">
+                Sign-Up
+            </button>
+
+            <button class="button button-block button-positive" ng-click="facebookLogin()">
+                <i class="icon ion-social-facebook"></i>
+                &nbsp;Login with Facebook
+            </button>
+            <p class="text-center">
+                <a href="#/forgotPassword">Forgot password</a>
+            </p>
+        </div>
+    </ion-content>
+</ion-view>
+

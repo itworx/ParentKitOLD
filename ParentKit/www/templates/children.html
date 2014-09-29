@@ -1,0 +1,26 @@
+
+    <ion-nav-bar class="bar-positive nav-title-slide-ios7">
+        <ion-nav-buttons side="left">
+            <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+<ion-view  title="Students" hide-back-button="true" animation="slide-left-right">
+    <ion-content class="has-header">
+        <ion-list>
+            <div ng-repeat="child in children" >
+                <ion-item class="item-stable"
+                          ng-click="toggleGroup(child,$index)"
+                          ng-class="{active: isGroupShown(child)}">
+                    <i class="icon" ng-class="isGroupShown(child) ? 'ion-minus' : 'ion-plus'"></i>
+                    <b>{{child.firstName}}  {{child.lastName}}</b>
+                </ion-item>
+                <ion-item class="item-accordion-general"
+                          ng-repeat="item in child.classrooms"
+                          ng-show="isGroupShown(child)"
+                          ng-click="goToChildren($index)">
+                    {{item.attributes.title}}
+                </ion-item>
+                </div>
+            </ion-list>
+    </ion-content>
+</ion-view>
